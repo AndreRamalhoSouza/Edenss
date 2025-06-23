@@ -1,0 +1,121 @@
+/* styles/ProjectDetail.module.css */
+
+
+
+.backButton {
+  background-color: #3ea6e2; /* Azul vibrante */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px; /* Borda mais arredondada */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 40px; /* Espaço abaixo do botão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.backButton:hover {
+  background-color: #004f76;
+  transform: translateY(-3px); /* Leve elevação no hover */
+}
+
+.title {
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.description {
+  position: relative;
+  left: 500px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 60px; /* Espaço antes das imagens */
+  max-width: 800px;
+  text-align: justify; /* Alinha o texto em parágrafo */
+}
+
+.detailImagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Grid de 2 colunas para telas maiores, 1 coluna para menores */
+  gap: 25px; /* Espaçamento entre as imagens */
+  width: 100%;
+  margin-bottom: 60px; /* Espaço após as imagens */
+}
+
+.imageWrapper {
+  border-radius: 12px;
+  overflow: hidden; /* Garante que a imagem respeite o border-radius */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra mais acentuada */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  /* --- NOVAS REGRAS PARA TAMANHO UNIFORME --- */
+  position: relative; /* Essencial para o padding-bottom de proporção */
+  padding-bottom: 75%; /* Exemplo: define a altura como 75% da largura (proporção 4:3). Ajuste conforme desejar. */
+                        /* Para 16:9, use 56.25%; para 1:1 (quadrado), use 100%. */
+  height: 0; /* Zera a altura para o padding-bottom funcionar */
+  /* --- FIM DAS NOVAS REGRAS --- */
+}
+
+.imageWrapper:hover {
+  transform: scale(1.02); /* Pequeno zoom no hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* --- NOVA REGRA PARA A IMAGEM DENTRO DO WRAPPER --- */
+.imageWrapper img {
+  position: absolute; /* Permite que a imagem preencha o wrapper com position:relative */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando se necessário */
+}
+/* --- FIM DA NOVA REGRA --- */
+
+.loading {
+  font-size: 1.8rem;
+  color: #888;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+  .detailImagesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta colunas para tablets */
+    gap: 20px;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: 30px 15px;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  .detailImagesGrid {
+    grid-template-columns: 1fr; /* Uma coluna para celulares */
+    gap: 15px;
+  }
+  .backButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

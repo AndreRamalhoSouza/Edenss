@@ -1,0 +1,70 @@
+
+
+.card {
+  width: 320px;
+  height: 320px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px; /* pode mudar pra 0 se quiser */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  margin: 0;
+  padding: 2;
+
+  float: left;  /* >>> adiciona isso pra colar os cards */
+}
+
+
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.665);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-grow: 1;
+  /* --- REGRAS PARA PRETO E BRANCO E TRANSIÇÃO --- */
+  filter: grayscale(100%); /* Deixa a imagem em preto e branco */
+  transition: filter 0.5s ease-in-out; /* Adiciona uma transição suave ao filtro */
+  /* --- FIM DAS REGRAS --- */
+}
+
+/* Quando o mouse passar sobre o card, a imagem perde o filtro de cinza */
+.card:hover img {
+  filter: grayscale(0%); /* Remove o filtro, mostrando as cores originais */
+}
+
+.overlay {
+  min-height: 60px;   /* um pouco menor */
+  max-height: 100px;  /* menor pra não ocupar tanto espaço */
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.305));
+  color: white;
+  padding: 10px 10px 8px; /* padding reduzido */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 1.2em; /* ligeiramente menor */
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+}

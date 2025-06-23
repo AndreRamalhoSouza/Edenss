@@ -1,0 +1,61 @@
+.container {
+  /* O container principal é definido em globals.css */
+}
+
+.main {
+  /* O main é definido em globals.css */
+}
+
+.titulo {
+  font-size: 3rem;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+
+.contactContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contactDetails {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 300px;
+}
+
+.contactDetails h3 {
+  font-size: 1.8rem;
+  color: #333333;
+  margin-bottom: 1.5rem;
+}
+
+.contactDetails p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 0.8rem;
+}
+
+/* O formulário terá estilos de FormularioContato.module.css */
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+  .contactContent {
+    flex-direction: column;
+  }
+  .contactDetails {
+    text-align: center;
+  }
+}

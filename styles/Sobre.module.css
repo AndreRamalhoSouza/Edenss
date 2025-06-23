@@ -1,0 +1,105 @@
+/* Seu CSS existente para Sobre.module.css */
+
+.container {
+  /* O container principal é definido em globals.css */
+}
+
+.main {
+  /* O main é definido em globals.css */
+  text-align: center;
+}
+
+.titulo {
+  /* ESTILOS PARA O CONTAINER DO TÍTULO "NOSSA HISTÓRIA" */
+  display: flex; /* Permite controlar o layout dos filhos */
+  flex-direction: column; /* Coloca os filhos um abaixo do outro */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  /* Remove font-size e color daqui, pois serão definidos nas sub-partes */
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.nossaAzulPequeno {
+  position:relative;
+  right:140px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+  /* ESTILOS PARA "NOSSA" */
+  font-size: 2rem; /* Menor que "HISTÓRIA", ajuste conforme necessário */
+  color: #7fcae3; /* Cor azul clara */
+  font-weight:bold; /* Geralmente "NOSSA" é menos bold na imagem */
+  line-height: 1; /* Ajusta o espaçamento da linha */
+  margin-bottom: 0.2em; /* Espaço entre "NOSSA" e "HISTÓRIA" */
+}
+
+.historiaGrande {
+  /* ESTILOS PARA "HISTÓRIA" */
+  font-size: 4rem; /* Maior, ajuste conforme necessário para o tamanho principal do título */
+  color: #000000; /* Cor preta/cinza escuro */
+  font-weight: bold; /* Geralmente bold na imagem */
+  line-height: 1; /* Ajusta o espaçamento da linha */
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.descricao {
+  /* Seus estilos existentes para a descrição */
+  text-align: center; /* No print, o texto da descrição está centralizado */
+  max-width: 800px; /* Ajuste conforme a largura do texto no print */
+  margin: 0 auto 3rem auto; /* Centraliza e adiciona margem abaixo para o traço */
+  font-size: 1.1rem; /* Ajuste o tamanho da fonte se necessário */
+  color: #555555; /* Ajuste a cor se necessário */
+  line-height: 1.6;
+}
+
+.divisorCinza {
+  width: 250px; /* Largura do traço, ajuste conforme o print */
+  height: 2px; /* Espessura do traço */
+  background-color: #cccccc; /* Cor cinza do traço */
+  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
+  border-radius: 1px; /* Para as pontas arredondadas do traço, se desejar */
+}
+
+
+
+
+.secaoEquipe {
+  padding: 3rem 0;
+  background-color: #f8f8f8;
+  margin-top: 2rem;
+}
+
+.secaoEquipe h2 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 2.5rem;
+}
+
+.gradeEquipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    /* Ajustes para o container do título em telas menores */
+    margin-top: 1.5rem; /* Reduz margem superior */
+  }
+  .nossaAzulPequeno {
+    font-size: 1.2rem; /* Reduz tamanho em telas menores */
+  }
+  .historiaGrande {
+    font-size: 2.5rem; /* Reduz tamanho em telas menores */
+  }
+  .descricao {
+    font-size: 1rem;
+  }
+  .secaoEquipe h2 {
+    font-size: 2rem;
+  }
+}

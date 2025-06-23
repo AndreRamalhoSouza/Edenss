@@ -1,0 +1,90 @@
+/* styles/Carousel.module.css */
+
+.carouselWrapper {
+  width: 100%;
+  /* A largura MÁXIMA do seu grid 3x2. Ajuste para o quão "pequenos" os cards devem ser. */
+  /* Para 3 cards de 320px de largura, o max-width deve ser 960px. */
+  max-width: 960px; /* <--- IMPORTANTE: Define a largura total do grid 3x2 */
+  margin: 0 auto; /* Centraliza o carrossel */
+  padding: 40px 0; /* Espaçamento vertical (acima/abaixo do título e carrossel) */
+  box-sizing: border-box;
+  overflow: hidden; /* Corta qualquer coisa que transborde do wrapper (ex: sombra do hover) */
+}
+
+
+/* Estilos para os itens dentro do Slider, para fazê-los parecer um grid */
+/* O .slick-slide é a classe que o react-slick aplica a cada "slide" */
+.carouselWrapper .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Espaçamento entre os cards */
+  box-sizing: border-box;
+}
+
+/* Estilo para o wrapper do ProjectCard dentro de cada slide */
+.carouselItemWrapper {
+    /* Garanta que o card ocupe o espaço necessário */
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Personalizando os Dots (pontinhos de navegação) */
+.carouselWrapper .slick-dots {
+  bottom: -40px; /* Posição abaixo do carrossel */
+}
+
+.carouselWrapper .slick-dots li button:before {
+  font-size: 10px; /* Tamanho dos pontinhos */
+  color: #999; /* Cor dos pontinhos inativos */
+}
+
+.carouselWrapper .slick-dots li.slick-active button:before {
+  color: #007bff; /* Cor do pontinho ativo */
+}
+
+/* Personalizando as setas (arrows) - Opcional, se quiser usá-las */
+.carouselWrapper .slick-prev,
+.carouselWrapper .slick-next {
+  z-index: 1; /* Garante que as setas estejam acima dos cards */
+  width: 40px;
+  height: 40px;
+}
+
+.carouselWrapper .slick-prev:before,
+.carouselWrapper .slick-next:before {
+  font-size: 30px;
+  color: #007bff; /* Cor das setas */
+}
+
+.carouselWrapper .slick-prev {
+  left: -50px; /* Posição da seta esquerda */
+}
+
+.carouselWrapper .slick-next {
+  right: -50px; /* Posição da seta direita */
+}
+.carouselWrapper :global(.slick-list) {
+  padding: 0 !important;
+  /* Garante que nada escorra para fora se houver hover/efeitos laterais */
+  overflow: hidden;
+}
+.carouselWrapper :global(.slick-track) {
+  display: flex !important;
+  flex-wrap: wrap !important; /* ESSENCIAL para 2 linhas */
+  margin: 0 !important; /* Remove margens padrão que podem criar gap */
+  transform: none !important; /* Desativa a transformação padrão do slick para 'rows' */
+  height: auto !important; /* Permite que a altura se ajuste ao conteúdo das 2 linhas */
+}
+
+/* Esconde as setas em telas menores se preferir apenas dots ou swipe */
+@media (max-width: 768px) {
+  .carouselWrapper .slick-prev,
+  .carouselWrapper .slick-next {
+    display: none !important;
+  }
+  .carouselWrapper .slick-dots {
+    bottom: -20px; /* Ajusta a posição se as setas sumirem */
+  }
+}

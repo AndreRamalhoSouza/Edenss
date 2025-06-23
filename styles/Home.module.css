@@ -1,0 +1,280 @@
+/* SEU CÓDIGO EXISTENTE EM styles/Home.module.css */
+
+.container {
+  /* O container principal é definido em globals.css */
+}
+
+.main {
+  /* O main é definido em globals.css */
+}
+
+.secaoSobreNos {
+  text-align: center;
+  padding: 3rem 0;
+  background-color: #f8f8f8;
+  margin-bottom: 2rem;
+}
+
+/* REMOVA O H2 DAQUI, POIS AGORA USAREMOS .tituloSobreNosEstilizado */
+/* .secaoSobreNos h2 {
+   font-size: 2.5rem;
+   color: #333333;
+   margin-bottom: 1.5rem;
+} */
+
+/* NOVO ESTILO PARA O H2 "NOSSA HISTÓRIA" */
+.tituloSobreNosEstilizado {
+  display: flex; /* Transforma o h2 em um container flexível */
+  flex-direction: column; /* Empilha os filhos (divs de "NOSSA" e "HISTÓRIA") */
+  align-items: center; /* Centraliza horizontalmente "NOSSA" e "HISTÓRIA" um em relação ao outro */
+  margin-bottom: 1.5rem; /* Mantém a margem inferior original do h2 */
+  margin-top: 0; /* Remove margem superior padrão do h2 se necessário */
+  padding: 0; /* Remove padding padrão do h2 se necessário */
+}
+
+/* NOVAS CLASSES PARA AS PARTES DO TÍTULO */
+.nossaAzulPequeno {
+  position:relative;
+  right:140px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+  /* ESTILOS PARA "NOSSA" */
+  font-size: 2rem; /* Menor que "HISTÓRIA", ajuste conforme necessário */
+  color: #7fcae3; /* Cor azul clara */
+  font-weight:bold; /* Geralmente "NOSSA" é menos bold na imagem */
+  line-height: 1; /* Ajusta o espaçamento da linha */
+  margin-bottom: 0.2em; /* Espaço entre "NOSSA" e "HISTÓRIA" */
+}
+.historiaGrande {
+  /* ESTILOS PARA "HISTÓRIA" */
+  font-size: 4rem; /* Maior, ajuste conforme necessário para o tamanho principal do título */
+  color: #000000; /* Cor preta/cinza escuro */
+  font-weight: bold; /* Geralmente bold na imagem */
+  line-height: 1; /* Ajusta o espaçamento da linha */
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+
+.secaoSobreNos p {
+  font-size: 1.5rem;
+  color: #555555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.secaoEquipe {
+  padding: 3rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.secaoEquipe h2 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.gradeEquipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.secaoDepoimentos {
+  position:relative;
+  top:500px;
+  padding: 3rem 1rem;
+  background-color: #f0f8ff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/* styles/Home.module.css */
+
+/* ... (seus outros estilos existentes) ... */
+
+.tituloPortfolio {
+  font-size: 2.5rem; /* Ajuste este valor para o tamanho desejado (maior) */
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #333; /* Cor do texto (ajuste se desejar outra cor) */
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+  text-transform: uppercase; /* Deixa o texto em maiúsculas, se já não estiver no HTML */
+  letter-spacing: 2px; /* Espaçamento entre as letras para um visual mais impactante */
+}
+
+/* Opcional: Se quiser uma linha divisória abaixo do título do Portfólio, similar a Serviços */
+.secaoPortfolio::before {
+  position:relative;
+  top:100px;
+  content: '';
+  display: block;
+  width: 650px; /* Largura da linha */
+  height: 5px;
+  background-color: #4d4d4d90; /* Cor da linha */
+  margin: -30px auto 30px; /* Centraliza a linha e ajusta a margem */
+}
+
+/* ... (seus outros estilos existentes) ... */
+
+.secaoDepoimentos h2 {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.gradeDepoimentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.chamadaParaAcao {
+  position: relative;
+  text-align: center;
+  padding: 4rem 0;
+  background-color: #0070f3;
+  color: #ffffff;
+  margin-top: 2rem;
+  top:450px;
+}
+
+.chamadaParaAcao h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* styles/Home.module.css (adicione ao seu arquivo existente) */
+
+/* Estilos para a nova seção de Serviços */
+.secaoServicos {
+  padding: 60px 0; /* Espaçamento interno da seção */
+  background-color: #fff; /* Fundo branco ou claro para a seção */
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 60px; /* Espaço entre a seção de serviços e a próxima */
+}
+
+.tituloServicos {
+  font-size: 2.5rem; /* Tamanho do título "SERVIÇOS" */
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.linhaServicos {
+  width: 80px; /* Largura da linha abaixo do título */
+  height: 3px;
+  background-color: #007bff; /* Cor da linha */
+  margin: 0 auto 40px; /* Centraliza a linha e dá espaço abaixo */
+}
+
+.gradeServicos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os cards se não preencherem a linha toda */
+  max-width: 1200px; /* Largura máxima para o grid de serviços, ajuste conforme necessário */
+  margin: 0 auto; /* Centraliza o grid */
+  /* Remova qualquer gap aqui se você já controlou o espaçamento nos cards */
+  /* gap: 0; */
+}
+
+/* ... (seus outros estilos para .secaoSobreNos, .secaoEquipe, .secaoPortfolio, etc.) ... */
+
+.botaoContato {
+  background-color: #ffffff;
+  color: #0070f3;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botaoContato:hover {
+  background-color: #eeeeee;
+  color: #005bb5;
+}
+
+.divisorCinza {
+  width: 615px; /* Largura do traço, como no print */
+  height: 5px; /* Espessura do traço */
+  background-color: #727272ab; /* Cor cinza do traço */
+  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
+  border-radius: 1px;
+  position: relative;
+  top: 35px; /* Para as pontas arredondadas do traço, se desejar */
+}
+.divisorGray {
+  width: 615px; /* Largura do traço, como no print */
+  height: 5px; /* Espessura do traço */
+  background-color: #727272ab; /* Cor cinza do traço */
+  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
+  border-radius: 1px;
+  position: relative;
+  top: -25px; /* Para as pontas arredondadas do traço, se desejar */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Altere o seletor aqui para .tituloSobreNosEstilizado */
+  .tituloSobreNosEstilizado {
+    font-size: unset; /* Reseta o font-size do h2 para que as divs controlem */
+    margin-bottom: 1rem; /* Ajuste a margem */
+  }
+  .nossaAzulPequeno {
+    font-size: 1.2rem; /* Tamanho de fonte menor para "NOSSA" em mobile */
+  }
+  .historiaGrande {
+    font-size: 2rem; /* Tamanho de fonte menor para "HISTÓRIA" em mobile */
+  }
+
+  .secaoEquipe h2,
+  .secaoDepoimentos h2,
+  .chamadaParaAcao h2 {
+    font-size: 2rem;
+  }
+
+  .secaoSobreNos p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* styles/Home.module.css */
+
+/* ... (seus estilos existentes) ... */
+
+.secaoPortfolio {
+  width: 100%;
+  max-width: 1200px; /* Ajuste conforme a largura desejada para a seção do portfólio */
+  margin: 80px auto; /* Espaçamento superior/inferior e centraliza */
+  padding: 0 20px; /* Preenchimento nas laterais */
+  text-align: center; /* Centraliza o título e a descrição */
+}
+
+.tituloPortfolio {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.descricaoPortfolio {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ... (restante dos seus estilos existentes) ... */
+}

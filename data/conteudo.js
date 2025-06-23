@@ -1,0 +1,74 @@
+export const conteudoHero = {
+  titulo: "ARQUITETURA QUE TRANSFORMA EXPERIÊNCIAS",
+  imagem: "/images/parque.jpg"
+};
+
+export const conteudoSobreNos = {
+  titulo: "NOSSA HISTÓRIA",
+  texto: "Especializada em ambientes de entretenimento e espaços corporativos, a Ēdenss, liderada pelos arquitetos Samuel Vidal e Susi Abissamra, cria projetos inovadores para hotéis, pousadas e parques aquáticos. Integrando estética, funcionalidade e tendências de mercado, a empresa desenvolve espaços interativos que proporcionam experiências inesquecíveis e autênticas.",
+};
+
+
+
+export const servicos = [
+  {
+    titulo: "MASTER PLANNING",
+    icon: "/images/icons/serv 1.png", // <--- Adicione o caminho completo do ícone
+    color: "#7FC8D7"
+  },
+  {
+    titulo: "DESENVOLVIMENTO CRIATIVO",
+    icon: "/images/icons/serv 2.png", // <--- Adicione o caminho completo do ícone
+    color: "#5FBAC9",
+  },
+  {
+    titulo: "CONSULTORIA ESTRATÉGICA",
+    icon: "/images/icons/serv 3.png", // <--- Adicione o caminho completo do ícone
+    color: "#47A2AE",
+  },
+  {
+    titulo: "PISCINAS RESIDENCIAS PARQUES TEMÁTICOS HOTEIS",
+    icon: "/images/icons/serv 4.png", // <--- Adicione o caminho completo do ícone
+    color: "#2A7C86",
+  },
+];
+
+
+export const membrosEquipe = [
+  {
+    nome: "Samuel",
+    cargo: "Arquiteto, Gestor e Criador de Espaços Extraordinários",
+    imagem: "/images/Samuel.png", 
+    bio: "Arquiteto urbanista desde 2014, formado pela PUC-Campinas, com especializações em Administração e Gestão Empresarial pela FGV. Com experiência em incorporação imobiliária, gerenciamento de obras, projetos arquitetônicos, paisagísticos e de design, busca criar espaços que vão além da funcionalidade. Sócio de Edenss, lidera uma equipe focada em desenvolver hotéis e parques acolhedores, unindo sustentabilidade, inovação e bem-estar. Acredita no poder transformador da arquitetura para criar experiências memoráveis e um mundo melhor."
+  },
+  {
+    nome: "Susi",
+    cargo: "Arquiteta Especialista em Hotelaria e Entretenimento",
+    imagem: "/images/Susi.png", 
+    bio: "Formada em Arquitetura e Urbanismo, com pós-graduação em Arquitetura Hoteleira e cursando MBA em Arquitetura Hoteleira, Susi possui ampla experiência em projetos de atrações aquáticas, parques e destinos de lazer familiar. Seu conhecimento abrange o design de produtos para hotéis, pousadas e parques aquáticos, enriquecido por viagens ao redor do mundo, que lhe deram uma visão inovadora do setor. Na Edenss, sua missão é criar experiências únicas e inesquecíveis, projetando ambientes que encantam, conectam e transformam sonhos em realidade.",
+  },
+];
+
+export const depoimentos = [
+  {
+    nome: "LUÍS AUGUSTO",
+    titulo: "CEO THERMAS HOT WORLD",
+    empresa: "World Blue Beach", 
+    citacao: "Texto do depoimento de Luís Augusto. (Precisa ser extraído ou imaginado)",
+    imagemUrl: "/images/DEP 1.png",
+  },
+  {
+    nome: "OSMAR TEIXEIRA",
+    titulo: "CEO de [Nome da Empresa]", 
+    empresa: "[Nome da Empresa]",
+    citacao: "Texto do depoimento de Osmar Teixeira. (Precisa ser extraído ou imaginado)",
+    imagemUrl: "/images/DEP 2.png",
+  
+  },
+];
+
+export const infoContato = {
+  emailSamuel: "samuelvidal@edenss.com.br",
+  emailSusi: "susi@edenss.com.br",
+  
+};

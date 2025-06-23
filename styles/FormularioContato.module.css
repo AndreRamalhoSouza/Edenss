@@ -1,0 +1,118 @@
+/* styles/FormularioContato.module.css */
+
+.secaoFormulario {
+  position: relative;
+  top: 400px;
+  background-color: #f0f0f0;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* REMOVIDO: position:relative; */
+  /* REMOVIDO: top:200px; */
+  margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
+}
+
+.tituloFormulario {
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.formulario {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: #ada9a900;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.campo {
+  margin-bottom: 1.5rem;
+}
+
+.labelCampo {
+  display: block;
+  font-size: 0.9rem;
+  color: #555555;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.inputCampo {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.inputCampo:focus {
+  border-color: #0070f3;
+}
+
+.textAreaCampo {
+  resize: none;
+  min-height: 120px;
+}
+
+.botaoEnviar {
+  display: block;
+  width: 155px;
+  height: 40px;;
+  padding: 0rem 1.5rem;
+  background-color: #333333;
+  color: #81f5ed;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.botaoEnviar:hover {
+  background-color: #595a5a;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .tituloFormulario {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .formulario {
+    padding: 1.5rem;
+  }
+
+  .labelCampo {
+    font-size: 0.8rem;
+  }
+
+  .inputCampo,
+  .textAreaCampo {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .botaoEnviar {
+    width: 120px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}

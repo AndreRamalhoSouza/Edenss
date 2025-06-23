@@ -1,0 +1,86 @@
+/* Seu CSS existente e consolidado */
+
+.heroSection {
+  position: relative; /* Container principal, crucial para posicionamento absoluto dos filhos */
+  width: 100%;
+  height: 60vh; /* Altura da seção hero. Ajuste conforme necessário. */
+  overflow: hidden; /* Garante que a imagem não vaze */
+
+  /* Remove display flex/justify/align do container, pois o título será posicionado absolutamente */
+  /* background-size e background-position podem ir na imagem ou aqui se a imagem for background */
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  z-index: 0; /* Fica no fundo */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Escurece a imagem de fundo */
+  z-index: 1; /* Acima da imagem, abaixo do texto */
+}
+
+.heroTitle {
+  position: absolute; /* Posiciona o título em relação a .heroSection */
+  top: 20%; /* Começa no meio verticalmente */
+  left: 5%; /* Alinha à esquerda, ajuste este valor */
+  transform: translateY(-50%); /* Ajusta para centralizar verticalmente o bloco de texto */
+  z-index: 2; /* Garante que o texto esteja acima do overlay */
+
+  color: #ffffff; /* Cor do texto principal */
+  font-size: 4rem; /* Tamanho da fonte, ajuste conforme necessário */
+  font-weight: bold; /* Se a fonte for bold */
+  text-align: left; /* Alinhamento do texto dentro do bloco do título */
+  line-height: 1.1; /* Espaçamento entre as linhas */
+  margin: 0; /* Remove margens padrão do h1 */
+  padding: 0; 
+  position: relative;
+}
+
+.line {
+  /* Estilos para cada linha de texto, se precisar de algo específico */
+  display: block; /* Garante que cada div ocupe sua própria linha */
+  /* font-size, font-weight e color serão herdados do .heroTitle, a menos que sobrepostos */
+}
+
+.experienciasAzul {
+  color: #7fcae3; /* Cor azul clara, ajuste o tom se precisar */
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3rem; /* Ajuste para telas menores */
+    left: 4%; /* Ajuste a margem esquerda */
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 50vh; /* Altura menor em dispositivos móveis */
+  }
+  .heroTitle {
+    font-size: 2rem; /* Tamanho menor em dispositivos móveis */
+    left: 50%; /* Centraliza horizontalmente em telas menores */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar em telas menores */
+    width: 90%; /* Limita a largura para evitar texto muito longo */
+    text-align: center; /* Centraliza o texto em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
