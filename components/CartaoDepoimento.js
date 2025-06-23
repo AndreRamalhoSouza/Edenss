@@ -11,7 +11,8 @@ function CartaoDepoimento({ depoimento }) {
           className={styles.imagemDepoimento} // Add a class for styling
         />
       )}
-      <p className={styles.citacao}>"{depoimento.citacao}"</p>
+     <p className={styles.citacao}>&quot;{depoimento.citacao}&quot;</p>
+
       <p className={styles.autor}>- {depoimento.nome}</p>
       <p className={styles.empresa}>{depoimento.titulo}, {depoimento.empresa}</p>
     </div>
