@@ -39,8 +39,7 @@
 }
 
 .imagemSusi {
-  filter: grayscale(50%);
-  bottom: 100px;
+  filter: grayscale(250%);
 }
 
 .textoMembro {
