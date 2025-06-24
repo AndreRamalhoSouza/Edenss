@@ -15,20 +15,17 @@
   margin-right: auto;
 }
 
-.containerImagens {
-  display: flex;
-  flex-direction: column; /* empilha as imagens */
-  gap: 1rem;
-}
+
 
 .imagemMembro {
+  display: block; /* força cada imagem ocupar linha inteira */
+  margin-bottom: 1rem; /* espaço entre as imagens */
   width: 250px;
   height: 350px;
   object-fit: cover;
   border-radius: 4px;
-  flex-shrink: 0;
- 
 }
+
 
 /* Estilos específicos para a imagem de Samuel */
 .imagemMembro-samuel {
