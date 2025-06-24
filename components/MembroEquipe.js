@@ -3,12 +3,7 @@ import styles from '../styles/MembroEquipe.module.css';
 
 function MembroEquipe() {
   const membros = [
-   {
-    nome: "Samuel",
-    cargo: "Arquiteto, Gestor e Criador de Espaços Extraordinários",
-    imagem: "/images/Samuel.png", 
-    bio: "Arquiteto urbanista desde 2014, formado pela PUC-Campinas, com especializações em Administração e Gestão Empresarial pela FGV. Com experiência em incorporação imobiliária, gerenciamento de obras, projetos arquitetônicos, paisagísticos e de design, busca criar espaços que vão além da funcionalidade. Sócio de Edenss, lidera uma equipe focada em desenvolver hotéis e parques acolhedores, unindo sustentabilidade, inovação e bem-estar. Acredita no poder transformador da arquitetura para criar experiências memoráveis e um mundo melhor."
-  },
+
     {
     nome: "Susi",
     cargo: "Arquiteta Especialista em Hotelaria e Entretenimento",
