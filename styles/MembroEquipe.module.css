@@ -86,8 +86,8 @@
 .textoMembro-susi {
   text-align: justify;
   position:relative;
-  top:600px; 
-  right: 610px;/* Mantido o justify, se desejado */
+  top:100px; 
+  right: 210px;/* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
   /* padding-left: 0; */
