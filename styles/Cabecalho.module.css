@@ -84,7 +84,7 @@
 }
 
 .lupaCircle {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 75px;
   width: 1.9rem;
