@@ -14,8 +14,8 @@
 }
 
 .imagemMembro {
-  width: 150px;
-  height: 250px;
+  width: 350px;
+  height: 450px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
@@ -24,7 +24,7 @@
 
 
 .imagemMembro-samuel {
-  border: 2px solid #0070f3;
+  border: 2px solid #46464700;
 }
 
 
