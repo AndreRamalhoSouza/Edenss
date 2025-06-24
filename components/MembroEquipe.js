@@ -1,7 +1,7 @@
 // components/MembroEquipe.js
 import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
-import { membrosEquipe } from '../data/conteudo';
+
  // <-- importa os dados corretos
 
 function MembroEquipe() {
