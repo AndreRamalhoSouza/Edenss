@@ -29,8 +29,8 @@
 
 /* Estilo específico para Susi */
 .imagemMembro-susi {
-  filter: grayscale(50%);
-  bottom: 200px;
+  filter: grayscale(100%);
+  
 }
 
 /* Texto compartilhado */
