@@ -32,8 +32,10 @@ function Cabecalho() {
               Nossa História
             </Link>
             {/* --- LUPA CRIADA COM CSS AQUI --- */}
-            {/* Agora a lupa é apenas um span com uma única classe */}
-            <span className={styles.cssLupa} /* onClick opcional aqui */></span>
+            <span className={styles.cssLupaContainer} /* onClick opcional aqui */>
+              <div className={styles.lupaCircle}></div>
+              <div className={styles.lupaHandle}></div>
+            </span>
             {/* --- FIM DA LUPA CRIADA COM CSS --- */}
           </li>
         </ul>
