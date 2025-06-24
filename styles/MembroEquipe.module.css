@@ -29,7 +29,7 @@
 
 /* Estilo específico para Susi */
 .imagemMembro-susi {
-  filter: grayscale(100%);
+  top: 100%;
   
 }
 
