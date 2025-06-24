@@ -24,7 +24,9 @@
 }
 
 /* Estilos específicos para a imagem de Samuel */
-
+.imagemMembro-samuel {
+  border: 2px solid #0070f3;
+}
 
 /* Estilos específicos para a imagem de Susi */
 .imagemMembro-susi {
