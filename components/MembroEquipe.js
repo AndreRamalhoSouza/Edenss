@@ -17,5 +17,25 @@ function MembroEquipe() {
   },
   ];
 
+  return (
+    <>
+      {membros.map((membro, index) => {
+        const nomeCss = membro.nome.toLowerCase();
+        const imagemDinamicaClass = `${styles.imagemMembro}-${nomeCss}`;
+        const textoDinamicaClass = `${styles.textoMembro}-${nomeCss}`;
+        const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${nomeCss}`;
+
+        return (
+          <div
+            key={index}
+            className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}
+          >
+         
+          </div>
+        );
+      })}
+    </>
+  );
 }
+
 export default MembroEquipe;
