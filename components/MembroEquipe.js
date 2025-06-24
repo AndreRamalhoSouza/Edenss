@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
 
 function MembroEquipe({ membro }) {
-  const imagemDinamicaClass = `${styles.imagemMembro}-${membro.Samuel()}`;
+  const imagemDinamicaClass = `${styles.imagemMembro}-${membro.nome.toLowerCase()}`;
   const textoDinamicaClass = `${styles.textoMembro}-${membro.nome.toLowerCase()}`;
   const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${membro.nome.toLowerCase()}`; // Nova classe dinâmica
 
