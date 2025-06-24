@@ -79,7 +79,9 @@
 /* Estilos para o texto de Samuel */
 .textoMembro-samuel {
   text-align: justify; 
-    word-spacing: 0.1em;/* Mantido o justify, se desejado */
+    word-spacing: 0.1em;
+    position: relative;
+    /* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
   /* padding-right: 0; */
@@ -91,7 +93,7 @@
   text-align: justify;
   position:relative;
   top:400px; 
-  right: 500px;/* Mantido o justify, se desejado */
+  right: 700px;/* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
   /* padding-left: 0; */
