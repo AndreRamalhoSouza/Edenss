@@ -30,7 +30,16 @@ function MembroEquipe() {
             key={index}
             className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}
           >
-         
+            <img
+              src={membro.imagem}
+              alt={membro.nome}
+              className={`${styles.imagemMembro} ${imagemDinamicaClass}`}
+            />
+            <div className={`${styles.textoMembro} ${textoDinamicaClass}`}>
+              <h3>{membro.nome}</h3>
+              <h4>{membro.cargo}</h4>
+              <p>{membro.bio}</p>
+            </div>
           </div>
         );
       })}
