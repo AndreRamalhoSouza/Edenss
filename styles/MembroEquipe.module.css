@@ -2,6 +2,7 @@
 
 .membroDetalhe {
   display: flex;
+  flex-direction: column; /* mudar para coluna para empilhar verticalmente */
   align-items: flex-start;
   gap: 1rem;
   padding: 1rem;
@@ -9,10 +10,11 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
-   max-width: 1100px; /* Considere aumentar este valor se o texto ainda quebrar muito cedo */
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .imagemMembro {
   width: 250px;
@@ -20,7 +22,7 @@
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
-  /* Este é o estilo padrão para todas as imagens de membro */
+ 
 }
 
 /* Estilos específicos para a imagem de Samuel */
