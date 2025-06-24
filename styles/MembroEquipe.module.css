@@ -26,15 +26,13 @@
 /* Estilos específicos para a imagem de Samuel */
 .imagemMembro-samuel {
   border: 2px solid #0070f3;
-  position: relative;
-  bottom:100px;
 }
 
 /* Estilos específicos para a imagem de Susi */
 .imagemMembro-susi {
   position: relative; /* Mantido como você solicitou */
-  right: 220px; /* Mantido como você solicitou */
-  top: 200px; /* Mantido como você solicitou */
+  right: 520px; /* Mantido como você solicitou */
+  top: 400px; /* Mantido como você solicitou */
   filter: grayscale(50%);
 }
 
@@ -88,7 +86,7 @@
 .textoMembro-susi {
   text-align: justify;
   position:relative;
-  top:100px; 
+  top:400px; 
   right: 500px;/* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
