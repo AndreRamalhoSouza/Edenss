@@ -1,15 +1,14 @@
 // components/MembroEquipe.js
 import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
-
- // <-- importa os dados corretos
+import { membrosEquipe } from '../data/conteudo'; // <-- importa os dados corretos
 
 function MembroEquipe() {
   return (
     <>
       {membrosEquipe.map((membro, index) => {
         const nomeCss = membro.nome.toLowerCase();
-        const imagemDinamicaClass = `${styles.imagemMembro}-${nomeCss}`;
+       
         const textoDinamicaClass = `${styles.textoMembro}-${nomeCss}`;
         const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${nomeCss}`;
 
