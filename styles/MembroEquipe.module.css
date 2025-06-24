@@ -31,7 +31,7 @@
 /* Estilos específicos para a imagem de Susi */
 .imagemMembro-susi {
   position: relative; /* Mantido como você solicitou */
-  right: 520px; /* Mantido como você solicitou */
+  right: 720px; /* Mantido como você solicitou */
   top: 600px; /* Mantido como você solicitou */
   filter: grayscale(50%);
 }
