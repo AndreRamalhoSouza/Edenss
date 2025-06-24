@@ -72,49 +72,43 @@
   gap: 5px;
 }
 
-.cssLupaContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.cssLupa {
+  /* O elemento principal será o círculo da lupa */
+  display: block; /* Para poder aplicar largura e altura */
   width: 1.5rem;
   height: 1.5rem;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
-
-.lupaCircle {
-  position: absolute;
-  top: 0;
-  left: 150;
-  width: 1.9rem;
-  height: 1.9rem;
-  border: 2px solid #3ce5d4;
+  border: 2px solid #3ce5d4; /* Borda do círculo */
   border-radius: 50%;
-  transition: border-color 0.3s ease;
+  position: relative; /* Essencial para posicionar a alça (::after) */
+  cursor: pointer;
+  margin-left: 0.5rem; /* Espaçamento da "Nossa História" */
+  transition: border-color 0.3s ease; /* Transição para o hover */
 }
 
-.lupaHandle {
-
+.cssLupa::after {
+  /* O pseudo-elemento ::after será a alça da lupa */
+  content: ''; /* Necessário para pseudo-elementos */
+  display: block;
   width: 2px;
-  height: 1.5rem;
-  background-color: #3ce5d4;
-  position: relative;
-  top: 25px;
-  right: -120px;
-  transform: rotate(45deg);
-  transform-origin: bottom right;
-  transition: background-color 0.3s ease;
+  height: 0.75rem; /* Altura da alça */
+  background-color: #3ce5d4; /* Cor da alça */
+  position: absolute;
+  /* Posiciona a alça no canto inferior direito do círculo */
+  bottom: -0.2rem; /* Ajuste para sair um pouco do círculo */
+  right: -0.2rem;  /* Ajuste para sair um pouco do círculo */
+  transform: rotate(45deg); /* Gira a alça */
+  transform-origin: bottom right; /* Ponto de rotação */
+  transition: background-color 0.3s ease; /* Transição para o hover */
 }
 
-.cssLupaContainer:hover .lupaCircle {
-  border-color: #7fcbe4;
+/* Efeitos de hover */
+.cssLupa:hover {
+  border-color: #7fcbe4; /* Altera a cor da borda no hover */
 }
 
-.cssLupaContainer:hover .lupaHandle {
-  background-color: #7fcbe4;
+.cssLupa:hover::after {
+  background-color: #7fcbe4; /* Altera a cor da alça no hover */
 }
-
 .botaoContato {
   position:relative;
   right: 150px;
