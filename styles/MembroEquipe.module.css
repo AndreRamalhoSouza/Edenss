@@ -32,7 +32,7 @@
 .imagemMembro-susi {
   position: relative; /* Mantido como você solicitou */
   right: 720px; /* Mantido como você solicitou */
-  top: 600px; /* Mantido como você solicitou */
+  top: 800px; /* Mantido como você solicitou */
   filter: grayscale(50%);
 }
 
@@ -86,8 +86,8 @@
 .textoMembro-susi {
   text-align: justify;
   position:relative;
-  top:400px; 
-  right: 500px;/* Mantido o justify, se desejado */
+  top:600px; 
+  right: 600px;/* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
   /* padding-left: 0; */
