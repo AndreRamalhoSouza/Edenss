@@ -1,3 +1,5 @@
+/* styles/MembroEquipe.module.css */
+
 .membroDetalhe {
   display: flex;
   align-items: flex-start;
@@ -7,22 +9,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   margin-bottom: 2rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.membroDetalheColuna {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-  max-width: 1100px;
+   max-width: 1100px; /* Considere aumentar este valor se o texto ainda quebrar muito cedo */
   margin-left: auto;
   margin-right: auto;
 }
@@ -32,47 +19,111 @@
   height: 350px;
   object-fit: cover;
   border-radius: 4px;
+  flex-shrink: 0;
+  /* Este é o estilo padrão para todas as imagens de membro */
 }
 
-.imagemSamuel {
+/* Estilos específicos para a imagem de Samuel */
+.imagemMembro-samuel {
   border: 2px solid #0070f3;
 }
 
-.imagemSusi {
-  filter: grayscale(250%);
+/* Estilos específicos para a imagem de Susi */
+.imagemMembro-susi {
+  position: relative; /* Mantido como você solicitou */
+  right: 520px; /* Mantido como você solicitou */
+  top: 400px; /* Mantido como você solicitou */
+  filter: grayscale(50%);
 }
+
 
 .textoMembro {
   flex-grow: 1;
-  min-width: 550px;
+  text-align: left;
+  position: relative; /* Mantido como você solicitou */
+  /* Adição para otimização do espaço e evitar quebras indesejadas */
+  min-width: 0; /* Permite que o item flex encolha abaixo de seu conteúdo intrínseco se necessário */
+  word-wrap: break-word; /* Garante que palavras muito longas quebrem */
+  overflow-wrap: break-word; /* Moderno equivalente a word-wrap */
+}
+
+.textoMembro h3 {
+  font-size: 2rem;
+  color: #333333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  word-break: break-word; /* Permite quebrar palavras longas nos títulos também */
+}
+
+.textoMembro h4 {
+  font-size: 1.2rem;
+  color: #464747;
+  margin-bottom: 0rem;
+  font-weight: normal;
+  word-break: break-word; /* Permite quebrar palavras longas nos cargos também */
+}
+
+.textoMembro {
+  flex-grow: 100;
+  text-align: center;
+  position: relative;
+  min-width: 550px; /* Tente um valor como este. Ajuste conforme necessário. */
+  word-wrap: none;
   overflow-wrap: break-word;
 }
 
-.textoSamuel {
-  text-align: justify;
-  word-spacing: 0.1em;
+/* Estilos para o texto de Samuel */
+.textoMembro-samuel {
+  text-align: justify; 
+    word-spacing: 0.1em;/* Mantido o justify, se desejado */
+  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
+  /* Por exemplo: */
+  /* padding-right: 0; */
+  /* margin-right: 0; */
 }
 
-.textoSusi {
+/* Estilos para o texto de Susi */
+.textoMembro-susi {
   text-align: justify;
+  position:relative;
+  top:400px; 
+  right: 500px;/* Mantido o justify, se desejado */
+  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
+  /* Por exemplo: */
+  /* padding-left: 0; */
+  /* margin-left: 0; */
 }
 
-/* Responsivo */
+
+
+
+/* Responsividade */
 @media (max-width: 768px) {
-  .membroDetalhe,
-  .membroDetalheColuna {
+  .membroDetalhe {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    padding: 1.5rem;
   }
 
   .imagemMembro {
     width: 200px;
     height: 200px;
   }
+  .imagemMembro-samuel {
+    border: 1px solid #0070f3;
+  }
+  .imagemMembro-susi {
+    filter: none;
+    position: static; /* É ALTAMENTE RECOMENDADO resetar o posicionamento em mobile para evitar quebras */
+    right: auto;
+    top: auto;
+  }
 
   .textoMembro {
-    min-width: auto;
+    text-align: center;
+    position: relative; /* Mantido como você solicitou para mobile */
+    min-width: auto; /* Reseta para mobile */
   }
 
   .textoMembro h3 {
