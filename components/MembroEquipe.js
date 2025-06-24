@@ -1,36 +1,25 @@
 // components/MembroEquipe.js
 import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
-import { membrosEquipe } from '../data/conteudo'; // <-- importa os dados corretos
 
-function MembroEquipe() {
+function MembroEquipe({ membro }) {
+  const imagemDinamicaClass = `${styles.imagemMembro}-${membro.Samuel()}`;
+  const textoDinamicaClass = `${styles.textoMembro}-${membro.nome.toLowerCase()}`;
+  const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${membro.nome.toLowerCase()}`; // Nova classe dinâmica
+
   return (
-    <>
-      {membrosEquipe.map((membro, index) => {
-        const nomeCss = membro.nome.toLowerCase();
-       
-        const textoDinamicaClass = `${styles.textoMembro}-${nomeCss}`;
-        const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${nomeCss}`;
-
-        return (
-          <div
-            key={index}
-            className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}
-          >
-            <img
-              src={membro.imagem}
-              alt={membro.nome}
-              className={`${styles.imagemMembro} ${imagemDinamicaClass}`}
-            />
-            <div className={`${styles.textoMembro} ${textoDinamicaClass}`}>
-              <h3>{membro.nome}</h3>
-              <h4>{membro.cargo}</h4>
-              <p>{membro.bio}</p>
-            </div>
-          </div>
-        );
-      })}
-    </>
+    <div className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}> {/* Aplica a nova classe */}
+      <img
+        src={membro.imagem}
+        alt={membro.nome}
+        className={`${styles.imagemMembro} ${imagemDinamicaClass}`}
+      />
+      <div className={`${styles.textoMembro} ${textoDinamicaClass}`}>
+        <h3>{membro.nome}</h3>
+        <h4>{membro.cargo}</h4>
+        <p>{membro.bio}</p>
+      </div>
+    </div>
   );
 }
 
