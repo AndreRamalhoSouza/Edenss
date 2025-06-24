@@ -30,6 +30,7 @@
 /* Estilo específico para Susi */
 .imagemMembro-susi {
   filter: grayscale(50%);
+  bottom: 200px;
 }
 
 /* Texto compartilhado */
