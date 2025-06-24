@@ -81,6 +81,8 @@
   text-align: justify; 
     word-spacing: 0.1em;
     position: relative;
+    bottom:200px;
+    left:200px;
     /* Mantido o justify, se desejado */
   /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
   /* Por exemplo: */
