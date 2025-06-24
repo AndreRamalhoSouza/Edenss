@@ -29,12 +29,7 @@
 }
 
 /* Estilos específicos para a imagem de Susi */
-.imagemMembro-susi {
-  position: relative; /* Mantido como você solicitou */
-  right: 520px; /* Mantido como você solicitou */
-  top: 400px; /* Mantido como você solicitou */
-  filter: grayscale(50%);
-}
+
 
 
 .textoMembro {
@@ -83,16 +78,16 @@
 }
 
 /* Estilos para o texto de Susi */
+.imagemMembro-susi {
+  /* Remover posição fixa quebrada */
+  filter: grayscale(50%);
+}
+
 .textoMembro-susi {
   text-align: justify;
-  position:relative;
-  top:600px; 
-  right: 500px;/* Mantido o justify, se desejado */
-  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
-  /* Por exemplo: */
-  /* padding-left: 0; */
-  /* margin-left: 0; */
+  /* Remover top/right */
 }
+
 
 
 
