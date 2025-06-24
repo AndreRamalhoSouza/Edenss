@@ -101,7 +101,7 @@
   background-color: #3ce5d4;
   position: relative;
   top: 25px;
-  right: -100px;
+  right: -50px;
   transform: rotate(45deg);
   transform-origin: bottom right;
   transition: background-color 0.3s ease;
