@@ -3,14 +3,12 @@ import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
 
 function MembroEquipe({ membro }) {
-  const nomeSlug = membro.nome.trim().toLowerCase() === 'susi' ? 'susi' : 'samuel';
-
-  const imagemDinamicaClass = `${styles.imagemMembro}-${nomeSlug}`;
-  const textoDinamicaClass = `${styles.textoMembro}-${nomeSlug}`;
-  const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${nomeSlug}`;
+  const imagemDinamicaClass = `${styles.imagemMembro}-${membro.nome.toLowerCase()}`;
+  const textoDinamicaClass = `${styles.textoMembro}-${membro.nome.toLowerCase()}`;
+  const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${membro.nome.toLowerCase()}`; // Nova classe dinâmica
 
   return (
-    <div className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}>
+    <div className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}> {/* Aplica a nova classe */}
       <img
         src={membro.imagem}
         alt={membro.nome}

@@ -26,17 +26,17 @@
 /* Estilos específicos para a imagem de Samuel */
 .imagemMembro-samuel {
   border: 2px solid #0070f3;
-}
-.imagemMembro-susi {
-  filter: grayscale(50%);
-}
-
-.textoMembro-susi {
-  text-align: justify;
+  position: relative;
+  bottom:100px;
 }
 
 /* Estilos específicos para a imagem de Susi */
-
+.imagemMembro-susi {
+  position: relative; /* Mantido como você solicitou */
+  right: 220px; /* Mantido como você solicitou */
+  top: 200px; /* Mantido como você solicitou */
+  filter: grayscale(50%);
+}
 
 
 .textoMembro {
@@ -85,10 +85,58 @@
 }
 
 /* Estilos para o texto de Susi */
-
+.textoMembro-susi {
+  text-align: justify;
+  position:relative;
+  top:100px; 
+  right: 500px;/* Mantido o justify, se desejado */
+  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
+  /* Por exemplo: */
+  /* padding-left: 0; */
+  /* margin-left: 0; */
+}
 
 
 
 
 /* Responsividade */
- 
+@media (max-width: 768px) {
+  .membroDetalhe {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .imagemMembro {
+    width: 200px;
+    height: 200px;
+  }
+  .imagemMembro-samuel {
+    border: 1px solid #0070f3;
+  }
+  .imagemMembro-susi {
+    filter: none;
+    position: static; /* É ALTAMENTE RECOMENDADO resetar o posicionamento em mobile para evitar quebras */
+    right: auto;
+    top: auto;
+  }
+
+  .textoMembro {
+    text-align: center;
+    position: relative; /* Mantido como você solicitou para mobile */
+    min-width: auto; /* Reseta para mobile */
+  }
+
+  .textoMembro h3 {
+    font-size: 1.8rem;
+  }
+
+  .textoMembro h4 {
+    font-size: 1rem;
+  }
+
+  .textoMembro p {
+    font-size: 0.9rem;
+  }
+}
