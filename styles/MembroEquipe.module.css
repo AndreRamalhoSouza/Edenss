@@ -14,8 +14,8 @@
 }
 
 .imagemMembro {
-  width: 250px;
-  height: 350px;
+  width: 150px;
+  height: 250px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
