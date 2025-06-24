@@ -16,7 +16,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.4.2",
+    "@eslint/eslintrc": "^3.4.0",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@types/node": "^20.4.2",
     "@types/react": "^18.0.38",
