@@ -1,49 +1,25 @@
+// components/MembroEquipe.js
 import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
 
-function MembroEquipe() {
-  const membros = [
-   {
-    nome: "Samuel",
-    cargo: "Arquiteto, Gestor e Criador de Espaços Extraordinários",
-    imagem: "/images/Samuel.png", 
-    bio: "Arquiteto urbanista desde 2014, formado pela PUC-Campinas, com especializações em Administração e Gestão Empresarial pela FGV. Com experiência em incorporação imobiliária, gerenciamento de obras, projetos arquitetônicos, paisagísticos e de design, busca criar espaços que vão além da funcionalidade. Sócio de Edenss, lidera uma equipe focada em desenvolver hotéis e parques acolhedores, unindo sustentabilidade, inovação e bem-estar. Acredita no poder transformador da arquitetura para criar experiências memoráveis e um mundo melhor."
-  },
-    {
-    nome: "Susi",
-    cargo: "Arquiteta Especialista em Hotelaria e Entretenimento",
-    imagem: "/images/Susi.png", 
-    bio: "Formada em Arquitetura e Urbanismo, com pós-graduação em Arquitetura Hoteleira e cursando MBA em Arquitetura Hoteleira, Susi possui ampla experiência em projetos de atrações aquáticas, parques e destinos de lazer familiar. Seu conhecimento abrange o design de produtos para hotéis, pousadas e parques aquáticos, enriquecido por viagens ao redor do mundo, que lhe deram uma visão inovadora do setor. Na Edenss, sua missão é criar experiências únicas e inesquecíveis, projetando ambientes que encantam, conectam e transformam sonhos em realidade.",
-  },
-  ];
+function MembroEquipe({ membro }) {
+  const imagemDinamicaClass = `${styles.imagemMembro}-${membro.nome.toLowerCase()}`;
+  const textoDinamicaClass = `${styles.textoMembro}-${membro.nome.toLowerCase()}`;
+  const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${membro.nome.toLowerCase()}`; // Nova classe dinâmica
 
   return (
-    <>
-      {membros.map((membro, index) => {
-        const nomeCss = membro.nome.toLowerCase();
-        const imagemDinamicaClass = `${styles.imagemMembro}-${nomeCss}`;
-        const textoDinamicaClass = `${styles.textoMembro}-${nomeCss}`;
-        const membroDetalheDinamicaClass = `${styles.membroDetalhe}-${nomeCss}`;
-
-        return (
-          <div
-            key={index}
-            className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}
-          >
-            <img
-              src={membro.imagem}
-              alt={membro.nome}
-              className={`${styles.imagemMembro} ${imagemDinamicaClass}`}
-            />
-            <div className={`${styles.textoMembro} ${textoDinamicaClass}`}>
-              <h3>{membro.nome}</h3>
-              <h4>{membro.cargo}</h4>
-              <p>{membro.bio}</p>
-            </div>
-          </div>
-        );
-      })}
-    </>
+    <div className={`${styles.membroDetalhe} ${membroDetalheDinamicaClass}`}> {/* Aplica a nova classe */}
+      <img
+        src={membro.imagem}
+        alt={membro.nome}
+        className={`${styles.imagemMembro} ${imagemDinamicaClass}`}
+      />
+      <div className={`${styles.textoMembro} ${textoDinamicaClass}`}>
+        <h3>{membro.nome}</h3>
+        <h4>{membro.cargo}</h4>
+        <p>{membro.bio}</p>
+      </div>
+    </div>
   );
 }
 
