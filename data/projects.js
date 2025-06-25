@@ -16,7 +16,7 @@ export const projects = [
   {
     id: 'resort-costa-do-sol',
     name: 'Resort Costa do Sol',
-    mainImage: '/images/sol 1.jpg',
+    mainImage: '/images/irineu.jpg',
     description: 'Um luxuoso resort à beira-mar com piscinas infinitas, spa de classe mundial e restaurantes de alta gastronomia para uma experiência inesquecível. O design buscou maximizar as vistas para o oceano, utilizando grandes janelas e terraços espaçosos. A seleção de materiais naturais e a iluminação estratégica criam uma atmosfera de requinte e relaxamento.',
     detailImages: [
       '/images/sol 2.jpg',
