@@ -21,8 +21,8 @@ export const projects = [
     detailImages: [
       '/images/sol 2.jpg',
       '/images/sol 3.jpg',
-      '/images/sol 4.jpg',
-      '/images/sol 5.jpg',
+      '/images/sol 4.jpeg',
+      '/images/sol 5.jpeg',
     ],
   },
   // ... adicione/verifique os outros 4 projetos aqui com suas detailImages
@@ -35,7 +35,7 @@ export const projects = [
       '/images/hotel 2.jpg',
       '/images/hotel 3.jpg',
       '/images/hotel 4.jpg',
-      '/images/hotel 5.jpg',
+      '/images/hotel 5.jpeg',
     ],
   },
   {
@@ -59,7 +59,7 @@ export const projects = [
       '/images/zen 2.jpg',
       '/images/zen 3.webp',
       '/images/zen 4.jpg',
-      '/images/zen 5.JPEG',
+      '/images/zen 5.jpeg',
     ],
   },
   {
@@ -70,7 +70,7 @@ export const projects = [
     detailImages: [
       '/images/clube 2.jpg',
       '/images/clube 3.jpg',
-      '/images/clube 4.jpg',
+      '/images/clube 4.webp',
       '/images/clube 5.jpg',
     ],
   },
