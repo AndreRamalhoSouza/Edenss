@@ -1,49 +1,53 @@
-/* styles/Cabecalho.module.css */
-
 .cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #212121; /* Fundo escuro */
+  background-color: #212121;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .logoContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .logo a {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 4rem;
-  font-weight:bold;
-  color: #edeaea; /* Cor do logo (para EDEN) */
+  font-weight: bold;
+  color: #edeaea;
   text-decoration: none;
-  top: 20 px;
 }
 
 .ssColor {
-  color: #7fcbe4; /* Cor azul clara para SS */
+  color: #7fcbe4;
 }
 
 .slogan {
-  position: relative;
-  bottom: 25px;
-  left: 80px;
   font-size: 0.8em;
   color: #ffffff;
   margin-top: -10px;
-  display: flex;
-  justify-content: center; /* CORRIGIDO: Removido o 'content' duplicado */
+  text-align: center;
   width: 100%;
+  transform: translateY(-25px) translateX(80px);
+  white-space: nowrap;
 }
 
+.nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 150px;
+}
 
 .nav ul {
   list-style: none;
@@ -51,6 +55,7 @@
   padding: 0;
   display: flex;
   gap: 5.5rem;
+  align-items: center;
 }
 
 .nav a {
@@ -69,40 +74,36 @@
 .nossaHistoriaItem {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 5px; /* Espaçamento entre o link e a lupa */
 }
 
 .cssLupaContainer {
+  /* Não precisa de position: relative; aqui */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 25px; /* Ajuste o tamanho do contêiner da lupa conforme necessário */
+  height: 25px;
   cursor: pointer;
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; O gap do .nossaHistoriaItem já cuida do espaçamento */
 }
 
 .lupaCircle {
-  position: absolute;
-  top: 0;
-  left: 75px;
-  width: 1.9rem;
-  height: 1.9rem;
+  /* Removendo position: absolute e top/left */
+  width: 18px; /* Tamanho do círculo da lupa */
+  height: 18px;
   border: 2px solid #3ce5d4;
   border-radius: 50%;
   transition: border-color 0.3s ease;
+  transform: translate(-3px, -3px); /* Ajuste a posição do círculo */
 }
 
 .lupaHandle {
-
+  /* Removendo position: absolute e top/left */
   width: 2px;
-  height: 1.5rem;
+  height: 12px; /* Tamanho da alça da lupa */
   background-color: #3ce5d4;
-  position: relative;
-  top: 25px;
-  right: -50px;
-  transform: rotate(45deg);
+  transform: translate(7px, 7px) rotate(45deg); /* Ajuste a posição e rotação da alça */
   transform-origin: bottom right;
   transition: background-color 0.3s ease;
 }
@@ -116,9 +117,6 @@
 }
 
 .botaoContato {
-  position:relative;
-  right: 150px;
-  width: 200px;
   background-color: #0071f300;
   color: #ffffff;
   padding: 0.7rem 3rem;
@@ -127,12 +125,10 @@
   font-weight: bold;
   transition: background-color 0.3s ease, border-color 0.3s ease;
   border: 2px solid #8ad7c5;
-}
-
-.botaoContato a {
-  color: inherit;
-  text-decoration: none;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
 }
 
 .botaoContato:hover {
@@ -140,20 +136,130 @@
   border-color: #87CEEB;
 }
 
-/* Responsividade básica */
-@media (max-width: 768px) {
+.contatoMenuItem {
+  list-style: none;
+  margin-left: auto;
+  order: 1;
+}
+
+.hamburgerIcon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburgerIcon div {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+}
+
+.hamburgerIcon.open .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburgerIcon.open .bar2 {
+  opacity: 0;
+}
+.hamburgerIcon.open .bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 1023px) {
   .cabecalho {
+    height: 80px;
+    padding: 0.8rem 1rem;
+  }
+
+  .logo a {
+    font-size: 2.5rem;
+  }
+
+  .slogan {
+    font-size: 0.6em;
+    transform: translateY(-15px) translateX(40px);
+  }
+
+  .nav {
+    display: none;
     flex-direction: column;
-    padding: 1rem;
+    position: fixed; /* Mudei para fixed para garantir que o menu ocupe a altura total do viewport */
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh; /* Ocupa 100% da altura do viewport */
+    background-color: #333333ef;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .nav.open {
+    display: flex;
+    right: 0;
   }
 
   .nav ul {
     flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    width: 100%;
+    gap: 0rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .nav li {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav li:last-child a {
+    border-bottom: none;
+  }
+
+  .nossaHistoriaItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+
+  .hamburgerIcon {
+    display: flex;
+  }
+
+  .contatoMenuItem {
+    margin-left: 0;
+    order: unset;
+    margin-top: 1.5rem;
   }
 
   .botaoContato {
-    margin-top: 1rem;
+    background-color: #0070f3;
+    border: 2px solid transparent;
+    width: 150px;
+    padding: 0.7rem 1.5rem;
   }
+
+  .cssLupaContainer {
+    display: none; /* A lupa deve estar escondida em mobile */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
 }

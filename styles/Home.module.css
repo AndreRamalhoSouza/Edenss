@@ -1,164 +1,149 @@
-/* SEU CÓDIGO EXISTENTE EM styles/Home.module.css */
+/* --- styles/Home.module.css --- */
 
-.container {
-  /* O container principal é definido em globals.css */
-}
+/* Importante: O .container e .main são controlados em globals.css para o layout geral */
 
-.main {
-  /* O main é definido em globals.css */
-}
-
+/* --- SEÇÃO SOBRE NÓS --- */
 .secaoSobreNos {
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 1rem; /* Padding responsivo para mobile */
   background-color: #f8f8f8;
   margin-bottom: 2rem;
 }
 
-/* REMOVA O H2 DAQUI, POIS AGORA USAREMOS .tituloSobreNosEstilizado */
-/* .secaoSobreNos h2 {
-   font-size: 2.5rem;
-   color: #333333;
-   margin-bottom: 1.5rem;
-} */
-
-/* NOVO ESTILO PARA O H2 "NOSSA HISTÓRIA" */
 .tituloSobreNosEstilizado {
-  display: flex; /* Transforma o h2 em um container flexível */
-  flex-direction: column; /* Empilha os filhos (divs de "NOSSA" e "HISTÓRIA") */
-  align-items: center; /* Centraliza horizontalmente "NOSSA" e "HISTÓRIA" um em relação ao outro */
-  margin-bottom: 1.5rem; /* Mantém a margem inferior original do h2 */
-  margin-top: 0; /* Remove margem superior padrão do h2 se necessário */
-  padding: 0; /* Remove padding padrão do h2 se necessário */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  padding: 0;
 }
 
-/* NOVAS CLASSES PARA AS PARTES DO TÍTULO */
 .nossaAzulPequeno {
-  position:relative;
-  right:140px;
+  position: relative;
+  /* top: -10px; */ /* Remova ou ajuste se for desnecessário */
+  /* right: 140px; */ /* Isso pode causar overflow em mobile, vamos ajustar */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
-  /* ESTILOS PARA "NOSSA" */
-  font-size: 2rem; /* Menor que "HISTÓRIA", ajuste conforme necessário */
-  color: #7fcae3; /* Cor azul clara */
-  font-weight:bold; /* Geralmente "NOSSA" é menos bold na imagem */
-  line-height: 1; /* Ajusta o espaçamento da linha */
-  margin-bottom: 0.2em; /* Espaço entre "NOSSA" e "HISTÓRIA" */
+  font-size: 1.5rem; /* Menor para mobile */
+  color: #7fcae3;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.2em;
 }
 .historiaGrande {
-  /* ESTILOS PARA "HISTÓRIA" */
-  font-size: 4rem; /* Maior, ajuste conforme necessário para o tamanho principal do título */
-  color: #000000; /* Cor preta/cinza escuro */
-  font-weight: bold; /* Geralmente bold na imagem */
-  line-height: 1; /* Ajusta o espaçamento da linha */
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-size: 2.8rem; /* Menor para mobile */
+  color: #000000;
+  font-weight: bold;
+  line-height: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
 .secaoSobreNos p {
-  font-size: 1.5rem;
+  font-size: 1rem; /* Tamanho de fonte menor para mobile */
   color: #555555;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
+  padding: 0 1rem; /* Adiciona padding lateral para texto em telas pequenas */
 }
 
+/* --- SEÇÃO EQUIPE --- */
 .secaoEquipe {
-  padding: 3rem 0;
+  padding: 3rem 1rem; /* Padding responsivo */
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .secaoEquipe h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Menor para mobile */
   color: #333333;
   margin-bottom: 2rem;
 }
 
 .gradeEquipe {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  /* Em mobile, minmax(280px, 1fr) permite que cards pequenos se ajustem. */
+  /* Em telas maiores, repeat(auto-fit, minmax(300px, 1fr)) continua funcionando bem. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; /* Gap menor para mobile */
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem; /* Garante algum padding interno para a grade */
 }
 
+/* --- SEÇÃO DEPOIMENTOS --- */
 .secaoDepoimentos {
-  position:relative;
-  top:500px;
-  padding: 3rem 1rem;
+  position: relative;
+  /* top: 500px; */ /* Remova ou ajuste esta posição se estiver causando scroll ou layout estranho */
+  padding: 3rem 1rem; /* Padding responsivo */
   background-color: #f0f8ff;
   text-align: center;
   margin-bottom: 2rem;
 }
-/* styles/Home.module.css */
-
-/* ... (seus outros estilos existentes) ... */
-
-.tituloPortfolio {
-  font-size: 2.5rem; /* Ajuste este valor para o tamanho desejado (maior) */
-  font-weight: bold; /* Deixa o texto em negrito */
-  color: #333; /* Cor do texto (ajuste se desejar outra cor) */
-  text-align: center; /* Centraliza o texto */
-  margin-bottom: 10px; /* Espaço abaixo do título */
-  text-transform: uppercase; /* Deixa o texto em maiúsculas, se já não estiver no HTML */
-  letter-spacing: 2px; /* Espaçamento entre as letras para um visual mais impactante */
-}
-
-/* Opcional: Se quiser uma linha divisória abaixo do título do Portfólio, similar a Serviços */
-.secaoPortfolio::before {
-  position:relative;
-  top:100px;
-  content: '';
-  display: block;
-  width: 650px; /* Largura da linha */
-  height: 5px;
-  background-color: #4d4d4d90; /* Cor da linha */
-  margin: -30px auto 30px; /* Centraliza a linha e ajusta a margem */
-}
-
-/* ... (seus outros estilos existentes) ... */
 
 .secaoDepoimentos h2 {
-  font-size: 2.5rem;
+  font-size: 2rem; /* Menor para mobile */
   color: #333333;
   margin-bottom: 2rem;
 }
 
 .gradeDepoimentos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min-width menor para mobile */
+  gap: 1.5rem; /* Gap menor para mobile */
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.chamadaParaAcao {
-  position: relative;
+/* --- SEÇÃO PORTFÓLIO --- */
+.secaoPortfolio {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto; /* Margem ajustada para mobile */
+  padding: 0 1rem; /* Padding lateral */
   text-align: center;
-  padding: 4rem 0;
-  background-color: #0070f3;
-  color: #ffffff;
-  margin-top: 2rem;
-  top:450px;
 }
 
-.chamadaParaAcao h2 {
-  font-size: 2.8rem;
-  margin-bottom: 1.5rem;
+.tituloPortfolio {
+  font-size: 2rem; /* Menor para mobile */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Ajuste para mobile */
 }
 
-/* styles/Home.module.css (adicione ao seu arquivo existente) */
+.descricaoPortfolio {
+  font-size: 1rem; /* Menor para mobile */
+  color: #666;
+  margin-bottom: 25px; /* Margem ajustada */
+  line-height: 1.6;
+  padding: 0 1rem; /* Padding lateral para o texto */
+}
 
-/* Estilos para a nova seção de Serviços */
+/* Opcional: Linha divisória abaixo do título do Portfólio */
+.secaoPortfolio::before {
+  content: '';
+  display: block;
+  width: 80%; /* Largura percentual para ser responsiva */
+  max-width: 650px; /* Largura máxima */
+  height: 5px;
+  background-color: #4d4d4d90;
+  margin: 0px auto 30px; /* Ajuste a margem para telas menores */
+  position: relative;
+  /* top: 100px; */ /* Remova ou ajuste se estiver causando layout estranho */
+}
+
+
+/* --- SEÇÃO SERVIÇOS --- */
 .secaoServicos {
   padding: 60px 0; /* Espaçamento interno da seção */
   background-color: #fff; /* Fundo branco ou claro para a seção */
   text-align: center; /* Centraliza o título */
-  margin-bottom: 60px; /* Espaço entre a seção de serviços e a próxima */
+  margin-bottom: 60px; /* Espaço entre a seção de serviços e a próxima */
 }
 
 .tituloServicos {
@@ -168,14 +153,14 @@
   text-align: center;
   margin-bottom: 10px;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .linhaServicos {
-  width: 80px; /* Largura da linha abaixo do título */
+  width: 60px; /* Largura da linha para mobile */
   height: 3px;
-  background-color: #007bff; /* Cor da linha */
-  margin: 0 auto 40px; /* Centraliza a linha e dá espaço abaixo */
+  background-color: #007bff;
+  margin: 0 auto 30px; /* Espaço abaixo */
 }
 
 .gradeServicos {
@@ -184,18 +169,32 @@
   justify-content: center; /* Centraliza os cards se não preencherem a linha toda */
   max-width: 1200px; /* Largura máxima para o grid de serviços, ajuste conforme necessário */
   margin: 0 auto; /* Centraliza o grid */
-  /* Remova qualquer gap aqui se você já controlou o espaçamento nos cards */
-  /* gap: 0; */
+  gap: 0rem; /* Adicionado gap para espaçamento entre os cards em mobile */
+  padding: 0 1rem; /* Padding lateral para a grade */
 }
 
-/* ... (seus outros estilos para .secaoSobreNos, .secaoEquipe, .secaoPortfolio, etc.) ... */
+/* --- SEÇÃO CHAMADA PARA AÇÃO --- */
+.chamadaParaAcao {
+  position: relative;
+  /* top: 450px; */ /* Remova ou ajuste, pode causar scroll ou layout estranho */
+  text-align: center;
+  padding: 3rem 1rem; /* Padding responsivo */
+  background-color: #0070f3;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+.chamadaParaAcao h2 {
+  font-size: 2.2rem; /* Menor para mobile */
+  margin-bottom: 1.5rem;
+}
 
 .botaoContato {
   background-color: #ffffff;
   color: #0070f3;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2rem; /* Padding menor para mobile */
   border-radius: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem; /* Fonte menor para mobile */
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -205,76 +204,102 @@
   color: #005bb5;
 }
 
+/* --- DIVISORES --- */
 .divisorCinza {
-  width: 615px; /* Largura do traço, como no print */
-  height: 5px; /* Espessura do traço */
-  background-color: #727272ab; /* Cor cinza do traço */
-  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
+  width: 80%; /* Largura responsiva */
+  max-width: 615px; /* Largura máxima */
+  height: 5px;
+  background-color: #727272ab;
+  margin: 0 auto 3rem auto; /* Ajuste margem para mobile */
   border-radius: 1px;
   position: relative;
-  top: 35px; /* Para as pontas arredondadas do traço, se desejar */
+  /* top: 35px; */ /* Remova ou ajuste se estiver causando layout estranho */
 }
-.divisorGray {
-  width: 615px; /* Largura do traço, como no print */
-  height: 5px; /* Espessura do traço */
-  background-color: #727272ab; /* Cor cinza do traço */
-  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
+
+.divisorGray { /* Assumindo que este é diferente do .divisorCinza */
+  width: 80%; /* Largura responsiva */
+  max-width: 615px;
+  height: 5px;
+  background-color: #727272ab;
+  margin: 0 auto 3rem auto; /* Ajuste margem para mobile */
   border-radius: 1px;
   position: relative;
-  top: -25px; /* Para as pontas arredondadas do traço, se desejar */
+  /* top: -25px; */ /* Remova ou ajuste se estiver causando layout estranho */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  /* Altere o seletor aqui para .tituloSobreNosEstilizado */
-  .tituloSobreNosEstilizado {
-    font-size: unset; /* Reseta o font-size do h2 para que as divs controlem */
-    margin-bottom: 1rem; /* Ajuste a margem */
-  }
-  .nossaAzulPequeno {
-    font-size: 1.2rem; /* Tamanho de fonte menor para "NOSSA" em mobile */
-  }
-  .historiaGrande {
-    font-size: 2rem; /* Tamanho de fonte menor para "HISTÓRIA" em mobile */
-  }
+/* --- MEDIA QUERIES PARA TELAS MAIORES (TABLETS E DESKTOPS) --- */
 
+/* Tablets e Desktops (mínimo de 768px de largura) */
+@media (min-width: 768px) {
+  /* Tamanhos de Fonte */
+  .secaoSobreNos h2,
   .secaoEquipe h2,
   .secaoDepoimentos h2,
+  .tituloPortfolio,
+  .tituloServicos {
+    font-size: 2.5rem; /* Tamanho padrão para títulos */
+  }
+
   .chamadaParaAcao h2 {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .secaoSobreNos p {
-    font-size: 1rem;
-    padding: 0 1rem;
+    font-size: 1.25rem; /* Ajusta o parágrafo para telas maiores */
+  }
+  .descricaoPortfolio {
+    font-size: 1.1rem;
+  }
+  
+
+  .nossaAzulPequeno {
+    font-size: 2rem; /* Tamanho original para "NOSSA" */
+    right: 140px; /* Restaura a posição em telas maiores, se for o que você quer */
+  }
+  .historiaGrande {
+    font-size: 4rem; /* Tamanho original para "HISTÓRIA" */
   }
 
-  /* styles/Home.module.css */
+  /* Padding e Margens */
+  .secaoSobreNos,
+  .secaoEquipe,
+  .secaoDepoimentos,
+  .secaoServicos {
+    padding: 3rem 2rem; /* Mais padding em telas maiores */
+  }
 
-/* ... (seus estilos existentes) ... */
+  .secaoPortfolio {
+    margin: 80px auto; /* Margem original para telas maiores */
+    padding: 0 20px;
+  }
 
-.secaoPortfolio {
-  width: 100%;
-  max-width: 1200px; /* Ajuste conforme a largura desejada para a seção do portfólio */
-  margin: 80px auto; /* Espaçamento superior/inferior e centraliza */
-  padding: 0 20px; /* Preenchimento nas laterais */
-  text-align: center; /* Centraliza o título e a descrição */
+  .chamadaParaAcao {
+    padding: 4rem 2rem;
+  }
+
+  /* Grades (Grid/Flexbox) */
+  .gradeEquipe,
+  .gradeDepoimentos {
+    gap: 2rem; /* Gap maior para telas maiores */
+  }
+
+  .linhaServicos {
+    width: 80px; /* Largura original da linha */
+  }
+
+  .divisorCinza, .divisorGray {
+    margin: 0 auto 4rem auto; /* Margem original para telas maiores */
+  }
+
+  .botaoContato {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+  }
 }
 
-.tituloPortfolio {
-  font-size: 2.8rem;
-  color: #333;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.descricaoPortfolio {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-/* ... (restante dos seus estilos existentes) ... */
-}
+/* Desktops Maiores (mínimo de 1200px de largura - opcional, para ajustes muito finos) */
+/* @media (min-width: 1200px) {
+  .main {
+    padding: 2rem 0; // Se você quiser remover o padding lateral no main em telas muito grandes
+  }
+} */

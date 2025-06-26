@@ -3,7 +3,7 @@
 .heroSection {
   position: relative; /* Container principal, crucial para posicionamento absoluto dos filhos */
   width: 100%;
-  height: 60vh; /* Altura da seção hero. Ajuste conforme necessário. */
+  height: 90vh; /* Altura da seção hero. Ajuste conforme necessário. */
   overflow: hidden; /* Garante que a imagem não vaze */
 
   /* Remove display flex/justify/align do container, pois o título será posicionado absolutamente */

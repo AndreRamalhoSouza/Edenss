@@ -1,31 +1,39 @@
-.container {
-  /* O container principal é definido em globals.css */
-}
+/* --- Estilos base (Mobile-First) --- */
 
-.main {
-  /* O main é definido em globals.css */
-}
+/* Nota: .container e .main são gerenciados em globals.css conforme as discussões anteriores. */
 
 .titulo {
-  font-size: 3rem;
+  font-size: 2.2rem; /* Tamanho da fonte menor para celulares */
   text-align: center;
   color: #333333;
-  margin-bottom: 3rem;
-  margin-top: 2rem;
+  margin-bottom: 2rem; /* Margem ajustada para telas menores */
+  margin-top: 1.5rem; /* Margem ajustada para telas menores */
+  padding: 0 1rem; /* Adiciona padding lateral para evitar que o título grude nas bordas */
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem;
+  /* Em telas menores, os itens podem ter um minmax de 280px para melhor encaixe. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; /* Espaçamento menor entre os itens em telas menores */
+  padding: 0 1rem; /* Padding lateral para a grade para não grudar nas bordas */
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* --- Media Query para Telas Maiores (Tablets e PCs) --- */
+@media (min-width: 768px) {
   .titulo {
-    font-size: 2.5rem;
+    font-size: 3rem; /* Restaura o tamanho da fonte original para telas maiores */
+    margin-bottom: 3rem; /* Restaura a margem original para telas maiores */
+    margin-top: 2rem; /* Restaura a margem original para telas maiores */
+    padding: 0; /* Remove o padding lateral, se o .main já tiver o suficiente */
+  }
+
+  .servicesGrid {
+    /* Em telas maiores, o minmax de 300px é apropriado. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem; /* Restaura o espaçamento original para telas maiores */
+    padding: 0 1rem; /* Mantém o padding lateral ou ajuste conforme o design */
   }
 }
