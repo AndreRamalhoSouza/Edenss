@@ -1,3 +1,5 @@
+/* styles/Cabecalho.module.css */
+
 .cabecalho {
   position: sticky;
   top: 0;
@@ -35,12 +37,14 @@
   margin-top: -10px;
   text-align: center;
   width: 100%;
+  /* Mantenha o transform para desktop se for o layout desejado,
+     mas ele será redefinido em media queries para responsividade. */
   transform: translateY(-25px) translateX(80px);
   white-space: nowrap;
 }
 
 .nav {
-  display: flex;
+  display: flex; /* Visível no desktop */
   flex-grow: 1;
   justify-content: center;
   align-items: center;
@@ -78,32 +82,28 @@
 }
 
 .cssLupaContainer {
-  /* Não precisa de position: relative; aqui */
-  display: flex;
+  display: flex; /* Visível no desktop */
   justify-content: center;
   align-items: center;
-  width: 25px; /* Ajuste o tamanho do contêiner da lupa conforme necessário */
+  width: 25px;
   height: 25px;
   cursor: pointer;
-  /* margin-left: 0.5rem; O gap do .nossaHistoriaItem já cuida do espaçamento */
 }
 
 .lupaCircle {
-  /* Removendo position: absolute e top/left */
-  width: 18px; /* Tamanho do círculo da lupa */
+  width: 18px;
   height: 18px;
   border: 2px solid #3ce5d4;
   border-radius: 50%;
   transition: border-color 0.3s ease;
-  transform: translate(-3px, -3px); /* Ajuste a posição do círculo */
+  transform: translate(-3px, -3px);
 }
 
 .lupaHandle {
-  /* Removendo position: absolute e top/left */
   width: 2px;
-  height: 12px; /* Tamanho da alça da lupa */
+  height: 12px;
   background-color: #3ce5d4;
-  transform: translate(7px, 7px) rotate(45deg); /* Ajuste a posição e rotação da alça */
+  transform: translate(7px, 7px) rotate(45deg);
   transform-origin: bottom right;
   transition: background-color 0.3s ease;
 }
@@ -139,17 +139,18 @@
 .contatoMenuItem {
   list-style: none;
   margin-left: auto;
-  order: 1;
+  order: 1; /* Mantém a ordem no desktop */
 }
 
+/* --- Hamburger Icon (Invisível por padrão no desktop) --- */
 .hamburgerIcon {
-  display: flex !important;
+  display: none; /* ESCONDIDO NO DESKTOP */
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
   height: 25px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1001; /* Garante que fique acima do menu */
 }
 
 .hamburgerIcon div {
@@ -170,6 +171,11 @@
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* ------------------------------------------- */
+/* --- Media Queries para Responsividade --- */
+/* ------------------------------------------- */
+
+/* Para telas menores que 1024px (tablets e celulares) */
 @media (max-width: 1023px) {
   .cabecalho {
     height: 80px;
@@ -182,19 +188,21 @@
 
   .slogan {
     font-size: 0.6em;
+    /* Ajusta a posição para mobile */
     transform: translateY(-15px) translateX(40px);
   }
 
+  /* --- Menu de Navegação (Escondido por padrão, aberto com JS) --- */
   .nav {
-    display: none;
+    display: none; /* Escondido por padrão em mobile */
     flex-direction: column;
-    position: fixed; /* Mudei para fixed para garantir que o menu ocupe a altura total do viewport */
+    position: fixed;
     top: 0;
-    right: -100%;
+    right: -100%; /* Inicia fora da tela */
     width: 70%;
-    height: 100vh; /* Ocupa 100% da altura do viewport */
+    height: 100vh;
     background-color: #333333ef;
-    padding-top: 60px;
+    padding-top: 60px; /* Espaço para o cabeçalho fixo, se houver */
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
     justify-content: flex-start;
@@ -205,14 +213,14 @@
   }
 
   .nav.open {
-    display: flex;
-    right: 0;
+    display: flex; /* Exibido quando a classe 'open' é aplicada */
+    right: 0; /* Desliza para a tela */
   }
 
   .nav ul {
     flex-direction: column;
     width: 100%;
-    gap: 0rem;
+    gap: 0; /* Zera o gap entre itens empilhados */
     text-align: center;
     align-items: center;
   }
@@ -239,13 +247,14 @@
     gap: 0;
   }
 
+  /* --- Hamburger Icon (Visível apenas em mobile) --- */
   .hamburgerIcon {
-    display: flex;
+    display: flex; /* VISÍVEL NO MOBILE */
   }
 
   .contatoMenuItem {
     margin-left: 0;
-    order: unset;
+    order: unset; /* Remove a ordem específica em mobile */
     margin-top: 1.5rem;
   }
 
@@ -261,5 +270,30 @@
   }
 }
 
+/* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
+  /* Adicione estilos específicos para tablets, se necessário.
+     Por exemplo, talvez o menu lateral possa ser mais largo aqui. */
+}
+
+/* Para telas muito pequenas (celulares em modo retrato) */
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 2rem;
+  }
+
+  .slogan {
+    font-size: 0.5em;
+    /* Ajusta ainda mais para telas pequenas */
+    transform: translateY(-10px) translateX(30px);
+  }
+
+  .nav {
+    width: 85%; /* Menu lateral um pouco mais largo em telas menores */
+  }
+
+  .nav a {
+    font-size: 1rem;
+    padding: 0.6rem 0;
+  }
 }

@@ -4,13 +4,13 @@
   padding: 2rem 1rem;
   text-align: center;
   position: relative;
-  top: 420px;
+  top: 420px; /* Isso ainda vai empurrar o rodapé para baixo */
 }
 
 .edenn {
   position: relative;
   right: 500px;
-  top:400px;
+  top: 400px;
   font-size: 3.5rem;
   color: white;
 }
@@ -22,7 +22,7 @@
   color: #ffffff;
   margin-top: -10px;
   display: flex;
-  justify-content: center; /* CORRIGIDO: Removido o 'content' duplicado */
+  justify-content: center;
   width: 100%;
   font-size: 1.0rem;
 }
@@ -30,7 +30,7 @@
 .ss {
   position: relative;
   right: 500px;
-  top:400px;
+  top: 400px;
   font-size: 3.5rem;
   color: black;
 }
@@ -42,9 +42,9 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-   position: relative;
-   left: 500px;
-   bottom: 100px;
+  position: relative;
+  left: 500px;
+  bottom: 100px;
 }
 
 .colunaRodape2 {
@@ -54,24 +54,24 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-   position: relative;
-   left: 20px;
-   bottom: -100px;
-   color:hsl(0, 0%, 0%)
+  position: relative;
+  left: 20px;
+  bottom: -100px;
+  color: hsl(0, 0%, 0%);
 }
 .emailSamuel {
   margin-top: 15px;
   color: rgb(0, 0, 0);
   position: relative;
-  right:130px;
+  right: 130px;
   top: 50px;
 }
 
 .emailSusi {
-    margin-top: 15px;
+  margin-top: 15px;
   color: rgb(0, 0, 0);
   position: relative;
-  right:442px;
+  right: 442px;
   top: 20px;
 }
 
@@ -79,54 +79,143 @@
   flex: 1;
   min-width: 200px;
   text-align: left;
-   position: relative;
+  position: relative;
 }
 
 .colunaRodape h3 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #000000;
-   position: relative;
+  position: relative;
 }
 
 .colunaRodape ul {
   list-style: none;
   padding: 0;
   margin: 0;
-   position: relative;
+  position: relative;
 }
 
 .colunaRodape ul li {
   margin-bottom: 0.5rem;
-   position: relative;
+  position: relative;
 }
 
 .colunaRodape ul li a {
   color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
-   position: relative;
+  position: relative;
 }
 
 .colunaRodape ul li a:hover {
   color: #0070f3;
-   position: relative; /* Cor de destaque ao passar o mouse */
+  position: relative; /* Cor de destaque ao passar o mouse */
 }
 
 .colunaRodape p {
   color: #000000;
   margin-bottom: 0.5rem;
-   position: relative;
+  position: relative;
 }
 
-/* Responsividade básica */
-@media (max-width: 768px) {
+/* --- Media Queries para Responsividade --- */
+
+/* Para telas menores que 1024px (tablets maiores e desktops menores) */
+@media (max-width: 1024px) {
   .colunasRodape {
-    flex-direction: column;
-    align-items: center;
+    /* Ajustes para telas um pouco menores, se necessário */
+    left: 0; /* Tenta centralizar mais */
+    justify-content: center; /* Centraliza as colunas */
   }
 
-  .colunaRodape {
-    text-align: center;
+  .colunaRodape2 {
+    left: 0; /* Tenta centralizar */
+  }
+}
+
+/* Para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  .rodape {
+    top: 0; /* Tenta trazer o rodapé para a tela */
+    padding: 1.5rem 0.8rem; /* Ajusta o padding */
+  }
+
+  .colunasRodape {
+    flex-direction: column; /* Empilha as colunas verticalmente */
+    align-items: center; /* Centraliza as colunas */
+    gap: 1.5rem; /* Reduz o espaçamento entre as colunas empilhadas */
+    left: 0; /* Zera qualquer deslocamento horizontal */
+    bottom: 0; /* Zera qualquer deslocamento vertical */
+  }
+
+  .colunaRodape,
+  .colunaRodape2 {
+    text-align: center; /* Centraliza o texto em cada coluna */
+    min-width: 100%; /* Colunas ocupam 100% da largura disponível */
+    margin-bottom: 1.5rem; /* Adiciona mais espaço entre as colunas empilhadas */
+    position: static; /* Tenta remover o posicionamento relativo */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  /* Tenta ajustar o logo e slogan */
+  .edenn,
+  .ss {
+    font-size: 2.8rem; /* Reduz o tamanho do logo */
+    position: static; /* Tenta remover o posicionamento relativo */
+    right: 0;
+    top: 0;
+  }
+
+  .slogan {
+    font-size: 1.2rem; /* Reduz o tamanho do slogan */
+    text-align: center; /* Centraliza o slogan */
+    position: static; /* Tenta remover o posicionamento relativo */
+    left: 0;
+    top: 0;
+  }
+
+  /* Ajusta o espaçamento dos emails para mobile */
+  .emailSamuel,
+  .emailSusi {
+    margin: 5px auto; /* Centraliza e ajusta margem */
+    position: static; /* Tenta remover o posicionamento relativo */
+    right: 0;
+    top: 0;
+  }
+
+  .colunaRodape h3,
+  .colunaRodape2 h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    position: static; /* Tenta remover o posicionamento relativo */
+  }
+
+  .colunaRodape ul li {
+    margin-bottom: 0.4rem;
+    position: static; /* Tenta remover o posicionamento relativo */
+  }
+
+  .colunaRodape ul li a {
+    position: static; /* Tenta remover o posicionamento relativo */
+  }
+}
+
+/* Para telas menores que 480px (celulares muito pequenos) */
+@media (max-width: 480px) {
+  .rodape {
+    padding: 1rem 0.5rem; /* Reduz o padding do rodapé */
+  }
+
+  .edenn,
+  .ss {
+    font-size: 2.2rem; /* Reduz ainda mais o logo */
+  }
+
+  .slogan {
+    font-size: 1rem; /* Reduz ainda mais o slogan */
   }
 }

@@ -21,8 +21,8 @@ const Carousel = ({ projects }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2, // Em tablets, 2 colunas
-          slidesToScroll: 2,
+          slidesToShow: 3, // Em tablets, 2 colunas
+          slidesToScroll: 3,
           rows: 2,
           slidesPerRow: 1,
         }
@@ -30,8 +30,8 @@ const Carousel = ({ projects }) => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1, // Em celulares, 1 coluna
-          slidesToScroll: 1,
+          slidesToShow: 3, // Em celulares, 1 coluna
+          slidesToScroll: 3,
           rows: 2, // 2 linhas (2 cards um abaixo do outro)
           slidesPerRow: 1,
         }
@@ -41,7 +41,7 @@ const Carousel = ({ projects }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 1, // 1 linha para celulares muito pequenos
+          rows: 2, // 1 linha para celulares muito pequenos
           slidesPerRow: 1,
           dots: true,
           arrows: false,

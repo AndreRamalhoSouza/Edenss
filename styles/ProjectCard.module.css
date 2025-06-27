@@ -1,25 +1,19 @@
-
-
 .card {
   width: 320px;
-  height: 320px;
+  height: 320px; 
   position: relative;
   cursor: pointer;
-  border-radius: 10px; /* pode mudar pra 0 se quiser */
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-  margin: 0;
-  padding: 2;
-
-  float: left;  /* >>> adiciona isso pra colar os cards */
+  margin: 10px; 
+  padding: 0; 
+  float: left; 
 }
-
-
 
 .card:hover {
   transform: translateY(-3px);
@@ -31,28 +25,25 @@
   height: 100%;
   object-fit: cover;
   flex-grow: 1;
-  /* --- REGRAS PARA PRETO E BRANCO E TRANSIÇÃO --- */
-  filter: grayscale(100%); /* Deixa a imagem em preto e branco */
-  transition: filter 0.5s ease-in-out; /* Adiciona uma transição suave ao filtro */
-  /* --- FIM DAS REGRAS --- */
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out;
 }
 
-/* Quando o mouse passar sobre o card, a imagem perde o filtro de cinza */
 .card:hover img {
-  filter: grayscale(0%); /* Remove o filtro, mostrando as cores originais */
+  filter: grayscale(0%);
 }
 
 .overlay {
-  min-height: 60px;   /* um pouco menor */
-  max-height: 100px;  /* menor pra não ocupar tanto espaço */
+  min-height: 60px;
+  max-height: 100px;
   overflow: hidden;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.305));
+  background: linear-gradient(to top, rgba(11, 147, 232, 0.8), rgba(0, 0, 0, 0.305));
   color: white;
-  padding: 10px 10px 8px; /* padding reduzido */
+  padding: 10px; /* Padding ajustado para ser uniforme */
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -64,7 +55,57 @@
 
 .overlay h3 {
   margin: 0;
-  font-size: 1.2em; /* ligeiramente menor */
+  font-size: 1.2em;
   font-weight: 600;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.653);
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    /* Ajuste de tamanho para telas de tablet */
+    width: 150px;
+    height: 150px;
+
+    /* Propriedades para empilhar os cards */
+    display: block; /* Faz com que cada card ocupe sua própria linha */
+    margin: 10px auto; /* Centraliza o card e adiciona margem vertical */
+    float: none; /* Garante que não flutue e se empilhe */
+  }
+
+  
+
+  .overlay {
+    min-height: 50px;
+    max-height: 80px;
+    padding: 8px;
+  }
+
+  .overlay h3 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    /* Ajuste de tamanho para celulares menores */
+    width: 90%; /* Ocupa a maior parte da largura do contêiner pai */
+    max-width: 250px; /* Limite para não ficar muito grande em telas pequenas */
+    height: 250px;
+
+    /* As propriedades de empilhamento já foram definidas acima, mas podem ser repetidas para clareza */
+    display: block;
+    margin: 10px auto;
+    float: none;
+  }
+
+  .overlay {
+    min-height: 40px;
+    max-height: 70px;
+    padding: 6px;
+  }
+
+  .overlay h3 {
+    font-size: 0.9em;
+  }
 }

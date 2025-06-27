@@ -2,8 +2,8 @@
 
 .membroDetalhe {
   display: flex;
-  flex-direction: column; /* mudar para coluna para empilhar verticalmente */
-  align-items: flex-start;
+  flex-direction: column; /* Manter como coluna para empilhar verticalmente por padrão (desktop) */
+  align-items: flex-start; /* Alinhar itens à esquerda por padrão */
   gap: 1rem;
   padding: 1rem;
   background-color: #ffffff;
@@ -15,11 +15,12 @@
   margin-right: auto;
 }
 
+/* Não é necessário .membroDetalhe.reverse aqui, pois o layout principal é em coluna */
 
 
 .imagemMembro {
-  display: block; /* força cada imagem ocupar linha inteira */
-  margin-bottom: 1rem; /* espaço entre as imagens */
+  display: block; /* Garante que a imagem ocupe sua própria linha */
+  margin-bottom: 1rem; /* Espaço abaixo da imagem */
   width: 250px;
   height: 350px;
   object-fit: cover;
@@ -30,13 +31,14 @@
 /* Estilos específicos para a imagem de Samuel */
 .imagemMembro-samuel {
   border: 2px solid #0071f300;
+  /* Samuel não tem deslocamentos, então não adicionamos aqui */
 }
 
 /* Estilos específicos para a imagem de Susi */
 .imagemMembro-susi {
-  position: relative; /* Mantido como você solicitou */
-  right: 520px; /* Mantido como você solicitou */
-  top: 400px; /* Mantido como você solicitou */
+  position: relative; /* Mantido como solicitado */
+  right: 500px; /* Mantido como solicitado */
+  top: 400px; /* Mantido como solicitado */
   filter: grayscale(50%);
 }
 
@@ -44,11 +46,10 @@
 .textoMembro {
   flex-grow: 1;
   text-align: left;
-  position: relative; /* Mantido como você solicitou */
-  /* Adição para otimização do espaço e evitar quebras indesejadas */
-  min-width: 0; /* Permite que o item flex encolha abaixo de seu conteúdo intrínseco se necessário */
-  word-wrap: break-word; /* Garante que palavras muito longas quebrem */
-  overflow-wrap: break-word; /* Moderno equivalente a word-wrap */
+  position: relative; /* Mantido como solicitado */
+  min-width: 550px; /* Mantido como solicitado */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .textoMembro h3 {
@@ -56,7 +57,7 @@
   color: #333333;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  word-break: break-word; /* Permite quebrar palavras longas nos títulos também */
+  word-break: break-word;
 }
 
 .textoMembro h4 {
@@ -64,76 +65,98 @@
   color: #464747;
   margin-bottom: 0rem;
   font-weight: normal;
-  word-break: break-word; /* Permite quebrar palavras longas nos cargos também */
-}
-
-.textoMembro {
-  flex-grow: 100;
-  text-align: center;
-  position: relative;
-  min-width: 550px; /* Tente um valor como este. Ajuste conforme necessário. */
-  word-wrap: none;
-  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Estilos para o texto de Samuel */
 .textoMembro-samuel {
-  text-align: justify; 
-    word-spacing: 0.1em;
-    position: relative;
-    bottom:400px;
-    left:350px;
-    /* Mantido o justify, se desejado */
-  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
-  /* Por exemplo: */
-  /* padding-right: 0; */
-  /* margin-right: 0; */
+  text-align: justify;
+  word-spacing: 0.1em;
+  position: relative; /* Mantido como solicitado */
+  bottom: 400px; /* Mantido como solicitado */
+  left: 350px; /* Mantido como solicitado */
 }
 
 /* Estilos para o texto de Susi */
 .textoMembro-susi {
   text-align: justify;
-  position:relative;
-  top:20px; 
-  right: 180px;/* Mantido o justify, se desejado */
-  /* Adicionalmente, você pode querer ajustar margens/paddings específicas aqui se houver um espaço indesejado */
-  /* Por exemplo: */
-  /* padding-left: 0; */
-  /* margin-left: 0; */
+  position: relative; /* Mantido como solicitado */
+  top: 20px; /* Mantido como solicitado */
+  right: 150px; /* Mantido como solicitado */
 }
 
 
 
 
-/* Responsividade */
+/* Responsividade para Mobile */
 @media (max-width: 768px) {
   .membroDetalhe {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Garante que continua empilhado em mobile */
+    align-items: center; /* Centraliza tudo horizontalmente em mobile */
     gap: 1.5rem;
     padding: 1.5rem;
   }
 
+  /* Resetar o order para garantir que a ordem natural seja seguida */
+  .membroDetalhe > * {
+    order: unset !important; /* Desfaz qualquer order aplicada */
+  }
+
   .imagemMembro {
-    width: 200px;
-    height: 200px;
+    width: 250px; /* Mantido o tamanho para mobile */
+    height: 350px; /* Mantido o tamanho para mobile */
+    margin-bottom: 0; /* O gap já controla */
   }
   .imagemMembro-samuel {
     border: 1px solid #0071f300;
   }
+
   .imagemMembro-susi {
     filter: none;
-    position: static; /* É ALTAMENTE RECOMENDADO resetar o posicionamento em mobile para evitar quebras */
-    right: auto;
-    top: auto;
+    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    position: static; /* Remove position: relative */
+    right: auto; /* Remove right */
+    top: auto; /* Remove top */
+    /* Garante que não haja deslocamento em mobile */
+    transform: none; /* Se houver algum transform */
+    margin: 0; /* Zera margens extras */
   }
 
   .textoMembro {
-    text-align: center;
-    position: relative; /* Mantido como você solicitou para mobile */
-    min-width: auto; /* Reseta para mobile */
+    text-align: center; /* Centraliza o texto em mobile */
+    min-width: auto; /* Permite que o texto se ajuste à largura da tela */
+    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    position: static; /* Remove position: relative */
+    top: auto; /* Remove top */
+    right: auto; /* Remove right */
+    left: auto; /* Remove left */
+    bottom: auto; /* Remove bottom */
+    transform: none; /* Se houver algum transform */
+    margin: 0; /* Zera margens extras */
   }
 
+  .textoMembro-samuel {
+    text-align: center; /* Centraliza texto de Samuel em mobile */
+    word-spacing: normal;
+    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 0;
+  }
+
+  .textoMembro-susi {
+    text-align: center; /* Centraliza texto de Susi em mobile */
+    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin: 0;
+  }
+
+  /* Ajustes de fonte para mobile */
   .textoMembro h3 {
     font-size: 1.8rem;
   }

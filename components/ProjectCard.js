@@ -12,10 +12,11 @@ const ProjectCard = ({ project }) => {
         <Image
           src={project.mainImage}
           alt={project.name}
-          width={400} // Largura base, Next.js otimiza
-          height={300} // Altura base, Next.js otimiza
-          layout="responsive" // Ou "fill" se o parent tiver position: relative e width/height fixos
-          objectFit="cover" // Garante que a imagem cubra a área sem distorcer
+          width={400} // Largura base, Next.js otimiza e define a proporção
+          height={300} // Altura base, Next.js otimiza e define a proporção
+          // layout="responsive" // <--- Removido: Next.js infere isso automaticamente com width/height
+          objectFit="cover" // Garante que a imagem cubra a área sem distorcer (pode causar corte)
+                            // Considere "contain" se quiser evitar o corte (ver CSS)
         />
         <div className={styles.overlay}>
           <h3>{project.name}</h3>
