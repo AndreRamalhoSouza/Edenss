@@ -21,8 +21,8 @@ function Contato() {
           <FormularioContato />
           <div className={styles.detalhesContato}>
             <h3>Informações de Contato</h3>
-            <p></p>
-            <p></p>
+            <p>Email Samuel: {infoContato.emailSamuel}</p>
+            <p>Email Susi: {infoContato.emailSusi}</p>
             {/* Adicione número de telefone se disponível */}
           </div>
         </div>
