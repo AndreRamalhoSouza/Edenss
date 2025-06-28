@@ -126,6 +126,8 @@
 
   .botaoEnviar {
     width: 120px;
+    position: relative;
+    bottom: 20px;
     padding: 0.8rem 1rem;
     font-size: 1rem;
     margin-top: 1.5rem;
