@@ -87,4 +87,23 @@
   .carouselWrapper .slick-dots {
     bottom: -20px; /* Ajusta a posição se as setas sumirem */
   }
+
+    .slick-track {
+    display: flex !important; /* Força o flex para que os itens se empilhem */
+    flex-wrap: wrap !important; /* Permite que os itens quebrem para a próxima linha */
+    height: auto !important; /* Altura automática para acomodar todos os cards */
+    transform: none !important; /* Remove qualquer translação do carrossel */
+  }
+
+  .slick-slide {
+    display: block !important; /* Garante que o slide seja exibido como um bloco */
+    width: 100% !important; /* Cada card ocupa a largura total disponível */
+    height: auto !important;
+    margin-bottom: 20px; /* Espaçamento entre os cards */
+  }
+
+  .carouselItemWrapper {
+    width: 100% !important; /* Garante que o wrapper do card ocupe a largura total */
+    margin: 0;
+  }
 }

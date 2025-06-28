@@ -15,6 +15,7 @@
   float: left; 
 }
 
+
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.665);
@@ -66,6 +67,7 @@
     /* Ajuste de tamanho para telas de tablet */
     width: 150px;
     height: 150px;
+    
 
     /* Propriedades para empilhar os cards */
     display: block; /* Faz com que cada card ocupe sua própria linha */
