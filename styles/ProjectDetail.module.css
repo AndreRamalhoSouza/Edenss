@@ -1,7 +1,5 @@
 /* styles/ProjectDetail.module.css */
 
-
-
 .backButton {
   background-color: #3ea6e2; /* Azul vibrante */
   color: white;
@@ -30,53 +28,47 @@
 }
 
 .description {
-  position: relative;
-  left: 500px;
   font-size: 1.2rem;
   line-height: 1.8;
   color: #555;
-  margin-bottom: 60px; /* Espaço antes das imagens */
+  margin-bottom: 60px;
   max-width: 800px;
-  text-align: justify; /* Alinha o texto em parágrafo */
+  text-align: justify;
+  margin: 0 auto 60px auto; /* Combina margin-left/right auto com margin-bottom */
 }
 
 .detailImagesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Grid de 2 colunas para telas maiores, 1 coluna para menores */
-  gap: 25px; /* Espaçamento entre as imagens */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
   width: 100%;
-  margin-bottom: 60px; /* Espaço após as imagens */
+  margin-bottom: 60px;
 }
 
 .imageWrapper {
   border-radius: 12px;
-  overflow: hidden; /* Garante que a imagem respeite o border-radius */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); /* Sombra mais acentuada */
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-  /* --- NOVAS REGRAS PARA TAMANHO UNIFORME --- */
-  position: relative; /* Essencial para o padding-bottom de proporção */
-  padding-bottom: 75%; /* Exemplo: define a altura como 75% da largura (proporção 4:3). Ajuste conforme desejar. */
-                        /* Para 16:9, use 56.25%; para 1:1 (quadrado), use 100%. */
-  height: 0; /* Zera a altura para o padding-bottom funcionar */
-  /* --- FIM DAS NOVAS REGRAS --- */
+  position: relative;
+  padding-bottom: 70%; /* Ajuste isso se suas imagens tiverem uma proporção diferente */
+  height: 0;
 }
 
 .imageWrapper:hover {
-  transform: scale(1.02); /* Pequeno zoom no hover */
+  transform: scale(1.02);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* --- NOVA REGRA PARA A IMAGEM DENTRO DO WRAPPER --- */
 .imageWrapper img {
-  position: absolute; /* Permite que a imagem preencha o wrapper com position:relative */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando se necessário */
+  object-fit: contain; /* ALTERADO: Garante que a imagem não seja cortada */
 }
-/* --- FIM DA NOVA REGRA --- */
 
 .loading {
   font-size: 1.8rem;
@@ -88,7 +80,7 @@
 /* Media Queries para Responsividade */
 @media (max-width: 992px) {
   .detailImagesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta colunas para tablets */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
   }
   .title {
@@ -96,6 +88,7 @@
   }
   .description {
     font-size: 1.1rem;
+    margin-bottom: 40px; /* Ajuste para espaçamento em telas menores */
   }
 }
 
@@ -111,7 +104,7 @@
     margin-bottom: 40px;
   }
   .detailImagesGrid {
-    grid-template-columns: 1fr; /* Uma coluna para celulares */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
   .backButton {
