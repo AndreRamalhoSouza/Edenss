@@ -1,10 +1,10 @@
 .rodape {
-  background-color: #6fd0dd; /* Fundo escuro para o rodapé */
+  background-color: #6fd0dd;
   color: #ffffff;
   padding: 2rem 1rem;
   text-align: center;
   position: relative;
-  top: 420px; /* Isso ainda vai empurrar o rodapé para baixo */
+  top: 420px; /* Este 'top' fixo é problemático. O ideal seria removê-lo completamente. */
 }
 
 .edenn {
@@ -125,82 +125,128 @@
 @media (max-width: 1024px) {
   .colunasRodape {
     /* Ajustes para telas um pouco menores, se necessário */
-    left: 0; /* Tenta centralizar mais */
+    left: 0; /* Centraliza mais removendo o deslocamento */
     justify-content: center; /* Centraliza as colunas */
+    /* Remove o bottom aqui, se houver: */
+    bottom: unset; /* Permite que o Flexbox controle o posicionamento vertical */
   }
 
   .colunaRodape2 {
-    left: 0; /* Tenta centralizar */
+    left: 0; /* Centraliza mais removendo o deslocamento */
+    /* Remove o bottom aqui, se houver: */
+    bottom: unset; /* Permite que o Flexbox controle o posicionamento vertical */
+  }
+
+  /* Ajusta o posicionamento de logo e slogan */
+  .edenn,
+  .ss {
+    right: unset; /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
+  }
+
+  .slogan {
+    left: unset;  /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
+  }
+
+  /* Ajusta o posicionamento dos emails */
+  .emailSamuel,
+  .emailSusi {
+    right: unset; /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
   }
 }
 
 /* Para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
   .rodape {
-    top: 0; /* Tenta trazer o rodapé para a tela */
+    top: 0; /* Zera o 'top' fixo do rodapé para que ele flua normalmente */
     padding: 1.5rem 0.8rem; /* Ajusta o padding */
+    /* Garante que o rodapé seja um contêiner flex para o conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    gap: 1rem; /* Espaçamento entre as seções do rodapé */
   }
 
-  .colunasRodape {
+  .colunasRodape,
+  .colunaRodape2 { /* Aplicamos as mesmas regras para ambas as classes */
     flex-direction: column; /* Empilha as colunas verticalmente */
     align-items: center; /* Centraliza as colunas */
     gap: 1.5rem; /* Reduz o espaçamento entre as colunas empilhadas */
-    left: 0; /* Zera qualquer deslocamento horizontal */
-    bottom: 0; /* Zera qualquer deslocamento vertical */
+    left: unset; /* Zera qualquer deslocamento horizontal */
+    right: unset; /* Garante que não haja deslocamento */
+    bottom: unset; /* Zera qualquer deslocamento vertical */
+    position: static; /* MUITO IMPORTANTE: Remove o posicionamento relativo */
+    margin: 0 auto; /* Centraliza o bloco de colunas */
+    width: 100%; /* Ocupa a largura total disponível */
   }
 
-  .colunaRodape,
-  .colunaRodape2 {
+  .colunaRodape { /* Estilo para cada coluna individualmente no mobile */
     text-align: center; /* Centraliza o texto em cada coluna */
-    min-width: 100%; /* Colunas ocupam 100% da largura disponível */
+    min-width: unset; /* Permite que a coluna se encolha */
+    width: 100%; /* Ocupa a largura total do contêiner pai */
     margin-bottom: 1.5rem; /* Adiciona mais espaço entre as colunas empilhadas */
-    position: static; /* Tenta remover o posicionamento relativo */
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    position: static; /* MUITO IMPORTANTE: Remove o posicionamento relativo */
+    padding-bottom: 1.5rem; /* Espaçamento abaixo da coluna */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha divisória suave */
   }
 
-  /* Tenta ajustar o logo e slogan */
+  .colunaRodape:last-child {
+    border-bottom: none; /* Remove a linha divisória da última coluna */
+    padding-bottom: 0;
+    margin-bottom: 0; /* Remove a margem da última coluna */
+  }
+
+
+  /* Ajusta o logo e slogan */
   .edenn,
   .ss {
     font-size: 2.8rem; /* Reduz o tamanho do logo */
-    position: static; /* Tenta remover o posicionamento relativo */
-    right: 0;
-    top: 0;
+    position: static; /* Remove o posicionamento relativo */
+    right: unset; /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
+    display: inline-block; /* Mantém um ao lado do outro */
   }
 
   .slogan {
     font-size: 1.2rem; /* Reduz o tamanho do slogan */
     text-align: center; /* Centraliza o slogan */
-    position: static; /* Tenta remover o posicionamento relativo */
-    left: 0;
-    top: 0;
+    position: static; /* Remove o posicionamento relativo */
+    left: unset; /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
+    margin-top: 0.5rem; /* Ajusta a margem superior */
+    width: auto; /* Permite que a largura se ajuste ao conteúdo */
   }
 
   /* Ajusta o espaçamento dos emails para mobile */
   .emailSamuel,
   .emailSusi {
     margin: 5px auto; /* Centraliza e ajusta margem */
-    position: static; /* Tenta remover o posicionamento relativo */
-    right: 0;
-    top: 0;
+    position: static; /* Remove o posicionamento relativo */
+    right: unset; /* Remove deslocamento horizontal */
+    top: unset;   /* Remove deslocamento vertical */
+    left: unset;  /* Garante que não haja deslocamento */
+    display: block; /* Cada email em sua própria linha */
   }
 
   .colunaRodape h3,
-  .colunaRodape2 h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-    position: static; /* Tenta remover o posicionamento relativo */
+  .colunaRodape ul,
+  .colunaRodape ul li,
+  .colunaRodape ul li a,
+  .colunaRodape p {
+    position: static; /* Remove o posicionamento relativo de todos os elementos internos da coluna */
+    margin: 0 auto; /* Tenta centralizar, se aplicável */
+    padding: 0; /* Zera padding para evitar deslocamentos inesperados */
+    text-align: inherit; /* Herda o text-align do pai (.colunaRodape) */
+  }
+
+  .colunaRodape h3 {
+    margin-bottom: 0.8rem; /* Ajusta a margem inferior do título */
   }
 
   .colunaRodape ul li {
-    margin-bottom: 0.4rem;
-    position: static; /* Tenta remover o posicionamento relativo */
-  }
-
-  .colunaRodape ul li a {
-    position: static; /* Tenta remover o posicionamento relativo */
+    margin-bottom: 0.4rem; /* Ajusta a margem inferior dos itens da lista */
   }
 }
 
@@ -208,6 +254,7 @@
 @media (max-width: 480px) {
   .rodape {
     padding: 1rem 0.5rem; /* Reduz o padding do rodapé */
+    gap: 0.8rem; /* Reduz ainda mais o espaçamento geral */
   }
 
   .edenn,
@@ -217,5 +264,15 @@
 
   .slogan {
     font-size: 1rem; /* Reduz ainda mais o slogan */
+  }
+
+  .colunasRodape,
+  .colunaRodape2 {
+    gap: 1rem; /* Espaçamento menor entre colunas empilhadas */
+  }
+
+  .colunaRodape {
+    margin-bottom: 1rem; /* Espaçamento menor entre colunas */
+    padding-bottom: 1rem;
   }
 }
