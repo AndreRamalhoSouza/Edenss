@@ -2,52 +2,45 @@
 
 .carouselWrapper {
   width: 100%;
-  /* A largura MÁXIMA do seu grid 3x2. Ajuste para o quão "pequenos" os cards devem ser. */
-  /* Para 3 cards de 320px de largura, o max-width deve ser 960px. */
-  max-width: 960px; /* <--- IMPORTANTE: Define a largura total do grid 3x2 */
-  margin: 0 auto; /* Centraliza o carrossel */
-  padding: 40px 0; /* Espaçamento vertical (acima/abaixo do título e carrossel) */
+  max-width: 960px; /* Largura máxima para desktop */
+  margin: 0 auto;
+  padding: 40px 0;
   box-sizing: border-box;
-  overflow: hidden; /* Corta qualquer coisa que transborde do wrapper (ex: sombra do hover) */
+  overflow: hidden;
 }
 
-
-/* Estilos para os itens dentro do Slider, para fazê-los parecer um grid */
-/* O .slick-slide é a classe que o react-slick aplica a cada "slide" */
 .carouselWrapper .slick-slide > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Espaçamento entre os cards */
+  padding: 10px; /* Espaçamento entre cards (desktop) */
   box-sizing: border-box;
 }
 
-/* Estilo para o wrapper do ProjectCard dentro de cada slide */
 .carouselItemWrapper {
-    /* Garanta que o card ocupe o espaço necessário */
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-
-/* Personalizando os Dots (pontinhos de navegação) */
+/* Personalizando os Dots */
 .carouselWrapper .slick-dots {
-  bottom: -40px; /* Posição abaixo do carrossel */
+  bottom: -40px;
+  z-index: 10; /* Adicione ou garanta um z-index alto para serem clicáveis */
 }
 
 .carouselWrapper .slick-dots li button:before {
-  font-size: 10px; /* Tamanho dos pontinhos */
-  color: #999; /* Cor dos pontinhos inativos */
+  font-size: 10px;
+  color: #999;
 }
 
 .carouselWrapper .slick-dots li.slick-active button:before {
-  color: #007bff; /* Cor do pontinho ativo */
+  color: #007bff;
 }
 
-/* Personalizando as setas (arrows) - Opcional, se quiser usá-las */
+/* Personalizando as setas (arrows) - Para desktop */
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
-  z-index: 1; /* Garante que as setas estejam acima dos cards */
+  z-index: 1;
   width: 40px;
   height: 40px;
 }
@@ -55,55 +48,70 @@
 .carouselWrapper .slick-prev:before,
 .carouselWrapper .slick-next:before {
   font-size: 30px;
-  color: #007bff; /* Cor das setas */
+  color: #007bff;
 }
 
 .carouselWrapper .slick-prev {
-  left: -50px; /* Posição da seta esquerda */
+  left: -50px;
 }
 
 .carouselWrapper .slick-next {
-  right: -50px; /* Posição da seta direita */
-}
-.carouselWrapper :global(.slick-list) {
-  padding: 0 !important;
-  /* Garante que nada escorra para fora se houver hover/efeitos laterais */
-  overflow: hidden;
-}
-.carouselWrapper :global(.slick-track) {
-  display: flex !important;
-  flex-wrap: wrap !important; /* ESSENCIAL para 2 linhas */
-  margin: 0 !important; /* Remove margens padrão que podem criar gap */
-  transform: none !important; /* Desativa a transformação padrão do slick para 'rows' */
-  height: auto !important; /* Permite que a altura se ajuste ao conteúdo das 2 linhas */
+  right: -50px;
 }
 
-/* Esconde as setas em telas menores se preferir apenas dots ou swipe */
+/* --- ESTILOS ESPECÍFICOS PARA DESKTOP (MAIORES QUE 768px) --- */
+/* Estes estilos só devem ser aplicados em telas grandes para o layout de 2 linhas */
+@media (min-width: 769px) { /* Aplica em telas maiores que 768px */
+  .carouselWrapper :global(.slick-track) {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Permite que os cards se organizem em 2 linhas no desktop */
+    margin: 0 !important;
+    transform: none !important; /* Desativa a transformação do slick para funcionar com 'rows' no desktop */
+    height: auto !important; /* Permite que a altura se ajuste ao conteúdo das 2 linhas no desktop */
+  }
+}
+
+/* --- REGRAS GERAIS PARA O SLICK-LIST (APLICA EM TODOS OS TAMANHOS DE TELA) --- */
+.carouselWrapper :global(.slick-list) {
+  padding: 0 !important;
+  overflow: hidden; /* Essencial para o carrossel em todos os tamanhos */
+}
+
+
+/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 768PX) --- */
 @media (max-width: 768px) {
+  /* Esconda as setas se não as quiser no mobile */
   .carouselWrapper .slick-prev,
   .carouselWrapper .slick-next {
     display: none !important;
   }
   .carouselWrapper .slick-dots {
-    bottom: -20px; /* Ajusta a posição se as setas sumirem */
+    bottom: -20px; /* Ajusta a posição dos dots no mobile */
+    z-index: 10; /* Garanta que continuem clicáveis no mobile */
   }
 
-    .slick-track {
-    display: flex !important; /* Força o flex para que os itens se empilhem */
-    flex-wrap: wrap !important; /* Permite que os itens quebrem para a próxima linha */
-    height: auto !important; /* Altura automática para acomodar todos os cards */
-    transform: none !important; /* Remove qualquer translação do carrossel */
+  /*
+   * MUITO IMPORTANTE: NENHUMA REGRA AQUI DEVE ANULAR A ROLAGEM DO SLICK!
+   * Deixe o `react-slick` controlar `display`, `transform`, `width`, `height` para `.slick-track` e `.slick-slide`
+   * neste breakpoint, pois você quer um carrossel funcional aqui.
+   */
+
+  /* Ajuste o padding interno do slide para mobile se precisar de menos espaçamento */
+  .carouselWrapper .slick-slide > div {
+    padding: 5px; /* Por exemplo, um padding menor para o card individual no mobile */
   }
 
-  .slick-slide {
-    display: block !important; /* Garante que o slide seja exibido como um bloco */
-    width: 100% !important; /* Cada card ocupa a largura total disponível */
-    height: auto !important;
-    margin-bottom: 20px; /* Espaçamento entre os cards */
+  /* O overflow do slick-list já está configurado acima para todos os tamanhos, então não precisa repetir aqui. */
+}
+
+/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 480PX) --- */
+@media (max-width: 480px) {
+  .carouselWrapper .slick-dots {
+    bottom: -15px; /* Ajusta a posição dos dots */
   }
 
-  .carouselItemWrapper {
-    width: 100% !important; /* Garante que o wrapper do card ocupe a largura total */
-    margin: 0;
+  .carouselWrapper .slick-slide > div {
+    padding: 3px; /* Espaçamento ainda menor para o card individual */
   }
+  /* Novamente, nenhuma regra deve anular a rolagem do Slick aqui. */
 }
