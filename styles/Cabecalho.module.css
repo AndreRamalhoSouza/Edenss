@@ -199,6 +199,8 @@
 
   .slogan {
     font-size: 0.6em;
+    position:relative;
+    top : 5px;
     transform: translateY(-15px) translateX(40px);
   }
 
