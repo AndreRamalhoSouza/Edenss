@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Cabecalho';
 import Footer from '../components/Rodape';
 import FormularioContato from '../components/FormularioContato';
-import { infoContato } from '../data/conteudo'; // Você pode manter essa importação se 'infoContato' for usado em outro lugar no componente 'Contato'
+import { infoContato } from '../data/conteudo';
 import styles from '../styles/Contato.module.css';
 
 function Contato() {
@@ -21,10 +21,8 @@ function Contato() {
           <FormularioContato />
           <div className={styles.detalhesContato}>
             <h3>Informações de Contato</h3>
-            {/* As linhas abaixo foram removidas:
             <p>Email Samuel: {infoContato.emailSamuel}</p>
             <p>Email Susi: {infoContato.emailSusi}</p>
-            */}
             {/* Adicione número de telefone se disponível */}
           </div>
         </div>
