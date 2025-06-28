@@ -37,8 +37,6 @@
   margin-top: -10px;
   text-align: center;
   width: 100%;
-  /* Mantenha o transform para desktop se for o layout desejado,
-     mas ele será redefinido em media queries para responsividade. */
   transform: translateY(-25px) translateX(80px);
   white-space: nowrap;
 }
@@ -82,30 +80,43 @@
 }
 
 .cssLupaContainer {
-  display: flex; /* Visível no desktop */
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 25px; /* Tamanho do contêiner da lupa */
+  height: 25px; /* Tamanho do contêiner da lupa */
   cursor: pointer;
+  position: relative; /* **IMPORTANTE:** Este é o ponto de referência para lupaCircle e lupaHandle */
 }
 
 .lupaCircle {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   border: 2px solid #3ce5d4;
   border-radius: 50%;
   transition: border-color 0.3s ease;
-  transform: translate(-3px, -3px);
+  position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
+  top: -10px;
+  left:40px;
+  /* Ajuste a posição do círculo dentro do contêiner.
+     Por exemplo, para centralizar ou mover um pouco para cima/esquerda.
+     Experimente valores para 'left' e 'top' ou 'transform'. */
+  transform: translate(1px, 1px); /* Pequeno ajuste visual */
 }
 
 .lupaHandle {
   width: 2px;
-  height: 12px;
+  height: 30px; /* Comprimento do cabo */
   background-color: #3ce5d4;
-  transform: translate(7px, 7px) rotate(45deg);
-  transform-origin: bottom right;
   transition: background-color 0.3s ease;
+  position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
+  top: 15px;
+  left: 0px;
+  /* O 'transform-origin: bottom right;' é crucial para a rotação */
+  transform-origin: bottom right;
+  /* Ajuste o transform para posicionar o cabo em relação ao círculo.
+     O translate deve compensar a origem e a rotação para conectar corretamente. */
+  transform: translate(-3px, -3px) rotate(45deg); /* Move e rotaciona o cabo */
 }
 
 .cssLupaContainer:hover .lupaCircle {
@@ -188,11 +199,9 @@
 
   .slogan {
     font-size: 0.6em;
-    /* Ajusta a posição para mobile */
     transform: translateY(-15px) translateX(40px);
   }
 
-  /* --- Menu de Navegação (Escondido por padrão, aberto com JS) --- */
   .nav {
     display: none; /* Escondido por padrão em mobile */
     flex-direction: column;
@@ -202,7 +211,7 @@
     width: 70%;
     height: 100vh;
     background-color: #333333ef;
-    padding-top: 60px; /* Espaço para o cabeçalho fixo, se houver */
+    padding-top: 60px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     transition: right 0.3s ease-in-out;
     justify-content: flex-start;
@@ -213,14 +222,14 @@
   }
 
   .nav.open {
-    display: flex; /* Exibido quando a classe 'open' é aplicada */
-    right: 0; /* Desliza para a tela */
+    display: flex;
+    right: 0;
   }
 
   .nav ul {
     flex-direction: column;
     width: 100%;
-    gap: 0; /* Zera o gap entre itens empilhados */
+    gap: 0;
     text-align: center;
     align-items: center;
   }
@@ -247,14 +256,13 @@
     gap: 0;
   }
 
-  /* --- Hamburger Icon (Visível apenas em mobile) --- */
   .hamburgerIcon {
     display: flex; /* VISÍVEL NO MOBILE */
   }
 
   .contatoMenuItem {
     margin-left: 0;
-    order: unset; /* Remove a ordem específica em mobile */
+    order: unset;
     margin-top: 1.5rem;
   }
 
@@ -272,8 +280,7 @@
 
 /* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Adicione estilos específicos para tablets, se necessário.
-     Por exemplo, talvez o menu lateral possa ser mais largo aqui. */
+  /* Adicione estilos específicos para tablets, se necessário. */
 }
 
 /* Para telas muito pequenas (celulares em modo retrato) */
@@ -284,12 +291,11 @@
 
   .slogan {
     font-size: 0.5em;
-    /* Ajusta ainda mais para telas pequenas */
     transform: translateY(-10px) translateX(30px);
   }
 
   .nav {
-    width: 85%; /* Menu lateral um pouco mais largo em telas menores */
+    width: 85%;
   }
 
   .nav a {
