@@ -5,7 +5,7 @@ export const conteudoHero = {
 
 export const conteudoSobreNos = {
   titulo: "NOSSA HISTÓRIA",
-  texto: "Especializada em ambientes de entretenimento e espaços corporativos, a Ēdenss, liderada pelos arquitetos Samuel Vidal e Susi Abissamra, cria projetos inovadores para hotéis, pousadas e parques aquáticos. Integrando estética, funcionalidade e tendências de mercado, a empresa desenvolve espaços interativos que proporcionam experiências inesquecíveis e autênticas.",
+  texto: "Especializada em ambientes de entretenimento e espaços corporativos, a Ēdenss, liderada pelos arquitetos Samuel Vidal e Susi Abissamra, cria projetos inovadores para hotéis, pousadas e parques aquáticos. Integrando estética, funcionalidade e tendências de mercado, a empresa desenvolve espaços interativos que proporcionam experiências inesquecíveis e autênticas. Nosso portfólio abrange uma vasta gama de projetos, incluindo hotéis, pousadas e parques aquáticos, onde cada detalhe é cuidadosamente planejado para proporcionar experiências memoráveis. Na Ēdenss, acreditamos que a arquitetura vai além da estética; ela deve integrar funcionalidade, tecnologia e as mais recentes tendências de mercado para desenvolver espaços verdadeiramente interativos e envolventes.",
 };
 
 
