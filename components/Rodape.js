@@ -11,7 +11,7 @@ function Rodape() {
  <div className={styles.colunaRodape}>
 <h3><span className={styles.edenn}>ĒDEN</span><span className={styles.ss}>SS</span></h3>
 <div className={styles.socialIcons}>
- <a href="URL_DO_SEU_TWITTER" target="_blank" rel="noopener noreferrer">
+ <a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
  <Image src="/images/x.png" alt="Twitter" width={30} height={30} />
  </a>
 <a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
