@@ -14,16 +14,16 @@ function Rodape() {
  <a href="URL_DO_SEU_TWITTER" target="_blank" rel="noopener noreferrer">
  <Image src="/images/x.png" alt="Twitter" width={30} height={30} />
  </a>
-<a href="URL_DO_SEU_YOUTUBE" target="_blank" rel="noopener noreferrer">
+<a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
  <Image src="/images/ytb.png" alt="YouTube" width={30} height={30} />
  </a>
- <a href="URL_DO_SEU_WHATSAPP" target="_blank" rel="noopener noreferrer">
+ <a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
  <Image src="/images/zap.png" alt="WhatsApp" width={30} height={30} />
  </a>
- <a href="URL_DO_SEU_INSTAGRAM" target="_blank" rel="noopener noreferrer">
+ <a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
  <Image src="/images/insta.png" alt="Instagram" width={30} height={30} />
  </a>
- <a href="URL_DO_SEU_FACEBOOK" target="_blank" rel="noopener noreferrer">
+ <a href="https://edenss-beige.vercel.app/" target="_blank" rel="noopener noreferrer">
  <Image src="/images/face.png" alt="Facebook" width={30} height={30} />
  </a>
 </div>
