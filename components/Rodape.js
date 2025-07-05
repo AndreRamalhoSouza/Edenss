@@ -42,9 +42,9 @@ function Rodape() {
 <ul>
  <li><Link href="/servicos">Serviços</Link></li>
  <li><Link href="/sobre">Nossa História</Link></li>
- <li><Link href="/hoteis">Hotéis</Link></li>
- <li><Link href="/parques-tematicos">Parques Temáticos</Link></li>
- <li><Link href="/projetos">Portfólio</Link></li>
+ <li><Link href="/portfolio">Hotéis</Link></li>
+ <li><Link href="/portfolio">Parques Temáticos</Link></li>
+ <li><Link href="/portfolio">Portfólio</Link></li>
  <li><Link href="/sobre">Quem somos</Link></li>
  </ul>
  </div>
