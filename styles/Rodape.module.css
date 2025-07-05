@@ -325,6 +325,8 @@
     margin-top: 8px;
     margin-bottom: 8px;
     gap: 10px;
+    position: relative;
+   top:12px;
   }
 }
 
@@ -355,6 +357,8 @@
   }
 
   .socialIcons {
+    position: relative;
+    top: 8px;
     gap: 8px;
   }
 }
