@@ -20,9 +20,9 @@
 }
 
 .nossaAzulPequeno {
-  position: relative;
-  /* top: -10px; */ /* Remova ou ajuste se for desnecessário */
-  /* right: 140px; */ /* Isso pode causar overflow em mobile, vamos ajustar */
+  position: relative; /* Manter se precisar para pequenos ajustes finos, mas evitar top/right grandes */
+  /* top: -10px; */ /* REMOVIDO ou ajustado. Se precisar de espaçamento negativo, considere margin-top: -10px; no elemento, mas com cuidado. */
+  /* right: 140px; */ /* Isso pode causar overflow em mobile, vamos ajustar. Se for para ajuste visual, talvez padding/margin no elemento pai. */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem; /* Menor para mobile */
   color: #7fcae3;
@@ -62,8 +62,6 @@
 
 .gradeEquipe {
   display: grid;
-  /* Em mobile, minmax(280px, 1fr) permite que cards pequenos se ajustem. */
-  /* Em telas maiores, repeat(auto-fit, minmax(300px, 1fr)) continua funcionando bem. */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem; /* Gap menor para mobile */
   justify-content: center;
@@ -74,12 +72,14 @@
 
 /* --- SEÇÃO DEPOIMENTOS --- */
 .secaoDepoimentos {
-  position: relative;
-  /* top: 500px; */ /* Remova ou ajuste esta posição se estiver causando scroll ou layout estranho */
+  position: relative; /* Manter o relative se houver elementos posicionados absolutamente DENTRO dela. */
+  /* top: 500px; */ /* REMOVIDO: ESTE É UM GRANDE SUSPEITO. Use margin-top ou padding-top no lugar. */
   padding: 3rem 1rem; /* Padding responsivo */
   background-color: #f0f8ff;
   text-align: center;
   margin-bottom: 2rem;
+  /* Se você precisava do 'top: 500px;' para criar espaço acima, use: */
+  /* margin-top: 500px; */ /* Ou um valor menor, dependendo do que você queria alcançar. */
 }
 
 .secaoDepoimentos h2 {
@@ -133,8 +133,8 @@
   height: 5px;
   background-color: #4d4d4d90;
   margin: 0px auto 30px; /* Ajuste a margem para telas menores */
-  position: relative;
-  /* top: 100px; */ /* Remova ou ajuste se estiver causando layout estranho */
+  /* top: 100px; */ /* REMOVIDO: Este também é um suspeito. Se precisar mover, use margin-top no próprio pseudo-elemento, ou no elemento anterior/seguinte. */
+  /* position: relative; */ /* REMOVIDO: Só é necessário se for usado com top/left/etc, ou para ser container de elementos abs. */
 }
 
 
@@ -143,7 +143,7 @@
   padding: 60px 0; /* Espaçamento interno da seção */
   background-color: #fff; /* Fundo branco ou claro para a seção */
   text-align: center; /* Centraliza o título */
-  margin-bottom: 60px; /* Espaço entre a seção de serviços e a próxima */
+  margin-bottom: 60px; /* Espaço entre a seção de serviços e a próxima */
 }
 
 .tituloServicos {
@@ -153,7 +153,7 @@
   text-align: center;
   margin-bottom: 10px;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .linhaServicos {
@@ -175,13 +175,13 @@
 
 /* --- SEÇÃO CHAMADA PARA AÇÃO --- */
 .chamadaParaAcao {
-  position: relative;
-  /* top: 450px; */ /* Remova ou ajuste, pode causar scroll ou layout estranho */
+  position: relative; /* Manter o relative se houver elementos posicionados absolutamente DENTRO dela. */
+  /* top: 450px; */ /* REMOVIDO: Mais um suspeito. Use margin-top ou padding-top. */
   text-align: center;
   padding: 3rem 1rem; /* Padding responsivo */
   background-color: #0070f3;
   color: #ffffff;
-  margin-top: 2rem;
+  margin-top: 2rem; /* Este margin-top já estava aqui e é uma forma melhor de criar espaço. */
 }
 
 .chamadaParaAcao h2 {
@@ -211,11 +211,10 @@
   height: 5px;
   background-color: #727272ab;
   margin: 0 auto 3rem auto; /* Ajuste margem para mobile */
-  border-radius: 1px;
-  position: relative;
-  top: 155px;
-
-  /* top: 35px; */ /* Remova ou ajuste se estiver causando layout estranho */
+  position: relative; /* Manter o relative se houver elementos posicionados absolutamente DENTRO dela. */
+  /* top: 155px; */ /* REMOVIDO: ESTE É UM GRANDE SUSPEITO. Use margin-top no lugar. */
+  /* Se você precisava do 'top: 155px;' para criar espaço acima, use: */
+  /* margin-top: 155px; */
 }
 
 .divisorGray { /* Assumindo que este é diferente do .divisorCinza */
@@ -224,9 +223,8 @@
   height: 5px;
   background-color: #727272ab;
   margin: 0 auto 3rem auto; /* Ajuste margem para mobile */
-  border-radius: 1px;
-  position: relative;
-  /* top: -25px; */ /* Remova ou ajuste se estiver causando layout estranho */
+  position: relative; /* Manter o relative se houver elementos posicionados absolutamente DENTRO dela. */
+  /* top: -25px; */ /* REMOVIDO: SUSPEITO. Use margin-top: -25px; com cautela, ou ajuste o elemento anterior. */
 }
 
 /* --- MEDIA QUERIES PARA TELAS MAIORES (TABLETS E DESKTOPS) --- */
@@ -291,6 +289,7 @@
 
   .divisorCinza, .divisorGray {
     margin: 0 auto 4rem auto; /* Margem original para telas maiores */
+    /* top: unset; */ /* IMPORTANTE: REMOVER OU AJUSTAR O TOP AQUI TAMBÉM */
   }
 
   .botaoContato {
@@ -298,10 +297,3 @@
     font-size: 1.2rem;
   }
 }
-
-/* Desktops Maiores (mínimo de 1200px de largura - opcional, para ajustes muito finos) */
-/* @media (min-width: 1200px) {
-  .main {
-    padding: 2rem 0; // Se você quiser remover o padding lateral no main em telas muito grandes
-  }
-} */
