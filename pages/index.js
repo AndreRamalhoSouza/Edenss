@@ -145,8 +145,8 @@ function Home() {
 
             <div className={styles.gradeDepoimentos}>
               {/* Renderiza apenas os depoimentos visíveis no slide atual */}
-              {depoimentosVisiveis.map((depoimento, _) => ( // Linha corrigida: removido o comentário
-                <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
+              {depoimentosVisiveis.map((depoimento) => ( // Removendo o segundo parâmetro '_'
+  <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
               ))}
             </div>
 
