@@ -1,5 +1,3 @@
-// pages/index.js
-
 import Head from 'next/head';
 import React, { useState } from 'react'; // Importe useState
 import Header from '../components/Cabecalho';
@@ -147,7 +145,7 @@ function Home() {
 
             <div className={styles.gradeDepoimentos}>
               {/* Renderiza apenas os depoimentos visíveis no slide atual */}
-              {depoimentosVisiveis.map((depoimento, index) => (
+              {depoimentosVisiveis.map((depoimento, _) => ( // Linha corrigida: removido o comentário
                 <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
               ))}
             </div>
