@@ -1,6 +1,7 @@
 // pages/index.js
 
 import Head from 'next/head';
+import React, { useState } from 'react'; // Importe useState
 import Header from '../components/Cabecalho';
 import Footer from '../components/Rodape';
 import SecaoHero from '../components/SecaoHero';
@@ -8,15 +9,15 @@ import MembroEquipe from '../components/MembroEquipe';
 import CartaoDepoimento from '../components/CartaoDepoimento';
 import FormularioContato from '../components/FormularioContato';
 
-// --- NOVOS IMPORTS PARA O CARROSSEL (já existentes) ---
-import Carousel from '../components/Carousel';
-import projects from '../data/projects';
-// --- FIM DOS NOVOS IMPORTS ---
+// --- IMPORTS DO PORTFÓLIO ---
+import ProjectCard from '../components/ProjectCard';
+import projectsData from '../data/projects';
+// --- FIM DOS IMPORTS DO PORTFÓLIO ---
 
-// --- NOVOS IMPORTS PARA A SEÇÃO DE SERVIÇOS ---
-import CartaoServico from '../components/CartaoServico'; // Importa o novo componente
-import { conteudoHero, conteudoSobreNos, membrosEquipe, depoimentos, servicos } from '../data/conteudo'; // Importa os dados dos serviços
-// --- FIM DOS NOVOS IMPORTS PARA A SEÇÃO DE SERVIÇOS ---
+// --- OUTROS IMPORTS (EXISTENTES) ---
+import CartaoServico from '../components/CartaoServico';
+import { conteudoHero, conteudoSobreNos, membrosEquipe, depoimentos, servicos } from '../data/conteudo';
+// --- FIM DOS OUTROS IMPORTS ---
 
 import styles from '../styles/Home.module.css';
 
@@ -24,6 +25,49 @@ function Home() {
   const partesTituloSobreNos = conteudoSobreNos.titulo.split(' ');
   const nossaSobreNos = partesTituloSobreNos[0];
   const historiaSobreNos = partesTituloSobreNos.slice(1).join(' ');
+
+  const exampleProjects = [
+    { id: '1', name: 'Resort Paradisíaco', mainImage: '/images/project1.jpg' },
+    { id: '2', name: 'Parque Aquático Aventura', mainImage: '/images/project2.jpg' },
+    { id: '3', name: 'Praia Exclusiva', mainImage: '/images/project3.jpg' },
+    { id: '4', name: 'Pool Lounge Elegante', mainImage: '/images/project4.jpg' },
+    { id: '5', name: 'Bar Tropical', mainImage: '/images/project5.jpg' },
+    { id: '6', 'name': 'Restaurante Envidraçado', mainImage: '/images/project6.jpg' },
+  ];
+
+  const currentProjects = projectsData || exampleProjects;
+
+  const totalPages = 4;
+  const currentPage = 1;
+
+  // Carrossel de Depoimentos
+  const [currentDepoimentoIndex, setCurrentDepoimentoIndex] = useState(0);
+  const depoimentosPorPagina = 2; // Quantos depoimentos você quer mostrar por vez
+
+  const totalDepoimentoPages = Math.ceil(depoimentos.length / depoimentosPorPagina);
+
+  const handleClickNextDepoimento = () => {
+    setCurrentDepoimentoIndex((prevIndex) => {
+      const nextIndex = prevIndex + depoimentosPorPagina;
+      return nextIndex >= depoimentos.length ? 0 : nextIndex; // Volta ao início se for o último slide
+    });
+  };
+
+  const handleClickPrevDepoimento = () => {
+    setCurrentDepoimentoIndex((prevIndex) => {
+      const nextIndex = prevIndex - depoimentosPorPagina;
+      return nextIndex < 0 ? (depoimentos.length - depoimentosPorPagina < 0 ? 0 : depoimentos.length - depoimentosPorPagina) : nextIndex;
+      // Garante que não vai para índice negativo, e se for, vai para o penúltimo "slide"
+      // Se não houver depoimentos suficientes para preencher um "slide" completo no final, ajusta para o início
+    });
+  };
+
+  // Depoimentos a serem exibidos no slide atual
+  const depoimentosVisiveis = depoimentos.slice(
+    currentDepoimentoIndex,
+    currentDepoimentoIndex + depoimentosPorPagina
+  );
+
 
   return (
     <div className={styles.container}>
@@ -36,7 +80,7 @@ function Home() {
       <Header />
 
       <main className={styles.main}>
-        <SecaoHero titulo={conteudoHero.titulo} imagem={conteudoHero.imagem} />
+        <SecaoHero images={conteudoHero.imagensCarrossel} />
 
         <section className={styles.secaoSobreNos}>
           <h2 className={styles.tituloSobreNos}>
@@ -47,10 +91,9 @@ function Home() {
           <div className={styles.divisorCinza}></div>
         </section>
 
-        {/* --- SEÇÃO DE SERVIÇOS (AGORA AQUI) --- */}
+        {/* --- SEÇÃO DE SERVIÇOS --- */}
         <section className={styles.secaoServicos}>
           <h2 className={styles.tituloServicos}>SERVIÇOS</h2>
-          
           <div className={styles.gradeServicos}>
             {servicos.map((servico, index) => (
               <CartaoServico key={index} servico={servico} />
@@ -59,17 +102,28 @@ function Home() {
         </section>
         {/* --- FIM DA SEÇÃO DE SERVIÇOS --- */}
 
-        {/* --- SEÇÃO DE PORTFÓLIO COM O CARROSSEL (AGORA AQUI) --- */}
+        {/* --- SEÇÃO DE PORTFÓLIO --- */}
         <section className={styles.secaoPortfolio}>
-          <h2 className={styles.tituloPortfolio}> PORTFÓLIO</h2>
-         
-          <Carousel projects={projects} />
+          <h2 className={styles.portfolioTitle}>PORTFÓLIO</h2>
+          <div className={styles.projectsGridContainer}>
+            {currentProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          <div className={styles.paginationDots}>
+            {[...Array(totalPages)].map((_, index) => (
+              <span
+                key={index}
+                className={`${styles.dot} ${index + 1 === currentPage ? styles.active : ''}`}
+              ></span>
+            ))}
+          </div>
         </section>
         {/* --- FIM DA SEÇÃO DE PORTFÓLIO --- */}
 
-        {/* --- SEÇÃO DA EQUIPE (AGORA AQUI) --- */}
+        {/* --- SEÇÃO DA EQUIPE --- */}
         <section className={styles.secaoEquipe}>
-          
           <div className={styles.gradeEquipe}>
             {membrosEquipe.map((membro, index) => (
               <MembroEquipe key={index} membro={membro} />
@@ -78,13 +132,42 @@ function Home() {
         </section>
         {/* --- FIM DA SEÇÃO DA EQUIPE --- */}
 
-        {/* --- SEÇÃO DE DEPOIMENTOS (AGORA AQUI) --- */}
+        {/* --- SEÇÃO DE DEPOIMENTOS (AGORA COM CARROSSEL) --- */}
         <section className={styles.secaoDepoimentos}>
           <h2>DEPOIMENTOS</h2>
           <div className={styles.divisorGray}></div>
-          <div className={styles.gradeDepoimentos}>
-            {depoimentos.map((depoimento, index) => (
-              <CartaoDepoimento key={index} depoimento={depoimento} />
+
+          <div className={styles.depoimentosCarouselContainer}> {/* Novo contêiner para o carrossel */}
+            <button
+              className={`${styles.carouselArrowDepoimento} ${styles.arrowLeftDepoimento}`}
+              onClick={handleClickPrevDepoimento}
+            >
+              &#10094; {/* Seta para a esquerda */}
+            </button>
+
+            <div className={styles.gradeDepoimentos}>
+              {/* Renderiza apenas os depoimentos visíveis no slide atual */}
+              {depoimentosVisiveis.map((depoimento, index) => (
+                <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
+              ))}
+            </div>
+
+            <button
+              className={`${styles.carouselArrowleftDepoimento} ${styles.carouselArrowRightDepoimento}`}
+              onClick={handleClickNextDepoimento}
+            >
+              &#10095; {/* Seta para a direita */}
+            </button>
+          </div>
+
+          {/* Pontos de paginação para os depoimentos (opcional) */}
+          <div className={styles.paginationDotsDepoimento}>
+            {[...Array(totalDepoimentoPages)].map((_, index) => (
+              <span
+                key={index}
+                className={`${styles.dotDepoimento} ${Math.floor(currentDepoimentoIndex / depoimentosPorPagina) === index ? styles.activeDepoimento : ''}`}
+                onClick={() => setCurrentDepoimentoIndex(index * depoimentosPorPagina)}
+              ></span>
             ))}
           </div>
         </section>

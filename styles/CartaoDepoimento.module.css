@@ -1,8 +1,9 @@
 .cartao {
+  width: 350px;
   background-color: #f9f9f9;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 0rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   text-align: center;
   display: flex;
@@ -11,8 +12,8 @@
 }
 
 .imagemDepoimento {
-  width: 200px; /* Ajuste o tamanho conforme necessário para caber o logo */
-  height: 200px; /* Garante que seja um círculo */
+  width: 150px; /* Ajuste o tamanho conforme necessário para caber o logo */
+  height: 150px; /* Garante que seja um círculo */
   border-radius: 50%; /* Cria o formato circular */
   object-fit: contain; /* Garante que o logo inteiro caiba dentro do círculo sem cortar ou distorcer, adicionando espaço se necessário */
   background-color: #f9f9f9; /* Adiciona um fundo branco caso o logo tenha transparência e o cartão não */

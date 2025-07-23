@@ -34,7 +34,7 @@
 }
 
 .carouselWrapper .slick-dots li.slick-active button:before {
-  color: #007bfff5;
+  color: #007bff;
 }
 
 /* Personalizando as setas (arrows) - Para desktop */

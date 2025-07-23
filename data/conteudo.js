@@ -1,7 +1,14 @@
 export const conteudoHero = {
   titulo: "ARQUITETURA QUE TRANSFORMA EXPERIÊNCIAS",
-  imagem: "/images/parque.jpg"
+  // Corrigido: Agora 'imagensCarrossel' é um array de URLs
+  imagensCarrossel: [
+    "/images/parque.jpg",
+    "/images/hotel 1.jpg",
+    // Adicione mais URLs de imagem aqui se tiver mais
+  ]
 };
+
+// O restante do seu código (conteudoSobreNos, servicos, etc.) permanece como está.
 
 export const conteudoSobreNos = {
   titulo: "NOSSA HISTÓRIA",
@@ -13,22 +20,22 @@ export const conteudoSobreNos = {
 export const servicos = [
   {
     titulo: "MASTER PLANNING",
-    icon: "/images/icons/serv 1.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/planejamento.png", // <--- Adicione o caminho completo do ícone
     color: "#7FC8D7"
   },
   {
     titulo: "DESENVOLVIMENTO CRIATIVO",
-    icon: "/images/icons/serv 2.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/design-grafico.png", // <--- Adicione o caminho completo do ícone
     color: "#5FBAC9",
   },
   {
     titulo: "CONSULTORIA ESTRATÉGICA",
-    icon: "/images/icons/serv 3.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/serv.png", // <--- Adicione o caminho completo do ícone
     color: "#47A2AE",
   },
   {
     titulo: "PISCINAS RESIDENCIAS PARQUES TEMÁTICOS HOTEIS",
-    icon: "/images/icons/serv 4.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/piscina.png", // <--- Adicione o caminho completo do ícone
     color: "#2A7C86",
   },
 ];
@@ -54,14 +61,15 @@ export const depoimentos = [
     nome: "LUÍS AUGUSTO",
     titulo: "CEO THERMAS HOT WORLD",
     empresa: "World Blue Beach", 
-    citacao: "Texto do depoimento de Luís Augusto. (Precisa ser extraído ou imaginado)",
+    citacao: "Samuel nos trouxe o que há de novo nos parques não só do Brasil mas do mundo, focado não só no belo design do projeto mas também na logística do empreendimento e otimização de custos, que é muito importante para mim como empresário",
     imagemUrl: "/images/DEP 1.png",
   },
   {
     nome: "OSMAR TEIXEIRA",
     titulo: "CEO de [Nome da Empresa]", 
-    empresa: "[Nome da Empresa]",
-    citacao: "Texto do depoimento de Osmar Teixeira. (Precisa ser extraído ou imaginado)",
+    
+    citacao: "Um excelente serviço no projeto de expansão do parque com rapidez, beleza e funcionalidade. Desde o design moderno até a economia operacional foram pensados com excelência no projeto"
+,
     imagemUrl: "/images/DEP 2.png",
   
   },

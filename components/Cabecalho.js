@@ -1,6 +1,8 @@
 // components/Cabecalho.js
+
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from 'next/link'
+import Image from 'next/image';
 import styles from '../styles/Cabecalho.module.css';
 
 function Cabecalho() {
@@ -29,10 +31,16 @@ function Cabecalho() {
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
           <Link href="/">
-            ĒDEN<span className={styles.ssColor}>SS</span>
+            <Image
+              src="/images/logo.png"
+              alt="Logo da Empresa"
+              width={150} // Manter para otimização do Next.js
+              height={50} // Manter para otimização do Next.js
+              priority
+              className={styles.logoCabecalho} // **ADICIONADO: Nova classe CSS**
+            />
           </Link>
         </div>
-        <p className={styles.slogan}>Projetando experiências</p>
       </div>
 
       <div
@@ -65,8 +73,7 @@ function Cabecalho() {
               <div className={styles.lupaHandle}></div>
             </span>
           </li>
-          {/* Este é o único item de contato */}
-          <li className={styles.contatoMenuItem}> {/* Adicionei uma nova classe para estilizar este LI */}
+          <li className={styles.contatoMenuItem}>
             <Link
               href="/contato"
               className={styles.botaoContato}

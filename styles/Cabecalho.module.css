@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 120px;
+  height: 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,27 +19,38 @@
   align-items: flex-start;
 }
 
-.logo a {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #edeaea;
-  text-decoration: none;
+.logoCabecalho {
+  /* Defina a largura desejada para a imagem no desktop. */
+  width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
+  height: auto; /* Garante que a proporção da imagem seja mantida */
+  display: block; /* Ajuda a remover qualquer espaço extra se houver */
+
+  /* Se você sentir que a logo está muito longe do resto do menu,
+     pode ajustar o padding do .cabecalho ou o margin-left do .nav */
 }
 
+.logo a {
+
+  text-decoration: none;
+
+}
+
+
+.logo img { /* Seleciona a tag <img> dentro de .logo */
+  display: block; /* Garante que a imagem se comporte como um bloco */
+  max-width: 200%; /* Garante que a imagem não transborde seu contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  /* Se você quiser ajustar o tamanho aqui no CSS, remova width/height do componente <Image> no JS */
+}
+
+
 .ssColor {
+  /* Este estilo não é mais necessário, pois o texto "SS" foi removido.
+     Você pode remover esta regra inteira. */
   color: #7fcbe4;
 }
 
-.slogan {
-  font-size: 0.9em;
-  color: #ffffff;
-  margin-top: -5px;
-  text-align: center;
-  width: 100%;
-  transform: translateY(-25px) translateX(80px);
-  white-space: nowrap;
-}
+
 
 .nav {
   display: flex; /* Visível no desktop */
@@ -48,7 +59,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 450px;
+  padding-left: 0px;
 }
 
 .nav ul {
@@ -83,24 +94,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px; /* Tamanho do contêiner da lupa */
-  height: 25px; /* Tamanho do contêiner da lupa */
+  width: 80px; /* Tamanho do contêiner da lupa */
+  height: 125px; /* Tamanho do contêiner da lupa */
   cursor: pointer;
   position: relative; /* **IMPORTANTE:** Este é o ponto de referência para lupaCircle e lupaHandle */
 }
 
 .lupaCircle {
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 35px;
   border: 2px solid #3ce5d4;
   border-radius: 50%;
   transition: border-color 0.3s ease;
   position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
   top: -8px;
-  left:171px;
+  left: 171px;
   /* Ajuste a posição do círculo dentro do contêiner.
-     Por exemplo, para centralizar ou mover um pouco para cima/esquerda.
-     Experimente valores para 'left' e 'top' ou 'transform'. */
+       Por exemplo, para centralizar ou mover um pouco para cima/esquerda.
+       Experimente valores para 'left' e 'top' ou 'transform'. */
   transform: translate(1px, 1px); /* Pequeno ajuste visual */
 }
 
@@ -110,12 +121,12 @@
   background-color: #3ce5d4;
   transition: background-color 0.3s ease;
   position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
-  top: 11px;
-  left: 137px;
+  top: 15px;
+  left: 123px;
   /* O 'transform-origin: bottom right;' é crucial para a rotação */
   transform-origin: bottom right;
   /* Ajuste o transform para posicionar o cabo em relação ao círculo.
-     O translate deve compensar a origem e a rotação para conectar corretamente. */
+       O translate deve compensar a origem e a rotação para conectar corretamente. */
   transform: translate(-3px, -3px) rotate(45deg); /* Move e rotaciona o cabo */
 }
 
@@ -146,7 +157,7 @@
 
 .botaoContato:hover {
   background-color: #000000;
-  border-color: #87CEEB;
+  border-color: #87ceeb;
 }
 
 .contatoMenuItem {
@@ -196,13 +207,22 @@
   }
 
   .logo a {
-    font-size: 2.5rem;
+    /* REMOVIDO: font-size para texto.
+       Se a imagem for muito grande, ajuste o width/height diretamente no componente Image,
+       ou adicione .logo img { max-width: Xpx; height: auto; } */
   }
+
+  /* Adicionado para ajustar a imagem em telas menores */
+  .logo img {
+    width: 100px; /* Largura menor para mobile */
+    height: auto;
+  }
+
 
   .slogan {
     font-size: 0.6em;
-    position:relative;
-    top : 5px;
+    position: relative;
+    top: 5px;
     transform: translateY(-15px) translateX(40px);
   }
 
@@ -292,7 +312,12 @@
 /* Para telas muito pequenas (celulares em modo retrato) */
 @media (max-width: 480px) {
   .logo a {
-    font-size: 2rem;
+    /* REMOVIDO: font-size para texto.
+       Ajuste o .logo img para tamanhos menores se necessário. */
+  }
+  .logo img {
+    width: 80px; /* Largura ainda menor para telas muito pequenas */
+    height: auto;
   }
 
   .slogan {
