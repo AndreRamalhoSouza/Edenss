@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react'; // Importe useState e useEffect
+import React, { useState, useEffect } from 'react'; // Mantenha useEffect se for usar o carrossel automático
+import Image from 'next/image'; // *** IMPORTANTE: Importe o componente Image do Next.js ***
 import styles from '../styles/SecaoHero.module.css';
 
-// Remova a prop 'imagem' e adicione 'images' como um array de URLs
-function SecaoHero({ images }) { // <--- A prop AGORA é 'images' (plural)
-  // Verifica se 'images' é um array e se não está vazio
-  // Se não for válido, podemos renderizar algo alternativo ou lançar um erro mais claro.
+function SecaoHero({ images }) {
+  // *** 1. HOOKS DEVEM SER DECLARADOS SEMPRE NO TOPO E INCONDICIONALMENTE ***
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  // 2. AGORA, a lógica de validação/retorno antecipado pode vir AQUI,
+  //    DEPOIS que todos os Hooks foram chamados.
   if (!Array.isArray(images) || images.length === 0) {
     console.error("SecaoHero: A prop 'images' deve ser um array não vazio de URLs de imagem.");
     return (
-        <section className={styles.heroSection}>
-            <p style={{color: 'red', textAlign: 'center'}}>Erro: Nenhuma imagem fornecida para o carrossel.</p>
-        </section>
+      <section className={styles.heroSection}>
+        <p style={{ color: 'red', textAlign: 'center' }}>Erro: Nenhuma imagem fornecida para o carrossel.</p>
+      </section>
     );
   }
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Estado para controlar a imagem atual
-  const [fade, setFade] = useState(true); // Estado para controlar a animação de fade
+  // Se você realmente não usa useEffect para o carrossel automático, pode remover ele da linha 1
+  // Se você VAI usar o carrossel automático, DESCOMENTE e ajuste:
+  useEffect(() => {
+    const interval = setInterval(handleClickNext, 5000); // Muda a cada 5 segundos
+    return () => clearInterval(interval); // Limpa o intervalo na desmontagem
+  }, [images.length, handleClickNext]); // Dependências: images.length e a função handleClickNext (memorizada)
 
-  // Função para ir para a próxima imagem
-  const handleClickNext = () => {
+
+  // Função para ir para a próxima imagem (melhor memorizá-la com useCallback para useEffect)
+  const handleClickNext = React.useCallback(() => {
     setFade(false); // Inicia o fade-out
     setTimeout(() => { // Espera um pouco antes de mudar a imagem para o fade-out ser visível
       setCurrentImageIndex((prevIndex) =>
@@ -26,10 +35,10 @@ function SecaoHero({ images }) { // <--- A prop AGORA é 'images' (plural)
       );
       setFade(true); // Inicia o fade-in para a nova imagem
     }, 300); // Duração do fade-out (deve ser menor ou igual à duração da transição CSS)
-  };
+  }, [images.length]); // Dependência: images.length
 
-  // Função para ir para a imagem anterior
-  const handleClickPrev = () => {
+  // Função para ir para a imagem anterior (melhor memorizá-la com useCallback)
+  const handleClickPrev = React.useCallback(() => {
     setFade(false); // Inicia o fade-out
     setTimeout(() => { // Espera um pouco antes de mudar a imagem
       setCurrentImageIndex((prevIndex) =>
@@ -37,20 +46,18 @@ function SecaoHero({ images }) { // <--- A prop AGORA é 'images' (plural)
       );
       setFade(true); // Inicia o fade-in para a nova imagem
     }, 300); // Duração do fade-out
-  };
+  }, [images.length]); // Dependência: images.length
 
-  // Se você quiser que o carrossel mude automaticamente
-  // useEffect(() => {
-  //   const interval = setInterval(handleClickNext, 5000); // Muda a cada 5 segundos
-  //   return () => clearInterval(interval); // Limpa o intervalo na desmontagem
-  // }, [images.length, handleClickNext]); // Adicione handleClickNext como dependência se estiver usando ele aqui
 
   return (
     <section className={styles.heroSection}>
-      <img
+      {/* 3. SUBSTITUA <img> POR <Image /> E ADICIONE width/height ou layout="fill" */}
+      <Image
         src={images[currentImageIndex]} // Usa a imagem atual do array
         alt={`Imagem ${currentImageIndex + 1} da seção hero`}
-        className={`${styles.heroImage} ${fade ? styles.fadeIn : styles.fadeOut}`} // Aplica as classes de animação
+        className={`${styles.heroImage} ${fade ? styles.fadeIn : styles.fadeOut}`}
+        layout="fill" // Isso faz a imagem preencher o pai. O pai (heroSection) precisa de position: relative.
+        objectFit="cover" // Garante que a imagem cubra a área sem distorcer, cortando se necessário.
       />
       <div className={styles.overlay}></div>
 
@@ -63,15 +70,15 @@ function SecaoHero({ images }) { // <--- A prop AGORA é 'images' (plural)
       {/* Botões de navegação do carrossel com handlers */}
       <button
         className={`${styles.carouselArrow} ${styles.arrowLeft}`}
-        onClick={handleClickPrev} // Adiciona o evento de clique
+        onClick={handleClickPrev}
       >
-        &#10094; {/* Caractere HTML para seta para a esquerda */}
+        &#10094;
       </button>
       <button
         className={`${styles.carouselArrow} ${styles.arrowRight}`}
-        onClick={handleClickNext} // Adiciona o evento de clique
+        onClick={handleClickNext}
       >
-        &#10095; {/* Caractere HTML para seta para a direita */}
+        &#10095;
       </button>
     </section>
   );
