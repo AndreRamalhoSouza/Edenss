@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    margin-right: 200px;
+    margin-right: 200px; /* Mantém o espaçamento à direita, ajuste se precisar de mais espaço */
     padding-left: 0px;
 }
 
@@ -53,7 +53,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 5.5rem;
+    gap: 3.5rem; /* Reduzido o gap para dar mais espaço, ajuste conforme necessário */
     align-items: center;
 }
 
@@ -64,6 +64,7 @@
     transition: color 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    white-space: nowrap; /* <<<< ESSA É A CHAVE: Impede a quebra de linha no texto do link */
 }
 
 .nav a:hover {
@@ -75,7 +76,7 @@
     display: flex;
     align-items: center;
     gap: 5px; /* Espaçamento entre o link e a lupa */
-    position: relative; /* Adicionado para posicionamento relativo da lupa em desktop */
+    /* Removido position: relative; pois não é mais necessário aqui para a lupa */
 }
 
 /* Contêiner da Lupa */
@@ -86,12 +87,9 @@
     width: 30px; /* Tamanho da lupa para o clique */
     height: 30px; /* Tamanho da lupa para o clique */
     cursor: pointer;
-    position: absolute; /* **IMPORTANTE:** Posicionamento absoluto dentro de .nossaHistoriaItem */
-    right: -40px; /* Ajuste para posicionar a lupa mais à direita do link "Nossa História" */
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10; /* Garante que ela esteja acima de outros elementos na nav */
-    padding: 5px; /* Área clicável maior */
+    /* REMOVIDO: propriedades de posicionamento absoluto */
+    z-index: 10;
+    padding: 5px;
 }
 
 .lupaCircle {
@@ -99,23 +97,29 @@
     height: 28px; /* Tamanho do círculo da lupa */
     border: 2px solid #3ce5d4;
     border-radius: 50%;
+    left: 70px;
+    bottom: 5px;
     transition: border-color 0.3s ease;
-    position: absolute; /* Ajuste para dentro do .cssLupaContainer */
-    top: 50%;
-    left: 450%;
-    transform: translate(-60%, -60%); /* Ajusta a posição do círculo em relação ao centro */
+    /* REMOVIDO: propriedades de posicionamento absoluto */
+    /* top: 50%; left: 450%; transform: translate(-60%, -60%); */
+    position: relative; /* Ajuste para dentro do .cssLupaContainer */
+    margin-right: 3px; /* Pequeno ajuste para espaçar do cabo */
 }
 
 .lupaHandle {
     width: 2px;
+    left: 42px;
     height: 20px; /* Comprimento do cabo */
     background-color: #3ce5d4;
+    top: 5px;
     transition: background-color 0.3s ease;
-    position: absolute; /* Ajuste para dentro do .cssLupaContainer */
-    top: 58%;
-    left: 358%;
+    /* REMOVIDO: propriedades de posicionamento absoluto */
+    /* top: 58%; left: 358%; */
     transform-origin: bottom right; /* Ponto de rotação */
-    transform: translate(0, 0) rotate(45deg); /* Posição do cabo */
+    transform: rotate(45deg); /* Posição do cabo */
+    position: relative; /* Ajuste para dentro do .cssLupaContainer */
+    margin-left: -15px; /* Ajuste para posicionar o cabo sobre o círculo */
+    margin-top: 15px; /* Ajuste para alinhar o cabo */
 }
 
 .cssLupaContainer:hover .lupaCircle {
@@ -140,7 +144,9 @@
     align-items: center;
     width: 150px;
     position: relative;
-    left: 200px; /* Mantém sua posição relativa */
+    left: 120px;
+    /* left: 200px; Removido para o flexbox gerenciar melhor */
+    margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
 }
 
 .botaoContato:hover {
@@ -150,7 +156,7 @@
 
 .contatoMenuItem {
     list-style: none;
-    margin-left: auto;
+    margin-left: auto; /* Pode ser removido se o .botaoContato já tiver margin-left: auto */
     order: 1; /* Mantém a ordem no desktop */
 }
 
@@ -243,7 +249,7 @@
 /* ------------------------------------------- */
 
 /* Para telas menores que 1024px (tablets e celulares) */
-@media (max-width: 1600px) {
+@media (max-width: 1200px) {
     .cabecalho {
         height: 80px;
         padding: 0.8rem 1rem;
@@ -270,7 +276,7 @@
     .nav {
         display: none; /* Escondido por padrão em mobile */
         flex-direction: column;
-        position: fixed;
+        position: relative;
         top: 0;
         right: -100%; /* Inicia fora da tela */
         width: 70%;
@@ -282,7 +288,7 @@
         justify-content: flex-start;
         align-items: center;
         margin-left: 0;
-        margin-right: 0;
+        margin-right: 0; /* Ajustado para 0 em mobile */
         padding-left: 0;
     }
 
@@ -308,6 +314,7 @@
         font-size: 1.2rem;
         padding: 0.8rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        white-space: normal; /* Permite quebrar linha em mobile, se necessário */
     }
 
     .nav li:last-child a {
@@ -319,7 +326,6 @@
         justify-content: center;
         align-items: center;
         gap: 0;
-        /* Remova a posição relativa para que a lupa não se posicione em relação a ela em mobile */
         position: static;
     }
 
@@ -340,6 +346,7 @@
         width: 150px;
         padding: 0.7rem 1.5rem;
         left: 0; /* Remove o left fixo em mobile */
+        margin-left: 0; /* Remove margin-left: auto em mobile */
     }
 
     .cssLupaContainer {
@@ -347,15 +354,7 @@
     }
 
     .searchForm {
-        display: none; /* O formulário de busca também deve estar oculto em mobile por padrão */
-        /* Ele só será mostrado via JS quando o menu hambúrguer estiver fechado e a lupa for clicada
-           (se você decidir ter uma lupa visível em mobile).
-           Pelo seu `Cabecalho.js` atual, a lupa só aparece no item "Nossa História" que está dentro da `nav`,
-           e a `nav` está escondida em mobile. Isso significa que a lupa não estará acessível.
-           Se você quer a busca em mobile, ela deve ter um ícone separado fora da `nav` principal.
-           No momento, o `Cabecalho.js` está mostrando o `searchForm` globalmente, então ele apareceria.
-           Vamos garantir que ele seja responsivo.
-        */
+        display: none;
         padding: 10px 1rem; /* Padding menor para mobile */
     }
 
@@ -371,12 +370,6 @@
 
 /* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* Estilos específicos para tablets.
-       A lupa e o campo de busca ainda estarão escondidos por padrão aqui,
-       conforme o media query anterior (max-width: 1600px).
-       Se você quiser que a lupa apareça em tablets mas não em celulares muito pequenos,
-       você precisaria ajustar a lógica de `display: none` para `min-width` aqui.
-    */
     .logo img {
       width: 250px; /* Um pouco maior para tablets */
     }
@@ -408,10 +401,6 @@
 }
 
 /* Garante que o formulário de busca esteja visível apenas quando isSearchOpen é true */
-/* Não há uma forma direta de controlar isso via CSS modules sem ter a classe no elemento
-   ou um elemento pai que controle isso. O `isSearchOpen` no JS já controla a renderização.
-   Estes estilos garantem que, quando renderizado, ele se comporte corretamente.
-*/
-.searchForm[style*="display: block"] { /* Ou .searchForm.visible, se você adicionar a classe */
-  display: flex !important;
+.searchForm[style*="display: block"] {
+    display: flex !important;
 }
