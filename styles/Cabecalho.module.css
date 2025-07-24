@@ -384,7 +384,7 @@
         position: relative;
         width: 190px; /* Largura ainda menor para telas muito pequenas */
         height: auto;
-        right: 40; /* Removido o right fixo */
+        right: 80; /* Removido o right fixo */
         margin-left: auto; /* Centraliza no container */
     }
 
