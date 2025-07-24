@@ -174,7 +174,7 @@
 
 .arrowRight {
   width: 2px;
-  left:405px; /* Posição da seta direita. */
+  left:425px; /* Posição da seta direita. */
 }
 
 @media (max-width: 470px) {
