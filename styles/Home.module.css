@@ -19,13 +19,15 @@
   padding: 0;
 }
 
-.nossaAzulPequeno {
+.nossaAzulPequeno {position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.5rem; /* Menor para mobile */
   color: #7fcae3;
+  right: 70px;
   font-weight: bold;
   line-height: 1;
   margin-bottom: 0.2em;
+   font-family: 'Montserrat', sans-serif
 }
 
 .historiaGrande {
@@ -34,6 +36,7 @@
   font-weight: bold;
   line-height: 1;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'Montserrat', sans-serif
 }
 
 .secaoSobreNos p {
@@ -69,18 +72,35 @@
 }
 
 /* --- SEÇÃO DEPOIMENTOS (COMBINANDO COM OS ESTILOS DO CARROSSEL) --- */
+/* styles/Home.module.css */
+
 .secaoDepoimentos {
   position: relative;
-  padding: 3rem 1rem; /* Padding responsivo */
-  background-color: #f0f8ff; /* Seu novo background */
+  padding: 3rem 1rem;
+  background-color: #f0f8ff;
   text-align: center;
   margin-bottom: 2rem;
+  /* REMOVA ESTA LINHA: */
+  /* font-family: 'Montserrat', sans-serif; */
 }
+   /* A fonte da seção pai */
+
+
+/* * ESTILOS APENAS PARA O TÍTULO "DEPOIMENTOS"
+ * O resto da seção (depoimentos, setas, dots) permanece como está.
+ */
+/* styles/Home.module.css */
 
 .secaoDepoimentos h2 {
-  font-size: 2rem; /* Menor para mobile */
+  font-size: 2.5rem;
   color: #333333;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 900; /* Use 900 para Montserrat Black */
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* ADICIONE A FONTE AQUI, SOMENTE PARA O H2 */
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Este divisor está na seção de depoimentos */
@@ -115,7 +135,8 @@
 }
 
 /* Estilos para as setas do carrossel de depoimentos */
-.carouselArrowDepoimento {position: relative;
+.carouselArrowDepoimento {
+  position: relative;
   background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
   color: rgb(7, 224, 248);
   border: none;
@@ -137,7 +158,8 @@
   background-color: rgba(0, 0, 0, 0.155);
 }
 
-.carouselArrowRightDepoimento {position: relative;
+.carouselArrowRightDepoimento {
+  position: relative;
   background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
   color: rgb(7, 224, 248);
   border: none;
@@ -158,6 +180,7 @@
 .carouselArrowRightDepoimento:hover {
   background-color: rgba(0, 0, 0, 0.15);
 }
+
 /* Estilos para os pontos de paginação do depoimento */
 .paginationDotsDepoimento {
   display: flex;
@@ -179,7 +202,6 @@
   background-color: #7fcae3; /* Sua cor azul */
 }
 
-
 /* --- SEÇÃO PORTFÓLIO --- */
 /* Estilos para o Título do Portfólio */
 .portfolioTitle {
@@ -190,17 +212,10 @@
   margin-bottom: 40px;
   position: relative;
   padding-bottom: 10px;
+   font-family: 'Montserrat', sans-serif
 }
 
-.portfolioTitle::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: #0b93e8;
-  margin: 10px auto 0;
-  border-radius: 5px;
-}
+
 
 /* Estilos para o Contêiner da Grade de Projetos (Flexbox) */
 .projectsGridContainer {
@@ -253,6 +268,7 @@
   margin-bottom: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif
 }
 
 .linhaServicos {
@@ -262,14 +278,16 @@
   margin: 0 auto 30px; /* Espaço abaixo */
 }
 
-.gradeServicos { /* Esta é a grade de serviços (pode ser grid ou flex, dependendo do design) */
+.gradeServicos {
+ 
   display: flex; /* Mantido como flex para flexibilidade */
   flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
   justify-content: center; /* Centraliza os cards se não preencherem a linha toda */
-  max-width: 1200px; /* Largura máxima para o grid de serviços, ajuste conforme necessário */
+  max-width: 1500px; /* Largura máxima para o grid de serviços, ajuste conforme necessário */
   margin: 0 auto; /* Centraliza o grid */
-  gap: 0rem; /* Adicionado gap para espaçamento entre os cards em mobile */
-  padding: 0 1rem; /* Padding lateral para a grade */
+  gap: 0rem; /* Adicionado gap para espaçamento entre os cards em mobile, ajustado para 2rem */
+  padding: 0rem;
+  /* Padding lateral para a grade */
 }
 
 /* --- SEÇÃO CHAMADA PARA AÇÃO --- */
@@ -280,11 +298,13 @@
   background-color: #0070f3;
   color: #ffffff;
   margin-top: 2rem;
+   font-family: 'Montserrat', sans-serif
 }
 
 .chamadaParaAcao h2 {
   font-size: 2.2rem; /* Menor para mobile */
   margin-bottom: 1.5rem;
+   font-family: 'Montserrat', sans-serif
 }
 
 .botaoContato {
@@ -312,22 +332,11 @@
   position: relative;
 }
 
-/* O divisorGray foi movido para a seção de depoimentos, se houver outro, defina-o aqui */
-/* .divisorGray {
-  width: 80%;
-  max-width: 615px;
-  height: 5px;
-  background-color: #727272ab;
-  margin: 0 auto 3rem auto;
-  position: relative;
-} */
-
-
 /* --- MEDIA QUERIES --- */
 /* Certifique-se de que estas media queries estão abaixo de todos os estilos base */
 
 /* Desktops (min-width: 1201px) - 3 colunas */
-@media (min-width: 1201px) {
+@media (max-width: 1200px) {
   .portfolioTitle {
     font-size: 2.5em;
     margin-bottom: 50px;
@@ -390,158 +399,17 @@
   }
 }
 
-/* Laptops/Tablets horizontais (993px a 1200px) - Mantenha 3 colunas ou ajuste para 2 */
-@media (max-width: 1200px) and (min-width: 993px) {
-  .projectsGridContainer {
-    gap: 0; /* AJUSTADO: Garante zero gap */
-    padding: 0; /* AJUSTADO: Garante zero padding */
-  }
-  .gradeDepoimentos > :global(.cartao) {
-    flex: 0 0 45%; /* Ajuste para duas colunas aqui também se desejar */
-    max-width: 45%;
-  }
-}
-
-/* Tablets verticais (769px a 992px) - 2 colunas */
-@media (max-width: 992px) {
+@media (max-width: 780px) {
   .portfolioTitle {
-    font-size: 2.2em;
-    margin-bottom: 35px;
-  }
-  .portfolioTitle::after {
-    width: 90px;
-  }
-  .projectsGridContainer {
-    gap: 0; /* AJUSTADO: Garante zero gap */
-    padding: 0; /* AJUSTADO: Garante zero padding */
-  }
-  /* Ajustar o tamanho da fonte e outros paddings/margens para tablets */
-  .secaoSobreNos h2,
-  .secaoEquipe h2,
-  .secaoDepoimentos h2,
-  .tituloServicos,
-  .portfolioTitle {
-    font-size: 2.2rem;
-  }
-  .chamadaParaAcao h2 {
-    font-size: 2.5rem;
-  }
-  .secaoSobreNos p {
-    font-size: 1.1rem;
-  }
-  .nossaAzulPequeno {
-    font-size: 1.8rem;
-  }
-  .historiaGrande {
-    font-size: 3.5rem;
-  }
-  .secaoSobreNos,
-  .secaoEquipe,
-  .secaoDepoimentos,
-  .secaoServicos {
-    padding: 2.5rem 1.5rem;
-  }
-  .chamadaParaAcao {
-    padding: 3.5rem 1.5rem;
-  }
-  .gradeEquipe {
-    gap: 1.8rem;
-  }
-  /* gradeDepoimentos já é tratado abaixo para mobile */
-  .linhaServicos {
-    width: 70px;
-  }
-  .divisorCinza, .divisorGray {
-    margin: 0 auto 3.5rem auto;
-  }
-  .botaoContato {
-    padding: 0.9rem 2.2rem;
-    font-size: 1.1rem;
-  }
-  /* Ajuste a largura de cada cartão de depoimento para tablets */
-  .gradeDepoimentos > :global(.cartao) {
-    flex: 0 0 48%; /* Para 2 por linha com um pouco mais de espaço */
-    max-width: 48%;
-    min-width: 250px;
-  }
-}
-
-/* Celulares (até 768px) - 1 coluna */
-@media (max-width: 768px) {
-  .portfolioTitle {
-    font-size: 2em;
-    margin-bottom: 30px;
-  }
-  .portfolioTitle::after {
-    width: 80px;
+    font-size: 1.8em;
   }
   .projectsGridContainer {
     width: 100%;
     padding: 0; /* AJUSTADO: Garante zero padding */
   }
-  /* Seus estilos mobile existentes ou os sugeridos anteriormente */
-  .secaoSobreNos h2,
-  .secaoEquipe h2,
-  .secaoDepoimentos h2,
-  .tituloServicos,
-  .portfolioTitle {
-    font-size: 2rem;
-  }
-  .chamadaParaAcao h2 {
-    font-size: 2.2rem;
-  }
-  .secaoSobreNos p {
-    font-size: 1rem;
-  }
-  .nossaAzulPequeno {
-    font-size: 1.5rem;
-  }
-  .historiaGrande {
-    font-size: 2.8rem;
-  }
-  .secaoSobreNos,
-  .secaoEquipe,
-  .secaoDepoimentos,
-  .secaoServicos {
-    padding: 3rem 1rem;
-  }
-  .chamadaParaAcao {
-    padding: 3rem 1rem;
-  }
-  .gradeEquipe {
-    gap: 1.5rem;
-  }
-  .linhaServicos {
-    width: 60px;
-  }
-  .divisorCinza, .divisorGray {
-    margin: 0 auto 3rem auto;
-  }
-  .botaoContato {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-
-  /* Media queries específicas para o carrossel de depoimentos */
-  .depoimentosCarouselContainer {
-    flex-direction: column; /* Coloca as setas acima/abaixo dos cartões */
-    gap: 15px; /* Manter este gap para espaçamento vertical entre seta e cartão */
-    padding: 0;
-  }
-  .gradeDepoimentos {
-    flex-direction: column; /* Mostra um depoimento por vez em telas pequenas */
-    align-items: center; /* Centraliza os cartões */
-  }
-  /* AQUI ESTÁ O AJUSTE PRINCIPAL para uniformizar a largura dos cards */
-  .cartao { /* ESTE SELETOR JÁ EXISTE NO CARTAO_DEPOIMENTO.MODULE.CSS */
-            /* Se estiver usando CSS Modules para CartaoDepoimento, você precisará usar :global() */
-    width: 90%; /* Ajuste a porcentagem para ser um pouco mais estreito se necessário */
-    max-width: 350px; /* Reduzindo a largura máxima para uniformizar */
-    min-width: 280px; /* Garante que não fique muito pequeno */
-  }
-  .carouselArrowDepoimento {
-    padding: 10px 12px;
-    font-size: 1.5rem;
+  .cartao { /* Para telas ainda menores, ajuste novamente se precisar */
+    width: 95%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
+    max-width: 300px;
   }
 }
 

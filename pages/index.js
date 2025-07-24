@@ -80,7 +80,8 @@ function Home() {
       <main className={styles.main}>
         <SecaoHero images={conteudoHero.imagensCarrossel} />
 
-        <section className={styles.secaoSobreNos}>
+        {/* Adicione o ID "nossa-historia" aqui */}
+        <section id="nossa-historia" className={styles.secaoSobreNos}>
           <h2 className={styles.tituloSobreNos}>
             <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
             <div className={styles.historiaGrande}>{historiaSobreNos}</div>
@@ -90,7 +91,8 @@ function Home() {
         </section>
 
         {/* --- SEÇÃO DE SERVIÇOS --- */}
-        <section className={styles.secaoServicos}>
+        {/* Adicione o ID "servicos" aqui */}
+        <section id="servicos" className={styles.secaoServicos}>
           <h2 className={styles.tituloServicos}>SERVIÇOS</h2>
           <div className={styles.gradeServicos}>
             {servicos.map((servico, index) => (
@@ -101,9 +103,13 @@ function Home() {
         {/* --- FIM DA SEÇÃO DE SERVIÇOS --- */}
 
         {/* --- SEÇÃO DE PORTFÓLIO --- */}
-        <section className={styles.secaoPortfolio}>
+        {/* Adicione o ID "projetos" aqui */}
+        <section id="projetos" className={styles.secaoPortfolio}>
+          
           <h2 className={styles.portfolioTitle}>PORTFÓLIO</h2>
+           <div className={styles.divisorCinza}></div>
           <div className={styles.projectsGridContainer}>
+            
             {currentProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -145,8 +151,8 @@ function Home() {
 
             <div className={styles.gradeDepoimentos}>
               {/* Renderiza apenas os depoimentos visíveis no slide atual */}
-              {depoimentosVisiveis.map((depoimento) => ( // Removendo o segundo parâmetro '_'
-  <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
+              {depoimentosVisiveis.map((depoimento, _) => ( // Linha corrigida: removido o comentário
+                <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
               ))}
             </div>
 

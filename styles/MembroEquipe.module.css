@@ -50,19 +50,21 @@
   min-width: 550px; /* Mantido como solicitado */
   word-wrap: break-word;
   overflow-wrap: break-word;
+  
 }
 
 .textoMembro h3 {
-  font-size: 2rem;
-  color: #333333;
+  font-size: 1.5rem;
+  color: #000000;
   margin-bottom: 0.5rem;
   font-weight: bold;
   word-break: break-word;
+   font-family: 'Montserrat', sans-serif
 }
 
 .textoMembro h4 {
-  font-size: 1.2rem;
-  color: #464747;
+  font-size: 1.3rem;
+  color: #5c5c5ccd;
   margin-bottom: 0rem;
   font-weight: normal;
   word-break: break-word;
@@ -89,7 +91,7 @@
 
 
 /* Responsividade para Mobile */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .membroDetalhe {
     flex-direction: column; /* Garante que continua empilhado em mobile */
     align-items: center; /* Centraliza tudo horizontalmente em mobile */

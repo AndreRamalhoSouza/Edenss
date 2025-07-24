@@ -1,336 +1,417 @@
 /* styles/Cabecalho.module.css */
 
 .cabecalho {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  height: 130px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #212121;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #212121;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .logoCabecalho {
-  /* Defina a largura desejada para a imagem no desktop. */
-  width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
-  height: auto; /* Garante que a proporção da imagem seja mantida */
-  display: block; /* Ajuda a remover qualquer espaço extra se houver */
-
-  /* Se você sentir que a logo está muito longe do resto do menu,
-     pode ajustar o padding do .cabecalho ou o margin-left do .nav */
+    width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
+    height: auto; /* Garante que a proporção da imagem seja mantida */
+    display: block;
 }
 
 .logo a {
-
-  text-decoration: none;
-
+    text-decoration: none;
 }
 
-
-.logo img { /* Seleciona a tag <img> dentro de .logo */
-  display: block; /* Garante que a imagem se comporte como um bloco */
-  max-width: 200%; /* Garante que a imagem não transborde seu contêiner */
-  height: auto; /* Mantém a proporção da imagem */
-  /* Se você quiser ajustar o tamanho aqui no CSS, remova width/height do componente <Image> no JS */
+.logo img {
+    display: block;
+    max-width: 200%;
+    height: auto;
 }
 
-
-.ssColor {
-  /* Este estilo não é mais necessário, pois o texto "SS" foi removido.
-     Você pode remover esta regra inteira. */
-  color: #7fcbe4;
-}
-
+/* Removido: .ssColor, pois o texto "SS" foi removido. */
 
 
 .nav {
-  display: flex; /* Visível no desktop */
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0px;
+    display: flex; /* Visível no desktop */
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 200px;
+    padding-left: 0px;
 }
 
 .nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 5.5rem;
-  align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 5.5rem;
+    align-items: center;
 }
 
 .nav a {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .nav a:hover {
-  color: #7fcbe4;
+    color: #7fcbe4;
 }
 
+/* O item "Nossa História" que contém o link e a lupa */
 .nossaHistoriaItem {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* Espaçamento entre o link e a lupa */
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaçamento entre o link e a lupa */
+    position: relative; /* Adicionado para posicionamento relativo da lupa em desktop */
 }
 
+/* Contêiner da Lupa */
 .cssLupaContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px; /* Tamanho do contêiner da lupa */
-  height: 125px; /* Tamanho do contêiner da lupa */
-  cursor: pointer;
-  position: relative; /* **IMPORTANTE:** Este é o ponto de referência para lupaCircle e lupaHandle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Tamanho da lupa para o clique */
+    height: 30px; /* Tamanho da lupa para o clique */
+    cursor: pointer;
+    position: absolute; /* **IMPORTANTE:** Posicionamento absoluto dentro de .nossaHistoriaItem */
+    right: -40px; /* Ajuste para posicionar a lupa mais à direita do link "Nossa História" */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Garante que ela esteja acima de outros elementos na nav */
+    padding: 5px; /* Área clicável maior */
 }
 
 .lupaCircle {
-  width: 40px;
-  height: 35px;
-  border: 2px solid #3ce5d4;
-  border-radius: 50%;
-  transition: border-color 0.3s ease;
-  position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
-  top: -8px;
-  left: 171px;
-  /* Ajuste a posição do círculo dentro do contêiner.
-       Por exemplo, para centralizar ou mover um pouco para cima/esquerda.
-       Experimente valores para 'left' e 'top' ou 'transform'. */
-  transform: translate(1px, 1px); /* Pequeno ajuste visual */
+    width: 28px; /* Tamanho do círculo da lupa */
+    height: 28px; /* Tamanho do círculo da lupa */
+    border: 2px solid #3ce5d4;
+    border-radius: 50%;
+    transition: border-color 0.3s ease;
+    position: absolute; /* Ajuste para dentro do .cssLupaContainer */
+    top: 50%;
+    left: 450%;
+    transform: translate(-60%, -60%); /* Ajusta a posição do círculo em relação ao centro */
 }
 
 .lupaHandle {
-  width: 3px;
-  height: 25px; /* Comprimento do cabo */
-  background-color: #3ce5d4;
-  transition: background-color 0.3s ease;
-  position: relative; /* Posicionamento absoluto dentro de .cssLupaContainer */
-  top: 15px;
-  left: 123px;
-  /* O 'transform-origin: bottom right;' é crucial para a rotação */
-  transform-origin: bottom right;
-  /* Ajuste o transform para posicionar o cabo em relação ao círculo.
-       O translate deve compensar a origem e a rotação para conectar corretamente. */
-  transform: translate(-3px, -3px) rotate(45deg); /* Move e rotaciona o cabo */
+    width: 2px;
+    height: 20px; /* Comprimento do cabo */
+    background-color: #3ce5d4;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Ajuste para dentro do .cssLupaContainer */
+    top: 58%;
+    left: 358%;
+    transform-origin: bottom right; /* Ponto de rotação */
+    transform: translate(0, 0) rotate(45deg); /* Posição do cabo */
 }
 
 .cssLupaContainer:hover .lupaCircle {
-  border-color: #7fcbe4;
+    border-color: #7fcbe4;
 }
 
 .cssLupaContainer:hover .lupaHandle {
-  background-color: #7fcbe4;
+    background-color: #7fcbe4;
 }
 
 .botaoContato {
-  background-color: #0071f300;
-  color: #ffffff;
-  padding: 0.7rem 3rem;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-  border: 2px solid #8ad7c5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 205px;
-  position: relative;
-  left: 200px;
+    background-color: #0071f300;
+    color: #ffffff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid #8ad7c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    position: relative;
+    left: 200px; /* Mantém sua posição relativa */
 }
 
 .botaoContato:hover {
-  background-color: #000000;
-  border-color: #87ceeb;
+    background-color: #000000;
+    border-color: #87ceeb;
 }
 
 .contatoMenuItem {
-  list-style: none;
-  margin-left: auto;
-  order: 1; /* Mantém a ordem no desktop */
+    list-style: none;
+    margin-left: auto;
+    order: 1; /* Mantém a ordem no desktop */
 }
 
 /* --- Hamburger Icon (Invisível por padrão no desktop) --- */
 .hamburgerIcon {
-  display: none; /* ESCONDIDO NO DESKTOP */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-  z-index: 1001; /* Garante que fique acima do menu */
+    display: none; /* ESCONDIDO NO DESKTOP */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburgerIcon div {
-  width: 100%;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition: all 0.3s linear;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s linear;
 }
 
 .hamburgerIcon.open .bar1 {
-  transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 .hamburgerIcon.open .bar2 {
-  opacity: 0;
+    opacity: 0;
 }
 .hamburgerIcon.open .bar3 {
-  transform: rotate(45deg) translate(-5px, -6px);
+    transform: rotate(45deg) translate(-5px, -6px);
 }
+
+/* --- Formulário de Busca (Invisível por padrão no desktop, aparece com JS) --- */
+.searchForm {
+    position: absolute; /* Posiciona sobre ou abaixo do cabeçalho */
+    top: 100%; /* Abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: #212121; /* Cor de fundo do cabeçalho */
+    padding: 15px 2rem; /* Mais padding para harmonizar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo da busca */
+}
+
+.searchInput {
+    flex-grow: 1;
+    padding: 10px 15px; /* Mais padding */
+    border: 1px solid #7fcbe4; /* Borda da cor do tema */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 1.1rem;
+    color: #333; /* Cor do texto digitado */
+    max-width: 500px; /* Limita a largura do input */
+    background-color: #fff; /* Fundo branco para o input */
+    margin-right: 15px;
+}
+
+.searchInput::placeholder {
+    color: #999;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #3ce5d4;
+    box-shadow: 0 0 0 3px rgba(60, 229, 212, 0.3); /* Sombra ao focar */
+}
+
+.searchButton {
+    background-color: #3ce5d4; /* Cor do tema */
+    color: #212121; /* Texto escuro no botão claro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #7fcbe4; /* Cor do hover */
+    color: #fff;
+}
+
 
 /* ------------------------------------------- */
 /* --- Media Queries para Responsividade --- */
 /* ------------------------------------------- */
 
 /* Para telas menores que 1024px (tablets e celulares) */
-@media (max-width: 1023px) {
-  .cabecalho {
-    height: 80px;
-    padding: 0.8rem 1rem;
-  }
+@media (max-width: 1600px) {
+    .cabecalho {
+        height: 80px;
+        padding: 0.8rem 1rem;
+    }
 
-  .logo a {
-    /* REMOVIDO: font-size para texto.
-       Se a imagem for muito grande, ajuste o width/height diretamente no componente Image,
-       ou adicione .logo img { max-width: Xpx; height: auto; } */
-  }
+    .logoCabecalho { /* Ajusta a imagem da logo para telas menores */
+      width: 200px; /* Largura menor para mobile/tablet */
+      height: auto;
+    }
 
-  /* Adicionado para ajustar a imagem em telas menores */
-  .logo img {
-    width: 100px; /* Largura menor para mobile */
-    height: auto;
-  }
+    .logo img {
+        width: 200px; /* Largura menor para mobile */
+        height: auto;
+    }
 
+    /* .slogan pode ser ajustado ou removido conforme sua necessidade */
+    .slogan {
+        font-size: 0.6em;
+        position: relative;
+        top: 5px;
+        transform: translateY(-15px) translateX(40px);
+    }
 
-  .slogan {
-    font-size: 0.6em;
-    position: relative;
-    top: 5px;
-    transform: translateY(-15px) translateX(40px);
-  }
+    .nav {
+        display: none; /* Escondido por padrão em mobile */
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Inicia fora da tela */
+        width: 70%;
+        height: 100vh;
+        background-color: #333333ef;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+    }
 
-  .nav {
-    display: none; /* Escondido por padrão em mobile */
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%; /* Inicia fora da tela */
-    width: 70%;
-    height: 100vh;
-    background-color: #333333ef;
-    padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: right 0.3s ease-in-out;
-    justify-content: flex-start;
-    align-items: center;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-  }
+    .nav.open {
+        display: flex;
+        right: 0;
+    }
 
-  .nav.open {
-    display: flex;
-    right: 0;
-  }
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        text-align: center;
+        align-items: center;
+    }
 
-  .nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-    text-align: center;
-    align-items: center;
-  }
+    .nav li {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
 
-  .nav li {
-    width: 100%;
-    padding: 0.5rem 0;
-  }
+    .nav a {
+        font-size: 1.2rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-  .nav a {
-    font-size: 1.2rem;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+    .nav li:last-child a {
+        border-bottom: none;
+    }
 
-  .nav li:last-child a {
-    border-bottom: none;
-  }
+    .nossaHistoriaItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        /* Remova a posição relativa para que a lupa não se posicione em relação a ela em mobile */
+        position: static;
+    }
 
-  .nossaHistoriaItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-  }
+    .hamburgerIcon {
+        display: flex; /* VISÍVEL NO MOBILE */
+    }
 
-  .hamburgerIcon {
-    display: flex; /* VISÍVEL NO MOBILE */
-  }
+    .contatoMenuItem {
+        margin-left: 0;
+        order: unset;
+        margin-top: 1.5rem;
+    }
 
-  .contatoMenuItem {
-    margin-left: 0;
-    order: unset;
-    margin-top: 1.5rem;
-  }
+    .botaoContato {
+        position: relative;
+        background-color: #0071f366;
+        border: 2px solid transparent;
+        width: 150px;
+        padding: 0.7rem 1.5rem;
+        left: 0; /* Remove o left fixo em mobile */
+    }
 
-  .botaoContato {
-    position: relative;
-    background-color: #0071f366;
-    border: 2px solid transparent;
-    width: 150px;
-    padding: 0.7rem 1.5rem;
-    left: 10px;
-  }
+    .cssLupaContainer {
+        display: none; /* A lupa deve estar escondida em mobile/tablet */
+    }
 
-  .cssLupaContainer {
-    display: none; /* A lupa deve estar escondida em mobile */
-  }
+    .searchForm {
+        display: none; /* O formulário de busca também deve estar oculto em mobile por padrão */
+        /* Ele só será mostrado via JS quando o menu hambúrguer estiver fechado e a lupa for clicada
+           (se você decidir ter uma lupa visível em mobile).
+           Pelo seu `Cabecalho.js` atual, a lupa só aparece no item "Nossa História" que está dentro da `nav`,
+           e a `nav` está escondida em mobile. Isso significa que a lupa não estará acessível.
+           Se você quer a busca em mobile, ela deve ter um ícone separado fora da `nav` principal.
+           No momento, o `Cabecalho.js` está mostrando o `searchForm` globalmente, então ele apareceria.
+           Vamos garantir que ele seja responsivo.
+        */
+        padding: 10px 1rem; /* Padding menor para mobile */
+    }
+
+    .searchInput {
+        font-size: 1rem;
+    }
+
+    .searchButton {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
 }
 
 /* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Adicione estilos específicos para tablets, se necessário. */
+    /* Estilos específicos para tablets.
+       A lupa e o campo de busca ainda estarão escondidos por padrão aqui,
+       conforme o media query anterior (max-width: 1600px).
+       Se você quiser que a lupa apareça em tablets mas não em celulares muito pequenos,
+       você precisaria ajustar a lógica de `display: none` para `min-width` aqui.
+    */
+    .logo img {
+      width: 250px; /* Um pouco maior para tablets */
+    }
 }
 
 /* Para telas muito pequenas (celulares em modo retrato) */
 @media (max-width: 480px) {
-  .logo a {
-    /* REMOVIDO: font-size para texto.
-       Ajuste o .logo img para tamanhos menores se necessário. */
-  }
-  .logo img {
-    width: 80px; /* Largura ainda menor para telas muito pequenas */
-    height: auto;
-  }
+    .logo img {
+        position: relative;
+        width: 190px; /* Largura ainda menor para telas muito pequenas */
+        height: auto;
+        right: 0; /* Removido o right fixo */
+        margin-left: auto; /* Centraliza no container */
+    }
 
-  .slogan {
-    font-size: 0.5em;
-    transform: translateY(-10px) translateX(30px);
-  }
+    .slogan {
+        font-size: 0.5em;
+        transform: translateY(-10px) translateX(30px);
+    }
 
-  .nav {
-    width: 85%;
-  }
+    .nav {
+        width: 85%;
+    }
 
-  .nav a {
-    font-size: 1rem;
-    padding: 0.6rem 0;
-  }
+    .nav a {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+    }
+}
+
+/* Garante que o formulário de busca esteja visível apenas quando isSearchOpen é true */
+/* Não há uma forma direta de controlar isso via CSS modules sem ter a classe no elemento
+   ou um elemento pai que controle isso. O `isSearchOpen` no JS já controla a renderização.
+   Estes estilos garantem que, quando renderizado, ele se comporte corretamente.
+*/
+.searchForm[style*="display: block"] { /* Ou .searchForm.visible, se você adicionar a classe */
+  display: flex !important;
 }

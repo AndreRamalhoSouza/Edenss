@@ -2,14 +2,15 @@
 
 .secaoFormulario {
   position: relative;
-  top: 70px;
-  background-color: #f0f0f0;
+  top: -80px;
+  background-color: #f0f0f000;
   padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height:890px ;
   /* REMOVIDO: position:relative; */
   /* REMOVIDO: top:200px; */
   margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
@@ -17,17 +18,18 @@
 
 .tituloFormulario {
   font-size: 2.5rem;
-  color: #333333;
+  color: #000000;
   margin-bottom: 3rem;
   text-transform: uppercase;
   font-weight: bold;
+    font-family: 'Montserrat', sans-serif
 }
 
 .formulario {
   width: 100%;
   max-width: 600px;
   padding: 2rem;
-  background-color: #ada9a900;
+  background-color: #c0c0c07f;
   border-radius: 8px;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
@@ -97,14 +99,15 @@
 
   .secaoFormulario {
   position: relative;
-  top: 100px;
-  background-color: #f0f0f0;
+  top: -80px;
+  background-color: #f0f0f000;
   padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 650px;
   /* REMOVIDO: position:relative; */
   /* REMOVIDO: top:200px; */
   margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
@@ -132,4 +135,50 @@
     font-size: 1rem;
     margin-top: 1.5rem;
   }
+
+  @media (max-width: 480px) {
+  .tituloFormulario {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .secaoFormulario {
+  position: relative;
+  top: -50px;
+  background-color: #f0f0f000;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 650px;
+  /* REMOVIDO: position:relative; */
+  /* REMOVIDO: top:200px; */
+  margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
+}
+
+  .formulario {
+    padding: 1.5rem;
+  }
+
+  .labelCampo {
+    font-size: 0.8rem;
+  }
+
+  .inputCampo,
+  .textAreaCampo {
+    padding: 0.7rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .botaoEnviar {
+    width: 120px;
+    position: relative;
+    bottom: 20px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+}
 }
