@@ -184,7 +184,7 @@ bottom: 280px;
    .logoPrincipal {position: relative;
  right: 355px;
      max-width: 1000px;
-  width: 850px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  width: 750px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
   height: 790px; /* Mantém a proporção da imagem automaticamente */
 bottom: 280px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
