@@ -393,13 +393,53 @@
         transform: translateY(-10px) translateX(30px);
     }
 
-    .nav {
-        width: 85%;
+  .nav {
+        display: none; /* Escondido por padrão em mobile */
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        right: -100%; /* Inicia fora da tela */
+        width: 70%;
+        height: 100vh;
+        background-color: #333333ef;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0; /* Ajustado para 0 em mobile */
+        padding-left: 0;
+    }
+
+    .nav.open {
+        display: flex;
+        right: -16;
+        top: 380px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav li {
+        width: 100%;
+        padding: 0.5rem 0;
     }
 
     .nav a {
-        font-size: 1rem;
-        padding: 0.6rem 0;
+        font-size: 1.2rem;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        white-space: normal; /* Permite quebrar linha em mobile, se necessário */
+    }
+
+    .nav li:last-child a {
+        border-bottom: none;
     }
 }
 
