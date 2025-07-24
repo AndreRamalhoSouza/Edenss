@@ -180,17 +180,160 @@ bottom: 280px;
   filter: grayscale(0%) brightness(100%);
 }
 
-/* --- Linhas Verticais (Se ainda precisar, ajuste o posicionamento absoluto dentro de .colunasRodape) --- */
+@media (max-width: 1366px) {
+   .logoPrincipal {position: relative;
+ right: 355px;
+     max-width: 1000px;
+  width: 850px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 790px; /* Mantém a proporção da imagem automaticamente */
+bottom: 280px;
+  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+}
 
+.rodape {
+  background-color: #6fd0dd;
+  color: #ffffff;
+  padding: 2rem 1rem; /* Padding base para o rodapé */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1351px;
 
+  box-sizing: border-box;
+  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
+  height: 300px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
+  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
 
-/* --- Media Queries para Responsividade --- */
+}
+.colunasRodape {
+  position: relative;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+  flex-grow: 1; 
+}
 
-/* Para telas maiores (desktops) */
+.colunaRodape
+ {position: relative;
+  left: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  text-align: left;
+  flex: 1;
+  min-width: 200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
+.colunaRodape2 {
+  position: relative;
+  display: flex;
+  top: 60px;
+  left: 10px;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  text-align: left;
+  flex: 1;
+  min-width: 200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
 
+.colunaRodape h3,
+.colunaRodape2 h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: #000000;
+}
 
-/* Para telas menores que 1024px (tablets maiores e desktops menores) */
+.colunaRodape ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.colunaRodape ul li {
+  margin-bottom: 0.4rem;
+}
+
+.colunaRodape ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.colunaRodape ul li a:hover {
+  color: #0070f3;
+}
+
+.colunaRodape p {
+  color: #000000;
+  margin-bottom: 0.4rem;
+}
+
+.emailSamuel {
+  position: relative;
+  top:0px;
+  right: 10px;
+
+  margin-top: 0px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  /* Removendo position: relative, left, top para o fluxo normal */
+}
+
+.emailSusi {
+  position: relative;
+  bottom: 40px;
+  right: 10px;
+
+  margin-top: 0px;
+  padding: 10px;
+  color: rgb(0, 0, 0);
+  /* Removendo position: relative, left, top para o fluxo normal */
+}
+
+/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+.socialIcons {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centraliza os ícones */
+  align-items: center;
+  gap: 15px;
+  left:675px;
+  bottom: 830px;
+  margin-top: 20px; /* Espaçamento após a logo/slogan */
+  margin-bottom: 20px; /* Espaçamento antes das colunas */
+  /* Removendo position: relative, left, bottom para o fluxo normal */
+}
+
+.socialIcons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialIcons img {
+  transition: transform 0.2s ease-in-out;
+  filter: grayscale(100%) brightness(180%);
+  width: 30px; /* Mantém o tamanho dos ícones sociais */
+  height: 30px; /* Mantém o tamanho dos ícones sociais */
+}
+
+.socialIcons img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(100%);
+}
+}
 @media (max-width: 1024px) {
    .logoPrincipal {position: relative;
  right: 295px;
