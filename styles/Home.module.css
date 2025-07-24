@@ -332,11 +332,114 @@
   margin: 0 auto 3rem auto; /* Ajuste margem para mobile */
   position: relative;
 }
+@media (max-width: 1366px) {
+  .portfolioTitle {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+  }
+  .portfolioTitle::after {
+    width: 100px;
+  }
+  .projectsGridContainer {
+    gap: 0; /* AJUSTADO: Garante zero gap em telas maiores */
+    padding: 0; /* AJUSTADO: Garante zero padding em telas maiores */
+  }
+  /* Outros ajustes de fonte/padding para telas maiores aqui, se necessário */
+  .secaoSobreNos h2,
+  .secaoEquipe h2,
+  .secaoDepoimentos h2,
+  .tituloServicos,
+  .portfolioTitle {
+    font-size: 2.5rem;
+  }
+  .chamadaParaAcao h2 {
+    font-size: 2.8rem;
+  }
+  .secaoSobreNos p {
+    font-size: 1.25rem;
+  }
+  .nossaAzulPequeno {
+    font-size: 2rem;
+  }
+  .historiaGrande {
+    font-size: 4rem;
+  }
+  .secaoSobreNos,
+  .secaoEquipe,
+  .secaoDepoimentos,
+  .secaoServicos {
+    padding: 3rem 2rem;
+  }
+  .chamadaParaAcao {
+    padding: 4rem 2rem;
+  }
+  .gradeEquipe {
+    gap: 2rem;
+  }
+  /* Removido o gap para gradeDepoimentos aqui pois ele é controlado no .depoimentosCarouselContainer e no .gradeDepoimentos para flex */
+  .linhaServicos {
+    width: 80px;
+  }
+  .divisorCinza, .divisorGray {
+    margin: 0 auto 4rem auto;
+  }
+  .botaoContato {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+  }
+  /* Ajuste a largura de cada cartão de depoimento para telas maiores */
+  .gradeDepoimentos > :global(.cartao) { /* Use :global() para atingir o componente importado */
+    flex: 0 0 45%; /* Cada cartão ocupa 45% do espaço, permitindo 2 por linha com gap */
+    max-width: 45%; /* Garante que não exceda essa largura */
+    min-width: 300px; /* Garante uma largura mínima para o conteúdo */
+  }
 
-/* --- MEDIA QUERIES --- */
-/* Certifique-se de que estas media queries estão abaixo de todos os estilos base */
+  .carouselArrowDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  left: 200px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
 
-/* Desktops (min-width: 1201px) - 3 colunas */
+.carouselArrowDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.155);
+}
+
+.carouselArrowRightDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  right: 200px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.carouselArrowRightDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+}
 @media (max-width: 1200px) {
   .portfolioTitle {
     font-size: 2.5em;
