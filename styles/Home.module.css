@@ -423,7 +423,7 @@
     padding: 0; /* AJUSTADO: Garante zero padding */
   }
   .cartao { /* Para telas ainda menores, ajuste novamente se precisar */
-    width: 95%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
+    width: 25%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
     max-width: 300px;
   }
 }
