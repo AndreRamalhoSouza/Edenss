@@ -297,6 +297,7 @@
     .nav.open {
         display: flex;
         right: 0;
+        top: 180px;
     }
 
     .nav ul {
