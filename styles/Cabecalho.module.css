@@ -296,7 +296,8 @@
 
     .nav.open {
         display: flex;
-        right: 0;
+        right: -15;
+        top:370px;
     }
 
     .nav ul {
@@ -329,6 +330,7 @@
         align-items: center;
         gap: 0;
         position: static;
+        top: 500px;
     }
 
     .hamburgerIcon {
@@ -400,6 +402,7 @@
         font-size: 1rem;
         padding: 0.6rem 0;
     }
+    
 }
 
 /* Garante que o formulário de busca esteja visível apenas quando isSearchOpen é true */
