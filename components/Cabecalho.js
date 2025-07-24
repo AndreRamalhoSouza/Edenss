@@ -1,4 +1,4 @@
-// components/Cabecalho.js
+'use client'; // <-- Adicione esta linha no topo do arquivo
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -21,6 +21,10 @@ function Cabecalho() {
   };
 
   const toggleSearch = () => {
+    // Para evitar o problema de hidratação com renderização condicional,
+    // vamos garantir que isSearchOpen só seja ativado no cliente.
+    // No entanto, o 'use client' já resolve a maioria desses problemas.
+    // Manter a lógica de toggle é ok.
     setIsSearchOpen(!isSearchOpen);
     if (isOpen) setIsOpen(false);
     setSearchTerm('');
@@ -29,7 +33,6 @@ function Cabecalho() {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    // Normaliza o termo de busca: para minúsculas, remove espaços e acentos
     const normalizedTerm = removeAccents(searchTerm).toLowerCase().trim();
 
     const sections = {
@@ -48,23 +51,20 @@ function Cabecalho() {
       'depoimentos': 'secao-depoimentos',
     };
 
-    // Tenta encontrar uma correspondência exata para o termo normalizado
     let targetId = sections[normalizedTerm];
 
-    // Se o termo normalizado não for uma chave exata,
-    // verifica se o termo normalizado está contido em alguma chave da seção.
-    // Isso pode ser útil para buscas mais flexíveis (ex: "historia" buscar "nossa historia").
     if (!targetId) {
       for (const key in sections) {
         if (removeAccents(key).toLowerCase().includes(normalizedTerm)) {
           targetId = sections[key];
-          break; // Encontrou a primeira correspondência, sai do loop
+          break;
         }
       }
     }
 
-
     if (targetId) {
+      // Usar useRouter para navegação programática pode ser mais robusto em Next.js
+      // mas window.location.hash funciona para âncoras na mesma página.
       window.location.hash = targetId;
       setIsSearchOpen(false);
       setSearchTerm('');
@@ -74,20 +74,35 @@ function Cabecalho() {
     }
   };
 
+  // Melhoria para o useEffect de redimensionamento:
+  // Só resetar os estados se o menu/busca ESTIVEREM abertos e a tela mudar para desktop.
+  // Isso minimiza a chance de um reset de estado no cliente que difere do servidor.
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 1023) {
-        setIsOpen(false);
-        setIsSearchOpen(false);
+      // Apenas execute a lógica se estiver em um ambiente de navegador
+      if (typeof window !== 'undefined') {
+        if (window.innerWidth > 1200) { // Usando 1200px como breakpoint do seu CSS
+          if (isOpen) setIsOpen(false);
+          if (isSearchOpen) setIsSearchOpen(false);
+        }
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    // Adiciona o listener APENAS no lado do cliente
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      // Remove o listener APENAS no lado do cliente
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
     };
-  }, [isOpen, isSearchOpen]);
+    // Dependências ajustadas: não precisa de isOpen, isSearchOpen aqui
+    // pois a função handleResize já faz a checagem if (isOpen) / if (isSearchOpen)
+    // O useEffect só precisa rodar uma vez na montagem para adicionar o listener.
+  }, []); // <-- Dependência vazia, roda apenas na montagem/desmontagem
 
   return (
     <header className={styles.cabecalho}>
@@ -123,6 +138,7 @@ function Cabecalho() {
             </Link>
           </li>
           <li>
+          {/* <li className={styles.projetosItem}></li> <-- Esta linha <li> está solta aqui e deve ser removida */}
             <Link href="#projetos" onClick={toggleMenu}>
               Projetos
             </Link>
@@ -148,6 +164,9 @@ function Cabecalho() {
         </ul>
       </nav>
 
+      {/* Renderização condicional do formulário de busca: */}
+      {/* Com 'use client', isso geralmente não é um problema grave de hidratação */}
+      {/* porque o componente inteiro é "client-side". */}
       {isSearchOpen && (
         <form onSubmit={handleSearch} className={styles.searchForm}>
           <input
