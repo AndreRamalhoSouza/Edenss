@@ -30,8 +30,10 @@
 }
 
 .logo img {
+    position: relative;
     display: block;
-    max-width: 200%;
+    right: 10px;
+    max-width: 80%;
     height: auto;
 }
 
