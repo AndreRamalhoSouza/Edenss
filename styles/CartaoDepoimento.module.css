@@ -141,7 +141,7 @@
     color: #777777;
   }
   
-  @media (max-width: 390px) {
+  @media (max-width: 400px) {
   .cartao {
     width: 100%; /* Ocupa 100% da largura disponível */
     max-width: 400px; /* Mas nunca será maior que 400px */
