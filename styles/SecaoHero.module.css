@@ -123,15 +123,7 @@
     right: 10px; /* Ajuste a posição para telas menores */
   }
 
-  .arrowLeft {
-  width: 20px;
-  left: 5px; /* Posição da seta esquerda. */
-}
 
-.arrowRight {
-  width: 2px;
-  left:730px; /* Posição da seta direita. */
-}
 }
 
 @media (max-width: 480px) {
