@@ -42,6 +42,56 @@
   color: #777777;
 }
 
+@media (max-width: 470px) {
+  .cartao {
+    width: 100%; /* Ocupa 100% da largura disponível */
+    max-width: 400px; /* Mas nunca será maior que 400px */
+    height: 552px;
+    background-color: #86868633;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto; /* Adicione isso para centralizar o cartão */
+  }
+
+  /* ... o restante do seu CSS para .imagemDepoimento, .citacao, .autor, .empresa ... */
+  .imagemDepoimento {
+    width: 100px; /* Ajuste o tamanho conforme necessário para caber o logo */
+    height: 150px; /* Garante que seja um círculo */
+    border-radius: 50%; /* Cria o formato circular */
+    object-fit: contain; /* Garante que o logo inteiro caiba dentro do círculo sem cortar ou distorcer, adicionando espaço se necessário */
+    background-color: #f9f9f9; /* Adiciona um fundo branco caso o logo tenha transparência e o cartão não */
+    margin-bottom: 20px; /* Espaçamento entre a imagem e o texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Uma sombra sutil para destacar a imagem */
+    display: block; /* Garante que a margem automática funcione */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza a imagem horizontalmente */
+  }
+
+  .citacao {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #555555;
+    margin-bottom: 1rem;
+  }
+
+  .autor {
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 0rem;
+  }
+
+  .empresa {
+    font-size: 0.9rem;
+    color: #777777;
+  }
+}
+
 @media (max-width: 430px) {
   .cartao {
     width: 100%; /* Ocupa 100% da largura disponível */
