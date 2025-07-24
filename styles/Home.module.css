@@ -529,4 +529,50 @@
     width: 25%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
     max-width: 300px;
   }
+
+  .carouselArrowDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  left: 0px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.carouselArrowDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.155);
+}
+
+.carouselArrowRightDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  right: 0px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.8rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.carouselArrowRightDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
 }
