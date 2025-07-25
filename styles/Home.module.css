@@ -1,4 +1,11 @@
-
+#nossa-historia,
+#servicos,
+#projetos,
+#secao-equipe,
+#secao-depoimentos,
+#contato {
+  scroll-margin-top: 100px; /* **AJUSTE AQUI** - Valor padrão (desktop) */
+}
 .secaoSobreNos {
   text-align: center;
   padding: 3rem 1rem; /* Padding responsivo para mobile */

@@ -1,5 +1,6 @@
 // components/Cabecalho.js
 
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -19,6 +20,7 @@ function Cabecalho() {
     setIsOpen(!isOpen);
     if (isSearchOpen) setIsSearchOpen(false);
   };
+  
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -89,22 +91,29 @@ function Cabecalho() {
     };
   }, [isOpen, isSearchOpen]);
 
-  return (
-    <header className={styles.cabecalho}>
-      <div className={styles.logoContainer}>
-        <div className={styles.logo}>
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="Logo da Empresa"
-              width={150}
-              height={50}
-              priority
-              className={styles.logoCabecalho}
-            />
-          </Link>
-        </div>
+ return (
+  <header className={styles.cabecalho}>
+    <div className={styles.logoContainer}>
+      <div className={styles.logo}>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <Image
+            src="/images/logo.png"
+            alt="Logo da Empresa"
+            width={150}
+            height={50}
+            priority
+            className={styles.logoCabecalho}
+          />
+        </a>
       </div>
+    </div>
+
 
       <div
         className={`${styles.hamburgerIcon} ${isOpen ? styles.open : ''}`}
