@@ -805,11 +805,11 @@ bottom: 150px;
 /* Para telas menores que 480px (celulares muito pequenos) */
 @media (max-width: 480px) {
  
-  .logoPrincipal {position: relative;
- right: 280px;
+.logoPrincipal {position: relative;
+ right: 80px;
      max-width: 1000px;
-  width: 700px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 700px; /* Mantém a proporção da imagem automaticamente */
+  width: 600px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 680px; /* Mantém a proporção da imagem automaticamente */
 bottom: -380px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
@@ -841,7 +841,8 @@ bottom: -380px;
   margin: 0 auto;
   width: 100%;
   padding: 0 1rem;
-  flex-grow: 1; 
+  flex-grow: 1;
+  right: 135px; 
 }
 
 .colunaRodape
@@ -1116,7 +1117,7 @@ bottom: -420px;
 @media (max-width: 360px) {
  
   .logoPrincipal {position: relative;
- right: 225px;
+ right: 145px;
      max-width: 1000px;
   width: 600px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
   height: 680px; /* Mantém a proporção da imagem automaticamente */
@@ -1152,7 +1153,7 @@ bottom: -380px;
   width: 100%;
   padding: 0 1rem;
   flex-grow: 1; 
-  right: 50px;
+  right: 135px;
 }
 
 .colunaRodape

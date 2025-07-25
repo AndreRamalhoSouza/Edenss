@@ -67,6 +67,41 @@
 .seta.direita {
   margin-left: 1rem;
 }
+
+@media (max-width: 480px) {
+  .cartao {
+    width: 320px;       
+    max-width: 1000px;   
+    min-width: auto;   
+    flex-shrink: 1;
+    margin: 10px 0;   
+    padding: 1rem;
+    height: auto;
+  }
+
+  .imagemDepoimento {
+    width: 120px;     
+    height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .citacao {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .autor {
+    font-size: 1rem;  
+  }
+
+  .empresa {
+    font-size: 0.9rem;
+  }
+
+  .seta {
+    display: none;
+  }
+
 @media (max-width: 360px) {
   .cartao {
     width: 220px;       
@@ -102,37 +137,5 @@
   }
 }
 
-@media (max-width: 480px) {
-  .cartao {
-    width: 320px;       
-    max-width: 1000px;   
-    min-width: auto;   
-    flex-shrink: 1;
-    margin: 10px 0;   
-    padding: 1rem;
-    height: auto;
-  }
 
-  .imagemDepoimento {
-    width: 120px;     
-    height: 120px;
-    margin-bottom: 15px;
-  }
-
-  .citacao {
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .autor {
-    font-size: 1rem;  
-  }
-
-  .empresa {
-    font-size: 0.9rem;
-  }
-
-  .seta {
-    display: none;
-  }
 }
