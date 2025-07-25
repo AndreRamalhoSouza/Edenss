@@ -1,14 +1,11 @@
-/* --- styles/Home.module.css --- */
 
-/* Importante: O .container e .main são controlados em globals.css para o layout geral */
-
-/* --- SEÇÃO SOBRE NÓS --- */
 .secaoSobreNos {
   text-align: center;
   padding: 3rem 1rem; /* Padding responsivo para mobile */
   background-color: #f8f8f8;
   margin-bottom: 2rem;
 }
+
 
 .tituloSobreNosEstilizado {
   display: flex;
