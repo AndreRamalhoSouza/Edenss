@@ -54,7 +54,7 @@ function Cabecalho() {
         block: 'center',
       });
       // Adiciona uma classe temporária para destacar visualmente a ocorrência atual
-      searchResultsRef.current.forEach((el, i) => {
+      searchResultsRef.current.forEach((el) => {
         if (el.classList.contains(styles.currentHighlight)) {
           el.classList.remove(styles.currentHighlight);
         }
