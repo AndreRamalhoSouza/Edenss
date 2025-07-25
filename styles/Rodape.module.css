@@ -862,7 +862,7 @@ bottom: -380px;
   position: relative;
   display: flex;
   top: 60px;
-  left: 110px;
+  left: 102px;
   flex-direction: column;
   align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
   text-align: left;
@@ -1030,7 +1030,7 @@ bottom: -380px;
   position: relative;
   display: flex;
   top: 60px;
-  left: 110px;
+  left: 102px;
   flex-direction: column;
   align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
   text-align: left;
