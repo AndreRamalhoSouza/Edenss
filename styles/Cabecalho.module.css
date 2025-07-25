@@ -95,11 +95,11 @@
 }
 
 .lupaCircle {
-    width: 28px; /* Tamanho do círculo da lupa */
-    height: 28px; /* Tamanho do círculo da lupa */
+    width: 20px; /* Tamanho do círculo da lupa */
+    height: 20px; /* Tamanho do círculo da lupa */
     border: 2px solid #3ce5d4;
     border-radius: 50%;
-    left: 70px;
+    left: 100px;
     bottom: 5px;
     transition: border-color 0.3s ease;
     /* REMOVIDO: propriedades de posicionamento absoluto */
@@ -110,10 +110,10 @@
 
 .lupaHandle {
     width: 2px;
-    left: 42px;
-    height: 20px; /* Comprimento do cabo */
+    left: 82px;
+    height: 15px; /* Comprimento do cabo */
     background-color: #3ce5d4;
-    top: 5px;
+    top: 0px;
     transition: background-color 0.3s ease;
     /* REMOVIDO: propriedades de posicionamento absoluto */
     /* top: 58%; left: 358%; */
@@ -135,7 +135,7 @@
 .botaoContato {
     background-color: #0071f300;
     color: #ffffff;
-    padding: 0.7rem 1.2rem;
+    padding: 0.7rem 1.1rem;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -144,9 +144,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 150px;
+    width: 140px;
+    height: 60px;;
     position: relative;
-    left: 120px;
+    left: 180px;
     /* left: 200px; Removido para o flexbox gerenciar melhor */
     margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
 }
