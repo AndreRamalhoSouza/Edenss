@@ -1,11 +1,11 @@
 // components/Cabecalho.js
 
-import { useState, useEffect, useRef } from 'react'; // Importe useRef
+import { useState, useEffect, useRef, useCallback } from 'react'; // Adicionado useCallback
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/router'; // Certifique-se de que esta linha está aqui
+import { useRouter } from 'next/router';
 import styles from '../styles/Cabecalho.module.css';
-import Mark from 'mark.js'; // Importe mark.js
+import Mark from 'mark.js';
 
 // Função auxiliar para remover acentos
 const removeAccents = (str) => {
@@ -16,29 +16,14 @@ function Cabecalho() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const router = useRouter(); // Inicialize o useRouter aqui
-  const [currentMarkInstance, setCurrentMarkInstance] = useState(null); // Para gerenciar a instância de mark.js
-  const [highlightedCount, setHighlightedCount] = useState(0); // Para contar ocorrências
-  const [currentIndex, setCurrentIndex] = useState(-1); // Para o índice da ocorrência atual
-  const searchResultsRef = useRef([]); // Para armazenar os elementos destacados
+  const router = useRouter();
+  const [currentMarkInstance, setCurrentMarkInstance] = useState(null);
+  const [highlightedCount, setHighlightedCount] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(-1);
+  const searchResultsRef = useRef([]);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    if (isSearchOpen) {
-      setIsSearchOpen(false);
-      clearHighlights(); // Limpa destaques se o menu for aberto e a busca estava ativa
-    }
-  };
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-    if (isOpen) setIsOpen(false);
-    setSearchTerm('');
-    clearHighlights(); // Sempre limpa os destaques ao abrir/fechar a busca
-  };
-
-  // Limpa todos os destaques da página
-  const clearHighlights = () => {
+  // **Corrigido**: clearHighlights envolvido em useCallback para estabilidade
+  const clearHighlights = useCallback(() => {
     if (currentMarkInstance) {
       currentMarkInstance.unmark();
       setCurrentMarkInstance(null);
@@ -46,6 +31,21 @@ function Cabecalho() {
     setHighlightedCount(0);
     setCurrentIndex(-1);
     searchResultsRef.current = [];
+  }, [currentMarkInstance]); // currentMarkInstance é uma dependência aqui
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    if (isSearchOpen) {
+      setIsSearchOpen(false);
+      clearHighlights();
+    }
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+    if (isOpen) setIsOpen(false);
+    setSearchTerm('');
+    clearHighlights();
   };
 
   // Função para rolar para a próxima/anterior ocorrência
@@ -76,24 +76,22 @@ function Cabecalho() {
       return;
     }
 
-    // Inicializa mark.js no elemento body (ou em um container específico do seu conteúdo)
-    const context = document.body; // Altere para um container específico se necessário (ex: document.getElementById('main-content'))
+    const context = document.body;
     const markInstance = new Mark(context);
     setCurrentMarkInstance(markInstance);
 
-    // Faz a marcação
     markInstance.mark(normalizedTerm, {
-      "separateWordSearch": false, // Permite buscar frases
-      "ignoreJoiners": true, // Ignora hífens e outros "joiners"
-      "diacritics": false, // Não diferencia acentos (já tratamos com removeAccents no searchTerm)
-      "accuracy": "partially", // Encontra ocorrências parciais da palavra
-      "acrossElements": true, // Permite que a palavra esteja quebrada entre elementos HTML
-      "className": styles.highlightedText, // Classe CSS para o destaque
+      "separateWordSearch": false,
+      "ignoreJoiners": true,
+      "diacritics": false,
+      "accuracy": "partially",
+      "acrossElements": true,
+      "className": styles.highlightedText,
       "done": (occurrences) => {
         setHighlightedCount(occurrences);
         searchResultsRef.current = Array.from(context.querySelectorAll(`.${styles.highlightedText}`));
         if (occurrences > 0) {
-          setCurrentIndex(0); // Começa na primeira ocorrência
+          setCurrentIndex(0);
           scrollToHighlight(0);
         } else {
           alert(`Nenhuma ocorrência encontrada para "${searchTerm}".`);
@@ -121,20 +119,14 @@ function Cabecalho() {
   };
 
   // Nova função para o clique na logo
-  const handleLogoClick = (e) => {
-    e.preventDefault();
+  const handleLogoClick = () => { // Removido 'e' pois não é mais usado com preventDefault
     if (router.pathname === '/') {
-      // Se já estiver na página inicial, apenas rola para o topo
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Remove o hash da URL se houver um
       if (window.location.hash) {
         router.replace(window.location.pathname, undefined, { shallow: true });
       }
     } else {
-      // Se estiver em outra página, navega para a página inicial (raiz)
       router.push('/');
-      // A propriedade scroll-behavior: smooth no html do globals.css
-      // se encarregará da rolagem suave para o topo na nova página.
     }
   };
 
@@ -143,7 +135,7 @@ function Cabecalho() {
       if (window.innerWidth > 1023) {
         setIsOpen(false);
         setIsSearchOpen(false);
-        clearHighlights(); // Limpa destaques em telas maiores
+        clearHighlights();
       }
     };
 
@@ -151,26 +143,24 @@ function Cabecalho() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearHighlights(); // Limpa destaques ao desmontar o componente
+      clearHighlights();
     };
-  }, []); // Dependências ajustadas, não precisa de isOpen e isSearchOpen aqui
+  }, [clearHighlights]); // **Corrigido**: clearHighlights adicionado às dependências
 
   // Limpa destaques quando a busca é fechada explicitamente pelo usuário
   useEffect(() => {
     if (!isSearchOpen) {
       clearHighlights();
     }
-  }, [isSearchOpen]);
+  }, [isSearchOpen, clearHighlights]); // **Corrigido**: clearHighlights adicionado às dependências
 
 
   return (
     <header className={styles.cabecalho}>
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
-          <a
-            href="/" // Mude para "/" para indicar a página inicial
-            onClick={handleLogoClick} // Use a nova função de clique
-          >
+          {/* **Corrigido**: Usando <Link> do Next.js para navegação interna */}
+          <Link href="/" onClick={handleLogoClick}>
             <Image
               src="/images/logo.png"
               alt="Logo da Empresa"
@@ -179,7 +169,7 @@ function Cabecalho() {
               priority
               className={styles.logoCabecalho}
             />
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -195,7 +185,6 @@ function Cabecalho() {
       <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
         <ul>
           <li>
-            {/* Ajuste os Links de navegação para lidar com navegação de página cruzada */}
             <Link href="/#servicos" onClick={toggleMenu}>
               Serviços
             </Link>
