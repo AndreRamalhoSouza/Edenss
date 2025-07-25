@@ -471,12 +471,13 @@
 
     .lupaCircle {
         left: unset; /* Remove posicionamento fixo */
-        bottom: unset; /* Remove posicionamento fixo */
+        bottom: 5px; /* Remove posicionamento fixo */
         margin-right: 3px;
+        left: 35px;
     }
 
     .lupaHandle {
-        left: unset; /* Remove posicionamento fixo */
+        left: 20px; /* Remove posicionamento fixo */
         top: unset; /* Remove posicionamento fixo */
         margin-left: -15px;
         margin-top: 15px;
