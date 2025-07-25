@@ -70,7 +70,7 @@
 
 @media (max-width: 480px) {
   .cartao {
-    width: 320px;       
+    width: 280px;       
     max-width: 1000px;   
     min-width: auto;   
     flex-shrink: 1;
