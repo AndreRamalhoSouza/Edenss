@@ -496,7 +496,8 @@
 }
 }
 
-@media (max-width:1201px) {
+
+@media (max-width:1366px) {
  /* styles/Cabecalho.module.css */
 
 .cabecalho {
@@ -598,7 +599,7 @@
     height: 20px; /* Tamanho do círculo da lupa */
     border: 2px solid #3ce5d4;
     border-radius: 50%;
-    left: 38px;
+    left: 48px;
     bottom: 5px;
     transition: border-color 0.3s ease;
     /* REMOVIDO: propriedades de posicionamento absoluto */
@@ -609,7 +610,7 @@
 
 .lupaHandle {
     width: 2px;
-    left: 20px;
+    left: 30px;
     height: 15px; /* Comprimento do cabo */
     background-color: #3ce5d4;
     top: 0px;
@@ -646,7 +647,7 @@
     width: 140px;
     height: 60px;
     position: relative;
-    left: 15px;
+    left: 25px;
     /* left: 200px; Removido para o flexbox gerenciar melhor */
     margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
 }
@@ -745,6 +746,10 @@
     color: #fff;
 }
 }
+
+
+
+
 
 /* Para telas menores que 1024px (tablets e celulares) */
 @media (max-width: 1200px) {
