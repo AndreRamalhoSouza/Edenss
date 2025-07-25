@@ -37,9 +37,6 @@
     height: auto;
 }
 
-/* Removido: .ssColor, pois o texto "SS" foi removido. */
-
-
 .nav {
     display: flex; /* Visível no desktop */
     flex-grow: 1;
@@ -78,7 +75,6 @@
     display: flex;
     align-items: center;
     gap: 5px; /* Espaçamento entre o link e a lupa */
-    /* Removido position: relative; pois não é mais necessário aqui para a lupa */
 }
 
 /* Contêiner da Lupa */
@@ -89,7 +85,6 @@
     width: 30px; /* Tamanho da lupa para o clique */
     height: 30px; /* Tamanho da lupa para o clique */
     cursor: pointer;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
     z-index: 10;
     padding: 5px;
 }
@@ -102,8 +97,6 @@
     left: 140px;
     bottom: 5px;
     transition: border-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 50%; left: 450%; transform: translate(-60%, -60%); */
     position: relative; /* Ajuste para dentro do .cssLupaContainer */
     margin-right: 3px; /* Pequeno ajuste para espaçar do cabo */
 }
@@ -115,8 +108,6 @@
     background-color: #3ce5d4;
     top: 0px;
     transition: background-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 58%; left: 358%; */
     transform-origin: bottom right; /* Ponto de rotação */
     transform: rotate(45deg); /* Posição do cabo */
     position: relative; /* Ajuste para dentro do .cssLupaContainer */
@@ -148,7 +139,6 @@
     height: 60px;
     position: relative;
     left: 215px;
-    /* left: 200px; Removido para o flexbox gerenciar melhor */
     margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
 }
 
@@ -159,7 +149,7 @@
 
 .contatoMenuItem {
     list-style: none;
-    margin-left: auto; /* Pode ser removido se o .botaoContato já tiver margin-left: auto */
+    margin-left: auto;
     order: 1; /* Mantém a ordem no desktop */
 }
 
@@ -192,31 +182,32 @@
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* --- Formulário de Busca (Invisível por padrão no desktop, aparece com JS) --- */
+/* --- Formulário de Busca (Agora mais complexo com botões de navegação) --- */
 .searchForm {
-    position: absolute; /* Posiciona sobre ou abaixo do cabeçalho */
+    position: absolute;
     top: 100%; /* Abaixo do cabeçalho */
     left: 0;
     width: 100%;
     display: flex;
-    background-color: #212121; /* Cor de fundo do cabeçalho */
-    padding: 15px 2rem; /* Mais padding para harmonizar */
+    flex-wrap: wrap; /* Adicionado para responsividade em telas menores */
+    background-color: #212121;
+    padding: 15px 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 99;
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo da busca */
+    justify-content: center;
+    gap: 15px; /* Espaçamento entre os elementos do formulário */
 }
 
 .searchInput {
     flex-grow: 1;
-    padding: 10px 15px; /* Mais padding */
-    border: 1px solid #7fcbe4; /* Borda da cor do tema */
-    border-radius: 25px; /* Bordas arredondadas */
+    padding: 10px 15px;
+    border: 1px solid #7fcbe4;
+    border-radius: 25px;
     font-size: 1.1rem;
-    color: #333; /* Cor do texto digitado */
-    max-width: 500px; /* Limita a largura do input */
-    background-color: #fff; /* Fundo branco para o input */
-    margin-right: 15px;
+    color: #333;
+    max-width: 500px;
+    background-color: #fff;
 }
 
 .searchInput::placeholder {
@@ -226,15 +217,15 @@
 .searchInput:focus {
     outline: none;
     border-color: #3ce5d4;
-    box-shadow: 0 0 0 3px rgba(60, 229, 212, 0.3); /* Sombra ao focar */
+    box-shadow: 0 0 0 3px rgba(60, 229, 212, 0.3);
 }
 
 .searchButton {
-    background-color: #3ce5d4; /* Cor do tema */
-    color: #212121; /* Texto escuro no botão claro */
+    background-color: #3ce5d4;
+    color: #212121;
     border: none;
     padding: 10px 20px;
-    border-radius: 25px; /* Bordas arredondadas */
+    border-radius: 25px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
@@ -242,534 +233,147 @@
 }
 
 .searchButton:hover {
-    background-color: #7fcbe4; /* Cor do hover */
+    background-color: #7fcbe4;
     color: #fff;
 }
+
+/* --- Novos Estilos para o Destaque e Navegação da Busca --- */
+
+/* Estilo para o texto destacado pelo mark.js */
+.highlightedText {
+    background-color: yellow; /* Cor padrão de destaque */
+    padding: 2px 0; /* Pequeno padding para melhor visualização */
+    border-radius: 3px;
+    transition: background-color 0.3s ease, outline 0.3s ease; /* Transição suave para cores e outline */
+}
+
+/* Estilo para a ocorrência atual que está em foco */
+.highlightedText.currentHighlight {
+    background-color: orange; /* Cor de destaque para a ocorrência atual */
+    outline: 2px solid #0071f3; /* Uma borda para maior visibilidade, usando uma cor de tema */
+    animation: pulseHighlight 1s infinite alternate; /* Adiciona uma pequena animação */
+}
+
+@keyframes pulseHighlight {
+    from {
+        outline-color: #0071f3;
+    }
+    to {
+        outline-color: #3ce5d4;
+    }
+}
+
+.searchNavigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px; /* Espaçamento do botão de busca */
+}
+
+.searchNavigation button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px; /* Bordas arredondadas para os botões de navegação */
+    background-color: #7fcbe4; /* Cor secundária do tema */
+    color: #212121; /* Texto escuro */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.searchNavigation button:hover:not(:disabled) {
+    background-color: #3ce5d4; /* Cor de hover */
+    color: #fff;
+}
+
+.searchNavigation button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.searchNavigation span {
+    font-weight: bold;
+    color: #ffffff; /* Cor de texto para o contador de resultados */
+    font-size: 1rem;
+    white-space: nowrap; /* Evita quebra de linha no contador */
+}
+
+.clearSearchButton {
+    background-color: #dc3545; /* Cor de botão de fechar/limpar (vermelho) */
+    color: white;
+    padding: 8px 12px; /* Ajuste para ser um "X" visível */
+}
+
+.clearSearchButton:hover {
+    background-color: #c82333;
+}
+
+
+/* --- Media Queries (Ajustadas para incluir os novos elementos da busca) --- */
 
 @media (max-width:1920px) {
- /* styles/Cabecalho.module.css */
-
-.cabecalho {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 130px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #212121;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    .cabecalho {
+        height: 130px;
+        padding: 1rem 2rem;
+    }
+    .nav {
+        margin-right: 0px;
+        padding-left: 300px;
+    }
+    .lupaCircle {
+        left: 180px;
+    }
+    .lupaHandle {
+        left: 160px;
+    }
+    .botaoContato {
+        left: 235px;
+    }
+    /* searchForm e seus elementos já são flexíveis, ajuste se necessário */
 }
-
-.logoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.logoCabecalho {
-    width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
-    height: auto; /* Garante que a proporção da imagem seja mantida */
-    display: block;
-}
-
-.logo a {
-    text-decoration: none;
-}
-
-.logo img {
-    position: relative;
-    display: block;
-    right: 10px;
-    max-width: 80%;
-    height: auto;
-}
-
-/* Removido: .ssColor, pois o texto "SS" foi removido. */
-
-
-.nav {
-    display: flex; /* Visível no desktop */
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 0px; /* Mantém o espaçamento à direita, ajuste se precisar de mais espaço */
-    padding-left: 300px;
-}
-
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 3.5rem; /* Reduzido o gap para dar mais espaço, ajuste conforme necessário */
-    align-items: center;
-}
-
-.nav a {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap; /* <<<< ESSA É A CHAVE: Impede a quebra de linha no texto do link */
-}
-
-.nav a:hover {
-    color: #7fcbe4;
-}
-
-/* O item "Nossa História" que contém o link e a lupa */
-.nossaHistoriaItem {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Espaçamento entre o link e a lupa */
-    /* Removido position: relative; pois não é mais necessário aqui para a lupa */
-}
-
-/* Contêiner da Lupa */
-.cssLupaContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px; /* Tamanho da lupa para o clique */
-    height: 30px; /* Tamanho da lupa para o clique */
-    cursor: pointer;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    z-index: 10;
-    padding: 5px;
-}
-
-.lupaCircle {
-    width: 20px; /* Tamanho do círculo da lupa */
-    height: 20px; /* Tamanho do círculo da lupa */
-    border: 2px solid #3ce5d4;
-    border-radius: 50%;
-    left: 180px;
-    bottom: 5px;
-    transition: border-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 50%; left: 450%; transform: translate(-60%, -60%); */
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-right: 3px; /* Pequeno ajuste para espaçar do cabo */
-}
-
-.lupaHandle {
-    width: 2px;
-    left: 160px;
-    height: 15px; /* Comprimento do cabo */
-    background-color: #3ce5d4;
-    top: 0px;
-    transition: background-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 58%; left: 358%; */
-    transform-origin: bottom right; /* Ponto de rotação */
-    transform: rotate(45deg); /* Posição do cabo */
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-left: -15px; /* Ajuste para posicionar o cabo sobre o círculo */
-    margin-top: 15px; /* Ajuste para alinhar o cabo */
-}
-
-.cssLupaContainer:hover .lupaCircle {
-    border-color: #7fcbe4;
-}
-
-.cssLupaContainer:hover .lupaHandle {
-    background-color: #7fcbe4;
-}
-
-.botaoContato {
-    background-color: #0071f300;
-    color: #ffffff;
-    padding: 0.7rem 1.1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    border: 2px solid #8ad7c5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 60px;
-    position: relative;
-    left: 235px;
-    /* left: 200px; Removido para o flexbox gerenciar melhor */
-    margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
-}
-
-.botaoContato:hover {
-    background-color: #000000;
-    border-color: #87ceeb;
-}
-
-.contatoMenuItem {
-    list-style: none;
-    margin-left: auto; /* Pode ser removido se o .botaoContato já tiver margin-left: auto */
-    order: 1; /* Mantém a ordem no desktop */
-}
-
-/* --- Hamburger Icon (Invisível por padrão no desktop) --- */
-.hamburgerIcon {
-    display: none; /* ESCONDIDO NO DESKTOP */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburgerIcon div {
-    width: 100%;
-    height: 3px;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s linear;
-}
-
-.hamburgerIcon.open .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.hamburgerIcon.open .bar2 {
-    opacity: 0;
-}
-.hamburgerIcon.open .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* --- Formulário de Busca (Invisível por padrão no desktop, aparece com JS) --- */
-.searchForm {
-    position: absolute; /* Posiciona sobre ou abaixo do cabeçalho */
-    top: 100%; /* Abaixo do cabeçalho */
-    left: 0;
-    width: 100%;
-    display: flex;
-    background-color: #212121; /* Cor de fundo do cabeçalho */
-    padding: 15px 2rem; /* Mais padding para harmonizar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    align-items: center;
-    justify-content: center; /* Centraliza o conteúdo da busca */
-}
-
-.searchInput {
-    flex-grow: 1;
-    padding: 10px 15px; /* Mais padding */
-    border: 1px solid #7fcbe4; /* Borda da cor do tema */
-    border-radius: 25px; /* Bordas arredondadas */
-    font-size: 1.1rem;
-    color: #333; /* Cor do texto digitado */
-    max-width: 500px; /* Limita a largura do input */
-    background-color: #fff; /* Fundo branco para o input */
-    margin-right: 15px;
-}
-
-.searchInput::placeholder {
-    color: #999;
-}
-
-.searchInput:focus {
-    outline: none;
-    border-color: #3ce5d4;
-    box-shadow: 0 0 0 3px rgba(60, 229, 212, 0.3); /* Sombra ao focar */
-}
-
-.searchButton {
-    background-color: #3ce5d4; /* Cor do tema */
-    color: #212121; /* Texto escuro no botão claro */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px; /* Bordas arredondadas */
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.searchButton:hover {
-    background-color: #7fcbe4; /* Cor do hover */
-    color: #fff;
-}
-}
-
 
 @media (max-width:1366px) {
- /* styles/Cabecalho.module.css */
-
-.cabecalho {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height: 130px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #212121;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logoContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.logoCabecalho {
-    width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
-    height: auto; /* Garante que a proporção da imagem seja mantida */
-    display: block;
-}
-
-.logo a {
-    text-decoration: none;
-}
-
-.logo img {
-    position: relative;
-    display: block;
-    right: 10px;
-    max-width: 80%;
-    height: auto;
-}
-
-/* Removido: .ssColor, pois o texto "SS" foi removido. */
-
-
-.nav {
-    display: flex; /* Visível no desktop */
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 0px; /* Mantém o espaçamento à direita, ajuste se precisar de mais espaço */
-    padding-left: 300px;
-}
-
-.nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 3.5rem; /* Reduzido o gap para dar mais espaço, ajuste conforme necessário */
-    align-items: center;
-}
-
-.nav a {
-    color: #ffffff;
-    font-size: 1.5rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap; /* <<<< ESSA É A CHAVE: Impede a quebra de linha no texto do link */
-}
-
-.nav a:hover {
-    color: #7fcbe4;
-}
-
-/* O item "Nossa História" que contém o link e a lupa */
-.nossaHistoriaItem {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Espaçamento entre o link e a lupa */
-    /* Removido position: relative; pois não é mais necessário aqui para a lupa */
-}
-
-/* Contêiner da Lupa */
-.cssLupaContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px; /* Tamanho da lupa para o clique */
-    height: 30px; /* Tamanho da lupa para o clique */
-    cursor: pointer;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    z-index: 10;
-    padding: 5px;
-}
-
-.lupaCircle {
-    width: 20px; /* Tamanho do círculo da lupa */
-    height: 20px; /* Tamanho do círculo da lupa */
-    border: 2px solid #3ce5d4;
-    border-radius: 50%;
-    left: 48px;
-    bottom: 5px;
-    transition: border-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 50%; left: 450%; transform: translate(-60%, -60%); */
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-right: 3px; /* Pequeno ajuste para espaçar do cabo */
-}
-
-.lupaHandle {
-    width: 2px;
-    left: 30px;
-    height: 15px; /* Comprimento do cabo */
-    background-color: #3ce5d4;
-    top: 0px;
-    transition: background-color 0.3s ease;
-    /* REMOVIDO: propriedades de posicionamento absoluto */
-    /* top: 58%; left: 358%; */
-    transform-origin: bottom right; /* Ponto de rotação */
-    transform: rotate(45deg); /* Posição do cabo */
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-left: -15px; /* Ajuste para posicionar o cabo sobre o círculo */
-    margin-top: 15px; /* Ajuste para alinhar o cabo */
-}
-
-.cssLupaContainer:hover .lupaCircle {
-    border-color: #7fcbe4;
-}
-
-.cssLupaContainer:hover .lupaHandle {
-    background-color: #7fcbe4;
-}
-
-.botaoContato {
-    background-color: #0071f300;
-    color: #ffffff;
-    padding: 0.7rem 1.1rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-    border: 2px solid #8ad7c5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 60px;
-    position: relative;
-    left: 25px;
-    /* left: 200px; Removido para o flexbox gerenciar melhor */
-    margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
-}
-
-.botaoContato:hover {
-    background-color: #000000;
-    border-color: #87ceeb;
-}
-
-.contatoMenuItem {
-    list-style: none;
-    margin-left: auto; /* Pode ser removido se o .botaoContato já tiver margin-left: auto */
-    order: 1; /* Mantém a ordem no desktop */
-}
-
-/* --- Hamburger Icon (Invisível por padrão no desktop) --- */
-.hamburgerIcon {
-    display: none; /* ESCONDIDO NO DESKTOP */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburgerIcon div {
-    width: 100%;
-    height: 3px;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: all 0.3s linear;
-}
-
-.hamburgerIcon.open .bar1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.hamburgerIcon.open .bar2 {
-    opacity: 0;
-}
-.hamburgerIcon.open .bar3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* --- Formulário de Busca (Invisível por padrão no desktop, aparece com JS) --- */
-.searchForm {
-    position: absolute; /* Posiciona sobre ou abaixo do cabeçalho */
-    top: 100%; /* Abaixo do cabeçalho */
-    left: 0;
-    width: 100%;
-    display: flex;
-    background-color: #212121; /* Cor de fundo do cabeçalho */
-    padding: 15px 2rem; /* Mais padding para harmonizar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 99;
-    align-items: center;
-    justify-content: center; /* Centraliza o conteúdo da busca */
-}
-
-.searchInput {
-    flex-grow: 1;
-    padding: 10px 15px; /* Mais padding */
-    border: 1px solid #7fcbe4; /* Borda da cor do tema */
-    border-radius: 25px; /* Bordas arredondadas */
-    font-size: 1.1rem;
-    color: #333; /* Cor do texto digitado */
-    max-width: 500px; /* Limita a largura do input */
-    background-color: #fff; /* Fundo branco para o input */
-    margin-right: 15px;
-}
-
-.searchInput::placeholder {
-    color: #999;
-}
-
-.searchInput:focus {
-    outline: none;
-    border-color: #3ce5d4;
-    box-shadow: 0 0 0 3px rgba(60, 229, 212, 0.3); /* Sombra ao focar */
-}
-
-.searchButton {
-    background-color: #3ce5d4; /* Cor do tema */
-    color: #212121; /* Texto escuro no botão claro */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px; /* Bordas arredondadas */
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.searchButton:hover {
-    background-color: #7fcbe4; /* Cor do hover */
-    color: #fff;
-}
+    .cabecalho {
+        height: 130px;
+        padding: 1rem 2rem;
+    }
+    .nav {
+        margin-right: 0px;
+        padding-left: 300px;
+    }
+    .lupaCircle {
+        left: 48px;
+    }
+    .lupaHandle {
+        left: 30px;
+    }
+    .botaoContato {
+        left: 25px;
+    }
+    /* searchForm e seus elementos já são flexíveis, ajuste se necessário */
 }
 
 
-
-
-
-/* Para telas menores que 1024px (tablets e celulares) */
+/* Para telas menores que 1200px (tablets e celulares) */
 @media (max-width: 1200px) {
     .cabecalho {
         height: 80px;
         padding: 0.8rem 1rem;
     }
 
-    .logoCabecalho { /* Ajusta a imagem da logo para telas menores */
-      width: 200px; /* Largura menor para mobile/tablet */
-      height: auto;
-    }
-
-    .logo img {
-        width: 200px; /* Largura menor para mobile */
+    .logoCabecalho {
+        width: 200px;
         height: auto;
     }
 
-    /* .slogan pode ser ajustado ou removido conforme sua necessidade */
-    .slogan {
+    .logo img {
+        width: 200px;
+        height: auto;
+    }
+
+    .slogan { /* Ajuste ou remova conforme sua necessidade */
         font-size: 0.6em;
         position: relative;
         top: 5px;
@@ -777,28 +381,28 @@
     }
 
     .nav {
-        display: none; /* Escondido por padrão em mobile */
+        display: none;
         flex-direction: column;
-        position: relative;
-        top: 0;
-        right: -100%; /* Inicia fora da tela */
+        position: absolute; /* Alterado para absolute para sobrepor o conteúdo */
+        top: 100%; /* Inicia logo abaixo do cabeçalho */
+        right: -100%;
         width: 70%;
-        height: 100vh;
+        height: calc(100vh - 80px); /* Altura da tela menos a altura do cabeçalho */
         background-color: #333333ef;
-        padding-top: 60px;
+        padding-top: 20px; /* Reduzido o padding top para começar mais cedo */
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
         transition: right 0.3s ease-in-out;
         justify-content: flex-start;
         align-items: center;
         margin-left: 0;
-        margin-right: 0; /* Ajustado para 0 em mobile */
+        margin-right: 0;
         padding-left: 0;
     }
 
     .nav.open {
         display: flex;
         right: 0;
-        top: 180px;
+        top: 80px; /* Posiciona corretamente abaixo do cabeçalho recolhido */
     }
 
     .nav ul {
@@ -818,7 +422,7 @@
         font-size: 1.2rem;
         padding: 0.8rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        white-space: normal; /* Permite quebrar linha em mobile, se necessário */
+        white-space: normal;
     }
 
     .nav li:last-child a {
@@ -834,7 +438,7 @@
     }
 
     .hamburgerIcon {
-        display: flex; /* VISÍVEL NO MOBILE */
+        display: flex;
     }
 
     .contatoMenuItem {
@@ -849,33 +453,78 @@
         border: 2px solid transparent;
         width: 150px;
         padding: 0.7rem 1.5rem;
-        left: 0; /* Remove o left fixo em mobile */
-        margin-left: 0; /* Remove margin-left: auto em mobile */
+        left: 0;
+        margin-left: 0;
     }
 
     .cssLupaContainer {
-        display: none; /* A lupa deve estar escondida em mobile/tablet */
+        /* A lupa agora pode ser exibida em mobile/tablet dentro do menu */
+        display: flex;
+        margin-left: 10px; /* Espaçamento da lupa no menu mobile */
+        /* Remova left/bottom fixos se a lupa estiver no fluxo normal do menu */
+        position: static;
+        width: 30px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
     }
 
+    .lupaCircle {
+        left: unset; /* Remove posicionamento fixo */
+        bottom: unset; /* Remove posicionamento fixo */
+        margin-right: 3px;
+    }
+
+    .lupaHandle {
+        left: unset; /* Remove posicionamento fixo */
+        top: unset; /* Remove posicionamento fixo */
+        margin-left: -15px;
+        margin-top: 15px;
+    }
+
+
+    /* Ajustes para o formulário de busca em telas menores */
     .searchForm {
-        display: none;
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: stretch; /* Estica os itens horizontalmente */
         padding: 10px 1rem; /* Padding menor para mobile */
+        gap: 10px; /* Ajuste o espaçamento entre os itens */
     }
 
     .searchInput {
         font-size: 1rem;
+        max-width: unset; /* Remove o max-width para ocupar 100% */
+        width: 100%;
+        margin-right: 0; /* Remove margem extra */
     }
 
     .searchButton {
         font-size: 1rem;
         padding: 8px 15px;
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    .searchNavigation {
+        flex-direction: row; /* Mantém em linha */
+        justify-content: center; /* Centraliza os botões de navegação */
+        width: 100%;
+        margin-left: 0; /* Remove margem extra */
+        margin-top: 5px; /* Pequeno espaçamento superior */
+        flex-wrap: wrap; /* Permite quebrar se necessário */
+    }
+
+    .searchNavigation button {
+        flex-grow: 1; /* Permite que os botões cresçam */
+        min-width: unset; /* Remove o min-width se houver */
+        font-size: 0.85rem; /* Fonte um pouco menor */
+        padding: 6px 10px;
     }
 }
 
 /* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
     .logo img {
-      width: 250px; /* Um pouco maior para tablets */
+        width: 250px; /* Um pouco maior para tablets */
     }
 }
 
@@ -883,10 +532,10 @@
 @media (max-width: 480px) {
     .logo img {
         position: relative;
-        width: 190px; /* Largura ainda menor para telas muito pequenas */
+        width: 190px;
         height: auto;
-        right: 80px; /* Removido o right fixo */
-        margin-left: auto; /* Centraliza no container */
+        right: 80px;
+        margin-left: auto;
     }
 
     .slogan {
@@ -894,57 +543,36 @@
         transform: translateY(-10px) translateX(30px);
     }
 
-  .nav {
-        display: none; /* Escondido por padrão em mobile */
-        flex-direction: column;
-        position: relative;
-        top: 0;
-        right: -100%; /* Inicia fora da tela */
-        width: 70%;
-        height: 100vh;
-        background-color: #333333ef;
-        padding-top: 60px;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: right 0.3s ease-in-out;
-        justify-content: flex-start;
-        align-items: center;
-        margin-left: 0;
-        margin-right: 0; /* Ajustado para 0 em mobile */
-        padding-left: 0;
+    .nav {
+        /* O nav já foi ajustado para mobile na media query de 1200px */
+        /* Apenas ajuste a posição 'top' se o cabeçalho tiver altura diferente */
+        top: 80px; /* Se o cabeçalho tiver 80px em mobile */
     }
 
     .nav.open {
-        display: flex;
-        right: -16;
-        top: 380px;
+        /* Se o 'top' do .nav.open precisar ser ajustado para telas muito pequenas */
+        top: 80px; /* Exemplo: se o cabeçalho for 80px em mobile */
     }
 
-    .nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-        text-align: center;
-        align-items: center;
+    .searchForm {
+        /* Já definido na media query de 1200px para telas menores */
     }
 
-    .nav li {
-        width: 100%;
-        padding: 0.5rem 0;
+    .searchInput,
+    .searchButton {
+        /* Já definido na media query de 1200px para telas menores */
     }
-
-    .nav a {
-        font-size: 1.2rem;
-        padding: 0.8rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        white-space: normal; /* Permite quebrar linha em mobile, se necessário */
+    .searchNavigation button {
+        font-size: 0.8rem; /* Ainda menor em telas muito pequenas */
+        padding: 5px 8px;
     }
-
-    .nav li:last-child a {
-        border-bottom: none;
+    .searchNavigation span {
+        font-size: 0.9rem;
     }
 }
 
 /* Garante que o formulário de busca esteja visível apenas quando isSearchOpen é true */
-.searchForm[style*="display: block"] {
+/* Esta regra CSS não é necessária, pois a visibilidade é controlada pelo React */
+/* .searchForm[style*="display: block"] {
     display: flex !important;
-}
+} */
