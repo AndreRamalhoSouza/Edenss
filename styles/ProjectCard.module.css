@@ -70,10 +70,10 @@
 /* Media Queries para responsividade do CARD INDIVIDUAL */
 
 /* Laptops e Desktops menores (3 colunas) */
-@media (max-width: 1900px) {
+@media (max-width: 1920px) {
 .card {
-   width: 506px;
-    height: 250px; /* Altura menor para celulares */
+   width: 635px;
+    height: 450px; /* Altura menor para celulares */
   }
 }
 @media (max-width: 1500px) {
@@ -84,7 +84,7 @@
 }
 @media (max-width: 1366px) {
   .card {
-   width: 430px;
+   width: 450px;
     height: 250px; /* Altura menor para celulares */
   }
 }
