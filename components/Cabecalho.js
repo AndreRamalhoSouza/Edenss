@@ -1,10 +1,10 @@
 // components/Cabecalho.js
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react'; // Importe useRef
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Cabecalho.module.css';
-import Mark from 'mark.js';
+import Mark from 'mark.js'; // Importe mark.js
 
 // Função auxiliar para remover acentos
 const removeAccents = (str) => {
@@ -15,16 +15,16 @@ function Cabecalho() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [currentMarkInstance, setCurrentMarkInstance] = useState(null);
-  const [highlightedCount, setHighlightedCount] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(-1);
-  const searchResultsRef = useRef([]);
+  const [currentMarkInstance, setCurrentMarkInstance] = useState(null); // Para gerenciar a instância de mark.js
+  const [highlightedCount, setHighlightedCount] = useState(0); // Para contar ocorrências
+  const [currentIndex, setCurrentIndex] = useState(-1); // Para o índice da ocorrência atual
+  const searchResultsRef = useRef([]); // Para armazenar os elementos destacados
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     if (isSearchOpen) {
       setIsSearchOpen(false);
-      clearHighlights();
+      clearHighlights(); // Limpa destaques se o menu for aberto e a busca estava ativa
     }
   };
 
@@ -32,7 +32,7 @@ function Cabecalho() {
     setIsSearchOpen(!isSearchOpen);
     if (isOpen) setIsOpen(false);
     setSearchTerm('');
-    clearHighlights();
+    clearHighlights(); // Sempre limpa os destaques ao abrir/fechar a busca
   };
 
   // Limpa todos os destaques da página
@@ -49,22 +49,23 @@ function Cabecalho() {
   // Função para rolar para a próxima/anterior ocorrência
   const scrollToHighlight = (index) => {
     if (searchResultsRef.current[index]) {
-      searchResultsRef.current.forEach((el) => { // Removido o 'i' desnecessário aqui
+      searchResultsRef.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+      // Adiciona uma classe temporária para destacar visualmente a ocorrência atual
+      searchResultsRef.current.forEach((el, i) => {
         if (el.classList.contains(styles.currentHighlight)) {
           el.classList.remove(styles.currentHighlight);
         }
       });
       searchResultsRef.current[index].classList.add(styles.currentHighlight);
-      searchResultsRef.current[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
     }
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    clearHighlights();
+    clearHighlights(); // Limpa destaques antigos antes de uma nova busca
 
     const normalizedTerm = removeAccents(searchTerm).toLowerCase().trim();
 
@@ -73,22 +74,24 @@ function Cabecalho() {
       return;
     }
 
-    const context = document.body;
+    // Inicializa mark.js no elemento body (ou em um container específico do seu conteúdo)
+    const context = document.body; // Altere para um container específico se necessário (ex: document.getElementById('main-content'))
     const markInstance = new Mark(context);
     setCurrentMarkInstance(markInstance);
 
+    // Faz a marcação
     markInstance.mark(normalizedTerm, {
-      "separateWordSearch": false,
-      "ignoreJoiners": true,
-      "diacritics": false,
-      "accuracy": "partially",
-      "acrossElements": true,
-      "className": styles.highlightedText,
+      "separateWordSearch": false, // Permite buscar frases
+      "ignoreJoiners": true, // Ignora hífens e outros "joiners"
+      "diacritics": false, // Não diferencia acentos (já tratamos com removeAccents no searchTerm)
+      "accuracy": "partially", // Encontra ocorrências parciais da palavra
+      "acrossElements": true, // Permite que a palavra esteja quebrada entre elementos HTML
+      "className": styles.highlightedText, // Classe CSS para o destaque
       "done": (occurrences) => {
         setHighlightedCount(occurrences);
         searchResultsRef.current = Array.from(context.querySelectorAll(`.${styles.highlightedText}`));
         if (occurrences > 0) {
-          setCurrentIndex(0);
+          setCurrentIndex(0); // Começa na primeira ocorrência
           scrollToHighlight(0);
         } else {
           alert(`Nenhuma ocorrência encontrada para "${searchTerm}".`);
@@ -97,6 +100,7 @@ function Cabecalho() {
     });
   };
 
+  // Navegar para a próxima ocorrência
   const goToNext = () => {
     if (highlightedCount > 0) {
       const nextIndex = (currentIndex + 1) % highlightedCount;
@@ -105,6 +109,7 @@ function Cabecalho() {
     }
   };
 
+  // Navegar para a ocorrência anterior
   const goToPrevious = () => {
     if (highlightedCount > 0) {
       const prevIndex = (currentIndex - 1 + highlightedCount) % highlightedCount;
@@ -118,7 +123,7 @@ function Cabecalho() {
       if (window.innerWidth > 1023) {
         setIsOpen(false);
         setIsSearchOpen(false);
-        clearHighlights();
+        clearHighlights(); // Limpa destaques em telas maiores
       }
     };
 
@@ -126,15 +131,17 @@ function Cabecalho() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearHighlights();
+      clearHighlights(); // Limpa destaques ao desmontar o componente
     };
-  }, [clearHighlights]); // Adicionado clearHighlights aqui
+  }, []); // Dependências ajustadas, não precisa de isOpen e isSearchOpen aqui
 
+  // Limpa destaques quando a busca é fechada explicitamente pelo usuário
   useEffect(() => {
     if (!isSearchOpen) {
       clearHighlights();
     }
-  }, [isSearchOpen, clearHighlights]); // Adicionado clearHighlights aqui também
+  }, [isSearchOpen]);
+
 
   return (
     <header className={styles.cabecalho}>
