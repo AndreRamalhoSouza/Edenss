@@ -2,25 +2,36 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router'; // 1. Importe useRouter
 import styles from '../styles/Rodape.module.css';
 
 function Rodape() {
+  const router = useRouter(); // 2. Inicialize useRouter
+
+  // Função auxiliar para lidar com cliques em links de âncora
+  const handleAnchorClick = (e, href) => {
+    e.preventDefault(); // Impede o comportamento padrão do Link
+    router.push(href); // Navega para a URL completa (ex: /#servicos)
+    // O 'scroll-behavior: smooth' no seu globals.css cuidará da rolagem suave na página de destino.
+  };
+
   return (
     <footer className={styles.rodape}>
       <div className={styles.colunasRodape}>
         <div className={styles.colunaRodape}>
-          {/* Se a logo deve levar para o topo da página, pode ser href="/" ou href="#top" */}
+          {/* A logo já está OK com href="/" */}
           <Link href="/">
             <Image
               src="/images/rodape.png"
               alt="Logo da Empresa"
-              width={460} // Manter esses valores para otimização do Next.js
-              height={120} // Manter esses valores para otimização do Next.js
+              width={460}
+              height={120}
               className={styles.logoPrincipal}
             />
           </Link>
 
           <div className={styles.socialIcons}>
+            {/* Links sociais (permanecem como estão, pois são externos) */}
             <a href="URL_DO_SEU_TWITTER" target="_blank" rel="noopener noreferrer">
               <Image src="/images/x.png" alt="Twitter" width={30} height={30} />
             </a>
@@ -43,30 +54,47 @@ function Rodape() {
           <h3>PÁGINAS</h3>
           <ul>
             <li>
-              {/* Aponta para a seção com id="servicos" no index.js */}
-              <Link href="#servicos">Serviços</Link>
+              {/* 3. Ajuste o href e adicione o onClick */}
+              <Link href="/#servicos" onClick={(e) => handleAnchorClick(e, '/#servicos')}>
+                Serviços
+              </Link>
             </li>
             <li>
-              {/* Aponta para a seção com id="nossa-historia" no index.js */}
-              <Link href="#nossa-historia">Nossa História</Link>
-            </li>
-            {/* Estes links abaixo precisam que você adicione as seções correspondentes no index.js ou decida se são necessários para uma one-page */}
-            <li>
-              {/* Se "Hotéis" e "Parques Temáticos" são parte do "Portfólio" ou seções separadas, ajuste o ID conforme necessário. */}
-              {/* Por exemplo, se forem parte do portfólio, podem apontar para #projetos */}
-              <Link href="#projetos">Hotéis</Link> {/* AJUSTE AQUI SE TIVER UMA SEÇÃO ESPECÍFICA */}
+              {/* Ajuste o href e adicione o onClick */}
+              <Link href="/#nossa-historia" onClick={(e) => handleAnchorClick(e, '/#nossa-historia')}>
+                Nossa História
+              </Link>
             </li>
             <li>
-              <Link href="#projetos">Parques Temáticos</Link> {/* AJUSTE AQUI SE TIVER UMA SEÇÃO ESPECÍFICA */}
+              {/* Ajuste o href e adicione o onClick (Verifique se #projetos é o correto para "Hotéis") */}
+              <Link href="/#projetos" onClick={(e) => handleAnchorClick(e, '/#projetos')}>
+                Hotéis
+              </Link>
             </li>
             <li>
-              {/* Aponta para a seção com id="projetos" no index.js */}
-              <Link href="#projetos">Portfólio</Link>
+              {/* Ajuste o href e adicione o onClick (Verifique se #projetos é o correto para "Parques Temáticos") */}
+              <Link href="/#projetos" onClick={(e) => handleAnchorClick(e, '/#projetos')}>
+                Parques Temáticos
+              </Link>
             </li>
             <li>
-              {/* Aponta para a seção com id="nossa-historia" no index.js */}
-              <Link href="#nossa-historia">Quem somos</Link>
+              {/* Ajuste o href e adicione o onClick */}
+              <Link href="/#projetos" onClick={(e) => handleAnchorClick(e, '/#projetos')}>
+                Portfólio
+              </Link>
             </li>
+            <li>
+              {/* Ajuste o href e adicione o onClick */}
+              <Link href="/#nossa-historia" onClick={(e) => handleAnchorClick(e, '/#nossa-historia')}>
+                Quem somos
+              </Link>
+            </li>
+             {/* Adicione um link para a seção de contato se houver uma, como você indicou */}
+             <li>
+                <Link href="/#contato" onClick={(e) => handleAnchorClick(e, '/#contato')}>
+                  Contato
+                </Link>
+             </li>
           </ul>
         </div>
 
@@ -74,10 +102,9 @@ function Rodape() {
           <h3>CONTATO</h3>
           <p className={styles.emailSamuel}>samuelvidal@edenss.com.br</p>
           <p className={styles.emailSusi}> susi@edenss.com.br</p>
-          {/* Adicione um link para a seção de contato se houver uma */}
-         
         </div>
       </div>
+       <p className={styles.copyright}>&copy; {new Date().getFullYear()} Edenss. Todos os direitos reservados.</p> {/* Certifique-se de que este parágrafo está dentro do footer */}
     </footer>
   );
 }

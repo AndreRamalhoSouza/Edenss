@@ -44,7 +44,7 @@ export default function ProjectDetail({ project }) {
       <main className={styles.main}>
         {/* Usar Link para navegação mais robusta ou router.push() */}
         <button onClick={() => router.push('/portfolio')} className={styles.backButton}>
-          ← Voltar para Projetos
+          ← Página Inicial
         </button>
 
         <h1 className={styles.title}>{project.name}</h1>

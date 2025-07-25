@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react'; // Importe useState
+import React, { useState } from 'react';
 import Header from '../components/Cabecalho';
 import Footer from '../components/Rodape';
 import SecaoHero from '../components/SecaoHero';
@@ -80,9 +80,9 @@ function Home() {
       <main className={styles.main}>
         <SecaoHero images={conteudoHero.imagensCarrossel} />
 
-        {/* Adicione o ID "nossa-historia" aqui */}
-        <section id="nossa-historia" className={styles.secaoSobreNos}>
-          <h2 className={styles.tituloSobreNos}>
+        {/* Nossa História - Mova o ID para o h2 */}
+        <section className={styles.secaoSobreNos}>
+        <h2 id="nossa-historia" style={{ scrollMarginTop: '130px' }} className={styles.tituloSobreNos}> {/* ID MOVIDO PARA CÁ */}
             <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
             <div className={styles.historiaGrande}>{historiaSobreNos}</div>
           </h2>
@@ -91,9 +91,9 @@ function Home() {
         </section>
 
         {/* --- SEÇÃO DE SERVIÇOS --- */}
-        {/* Adicione o ID "servicos" aqui */}
-        <section id="servicos" className={styles.secaoServicos}>
-          <h2 className={styles.tituloServicos}>SERVIÇOS</h2>
+        {/* Serviços - Mova o ID para o h2 */}
+        <section className={styles.secaoServicos}>
+       <h2 id="servicos" style={{ scrollMarginTop: '130px' }} className={styles.tituloServicos}>SERVIÇOS</h2>
           <div className={styles.gradeServicos}>
             {servicos.map((servico, index) => (
               <CartaoServico key={index} servico={servico} />
@@ -103,31 +103,34 @@ function Home() {
         {/* --- FIM DA SEÇÃO DE SERVIÇOS --- */}
 
         {/* --- SEÇÃO DE PORTFÓLIO --- */}
-        {/* Adicione o ID "projetos" aqui */}
-        <section id="projetos" className={styles.secaoPortfolio}>
-          
-          <h2 className={styles.portfolioTitle}>PORTFÓLIO</h2>
-           <div className={styles.divisorCinza}></div>
-          <div className={styles.projectsGridContainer}>
-            
-            {currentProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+        {/* Portfólio/Projetos - Mova o ID para o h2 */}
+        <section className={styles.secaoPortfolio}>
 
-          <div className={styles.paginationDots}>
-            {[...Array(totalPages)].map((_, index) => (
-              <span
-                key={index}
-                className={`${styles.dot} ${index + 1 === currentPage ? styles.active : ''}`}
-              ></span>
-            ))}
-          </div>
-        </section>
+          <h2 id="projetos" style={{ scrollMarginTop: '130px' }} className={styles.portfolioTitle}>PORTFÓLIO</h2>
+             <div className={styles.divisorCinza}></div>
+           <div className={styles.projectsGridContainer}>
+
+             {currentProjects.map((project) => (
+               <ProjectCard key={project.id} project={project} />
+             ))}
+           </div>
+
+           <div className={styles.paginationDots}>
+             {[...Array(totalPages)].map((_, index) => (
+               <span
+                 key={index}
+                 className={`${styles.dot} ${index + 1 === currentPage ? styles.active : ''}`}
+               ></span>
+             ))}
+           </div>
+         </section>
         {/* --- FIM DA SEÇÃO DE PORTFÓLIO --- */}
 
         {/* --- SEÇÃO DA EQUIPE --- */}
+        {/* Equipe - Adicione o ID ao h2 */}
         <section className={styles.secaoEquipe}>
+        <h2 id="secao-equipe" style={{ scrollMarginTop: '130px' }}>Nossa Equipe</h2>
+
           <div className={styles.gradeEquipe}>
             {membrosEquipe.map((membro, index) => (
               <MembroEquipe key={index} membro={membro} />
@@ -137,8 +140,9 @@ function Home() {
         {/* --- FIM DA SEÇÃO DA EQUIPE --- */}
 
         {/* --- SEÇÃO DE DEPOIMENTOS (AGORA COM CARROSSEL) --- */}
+        {/* Depoimentos - Adicione o ID ao h2 */}
         <section className={styles.secaoDepoimentos}>
-          <h2>DEPOIMENTOS</h2>
+         <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>DEPOIMENTOS</h2>
           <div className={styles.divisorGray}></div>
 
           <div className={styles.depoimentosCarouselContainer}> {/* Novo contêiner para o carrossel */}
@@ -151,7 +155,7 @@ function Home() {
 
             <div className={styles.gradeDepoimentos}>
               {/* Renderiza apenas os depoimentos visíveis no slide atual */}
-              {depoimentosVisiveis.map((depoimento) => ( // Linha corrigida: removido o comentário
+              {depoimentosVisiveis.map((depoimento) => (
                 <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
               ))}
             </div>
@@ -177,7 +181,12 @@ function Home() {
         </section>
         {/* --- FIM DA SEÇÃO DE DEPOIMENTOS --- */}
 
-        <FormularioContato />
+        {/* Formulário de Contato - Adicione o ID ao FormularioContato ou a um wrapper */}
+        {/* Assumindo que FormularioContato é um componente. Se ele não tiver um ID interno, envolva-o */}
+        <section id="contato"> {/* <--- ADICIONE ESTE WRAPPER COM O ID */}
+          <FormularioContato />
+        </section>
+
       </main>
 
       <Footer />

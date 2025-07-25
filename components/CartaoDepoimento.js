@@ -3,12 +3,12 @@ import styles from '../styles/CartaoDepoimento.module.css';
 function CartaoDepoimento({ depoimento }) {
   return (
     <div className={styles.cartao}>
-      {/* Conditionally render the image if imagemUrl exists */}
+     
       {depoimento.imagemUrl && (
         <img
           src={depoimento.imagemUrl}
-          alt={`Foto de ${depoimento.nome}`} // Good for accessibility
-          className={styles.imagemDepoimento} // Add a class for styling
+          alt={`Foto de ${depoimento.nome}`} 
+          className={styles.imagemDepoimento} 
         />
       )}
      <p className={styles.citacao}>&quot;{depoimento.citacao}&quot;</p>

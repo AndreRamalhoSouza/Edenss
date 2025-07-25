@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router'; // Certifique-se de que esta linha está aqui
 import styles from '../styles/Cabecalho.module.css';
 
 // Função auxiliar para remover acentos
@@ -14,6 +15,7 @@ function Cabecalho() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const router = useRouter(); // Inicialize o useRouter aqui
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -29,7 +31,6 @@ function Cabecalho() {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    // Normaliza o termo de busca: para minúsculas, remove espaços e acentos
     const normalizedTerm = removeAccents(searchTerm).toLowerCase().trim();
 
     const sections = {
@@ -48,29 +49,48 @@ function Cabecalho() {
       'depoimentos': 'secao-depoimentos',
     };
 
-    // Tenta encontrar uma correspondência exata para o termo normalizado
     let targetId = sections[normalizedTerm];
 
-    // Se o termo normalizado não for uma chave exata,
-    // verifica se o termo normalizado está contido em alguma chave da seção.
-    // Isso pode ser útil para buscas mais flexíveis (ex: "historia" buscar "nossa historia").
     if (!targetId) {
       for (const key in sections) {
         if (removeAccents(key).toLowerCase().includes(normalizedTerm)) {
           targetId = sections[key];
-          break; // Encontrou a primeira correspondência, sai do loop
+          break;
         }
       }
     }
 
-
     if (targetId) {
-      window.location.hash = targetId;
+      // Se estiver na página inicial, rola para a seção.
+      // Se estiver em outra página, navega para a home com o hash.
+      if (router.pathname === '/') {
+        window.location.hash = targetId;
+      } else {
+        router.push(`/#${targetId}`);
+      }
       setIsSearchOpen(false);
       setSearchTerm('');
     } else {
       alert('Seção não encontrada. Tente "Serviços", "Projetos", "Nossa História" ou "Contato".');
       setSearchTerm('');
+    }
+  };
+
+  // Nova função para o clique na logo
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    if (router.pathname === '/') {
+      // Se já estiver na página inicial, apenas rola para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Remove o hash da URL se houver um
+      if (window.location.hash) {
+        router.replace(window.location.pathname, undefined, { shallow: true });
+      }
+    } else {
+      // Se estiver em outra página, navega para a página inicial (raiz)
+      router.push('/');
+      // A propriedade scroll-behavior: smooth no html do globals.css
+      // se encarregará da rolagem suave para o topo na nova página.
     }
   };
 
@@ -93,7 +113,10 @@ function Cabecalho() {
     <header className={styles.cabecalho}>
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
-          <Link href="/">
+          <a
+            href="/" // Mude para "/" para indicar a página inicial
+            onClick={handleLogoClick} // Use a nova função de clique
+          >
             <Image
               src="/images/logo.png"
               alt="Logo da Empresa"
@@ -102,7 +125,7 @@ function Cabecalho() {
               priority
               className={styles.logoCabecalho}
             />
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -118,17 +141,18 @@ function Cabecalho() {
       <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>
         <ul>
           <li>
-            <Link href="#servicos" onClick={toggleMenu}>
+            {/* Ajuste os Links de navegação para lidar com navegação de página cruzada */}
+            <Link href="/#servicos" onClick={toggleMenu}>
               Serviços
             </Link>
           </li>
           <li>
-            <Link href="#projetos" onClick={toggleMenu}>
+            <Link href="/#projetos" onClick={toggleMenu}>
               Projetos
             </Link>
           </li>
           <li className={styles.nossaHistoriaItem}>
-            <Link href="#nossa-historia" onClick={toggleMenu}>
+            <Link href="/#nossa-historia" onClick={toggleMenu}>
               Nossa História
             </Link>
             <span className={styles.cssLupaContainer} onClick={toggleSearch}>
@@ -138,7 +162,7 @@ function Cabecalho() {
           </li>
           <li className={styles.contatoMenuItem}>
             <Link
-              href="#contato"
+              href="/#contato"
               className={styles.botaoContato}
               onClick={toggleMenu}
             >
