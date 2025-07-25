@@ -221,6 +221,7 @@
     font-size: 0.9em;
   }
   }
+  
   @media (max-width: 390px) {
   .card {
    width: 122px;
@@ -234,5 +235,20 @@
   .overlay h3 {
     font-size: 0.9em;
   }
+  }
+  }
+
+  @media (max-width: 360px) {
+  .card {
+   width: 120px;
+    height: 250px; /* Altura menor para celulares */
+  }
+  .overlay {
+    min-height: 40px;
+    max-height: 70px;
+    padding: 6px;
+  }
+  .overlay h3 {
+    font-size: 0.9em;
   }
   }

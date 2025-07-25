@@ -1,0 +1,30 @@
+// styles/custom-bootstrap.scss
+
+// 1. Defina suas variáveis customizadas AQUI
+$primary: #4fc0d7; // Cor primária
+$success: #3ce5d4; // Cor de sucesso (para o botão de busca)
+
+// Cores específicas para botões btn-outline-primary
+$btn-outline-primary-color: $primary;
+$btn-outline-primary-border-color: $primary;
+$btn-outline-primary-hover-color: #ffffff;
+$btn-outline-primary-hover-bg: $primary;
+$btn-outline-primary-hover-border-color: $primary;
+
+// Cores específicas para navbar-dark links
+$navbar-dark-color: #ffffff;
+$navbar-dark-hover-color: #7fcbe4; // Seu azul de hover
+$navbar-dark-active-color: #ffffff;
+$navbar-dark-link-color: #ffffff;
+
+// Ajuste a cor do ícone do toggler (hambúrguer)
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+$navbar-dark-toggler-border-color: #ffffff;
+
+
+// 2. Importe o Bootstrap (seções completas ou partes específicas)
+@import "~bootstrap/scss/bootstrap";
+
+// 3. Adicione qualquer CSS personalizado AQUI, se precisar sobrescrever algo muito específico
+// Ou se forem estilos para componentes que não são do Bootstrap.
+// .meu-componente { color: red; }
