@@ -58,7 +58,7 @@
 
 .nav a {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease;
     text-decoration: none;
@@ -126,7 +126,7 @@
 .botaoContato {
     background-color: #0071f300;
     color: #ffffff;
-    padding: 0.7rem 1.1rem;
+    padding: 0.9rem 1.7rem;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
