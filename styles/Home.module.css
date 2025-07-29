@@ -59,10 +59,11 @@
   margin-bottom: 2rem;
 }
 
-.secaoEquipe h2 {
+.secaoEquipe h2 {position: relative;
   font-size: 2rem; /* Menor para mobile */
-  color: #333333;
+  color: #000000;
   margin-bottom: 2rem;
+  right: 20px;
 }
 
 .gradeEquipe {
