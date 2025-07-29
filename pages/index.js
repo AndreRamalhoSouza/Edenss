@@ -129,7 +129,7 @@ function Home() {
         {/* --- SEÇÃO DA EQUIPE --- */}
         {/* Equipe - Adicione o ID ao h2 */}
         <section className={styles.secaoEquipe}>
-        <h2 id="secao-equipe" style={{ scrollMarginTop: '130px' }}>Nossa Equipe</h2>
+      
 
           <div className={styles.gradeEquipe}>
             {membrosEquipe.map((membro, index) => (
