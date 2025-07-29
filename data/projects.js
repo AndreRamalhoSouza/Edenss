@@ -6,11 +6,11 @@ export const projects = [
     name: 'Aqualand Salinópolis',
     mainImage: '/images/aqualand 1.jpg',
     description: 'Um parque aquático incrível localizado em Salinópolis, Pará, com diversas atrações para toda a família e piscinas vibrantes. Este projeto foi um desafio de engenharia e design, focado em criar uma experiência imersiva e segura para visitantes de todas as idades. A integração com a paisagem natural da região foi um ponto chave, resultando em um ambiente harmonioso e convidativo.',
-    detailImages: [ // <-- ESTAS SÃO AS IMAGENS QUE IRÃO NA PÁGINA DE DETALHES
+    detailImages: [
       '/images/aqualand 2.jpg',
       '/images/aqualand 3.jpg',
       '/images/aqualand 4.jpg',
-      '/images/aqualand 5.avif', // Adicione até 4 imagens
+      '/images/aqualand 5.avif',
     ],
   },
   {
@@ -25,7 +25,6 @@ export const projects = [
       '/images/sol 5.jpeg',
     ],
   },
-  // ... adicione/verifique os outros 4 projetos aqui com suas detailImages
   {
     id: 'hotel-tropical-oasis',
     name: 'Hotel Tropical Oasis',
@@ -73,6 +72,27 @@ export const projects = [
       '/images/clube 4.webp',
       '/images/clube 5.jpg',
     ],
+  },
+  {
+    id: 'oceania-wave-park',
+    name: 'Oceania Wave Park',
+    mainImage: '/images/port ex 1.webp',
+    description: 'Um parque aquático temático que simula paisagens oceânicas com ondas artificiais, toboáguas transparentes e áreas infantis interativas. O projeto traz uma fusão entre tecnologia e natureza, oferecendo diversão com realismo marítimo para todas as idades.',
+    detailImages: [],
+  },
+  {
+    id: 'fantasy-waterland',
+    name: 'Fantasy Waterland',
+    mainImage: '/images/port ex 2.webp',
+    description: 'Inspirado em contos de fadas, este parque aquático oferece castelos d’água, rios encantados e escorregadores mágicos. A proposta visual foi desenvolvida para criar uma imersão lúdica, com cenografia detalhada e experiência sensorial para crianças e adultos.',
+    detailImages: [],
+  },
+  {
+    id: 'blue-horizon-park',
+    name: 'Blue Horizon Park',
+    mainImage: '/images/port ex 3.jpg',
+    description: 'Localizado em uma região tropical, o Blue Horizon Park combina adrenalina e relaxamento com uma estrutura moderna, grandes piscinas de correnteza e áreas de descanso à sombra de coqueiros. Ideal para férias em família ou passeios de fim de semana.',
+    detailImages: [],
   },
 ];
 
