@@ -16,7 +16,7 @@ export const projects = [
   {
     id: 'Retrofit-hotel-Thermas',
     name: 'Retrofit hotel Thermas',
-    mainImage: '/images/therm.jpeg',
+    mainImage: '/images/Therm.jpeg',
     description: 'Retrofit da piscina infantil e adulta  , criando espaços com espreguiçadeiras para apreciar o sol enquanto se refresca nas piscinas, e muito paisagismo para conectar com todo o entorno',
     detailImages: [
       '/images/ther 2.jpeg',
