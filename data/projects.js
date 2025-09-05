@@ -2,98 +2,310 @@
 
 export const projects = [
   {
-    id: 'aqualand-salinopolis',
-    name: 'Aqualand Salinópolis',
-    mainImage: '/images/aqualand 1.jpg',
-    description: 'Um parque aquático incrível localizado em Salinópolis, Pará, com diversas atrações para toda a família e piscinas vibrantes. Este projeto foi um desafio de engenharia e design, focado em criar uma experiência imersiva e segura para visitantes de todas as idades. A integração com a paisagem natural da região foi um ponto chave, resultando em um ambiente harmonioso e convidativo.',
+    id: 'Retrofit-hotel-golden',
+    name: 'Retrofit hotel golden',
+    mainImage: '/images/golden.jpeg',
+    description: 'Fizemos alguns projetos de retrofit para o hotel , dentre eles a nova piscina infantil e o bar , criando um lounge e um deck de madeira … lugar mais amplo para desfrutar a vista desse lugar incrível.',
     detailImages: [
-      '/images/aqualand 2.jpg',
-      '/images/aqualand 3.jpg',
-      '/images/aqualand 4.jpg',
-      '/images/aqualand 5.avif',
+      '/images/golden 2.jpeg',
+      '/images/golden 3.jpeg',
+      '/images/golden 4.jpeg',
+      '/images/golden 5.jpeg',
     ],
   },
   {
-    id: 'resort-costa-do-sol',
-    name: 'Resort Costa do Sol',
-    mainImage: '/images/irineu.jpg',
-    description: 'Um luxuoso resort à beira-mar com piscinas infinitas, spa de classe mundial e restaurantes de alta gastronomia para uma experiência inesquecível. O design buscou maximizar as vistas para o oceano, utilizando grandes janelas e terraços espaçosos. A seleção de materiais naturais e a iluminação estratégica criam uma atmosfera de requinte e relaxamento.',
+    id: 'Retrofit-hotel-Thermas',
+    name: 'Retrofit hotel Thermas',
+    mainImage: '/images/therm.jpeg',
+    description: 'Retrofit da piscina infantil e adulta  , criando espaços com espreguiçadeiras para apreciar o sol enquanto se refresca nas piscinas, e muito paisagismo para conectar com todo o entorno',
     detailImages: [
-      '/images/sol 2.jpg',
-      '/images/sol 3.jpg',
-      '/images/sol 4.jpeg',
-      '/images/sol 5.jpeg',
+      '/images/ther 2.jpeg',
+      '/images/ther 3.jpeg',
+      '/images/ther 4.jpeg',
+      '/images/ther 5.jpeg',
     ],
   },
   {
-    id: 'hotel-tropical-oasis',
-    name: 'Hotel Tropical Oasis',
-    mainImage: '/images/hotel 1.jpg',
-    description: 'Oasis de tranquilidade com arquitetura inspirada na natureza, jardins exuberantes e piscinas que se integram à paisagem. O projeto priorizou a sustentabilidade, com sistemas de captação de água e uso eficiente de energia. Cada detalhe foi pensado para proporcionar uma fuga serena da vida urbana.',
+    id: 'Vale-Suiço',
+    name: 'Vale suíço ',
+    mainImage: '/images/sui.jpeg',
+    description: 'Grande desafio pois tínhamos que projetar um parque aquático em um hotel, que não ficasse com cara de parque mais sim uma área cheia de atrações como piscinas outdoor e indoor com brinquedos aquáticos , rio lento e piscina de ondas. Projeto ficou lindo.',
     detailImages: [
-      '/images/hotel 2.jpg',
-      '/images/hotel 3.jpg',
-      '/images/hotel 4.jpg',
-      '/images/hotel 5.jpeg',
+      '/images/sui 2.jpeg',
+      '/images/sui 3.jpeg',
+      '/images/sui 4.jpeg',
+      '/images/sui 5.jpeg',
     ],
   },
   {
-    id: 'parque-aventura',
-    name: 'Parque Aventura',
-    mainImage: '/images/park 1.jpg',
-    description: 'Parque temático com brinquedos radicais, áreas de lazer para todas as idades e shows interativos para diversão garantida. A segurança foi a prioridade máxima no design das atrações, combinada com elementos visuais que contam uma história em cada área do parque, criando um mundo de fantasia para os visitantes.',
+    id: 'Vilarejo-fazenda',
+    name: 'Vilarejo fazenda',
+    mainImage: '/images/vil.jpeg',
+    description: 'Projeto de uma area indoor que fosse multiuso, ou seja , com piscina com. Brinquedo aquático e piscina spa para toda a família , priorizamos a vista incrível do lugar , criando uma piscina outdoor com borda infinita e toda a fachada em vidro ! ',
     detailImages: [
-      '/images/park 2.jpg',
-      '/images/park 3.jpg',
-      '/images/park 4.jpg',
-      '/images/park 5.jpg',
+      '/images/vil 2.jpeg',
+      '/images/vil 3.jpeg',
+      '/images/vil 4.jpeg',
+      '/images/vil 5.jpeg',
     ],
   },
   {
-    id: 'spa-zen-retreat',
-    name: 'Spa Zen Retreat',
-    mainImage: '/images/zen 1.jpg',
-    description: 'Um refúgio para relaxamento e bem-estar, com tratamentos e terapias holísticas, piscinas aquecidas e ambientes de meditação. A arquitetura minimalista e o uso de elementos naturais como madeira e pedra promovem uma sensação de calma e harmonia. Cada espaço foi projetado para convidar à introspecção e renovação.',
+    id: 'Vilarejo-praia',
+    name: 'Vilarejo praia ',
+    mainImage: '/images/praia.png',
+    description: 'A ideia era conectar o espaço com a vista incrível do mar, o hotel não havia explorado essa ponto ainda , e assim priorizamos a vista como ponto de partida para o projeto assim criamos uma piscina de ofurôs e borda infinita voltada para o mar, além de uma piscina com brinquedo aquático. ',
     detailImages: [
-      '/images/zen 2.jpg',
-      '/images/zen 3.webp',
-      '/images/zen 4.jpg',
-      '/images/zen 5.jpeg',
+      '/images/praia 2.png',
+      '/images/praia 3.png',
+      '/images/praia 4.png',
+      '/images/praia 5.png',
     ],
   },
   {
-    id: 'clube-praiano',
-    name: 'Clube Praiano',
-    mainImage: '/images/clube 1.jpg',
-    description: 'Clube exclusivo com acesso à praia, amplas piscinas, quadras esportivas e eventos sociais para membros. O projeto integrou áreas de lazer ativas com espaços de convívio social, criando um clube versátil para todas as idades. A vista para o mar e a brisa costeira foram incorporadas ao design para uma experiência praiana autêntica.',
+    id: 'Vale-encantado',
+    name: 'Vale encantado',
+    mainImage: '/images/vale 1.jpeg',
+    description: 'A ideia era conectar os espaços criando uma nova entrada para o parque mas preservando a estrutura do antigo restaurante, pensando nisso trouxemos uma cobertura bem diferente porém que integrasse as 2 arquiteturas , além de um espaço com piscina e brinquedo aquáticos.',
     detailImages: [
-      '/images/clube 2.jpg',
-      '/images/clube 3.jpg',
-      '/images/clube 4.webp',
-      '/images/clube 5.jpg',
+      '/images/vale 2.jpeg',
+      '/images/vale 3.jpeg',
+      '/images/vale 4.jpeg',
+      '/images/vale 5.jpeg',
     ],
   },
   {
-    id: 'oceania-wave-park',
-    name: 'Oceania Wave Park',
-    mainImage: '/images/port ex 1.webp',
-    description: 'Um parque aquático temático que simula paisagens oceânicas com ondas artificiais, toboáguas transparentes e áreas infantis interativas. O projeto traz uma fusão entre tecnologia e natureza, oferecendo diversão com realismo marítimo para todas as idades.',
-    detailImages: [],
+    id: 'Hotel-porto-fazenda',
+    name: 'Hotel Porto fazenda ',
+    mainImage: '/images/faz 1.jpeg',
+    description: 'Hotel com uma vista linda para a represa mas com ares de campo, tudo bem pensado para integrar água e terra. ',
+    detailImages: [
+
+      '/images/faz 2.jpeg',
+      '/images/faz 3.jpeg',
+      '/images/faz 4.jpeg',
+      '/images/faz 5.jpeg',
+
+
+
+    ],
   },
   {
-    id: 'fantasy-waterland',
-    name: 'Fantasy Waterland',
-    mainImage: '/images/port ex 2.webp',
-    description: 'Inspirado em contos de fadas, este parque aquático oferece castelos d’água, rios encantados e escorregadores mágicos. A proposta visual foi desenvolvida para criar uma imersão lúdica, com cenografia detalhada e experiência sensorial para crianças e adultos.',
-    detailImages: [],
+    id: 'Hotel-aeroporto',
+    name: 'Hotel Aeroporto ',
+    mainImage: '/images/porto 1.jpeg',
+    description: 'Esse parque indoor foi projetado ao lado do aeroporto, criando uma atmosfera temática, com mtas atrações, conta com piscinas de ondas, adulta e infantil e ainda mtos  espaços de descanso.',
+    detailImages: [
+       '/images/porto 2.jpeg',
+        '/images/porto 3.jpeg',
+         '/images/porto 4.jpeg',
+          '/images/porto 5.jpeg',
+
+
+    ],
   },
+  
   {
-    id: 'blue-horizon-park',
-    name: 'Blue Horizon Park',
-    mainImage: '/images/port ex 3.jpg',
-    description: 'Localizado em uma região tropical, o Blue Horizon Park combina adrenalina e relaxamento com uma estrutura moderna, grandes piscinas de correnteza e áreas de descanso à sombra de coqueiros. Ideal para férias em família ou passeios de fim de semana.',
-    detailImages: [],
+    id: 'Hotel-Vale-da-Mantiqueira',
+    name: 'Hotel Vale da Mantiqueira',
+    mainImage: '/images/mant.jpg',
+    description: 'O partido do projeto, surgiu com a ideia do cliente de ter um parque aquático, dentro do hotel existente,inspirado em um Resort de Punta Cana, buscamos reunir neste parque uma pequena piscina de ondas, uma piscina com rio lento e toboáguas.Componto a área externa, temos os bangalôs para os hospedes, gêiser e a caravela que é a atração central do parque. Ao lado da pista de dança, utilizada para as atrações noturnas do hotel, temos um espaço para lareira, afinal na serra da Mantiqueira é sempre bom uma fogueira para se aquecer. O Edifício abriga um lindo bar, pista de dança, pista de boliche e uma piscina coberta.',
+
+    detailImages: [
+
+'/images/mant 2.jpg',
+'/images/mant 3.jpg',
+'/images/mant 4.jpg',
+'/images/mant 5.jpg',
+
+
+
+    ],
   },
+
+
+  {
+    id: 'Pousada-charme',
+    name: 'Pousada charme',
+    mainImage: '/images/mant s.jpeg',
+    description: 'Esse hotel tem uma localização  privilegiada em uma área  em volta da natureza e próximo ao um parque aquático conta com piscina de borda infinita e suspensa,integrando o restaurante através de decks em níveis diferentes com a área das piscina adulta e infantil. Perfeito para relaxamento e diversão para toda a família ',
+
+    detailImages: [
+
+'/images/ch 2.jpeg',
+'/images/ch 3.jpeg',
+'/images/ch 4.jpeg',
+'/images/ch 5.jpeg',
+
+
+
+    ],
+  },
+
+
+  
+
+  {
+    id: 'Monreale-park',
+    name: 'Monreale',
+    mainImage: '/images/mon.png',
+    description: 'O hotel prioriza a diversão em família , pensando nisso criamos piscinas com atrações para todas as idades, desde de piscina com spas,e piscinas infantis com brinquedos aquáticos.E para os mais radicais ainda conta com uma torre com 3 Toboáguas. Além disso criamos uma área indoor com vários brinquedos aquáticos ',
+
+    detailImages: [
+
+'/images/mon 2.jpeg',
+'/images/mon ex.png',
+'/images/mon m.png',
+'/images/mon 8.png',
+
+
+
+    ],
+  },
+
+
+
+  {
+    id: 'Hot-world',
+    name: 'Hot world',
+    mainImage: '/images/hot.jpg',
+    description: 'Fundado na década de 90, o Thermas Water Park de Águas de Lindóia, não tinha passado por nenhuma revitalização desde então. Ao ser adquirido por um grupo em 2018, a primeira iniciativa foi a contratação de um Masterplan para o parque.Surgiu então o Thermas Hot World, um parque aquático completo, inspirado nos parques americanos, com o que há de moderno neste segmento.',
+
+    detailImages: [
+
+'/images/hot 2.jpg',
+'/images/hot 3.jpg',
+'/images/hot 4.jpg',
+'/images/hot 5.jpg',
+
+
+
+    ],
+  },
+
+
+ 
+
+
+
+ {
+    id: 'Village-inn',
+    name: 'Village inn',
+    mainImage: '/images/dan.jpeg',
+    description: 'Esse hotel quisemos trazer uma ideia de resort urbano,  projetadospara oferecer aos hóspedes uma experiência de férias completa, com uma ampla gama de comodidades e atividades para toda a família. ',
+
+    detailImages: [
+'/images/dan 2.jpeg',
+'/images/dan 3.jpeg',
+'/images/dan 4.jpeg',
+'/images/dan 5.jpeg',
+
+
+
+    ],
+  },
+
+
+ {
+    id: 'Blue-Beach',
+    name: 'Blue Beach',
+    mainImage: '/images/bl.jpeg',
+    description: 'Aguardando Texto... ',
+
+    detailImages: [
+'/images/bl 2.jpeg',
+'/images/bl 3.jpeg',
+'/images/bl 4.jpeg',
+'/images/bl 5.jpeg',
+
+
+
+    ],
+  },
+
+ {
+    id: 'Pousada-dos-sonhos',
+    name: 'Pousada dos sonhos',
+    mainImage: '/images/po s.jpeg',
+    description: 'Aguardando Texto... ',
+
+    detailImages: [
+'/images/po 2.jpeg',
+'/images/po 3.jpeg',
+'/images/po 4.jpeg',
+'/images/po 5.jpeg',
+
+
+
+    ],
+  },
+
+
+
+
+
+ {
+    id: 'Resort-urbano',
+    name: 'Resort urbano',
+    mainImage: '/images/re.jpeg',
+    description: 'Aguardando Texto... ',
+
+    detailImages: [
+'/images/re 2.jpeg',
+'/images/re 3.jpeg',
+'/images/re 4.jpeg',
+'/images/re 5.jpeg',
+
+
+
+    ],
+  },
+
+   {
+    id: 'Sesi-Go',
+    name: 'Sesi Go',
+    mainImage: '/images/se p.jpeg',
+    description: 'Aguardando Texto... ',
+
+    detailImages: [
+'/images/se 2.jpeg',
+'/images/se 3.jpeg',
+'/images/se 4.jpeg',
+'/images/se 5.jpeg',
+
+
+
+    ],
+  },
+
+ {
+    id: 'Villa-Di-Mantova',
+    name: 'Villa Di Mantova',
+    mainImage: '/images/vi.jpeg',
+    description: 'Aguardando Texto... ',
+
+    detailImages: [
+'/images/vi 2.jpeg',
+'/images/vi 3.jpeg',
+'/images/vi 4.jpeg',
+'/images/vi 5.jpeg',
+
+
+
+    ],
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 export default projects;

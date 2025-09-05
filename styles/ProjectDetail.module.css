@@ -52,13 +52,9 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   position: relative;
-  padding-bottom: 70%; /* Ajuste isso se suas imagens tiverem uma proporção diferente */
-  height: 0;
-}
-
-.imageWrapper:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 16/9; /* Define proporção fixa para todos os cards */
+  width: 100%;
+  height: auto;
 }
 
 .imageWrapper img {
@@ -67,8 +63,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ALTERADO: Garante que a imagem não seja cortada */
+  object-fit: contain; /* Mantém imagem inteira, sem cortes */
 }
+
+.imageWrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
 
 .loading {
   font-size: 1.8rem;
