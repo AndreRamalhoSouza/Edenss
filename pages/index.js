@@ -30,13 +30,23 @@ function Home() {
     { id: '3', name: 'Praia Exclusiva', mainImage: '/images/project3.jpg' },
     { id: '4', name: 'Pool Lounge Elegante', mainImage: '/images/project4.jpg' },
     { id: '5', name: 'Bar Tropical', mainImage: '/images/project5.jpg' },
-    { id: '6', 'name': 'Restaurante Envidraçado', mainImage: '/images/project6.jpg' },
+    { id: '6', name: 'Restaurante Envidraçado', mainImage: '/images/project6.jpg' },
   ];
 
   const currentProjects = projectsData || exampleProjects;
 
-  const totalPages = 4;
-  const currentPage = 1;
+  // --- LÓGICA DE PAGINAÇÃO DO PORTFÓLIO (NOVA) ---
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const projectsPerPage = 9; // Quantos projetos você quer mostrar por vez
+
+  const totalProjects = currentProjects.length;
+  const totalProjectPages = Math.ceil(totalProjects / projectsPerPage);
+
+  const projectsToDisplay = currentProjects.slice(
+    currentProjectIndex,
+    currentProjectIndex + projectsPerPage
+  );
+  // --- FIM DA LÓGICA DE PAGINAÇÃO DO PORTFÓLIO ---
 
   // Carrossel de Depoimentos
   const [currentDepoimentoIndex, setCurrentDepoimentoIndex] = useState(0);
@@ -83,9 +93,9 @@ function Home() {
         {/* Nossa História - Mova o ID para o h2 */}
         <section className={styles.secaoSobreNos}>
         <h2 id="nossa-historia" style={{ scrollMarginTop: '130px' }} className={styles.tituloSobreNos}> {/* ID MOVIDO PARA CÁ */}
-            <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
-            <div className={styles.historiaGrande}>{historiaSobreNos}</div>
-          </h2>
+          <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
+          <div className={styles.historiaGrande}>{historiaSobreNos}</div>
+        </h2>
           <p className={styles.descricaoSobreNos}>{conteudoSobreNos.texto}</p>
           <div className={styles.divisorCinza}></div>
         </section>
@@ -107,23 +117,26 @@ function Home() {
         <section className={styles.secaoPortfolio}>
 
           <h2 id="projetos" style={{ scrollMarginTop: '130px' }} className={styles.portfolioTitle}>PORTFÓLIO</h2>
-             <div className={styles.divisorCinza}></div>
-           <div className={styles.projectsGridContainer}>
+              <div className={styles.divisorCinza}></div>
+            <div className={styles.projectsGridContainer}>
 
-             {currentProjects.map((project) => (
-               <ProjectCard key={project.id} project={project} />
-             ))}
-           </div>
+              {/* AQUI ESTÁ A ALTERAÇÃO: mapeia apenas os projetos da página atual */}
+               {projectsToDisplay.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
 
-           <div className={styles.paginationDots}>
-             {[...Array(totalPages)].map((_, index) => (
-               <span
-                 key={index}
-                 className={`${styles.dot} ${index + 1 === currentPage ? styles.active : ''}`}
-               ></span>
-             ))}
-           </div>
-         </section>
+            <div className={styles.paginationDots}>
+              {/* AQUI ESTÁ A ALTERAÇÃO: usa totalProjectPages e adiciona o onClick */}
+              {[...Array(totalProjectPages)].map((_, index) => (
+                <span
+                  key={index}
+                  className={`${styles.dot} ${Math.floor(currentProjectIndex / projectsPerPage) === index ? styles.active : ''}`}
+                  onClick={() => setCurrentProjectIndex(index * projectsPerPage)}
+                ></span>
+              ))}
+            </div>
+          </section>
         {/* --- FIM DA SEÇÃO DE PORTFÓLIO --- */}
 
         {/* --- SEÇÃO DA EQUIPE --- */}
@@ -142,10 +155,10 @@ function Home() {
         {/* --- SEÇÃO DE DEPOIMENTOS (AGORA COM CARROSSEL) --- */}
         {/* Depoimentos - Adicione o ID ao h2 */}
         <section className={styles.secaoDepoimentos}>
-         <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>DEPOIMENTOS</h2>
-          <div className={styles.divisorGray}></div>
+           <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>DEPOIMENTOS</h2>
+           <div className={styles.divisorGray}></div>
 
-          <div className={styles.depoimentosCarouselContainer}> {/* Novo contêiner para o carrossel */}
+           <div className={styles.depoimentosCarouselContainer}> {/* Novo contêiner para o carrossel */}
             <button
               className={`${styles.carouselArrowDepoimento} ${styles.arrowLeftDepoimento}`}
               onClick={handleClickPrevDepoimento}
@@ -182,7 +195,7 @@ function Home() {
         {/* --- FIM DA SEÇÃO DE DEPOIMENTOS --- */}
 
         {/* Formulário de Contato - Adicione o ID ao FormularioContato ou a um wrapper */}
-        {/* Assumindo que FormularioContato é um componente. Se ele não tiver um ID interno, envolva-o */}
+        {/* Assumindo que FormularioContato é um componente. Se ele não tiver um ID interno, envolva-lo */}
         <section id="contato"> {/* <--- ADICIONE ESTE WRAPPER COM O ID */}
           <FormularioContato />
         </section>
