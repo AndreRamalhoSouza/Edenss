@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     id: 'Retrofit-hotel-Thermas',
-    name: 'Retrofit hotel Thermas',
+    name: 'Retrofit hotel thermas',
     mainImage: '/images/Therm.jpeg',
     description: 'Retrofit da piscina infantil e adulta  , criando espaços com espreguiçadeiras para apreciar o sol enquanto se refresca nas piscinas, e muito paisagismo para conectar com todo o entorno',
     detailImages: [
@@ -75,7 +75,7 @@ export const projects = [
   },
   {
     id: 'Hotel-porto-fazenda',
-    name: 'Hotel Porto fazenda ',
+    name: 'Hotel porto fazenda ',
     mainImage: '/images/faz 1.jpeg',
     description: 'Hotel com uma vista linda para a represa mas com ares de campo, tudo bem pensado para integrar água e terra. ',
     detailImages: [
@@ -91,7 +91,7 @@ export const projects = [
   },
   {
     id: 'Hotel-aeroporto',
-    name: 'Hotel Aeroporto ',
+    name: 'Hotel aeroporto ',
     mainImage: '/images/porto 1.jpeg',
     description: 'Esse parque indoor foi projetado ao lado do aeroporto, criando uma atmosfera temática, com mtas atrações, conta com piscinas de ondas, adulta e infantil e ainda mtos  espaços de descanso.',
     detailImages: [
@@ -106,7 +106,7 @@ export const projects = [
   
   {
     id: 'Hotel-Vale-da-Mantiqueira',
-    name: 'Hotel Vale da Mantiqueira',
+    name: 'Hotel vale da mantiqueira',
     mainImage: '/images/mant.jpg',
     description: 'O partido do projeto, surgiu com a ideia do cliente de ter um parque aquático, dentro do hotel existente,inspirado em um Resort de Punta Cana, buscamos reunir neste parque uma pequena piscina de ondas, uma piscina com rio lento e toboáguas.Componto a área externa, temos os bangalôs para os hospedes, gêiser e a caravela que é a atração central do parque. Ao lado da pista de dança, utilizada para as atrações noturnas do hotel, temos um espaço para lareira, afinal na serra da Mantiqueira é sempre bom uma fogueira para se aquecer. O Edifício abriga um lindo bar, pista de dança, pista de boliche e uma piscina coberta.',
 
@@ -207,7 +207,7 @@ export const projects = [
 
  {
     id: 'Blue-Beach',
-    name: 'Blue Beach',
+    name: 'Blue beach',
     mainImage: '/images/bl.jpeg',
     description: 'Aguardando Texto... ',
 
@@ -262,7 +262,7 @@ export const projects = [
 
    {
     id: 'Sesi-Go',
-    name: 'Sesi Go',
+    name: 'Sesi go',
     mainImage: '/images/se p.jpeg',
     description: 'Aguardando Texto... ',
 
@@ -279,7 +279,7 @@ export const projects = [
 
  {
     id: 'Villa-Di-Mantova',
-    name: 'Villa Di Mantova',
+    name: 'Villa di mantova',
     mainImage: '/images/vi.jpeg',
     description: 'Aguardando Texto... ',
 
