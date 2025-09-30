@@ -34,7 +34,7 @@ export const servicos = [
     color: "#47A2AE",
   },
   {
-    titulo: "PISCINAS RESIDENCIAS PARQUES TEMÁTICOS HOTEIS",
+    titulo: "PISCINAS RESIDENCIAS / PARQUES TEMÁTICOS / HOTEIS",
     icon: "/images/piscina.png", // <--- Adicione o caminho completo do ícone
     color: "#2A7C86",
   },
@@ -52,7 +52,7 @@ export const membrosEquipe = [
     nome: "Susi",
        cargo: "Arquiteta Especialista\nem Hotelaria e Entretenimento",
     imagem: "/images/Susi.png", 
-    bio: "Formada em Arquitetura e Urbanismo, com pós-graduação em Arquitetura Hoteleira e cursando MBA em Arquitetura Hoteleira, Susi possui ampla experiência em projetos de atrações aquáticas, parques e destinos de lazer familiar. Seu conhecimento abrange o design de produtos para hotéis, pousadas e parques aquáticos, enriquecido por viagens ao redor do mundo, que lhe deram uma visão inovadora do setor. Na Edenss, sua missão é criar experiências únicas e inesquecíveis, projetando ambientes que encantam, conectam e transformam sonhos em realidade.",
+    bio: "Formada em Arquitetura e Urbanismo, cursando MBA em Arquitetura Hoteleira, Susi possui ampla experiência em projetos de atrações aquáticas, parques e destinos de lazer familiar. Seu conhecimento abrange o design de produtos para hotéis, pousadas e parques aquáticos, enriquecido por viagens ao redor do mundo, que lhe deram uma visão inovadora do setor. Na Edenss, sua missão é criar experiências únicas e inesquecíveis, projetando ambientes que encantam, conectam e transformam sonhos em realidade.",
   },
 ];
 

@@ -15,7 +15,7 @@ export const projects = [
   },
   {
     id: 'Retrofit-Hotel-Thermas',
-    name: 'Retrofit Hotel Thermas',
+    name: 'Retrofit Hotel Thermas Walter World',
     mainImage: '/images/Therm.jpeg',
     description: 'Retrofit da piscina infantil e adulta  , criando espaços com espreguiçadeiras para apreciar o sol enquanto se refresca nas piscinas, e muito paisagismo para conectar com todo o entorno',
     detailImages: [
@@ -27,7 +27,7 @@ export const projects = [
   },
   {
     id: 'Vale-Suiço',
-    name: 'Vale Suíço ',
+    name: ' Hotel Fazenda Vale Suíço ',
     mainImage: '/images/sui.jpeg',
     description: 'Grande desafio pois tínhamos que projetar um parque aquático em um hotel, que não ficasse com cara de parque mais sim uma área cheia de atrações como piscinas outdoor e indoor com brinquedos aquáticos , rio lento e piscina de ondas. Projeto ficou lindo.',
     detailImages: [
@@ -39,7 +39,7 @@ export const projects = [
   },
   {
     id: 'Vilarejo-Fazenda',
-    name: 'Vilarejo Fazenda',
+    name: ' Hotel Vilarejo Fazenda',
     mainImage: '/images/vil.jpeg',
     description: 'Projeto de uma area indoor que fosse multiuso, ou seja , com piscina com. Brinquedo aquático e piscina spa para toda a família , priorizamos a vista incrível do lugar , criando uma piscina outdoor com borda infinita e toda a fachada em vidro ! ',
     detailImages: [
@@ -51,7 +51,7 @@ export const projects = [
   },
   {
     id: 'Vilarejo-Praia',
-    name: 'Vilarejo Praia ',
+    name: ' Hotel Vilarejo Praia ',
     mainImage: '/images/praia.png',
     description: 'A ideia era conectar o espaço com a vista incrível do mar, o hotel não havia explorado essa ponto ainda , e assim priorizamos a vista como ponto de partida para o projeto assim criamos uma piscina de ofurôs e borda infinita voltada para o mar, além de uma piscina com brinquedo aquático. ',
     detailImages: [
@@ -106,7 +106,7 @@ export const projects = [
   
   {
     id: 'Hotel-Vale-da-Mantiqueira',
-    name: 'Hotel Vale da Mantiqueira',
+    name: 'Hotel  Fazenda Vale da Mantiqueira',
     mainImage: '/images/mant.jpg',
     description: 'O partido do projeto, surgiu com a ideia do cliente de ter um parque aquático, dentro do hotel existente,inspirado em um Resort de Punta Cana, buscamos reunir neste parque uma pequena piscina de ondas, uma piscina com rio lento e toboáguas.Componto a área externa, temos os bangalôs para os hospedes, gêiser e a caravela que é a atração central do parque. Ao lado da pista de dança, utilizada para as atrações noturnas do hotel, temos um espaço para lareira, afinal na serra da Mantiqueira é sempre bom uma fogueira para se aquecer. O Edifício abriga um lindo bar, pista de dança, pista de boliche e uma piscina coberta.',
 
@@ -146,7 +146,7 @@ export const projects = [
 
   {
     id: 'Monreale-Park',
-    name: 'Monreale',
+    name: 'Monreale Resort Parque Aquático',
     mainImage: '/images/mon.png',
     description: 'O hotel prioriza a diversão em família , pensando nisso criamos piscinas com atrações para todas as idades, desde de piscina com spas,e piscinas infantis com brinquedos aquáticos.E para os mais radicais ainda conta com uma torre com 3 Toboáguas. Além disso criamos uma área indoor com vários brinquedos aquáticos ',
 
@@ -166,7 +166,7 @@ export const projects = [
 
   {
     id: 'Hot-World',
-    name: 'Hot World',
+    name: 'Thermas Hot World Parque Aquático',
     mainImage: '/images/hot.jpg',
     description: 'Fundado na década de 90, o Thermas Water Park de Águas de Lindóia, não tinha passado por nenhuma revitalização desde então. Ao ser adquirido por um grupo em 2018, a primeira iniciativa foi a contratação de um Masterplan para o parque.Surgiu então o Thermas Hot World, um parque aquático completo, inspirado nos parques americanos, com o que há de moderno neste segmento.',
 
@@ -189,7 +189,7 @@ export const projects = [
 
  {
     id: 'Village-Inn',
-    name: 'Village Inn',
+    name: ' Hotel Village Inn',
     mainImage: '/images/dan.jpeg',
     description: 'Esse hotel quisemos trazer uma ideia de resort urbano,  projetadospara oferecer aos hóspedes uma experiência de férias completa, com uma ampla gama de comodidades e atividades para toda a família. ',
 
@@ -207,7 +207,7 @@ export const projects = [
 
  {
     id: 'Blue-Beach',
-    name: 'Blue Beach',
+    name: 'Blue Beach Park',
     mainImage: '/images/bl.jpeg',
     description: 'Aguardando Texto... ',
 
@@ -279,7 +279,7 @@ export const projects = [
 
  {
     id: 'Villa-Di-Mantova',
-    name: 'Villa Di Mantova',
+    name: 'Villa Di Mantova Resort Hotel',
     mainImage: '/images/vi.jpeg',
     description: 'Aguardando Texto... ',
 
