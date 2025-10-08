@@ -2,7 +2,7 @@
 
 .carouselWrapper {
   width: 100%;
-  max-width: 960px; /* Largura máxima para desktop */
+  max-width: 960px; /* Largura máxima do carrossel */
   margin: 0 auto;
   padding: 40px 0;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Espaçamento entre cards (desktop) */
+  padding: 10px; /* Espaçamento entre os cards no desktop */
   box-sizing: border-box;
 }
 
@@ -22,10 +22,13 @@
   height: 100%;
 }
 
-/* Personalizando os Dots */
+/* --- Dots --- */
 .carouselWrapper .slick-dots {
-  bottom: -40px;
-  z-index: 10; /* Adicione ou garanta um z-index alto para serem clicáveis */
+  bottom: -30px;
+  z-index: 10;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .carouselWrapper .slick-dots li button:before {
@@ -37,7 +40,7 @@
   color: #007bff;
 }
 
-/* Personalizando as setas (arrows) - Para desktop */
+/* --- Setas (arrows) --- */
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
   z-index: 1;
@@ -59,59 +62,46 @@
   right: -50px;
 }
 
-/* --- ESTILOS ESPECÍFICOS PARA DESKTOP (MAIORES QUE 768px) --- */
-/* Estes estilos só devem ser aplicados em telas grandes para o layout de 2 linhas */
-@media (min-width: 769px) { /* Aplica em telas maiores que 768px */
+/* --- Ajustes para desktop (maiores que 768px) --- */
+@media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
-    flex-wrap: wrap !important; /* Permite que os cards se organizem em 2 linhas no desktop */
+    flex-wrap: wrap !important; /* 2 linhas */
     margin: 0 !important;
-    transform: none !important; /* Desativa a transformação do slick para funcionar com 'rows' no desktop */
-    height: auto !important; /* Permite que a altura se ajuste ao conteúdo das 2 linhas no desktop */
+    transform: none !important;
+    height: auto !important;
+  }
+
+  .carouselWrapper .slick-slide > div {
+    padding: 10px; /* espaçamento entre cards */
   }
 }
 
-/* --- REGRAS GERAIS PARA O SLICK-LIST (APLICA EM TODOS OS TAMANHOS DE TELA) --- */
-.carouselWrapper :global(.slick-list) {
-  padding: 0 !important;
-  overflow: hidden; /* Essencial para o carrossel em todos os tamanhos */
-}
-
-
-/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 768PX) --- */
+/* --- Ajustes para mobile (max-width: 768px) --- */
 @media (max-width: 768px) {
-  /* Esconda as setas se não as quiser no mobile */
-  .carouselWrapper .slick-prev,
-  .carouselWrapper .slick-next {
-    display: none !important;
-  }
-  .carouselWrapper .slick-dots {
-    bottom: -20px; /* Ajusta a posição dos dots no mobile */
-    z-index: 10; /* Garanta que continuem clicáveis no mobile */
+  .carouselWrapper :global(.slick-track) {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* linha única para swipe */
+    transform: none !important;
+    height: auto !important;
   }
 
-  /*
-   * MUITO IMPORTANTE: NENHUMA REGRA AQUI DEVE ANULAR A ROLAGEM DO SLICK!
-   * Deixe o `react-slick` controlar `display`, `transform`, `width`, `height` para `.slick-track` e `.slick-slide`
-   * neste breakpoint, pois você quer um carrossel funcional aqui.
-   */
-
-  /* Ajuste o padding interno do slide para mobile se precisar de menos espaçamento */
   .carouselWrapper .slick-slide > div {
-    padding: 5px; /* Por exemplo, um padding menor para o card individual no mobile */
+    padding: 5px; /* espaço menor entre cards no mobile */
   }
 
-  /* O overflow do slick-list já está configurado acima para todos os tamanhos, então não precisa repetir aqui. */
+  .carouselWrapper .slick-dots {
+    bottom: -15px;
+  }
 }
 
-/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 480PX) --- */
+/* --- Ajustes para celulares muito pequenos (max-width: 480px) --- */
 @media (max-width: 480px) {
-  .carouselWrapper .slick-dots {
-    bottom: -15px; /* Ajusta a posição dos dots */
+  .carouselWrapper .slick-slide > div {
+    padding: 3px;
   }
 
-  .carouselWrapper .slick-slide > div {
-    padding: 3px; /* Espaçamento ainda menor para o card individual */
+  .carouselWrapper .slick-dots {
+    bottom: -10px;
   }
-  /* Novamente, nenhuma regra deve anular a rolagem do Slick aqui. */
 }
