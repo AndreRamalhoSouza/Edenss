@@ -1,14 +1,13 @@
 export const conteudoHero = {
   titulo: "ARQUITETURA QUE TRANSFORMA EXPERIÊNCIAS",
-  // Corrigido: Agora 'imagensCarrossel' é um array de URLs
+ 
   imagensCarrossel: [
     "/images/parque.jpg",
     "/images/hotel 1.jpg",
-    // Adicione mais URLs de imagem aqui se tiver mais
+  
   ]
 };
 
-// O restante do seu código (conteudoSobreNos, servicos, etc.) permanece como está.
 
 export const conteudoSobreNos = {
   titulo: "NOSSA HISTÓRIA",

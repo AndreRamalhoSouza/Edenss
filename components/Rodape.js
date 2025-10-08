@@ -22,7 +22,7 @@ function Rodape() {
           {/* A logo já está OK com href="/" */}
           <Link href="/">
             <Image
-              src="/images/rodape.png"
+              src="/images/edens 2.png"
               alt="Logo da Empresa"
               width={460}
               height={120}
@@ -32,21 +32,12 @@ function Rodape() {
 
           <div className={styles.socialIcons}>
             {/* Links sociais (permanecem como estão, pois são externos) */}
-            <a href="URL_DO_SEU_TWITTER" target="_blank" rel="noopener noreferrer">
-              <Image src="/images/x.png" alt="Twitter" width={30} height={30} />
-            </a>
-            <a href="URL_DO_SEU_YOUTUBE" target="_blank" rel="noopener noreferrer">
-              <Image src="/images/ytb.png" alt="YouTube" width={30} height={30} />
-            </a>
-            <a href="URL_DO_SEU_WHATSAPP" target="_blank" rel="noopener noreferrer">
-              <Image src="/images/zap.png" alt="WhatsApp" width={30} height={30} />
-            </a>
+          
+           
             <a href="URL_DO_SEU_INSTAGRAM" target="_blank" rel="noopener noreferrer">
               <Image src="/images/insta.png" alt="Instagram" width={30} height={30} />
             </a>
-            <a href="URL_DO_SEU_FACEBOOK" target="_blank" rel="noopener noreferrer">
-              <Image src="/images/face.png" alt="Facebook" width={30} height={30} />
-            </a>
+           
           </div>
         </div>
 
@@ -67,15 +58,12 @@ function Rodape() {
             </li>
             <li>
               {/* Ajuste o href e adicione o onClick (Verifique se #projetos é o correto para "Hotéis") */}
-              <Link href="/#projetos" onClick={(e) => handleAnchorClick(e, '/#projetos')}>
-                Hotéis
-              </Link>
+            
             </li>
             <li>
               {/* Ajuste o href e adicione o onClick (Verifique se #projetos é o correto para "Parques Temáticos") */}
-              <Link href="/#projetos" onClick={(e) => handleAnchorClick(e, '/#projetos')}>
-                Parques Temáticos
-              </Link>
+              
+              
             </li>
             <li>
               {/* Ajuste o href e adicione o onClick */}
@@ -104,7 +92,7 @@ function Rodape() {
           <p className={styles.emailSusi}> susi@edenss.com.br</p>
         </div>
       </div>
-       <p className={styles.copyright}>&copy; {new Date().getFullYear()} Edenss. Todos os direitos reservados.</p> {/* Certifique-se de que este parágrafo está dentro do footer */}
+      
     </footer>
   );
 }

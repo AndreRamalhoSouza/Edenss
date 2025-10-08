@@ -17,11 +17,11 @@
 }
 
 .logoPrincipal {position: relative;
- right: 510px;
+ right: 410px;
      max-width: 1000px;
-  width: 450px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 450px; /* Mantém a proporção da imagem automaticamente */
-bottom: 80px;
+  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 100px; /* Mantém a proporção da imagem automaticamente */
+bottom: -100px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
 
@@ -156,7 +156,7 @@ bottom: 80px;
   align-items: center;
   gap: 15px;
   left: 820px;
-  bottom: 500px;
+  bottom: 100px;
   margin-top: 20px; /* Espaçamento após a logo/slogan */
   margin-bottom: 20px; /* Espaçamento antes das colunas */
   /* Removendo position: relative, left, bottom para o fluxo normal */

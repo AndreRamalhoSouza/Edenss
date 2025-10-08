@@ -162,7 +162,7 @@ function Cabecalho() {
           {/* **Corrigido**: Usando <Link> do Next.js para navegação interna */}
           <Link href="/" onClick={handleLogoClick}>
             <Image
-              src="/images/logo.png"
+              src="/images/edens 1.png"
               alt="Logo da Empresa"
               width={150}
               height={50}
