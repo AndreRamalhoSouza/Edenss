@@ -182,11 +182,11 @@ bottom: -100px;
 
 @media (max-width: 1366px) {
    .logoPrincipal {position: relative;
- right: 355px;
+ right: 155px;
      max-width: 1000px;
-  width: 750px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 790px; /* Mantém a proporção da imagem automaticamente */
-bottom: 280px;
+  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 120px; /* Mantém a proporção da imagem automaticamente */
+bottom: -50px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
 
@@ -310,7 +310,7 @@ bottom: 280px;
   align-items: center;
   gap: 15px;
   left:675px;
-  bottom: 830px;
+  bottom: 230px;
   margin-top: 20px; /* Espaçamento após a logo/slogan */
   margin-bottom: 20px; /* Espaçamento antes das colunas */
   /* Removendo position: relative, left, bottom para o fluxo normal */
@@ -336,11 +336,11 @@ bottom: 280px;
 }
 @media (max-width: 1024px) {
    .logoPrincipal {position: relative;
- right: 295px;
+ right: 95px;
      max-width: 1000px;
-  width: 850px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 790px; /* Mantém a proporção da imagem automaticamente */
-bottom: 250px;
+  width: 450px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 150px; /* Mantém a proporção da imagem automaticamente */
+bottom: -80px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
 
@@ -464,7 +464,7 @@ bottom: 250px;
   align-items: center;
   gap: 15px;
   left:650px;
-  bottom: 830px;
+  bottom: 230px;
   margin-top: 20px; /* Espaçamento após a logo/slogan */
   margin-bottom: 20px; /* Espaçamento antes das colunas */
   /* Removendo position: relative, left, bottom para o fluxo normal */
@@ -492,11 +492,11 @@ bottom: 250px;
 
 @media (max-width: 900px) {
    .logoPrincipal {position: relative;
- right: 225px;
+ right:85px;
      max-width: 1000px;
-  width: 550px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 590px; /* Mantém a proporção da imagem automaticamente */
-bottom: 150px;
+  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 100px; /* Mantém a proporção da imagem automaticamente */
+bottom: 0px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
 
@@ -619,7 +619,7 @@ bottom: 150px;
   align-items: center;
   gap: 15px;
   left: 530px;
-  bottom: 620px;
+  bottom: 120px;
   margin-top: 20px; /* Espaçamento após a logo/slogan */
   margin-bottom: 20px; /* Espaçamento antes das colunas */
   /* Removendo position: relative, left, bottom para o fluxo normal */
@@ -649,11 +649,11 @@ bottom: 150px;
 /* Para telas menores que 768px (tablets e celulares) */
 @media (max-width: 768px) {
    .logoPrincipal {position: relative;
- right: 225px;
+ right: 55px;
      max-width: 1000px;
-  width: 550px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 590px; /* Mantém a proporção da imagem automaticamente */
-bottom: 150px;
+  width: 280px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
+  height: 110px; /* Mantém a proporção da imagem automaticamente */
+bottom: -50px;
   margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
 }
 
@@ -776,7 +776,7 @@ bottom: 150px;
   align-items: center;
   gap: 15px;
   left: 430px;
-  bottom: 620px;
+  bottom: 150px;
   margin-top: 20px; /* Espaçamento após a logo/slogan */
   margin-bottom: 20px; /* Espaçamento antes das colunas */
   /* Removendo position: relative, left, bottom para o fluxo normal */
