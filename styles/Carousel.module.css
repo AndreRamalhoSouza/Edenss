@@ -79,30 +79,15 @@
 
 
 /* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 768PX) --- */
-@media (max-width: 768px) {
-  /* Esconda as setas se não as quiser no mobile */
-  .carouselWrapper .slick-prev,
-  .carouselWrapper .slick-next {
-    display: none !important;
+@media (min-width: 769px) {
+  .carouselWrapper :global(.slick-track) {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Isso coloca os cards em duas linhas */
+    transform: none !important;
+    height: auto !important;
   }
-  .carouselWrapper .slick-dots {
-    bottom: -20px; /* Ajusta a posição dos dots no mobile */
-    z-index: 10; /* Garanta que continuem clicáveis no mobile */
-  }
-
-  /*
-   * MUITO IMPORTANTE: NENHUMA REGRA AQUI DEVE ANULAR A ROLAGEM DO SLICK!
-   * Deixe o `react-slick` controlar `display`, `transform`, `width`, `height` para `.slick-track` e `.slick-slide`
-   * neste breakpoint, pois você quer um carrossel funcional aqui.
-   */
-
-  /* Ajuste o padding interno do slide para mobile se precisar de menos espaçamento */
-  .carouselWrapper .slick-slide > div {
-    padding: 5px; /* Por exemplo, um padding menor para o card individual no mobile */
-  }
-
-  /* O overflow do slick-list já está configurado acima para todos os tamanhos, então não precisa repetir aqui. */
 }
+
 
 /* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 480PX) --- */
 @media (max-width: 480px) {
