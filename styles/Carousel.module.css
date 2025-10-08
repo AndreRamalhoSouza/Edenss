@@ -59,6 +59,15 @@
   right: -50px;
 }
 
+/* --- CLASSES PARA ESCOLHER SLIDER --- */
+.desktopOnly { display: block; }
+.mobileOnly { display: none; }
+
+@media (max-width: 768px) {
+  .desktopOnly { display: none; }
+  .mobileOnly { display: block; }
+}
+
 /* --- ESTILOS PARA DESKTOP (MAIORES QUE 768px) --- */
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
