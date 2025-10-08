@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/ProjectCard.module.css'; // Importa os estilos do seu card individual
+import styles from '../styles/ProjectCard.module.css'; 
 
 const ProjectCard = ({ project }) => {
   return (

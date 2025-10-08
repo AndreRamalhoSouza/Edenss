@@ -2,13 +2,13 @@
 import React from 'react';
 import styles from '../styles/MembroEquipe.module.css';
 
-// Adicione a prop 'reverseOrder'
+
 function MembroEquipe({ membro, reverseOrder }) {
   const nomeCss = membro.nome.toLowerCase();
   const imagemDinamicaClass = styles['imagemMembro-' + nomeCss] || '';
   const textoDinamicaClass = styles['textoMembro-' + nomeCss] || '';
 
-  // Condicionalmente aplica a classe 'reverse' se reverseOrder for true
+ 
   const membroDetalheClasses = `${styles.membroDetalhe} ${reverseOrder ? styles.reverse : ''}`;
 
   return (

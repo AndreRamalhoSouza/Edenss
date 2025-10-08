@@ -1,11 +1,11 @@
 // components/FormularioContato.js
 import React from 'react';
-import styles from '../styles/FormularioContato.module.css'; // Vamos criar este CSS
+import styles from '../styles/FormularioContato.module.css'; 
 
 function FormularioContato() {
   return (
     <section className={styles.secaoFormulario}>
-      <h2 className={styles.tituloFormulario}>FALE CONOSCO</h2> {/* Título do formulário */}
+      <h2 className={styles.tituloFormulario}>FALE CONOSCO</h2> 
       <form className={styles.formulario}>
         <div className={styles.campo}>
           <label htmlFor="nome" className={styles.labelCampo}>NOME</label>

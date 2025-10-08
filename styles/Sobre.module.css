@@ -1,20 +1,20 @@
-/* Seu CSS existente para Sobre.module.css */
+
 
 .container {
-  /* O container principal é definido em globals.css */
+  
 }
 
 .main {
-  /* O main é definido em globals.css */
+  
   text-align: center;
 }
 
 .titulo {
-  /* ESTILOS PARA O CONTAINER DO TÍTULO "NOSSA HISTÓRIA" */
-  display: flex; /* Permite controlar o layout dos filhos */
-  flex-direction: column; /* Coloca os filhos um abaixo do outro */
-  align-items: center; /* Centraliza os filhos horizontalmente */
-  /* Remove font-size e color daqui, pois serão definidos nas sub-partes */
+  
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  
   margin-bottom: 1.5rem;
   margin-top: 2rem;
 }
@@ -24,43 +24,40 @@
   right:140px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
-  /* ESTILOS PARA "NOSSA" */
-  font-size: 2rem; /* Menor que "HISTÓRIA", ajuste conforme necessário */
-  color: #7fcae3; /* Cor azul clara */
-  font-weight:bold; /* Geralmente "NOSSA" é menos bold na imagem */
-  line-height: 1; /* Ajusta o espaçamento da linha */
-  margin-bottom: 0.2em; /* Espaço entre "NOSSA" e "HISTÓRIA" */
+
+  font-size: 2rem; 
+  color: #7fcae3; 
+  font-weight:bold;
+  line-height: 1; 
+  margin-bottom: 0.2em; 
 }
 
 .historiaGrande {
-  /* ESTILOS PARA "HISTÓRIA" */
-  font-size: 4rem; /* Maior, ajuste conforme necessário para o tamanho principal do título */
-  color: #000000; /* Cor preta/cinza escuro */
-  font-weight: bold; /* Geralmente bold na imagem */
-  line-height: 1; /* Ajusta o espaçamento da linha */
+  
+  font-size: 4rem; 
+  color: #000000; 
+  font-weight: bold; 
+  line-height: 1; 
   font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 .descricao {
-  /* Seus estilos existentes para a descrição */
-  text-align: center; /* No print, o texto da descrição está centralizado */
-  max-width: 800px; /* Ajuste conforme a largura do texto no print */
-  margin: 0 auto 3rem auto; /* Centraliza e adiciona margem abaixo para o traço */
-  font-size: 1.1rem; /* Ajuste o tamanho da fonte se necessário */
-  color: #555555; /* Ajuste a cor se necessário */
+
+  text-align: center; 
+  max-width: 800px; 
+  margin: 0 auto 3rem auto; 
+  font-size: 1.1rem; 
+  color: #555555; 
   line-height: 1.6;
 }
 
 .divisorCinza {
-  width: 250px; /* Largura do traço, ajuste conforme o print */
-  height: 2px; /* Espessura do traço */
-  background-color: #cccccc; /* Cor cinza do traço */
-  margin: 0 auto 4rem auto; /* Centraliza o traço e adiciona margem abaixo para separar da próxima seção */
-  border-radius: 1px; /* Para as pontas arredondadas do traço, se desejar */
+  width: 250px; 
+  height: 2px; 
+  background-color: #cccccc; 
+  margin: 0 auto 4rem auto; 
+  border-radius: 1px; 
 }
-
-
-
 
 .secaoEquipe {
   padding: 3rem 0;
@@ -84,17 +81,17 @@
   padding: 0 1rem;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .titulo {
-    /* Ajustes para o container do título em telas menores */
-    margin-top: 1.5rem; /* Reduz margem superior */
+    
+    margin-top: 1.5rem; 
   }
   .nossaAzulPequeno {
-    font-size: 1.2rem; /* Reduz tamanho em telas menores */
+    font-size: 1.2rem; 
   }
   .historiaGrande {
-    font-size: 2.5rem; /* Reduz tamanho em telas menores */
+    font-size: 2.5rem; 
   }
   .descricao {
     font-size: 1rem;

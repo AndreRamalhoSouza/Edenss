@@ -20,8 +20,8 @@
 }
 
 .logoCabecalho {
-    width: 400px; /* Exemplo: Um tamanho maior para a logo no cabeçalho */
-    height: auto; /* Garante que a proporção da imagem seja mantida */
+    width: 400px;
+    height: auto; 
     display: block;
 }
 
@@ -38,13 +38,12 @@
 }
 
 .nav {
-    display: flex; /* Visível no desktop */
+    display: flex; 
     flex-grow: 1;
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    margin-right: 200px; /* Mantém o espaçamento à direita, ajuste se precisar de mais espaço */
-    padding-left: 0px;
+    margin-right: 200px; 
 }
 
 .nav ul {
@@ -52,7 +51,7 @@
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 3.5rem; /* Reduzido o gap para dar mais espaço, ajuste conforme necessário */
+    gap: 3.5rem; 
     align-items: center;
 }
 
@@ -63,56 +62,56 @@
     transition: color 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    white-space: nowrap; /* <<<< ESSA É A CHAVE: Impede a quebra de linha no texto do link */
+    white-space: nowrap; 
 }
 
 .nav a:hover {
     color: #7fcbe4;
 }
 
-/* O item "Nossa História" que contém o link e a lupa */
+
 .nossaHistoriaItem {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espaçamento entre o link e a lupa */
+    gap: 5px; 
 }
 
-/* Contêiner da Lupa */
+
 .cssLupaContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px; /* Tamanho da lupa para o clique */
-    height: 30px; /* Tamanho da lupa para o clique */
+    width: 30px; 
+    height: 30px; 
     cursor: pointer;
     z-index: 10;
     padding: 5px;
 }
 
 .lupaCircle {
-    width: 20px; /* Tamanho do círculo da lupa */
-    height: 20px; /* Tamanho do círculo da lupa */
+    width: 20px; 
+    height: 20px; 
     border: 2px solid #3ce5d4;
     border-radius: 50%;
     left: 140px;
     bottom: 5px;
     transition: border-color 0.3s ease;
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-right: 3px; /* Pequeno ajuste para espaçar do cabo */
+    position: relative; 
+    margin-right: 3px; 
 }
 
 .lupaHandle {
     width: 2px;
     left: 122px;
-    height: 15px; /* Comprimento do cabo */
+    height: 15px; 
     background-color: #3ce5d4;
     top: 0px;
     transition: background-color 0.3s ease;
-    transform-origin: bottom right; /* Ponto de rotação */
-    transform: rotate(45deg); /* Posição do cabo */
-    position: relative; /* Ajuste para dentro do .cssLupaContainer */
-    margin-left: -15px; /* Ajuste para posicionar o cabo sobre o círculo */
-    margin-top: 15px; /* Ajuste para alinhar o cabo */
+    transform-origin: bottom right; 
+    transform: rotate(45deg); 
+    position: relative; 
+    margin-left: -15px; 
+    margin-top: 15px; 
 }
 
 .cssLupaContainer:hover .lupaCircle {
@@ -139,7 +138,7 @@
     height: 60px;
     position: relative;
     left: 215px;
-    margin-left: auto; /* Empurra para a direita dentro do flex container do cabeçalho */
+    margin-left: auto; 
 }
 
 .botaoContato:hover {
@@ -150,12 +149,12 @@
 .contatoMenuItem {
     list-style: none;
     margin-left: auto;
-    order: 1; /* Mantém a ordem no desktop */
+    order: 1;
 }
 
-/* --- Hamburger Icon (Invisível por padrão no desktop) --- */
+
 .hamburgerIcon {
-    display: none; /* ESCONDIDO NO DESKTOP */
+    display: none; 
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -182,21 +181,21 @@
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* --- Formulário de Busca (Agora mais complexo com botões de navegação) --- */
+
 .searchForm {
     position: absolute;
-    top: 100%; /* Abaixo do cabeçalho */
+    top: 100%; 
     left: 0;
     width: 100%;
     display: flex;
-    flex-wrap: wrap; /* Adicionado para responsividade em telas menores */
+    flex-wrap: wrap; 
     background-color: #212121;
     padding: 15px 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 99;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Espaçamento entre os elementos do formulário */
+    gap: 15px; 
 }
 
 .searchInput {
@@ -237,21 +236,18 @@
     color: #fff;
 }
 
-/* --- Novos Estilos para o Destaque e Navegação da Busca --- */
 
-/* Estilo para o texto destacado pelo mark.js */
 .highlightedText {
-    background-color: yellow; /* Cor padrão de destaque */
-    padding: 2px 0; /* Pequeno padding para melhor visualização */
+    background-color: yellow; 
+    padding: 2px 0; 
     border-radius: 3px;
-    transition: background-color 0.3s ease, outline 0.3s ease; /* Transição suave para cores e outline */
+    transition: background-color 0.3s ease, outline 0.3s ease; 
 }
 
-/* Estilo para a ocorrência atual que está em foco */
 .highlightedText.currentHighlight {
-    background-color: orange; /* Cor de destaque para a ocorrência atual */
-    outline: 2px solid #0071f3; /* Uma borda para maior visibilidade, usando uma cor de tema */
-    animation: pulseHighlight 1s infinite alternate; /* Adiciona uma pequena animação */
+    background-color: orange; 
+    outline: 2px solid #0071f3; 
+    animation: pulseHighlight 1s infinite alternate;
 }
 
 @keyframes pulseHighlight {
@@ -267,15 +263,15 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: 15px; /* Espaçamento do botão de busca */
+    margin-left: 15px; 
 }
 
 .searchNavigation button {
     padding: 8px 12px;
     border: none;
-    border-radius: 20px; /* Bordas arredondadas para os botões de navegação */
-    background-color: #7fcbe4; /* Cor secundária do tema */
-    color: #212121; /* Texto escuro */
+    border-radius: 20px; 
+    background-color: #7fcbe4; 
+    color: #212121; 
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: bold;
@@ -283,7 +279,7 @@
 }
 
 .searchNavigation button:hover:not(:disabled) {
-    background-color: #3ce5d4; /* Cor de hover */
+    background-color: #3ce5d4; 
     color: #fff;
 }
 
@@ -295,23 +291,21 @@
 
 .searchNavigation span {
     font-weight: bold;
-    color: #ffffff; /* Cor de texto para o contador de resultados */
+    color: #ffffff; 
     font-size: 1rem;
-    white-space: nowrap; /* Evita quebra de linha no contador */
+    white-space: nowrap; 
 }
 
 .clearSearchButton {
-    background-color: #dc3545; /* Cor de botão de fechar/limpar (vermelho) */
+    background-color: #dc3545; 
     color: white;
-    padding: 8px 12px; /* Ajuste para ser um "X" visível */
+    padding: 8px 12px; 
 }
 
 .clearSearchButton:hover {
     background-color: #c82333;
 }
 
-
-/* --- Media Queries (Ajustadas para incluir os novos elementos da busca) --- */
 
 @media (max-width:1920px) {
     .cabecalho {
@@ -331,7 +325,7 @@
     .botaoContato {
         left: 235px;
     }
-    /* searchForm e seus elementos já são flexíveis, ajuste se necessário */
+   
 }
 
 @media (max-width:1366px) {
@@ -352,11 +346,10 @@
     .botaoContato {
         left: 25px;
     }
-    /* searchForm e seus elementos já são flexíveis, ajuste se necessário */
+ 
 }
 
 
-/* Para telas menores que 1200px (tablets e celulares) */
 @media (max-width: 1200px) {
     .cabecalho {
         height: 80px;
@@ -373,7 +366,7 @@
         height: auto;
     }
 
-    .slogan { /* Ajuste ou remova conforme sua necessidade */
+    .slogan { 
         font-size: 0.6em;
         position: relative;
         top: 5px;
@@ -383,13 +376,13 @@
     .nav {
         display: none;
         flex-direction: column;
-        position: absolute; /* Alterado para absolute para sobrepor o conteúdo */
-        top: 100%; /* Inicia logo abaixo do cabeçalho */
+        position: absolute; 
+        top: 100%; 
         right: -100%;
         width: 70%;
-        height: calc(100vh - 80px); /* Altura da tela menos a altura do cabeçalho */
+        height: calc(100vh - 80px); 
         background-color: #333333ef;
-        padding-top: 20px; /* Reduzido o padding top para começar mais cedo */
+        padding-top: 20px; 
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
         transition: right 0.3s ease-in-out;
         justify-content: flex-start;
@@ -402,7 +395,7 @@
     .nav.open {
         display: flex;
         right: 0;
-        top: 80px; /* Posiciona corretamente abaixo do cabeçalho recolhido */
+        top: 80px; 
     }
 
     .nav ul {
@@ -458,10 +451,10 @@
     }
 
     .cssLupaContainer {
-        /* A lupa agora pode ser exibida em mobile/tablet dentro do menu */
+       
         display: flex;
-        margin-left: 10px; /* Espaçamento da lupa no menu mobile */
-        /* Remova left/bottom fixos se a lupa estiver no fluxo normal do menu */
+        margin-left: 10px; 
+        
         position: static;
         width: 30px;
         height: 30px;
@@ -470,66 +463,64 @@
     }
 
     .lupaCircle {
-        left: unset; /* Remove posicionamento fixo */
-        bottom: 5px; /* Remove posicionamento fixo */
+        left: unset; 
+        bottom: 5px;
         margin-right: 3px;
         left: 35px;
     }
 
     .lupaHandle {
-        left: 20px; /* Remove posicionamento fixo */
-        top: unset; /* Remove posicionamento fixo */
+        left: 20px; 
+        top: unset; 
         margin-left: -15px;
         margin-top: 15px;
     }
 
-
-    /* Ajustes para o formulário de busca em telas menores */
     .searchForm {
-        flex-direction: column; /* Empilha os itens verticalmente */
-        align-items: stretch; /* Estica os itens horizontalmente */
-        padding: 10px 1rem; /* Padding menor para mobile */
-        gap: 10px; /* Ajuste o espaçamento entre os itens */
+        flex-direction: column; 
+        align-items: stretch; 
+        padding: 10px 1rem; 
+        gap: 10px; 
     }
 
     .searchInput {
         font-size: 1rem;
-        max-width: unset; /* Remove o max-width para ocupar 100% */
+        max-width: unset; 
         width: 100%;
-        margin-right: 0; /* Remove margem extra */
+        margin-right: 0; 
     }
 
     .searchButton {
         font-size: 1rem;
         padding: 8px 15px;
-        width: 100%; /* Botão ocupa toda a largura */
+        width: 100%; 
     }
 
     .searchNavigation {
-        flex-direction: row; /* Mantém em linha */
-        justify-content: center; /* Centraliza os botões de navegação */
+        flex-direction: row; 
+        justify-content: center; 
         width: 100%;
-        margin-left: 0; /* Remove margem extra */
-        margin-top: 5px; /* Pequeno espaçamento superior */
-        flex-wrap: wrap; /* Permite quebrar se necessário */
+        margin-left: 0;
+        margin-top: 5px; 
+        flex-wrap: wrap; 
     }
 
     .searchNavigation button {
-        flex-grow: 1; /* Permite que os botões cresçam */
-        min-width: unset; /* Remove o min-width se houver */
-        font-size: 0.85rem; /* Fonte um pouco menor */
+        flex-grow: 1; 
+        min-width: unset; 
+        font-size: 0.85rem; 
         padding: 6px 10px;
     }
 }
 
-/* Você tinha esta media query vazia, mantive ela caso queira adicionar algo entre 768px e 1023px */
+
 @media (min-width: 768px) and (max-width: 1023px) {
     .logo img {
-        width: 250px; /* Um pouco maior para tablets */
+        width: 250px;
     }
 }
 
-/* Para telas muito pequenas (celulares em modo retrato) */
+
 @media (max-width: 480px) {
     .logo img {
         position: relative;
@@ -545,26 +536,25 @@
     }
 
     .nav {
-        /* O nav já foi ajustado para mobile na media query de 1200px */
-        /* Apenas ajuste a posição 'top' se o cabeçalho tiver altura diferente */
-        top: 80px; /* Se o cabeçalho tiver 80px em mobile */
+     
+        top: 80px; 
     }
 
     .nav.open {
-        /* Se o 'top' do .nav.open precisar ser ajustado para telas muito pequenas */
-        top: 80px; /* Exemplo: se o cabeçalho for 80px em mobile */
+        
+        top: 80px; 
     }
 
     .searchForm {
-        /* Já definido na media query de 1200px para telas menores */
+        
     }
 
     .searchInput,
     .searchButton {
-        /* Já definido na media query de 1200px para telas menores */
+       
     }
     .searchNavigation button {
-        font-size: 0.8rem; /* Ainda menor em telas muito pequenas */
+        font-size: 0.8rem; 
         padding: 5px 8px;
     }
     .searchNavigation span {
@@ -572,8 +562,3 @@
     }
 }
 
-/* Garante que o formulário de busca esteja visível apenas quando isSearchOpen é true */
-/* Esta regra CSS não é necessária, pois a visibilidade é controlada pelo React */
-/* .searchForm[style*="display: block"] {
-    display: flex !important;
-} */

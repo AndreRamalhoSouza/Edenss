@@ -2,23 +2,22 @@
 
 .card {
   position: relative;
-  /* Largura e altura ajustadas para o layout de 3 em 3, preenchendo a tela */
-  /* Para 3 itens com um gap de 10px no container, teremos 2 gaps (20px) */
  
-  width: 630px; /* Permite que flex-basis domine */
-  height: 420px; /* Altura base para desktops */
+ 
+  width: 630px; 
+  height: 420px; 
 
   cursor: pointer;
   border-radius: 0px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  display: flex; /* Essencial para flex-direction e alinhamento interno */
+  display: flex; 
   flex-direction: column;
-  justify-content: flex-end; /* Para o overlay ficar na parte inferior */
+  justify-content: flex-end;
   padding: 0;
-  flex-grow: 1;   /* <--- Garante que os cards cresçam para ocupar o espaço igualitariamente */
-  flex-shrink: 1; /* Permite que os cards encolham se necessário */
+  flex-grow: 1;   
+  flex-shrink: 1; 
 }
 
 .card:hover {
@@ -29,8 +28,8 @@
 .card img {
   width: 200%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-  flex-grow: 1; /* Permite que a imagem preencha a altura restante do card */
+  object-fit: cover; 
+  flex-grow: 1; 
   filter: grayscale(100%);
   transition: filter 0.5s ease-in-out;
 }
@@ -67,52 +66,49 @@
 }
 
 
-/* Media Queries para responsividade do CARD INDIVIDUAL */
-
-/* Laptops e Desktops menores (3 colunas) */
 @media (max-width: 1920px) {
 .card {
    width: 635px;
-    height: 450px; /* Altura menor para celulares */
+    height: 450px; 
   }
 }
 @media (max-width: 1500px) {
 .card {
    width: 456px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
 }
 @media (max-width: 1366px) {
   .card {
    width: 450px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
 }
 
 @media (max-width: 1300px) {
   .card {
    width: 430px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px;  
   }
 }
 @media (max-width: 1200px) {
   .card {
    width: 341px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
 }
 
-/* Tablets grandes e laptops muito pequenos (2 colunas) */
+
 @media (max-width: 1000px) {
  .card {
    width: 300px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
 }
 @media (max-width: 900px) {
    .card {
    width: 260px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 50px;
@@ -124,11 +120,11 @@
   }
 }
 
-/* Tablets pequenos e celulares (1 coluna) */
+
 @media (max-width: 780px) {
    .card {
    width: 260px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 50px;
@@ -142,7 +138,7 @@
 @media (max-width: 768px) {
    .card {
    width: 255px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 50px;
@@ -156,7 +152,7 @@
 @media (max-width: 700px) {
   .card {
    width: 233px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -168,11 +164,11 @@
   }
 }
 
-/* Celulares muito pequenos */
+
 @media (max-width: 680px) {
   .card {
    width: 200px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -185,7 +181,7 @@
   @media (max-width: 580px) {
   .card {
    width: 165px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -197,11 +193,11 @@
   }
 }
 
-  /* Celulares muito pequenos */
+
 @media (max-width: 480px) {
   .card {
    width: 158px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -216,7 +212,7 @@
   @media (max-width: 430px) {
   .card {
    width: 132px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -231,7 +227,7 @@
   @media (max-width: 390px) {
   .card {
    width: 122px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;
@@ -247,7 +243,7 @@
   @media (max-width: 360px) {
   .card {
    width: 120px;
-    height: 250px; /* Altura menor para celulares */
+    height: 250px; 
   }
   .overlay {
     min-height: 40px;

@@ -1,57 +1,57 @@
-/* styles/Rodape.module.css */
+
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 350px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 350px; 
+  overflow: hidden; 
 
 }
 
 .logoPrincipal {position: relative;
  right: 410px;
      max-width: 1000px;
-  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 100px; /* Mantém a proporção da imagem automaticamente */
+  width: 350px; 
+  height: 100px; 
 bottom: -100px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
-/* --- LOGO E SLOGAN: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .edenn {
   font-size: 5rem;
   color: white;
-  margin-bottom: 0; /* Ajuste para espaçamento */
-  /* Removendo position: relative e right para o fluxo normal */
+  margin-bottom: 0; 
+  
 }
 
 .ss {
   font-size: 5rem;
   color: black;
-  margin-bottom: 0; /* Ajuste para espaçamento */
-  /* Removendo position: relative e right para o fluxo normal */
+  margin-bottom: 0; 
+  
 }
 
 .slogan {
   font-size: 1.2rem;
   color: #ffffff;
-  margin-top: 1rem; /* Espaçamento após a logo/título */
-  margin-bottom: 2rem; /* Espaçamento antes das colunas */
+  margin-top: 1rem; 
+  margin-bottom: 2rem; 
   display: block;
   text-align: center;
   width: auto;
-  /* Removendo position: relative, right, top para o fluxo normal */
+  
 }
 
-/* --- COLUNAS DO RODAPÉ --- */
+
 .colunasRodape {
   position: relative;
   top: 30px;
@@ -72,7 +72,7 @@ bottom: -100px;
   left: 100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -86,7 +86,7 @@ bottom: -100px;
   top: 80px;
   left: 110px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -134,7 +134,7 @@ bottom: -100px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -145,21 +145,21 @@ bottom: -100px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 820px;
   bottom: 100px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -171,8 +171,8 @@ bottom: -100px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -180,20 +180,20 @@ bottom: -100px;
   filter: grayscale(0%) brightness(100%);
 }
 
-@media (max-width: 1366px) {
+@media (max-width: 1370px) {
    .logoPrincipal {position: relative;
  right: 155px;
      max-width: 1000px;
-  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 120px; /* Mantém a proporção da imagem automaticamente */
+  width: 350px; 
+  height: 120px; 
 bottom: -50px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -201,9 +201,9 @@ bottom: -50px;
   width: 1351px;
 
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 300px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+ 
+  height: 300px; 
+  overflow: hidden;
 
 }
 .colunasRodape {
@@ -213,7 +213,7 @@ bottom: -50px;
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 3rem;
+ gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -226,7 +226,7 @@ bottom: -50px;
   left: 140px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -240,7 +240,7 @@ bottom: -50px;
   top: 60px;
   left: 10px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -288,7 +288,7 @@ bottom: -50px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -299,21 +299,21 @@ bottom: -50px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left:675px;
-  bottom: 230px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  bottom: 180px;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -325,8 +325,8 @@ bottom: -50px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px;
 }
 
 .socialIcons img:hover {
@@ -338,16 +338,16 @@ bottom: -50px;
    .logoPrincipal {position: relative;
  right: 95px;
      max-width: 1000px;
-  width: 450px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 150px; /* Mantém a proporção da imagem automaticamente */
+  width: 450px; 
+  height: 150px; 
 bottom: -80px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -355,9 +355,9 @@ bottom: -80px;
   width: 1200px;
 
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 400px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 400px; 
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -380,7 +380,7 @@ bottom: -80px;
   left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -394,7 +394,7 @@ bottom: -80px;
   top: 60px;
   left: -80px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -442,7 +442,7 @@ bottom: -80px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -453,21 +453,21 @@ bottom: -80px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left:650px;
   bottom: 230px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -479,8 +479,8 @@ bottom: -80px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -494,25 +494,25 @@ bottom: -80px;
    .logoPrincipal {position: relative;
  right:85px;
      max-width: 1000px;
-  width: 350px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 100px; /* Mantém a proporção da imagem automaticamente */
+  width: 350px;
+  height: 100px; 
 bottom: 0px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 400px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 400px; 
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -535,7 +535,7 @@ bottom: 0px;
   left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -549,7 +549,7 @@ bottom: 0px;
   top: 60px;
   left: 0px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -597,7 +597,7 @@ bottom: 0px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -608,21 +608,21 @@ bottom: 0px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 530px;
   bottom: 120px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -634,8 +634,8 @@ bottom: 0px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -646,30 +646,30 @@ bottom: 0px;
 }
 
 
-/* Para telas menores que 768px (tablets e celulares) */
+
 @media (max-width: 768px) {
    .logoPrincipal {position: relative;
  right: 55px;
      max-width: 1000px;
-  width: 280px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 110px; /* Mantém a proporção da imagem automaticamente */
+  width: 280px; 
+  height: 110px;
 bottom: -50px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px;
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 400px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 400px; 
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -692,7 +692,7 @@ bottom: -50px;
   left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start;
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -706,7 +706,7 @@ bottom: -50px;
   top: 60px;
   left: 0px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -754,7 +754,7 @@ bottom: -50px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -765,21 +765,21 @@ bottom: -50px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+ 
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 430px;
   bottom: 150px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -791,8 +791,8 @@ bottom: -50px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px;              
+  height: 30px;        
 }
 
 .socialIcons img:hover {
@@ -802,31 +802,31 @@ bottom: -50px;
 
 }
 
-/* Para telas menores que 480px (celulares muito pequenos) */
+
 @media (max-width: 480px) {
  
 .logoPrincipal {position: relative;
  right: -80px;
      max-width: 1000px;
-  width: 300px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 120px; /* Mantém a proporção da imagem automaticamente */
+  width: 300px; 
+  height: 120px; 
 bottom: -120px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 650px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 650px; 
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -850,7 +850,7 @@ bottom: -120px;
   left: 100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -864,7 +864,7 @@ bottom: -120px;
   top: 60px;
   left: 102px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -912,7 +912,7 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -923,21 +923,21 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 0px;
   bottom: -350px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -949,8 +949,8 @@ bottom: -120px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -964,25 +964,25 @@ bottom: -120px;
 .logoPrincipal {position: relative;
  right: -80px;
      max-width: 1000px;
-  width: 300px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 120px; /* Mantém a proporção da imagem automaticamente */
+  width: 300px; 
+  height: 120px; 
 bottom: -120px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px;  
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 650px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+  
+  height: 650px; 
+  overflow: hidden;
 
 }
 .colunasRodape {
@@ -1006,7 +1006,7 @@ bottom: -120px;
   left: 100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1020,7 +1020,7 @@ bottom: -120px;
   top: 60px;
   left: 102px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1068,7 +1068,7 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -1079,21 +1079,21 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 0px;
   bottom: -350px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px;
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -1105,8 +1105,8 @@ bottom: -120px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -1120,25 +1120,25 @@ bottom: -120px;
  .logoPrincipal {position: relative;
  right: -20px;
      max-width: 1000px;
-  width: 300px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 120px; /* Mantém a proporção da imagem automaticamente */
+  width: 300px; 
+  height: 120px;
 bottom: -120px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 650px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+ 
+  height: 650px;
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -1162,7 +1162,7 @@ bottom: -120px;
   left: 100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1176,7 +1176,7 @@ bottom: -120px;
   top: 60px;
   left: 102px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start;
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1224,7 +1224,7 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
 .emailSusi {
@@ -1235,21 +1235,21 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+  
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
+
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 0px;
   bottom: -350px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  
 }
 
 .socialIcons a {
@@ -1261,8 +1261,8 @@ bottom: -120px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px; 
+  height: 30px; 
 }
 
 .socialIcons img:hover {
@@ -1276,25 +1276,25 @@ bottom: -120px;
  .logoPrincipal {position: relative;
  right: -20px;
      max-width: 1000px;
-  width: 300px; /* Exemplo: Ajuste para o tamanho exato que você precisa */
-  height: 120px; /* Mantém a proporção da imagem automaticamente */
+  width: 300px; 
+  height: 120px; 
 bottom: -120px;
-  margin-bottom: 20px; /* Adiciona um espaço abaixo da logo, se desejar */
+  margin-bottom: 20px; 
 }
 
 .rodape {
   background-color: #6fd0dd;
   color: #ffffff;
-  padding: 2rem 1rem; /* Padding base para o rodapé */
+  padding: 2rem 1rem; 
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  /* --- AQUI ESTÁ A CHAVE PARA DEIXAR O TAMANHO FIXO --- */
-  height: 650px; /* **Altura FIXA do rodapé.** Ajuste este valor conforme o necessário. */
-  overflow: hidden; /* Importante: se o conteúdo exceder a altura, ele será cortado. */
+ 
+  height: 650px;
+  overflow: hidden; 
 
 }
 .colunasRodape {
@@ -1318,7 +1318,7 @@ bottom: -120px;
   left: 100px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1332,7 +1332,7 @@ bottom: -120px;
   top: 60px;
   left: 102px;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo de cada coluna à esquerda */
+  align-items: flex-start; 
   text-align: left;
   flex: 1;
   min-width: 200px;
@@ -1380,7 +1380,7 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+ 
 }
 
 .emailSusi {
@@ -1391,21 +1391,20 @@ bottom: -120px;
   margin-top: 0px;
   padding: 10px;
   color: rgb(0, 0, 0);
-  /* Removendo position: relative, left, top para o fluxo normal */
+ 
 }
 
-/* --- ÍCONES SOCIAIS: REMOVENDO POSICIONAMENTOS MANUAIS --- */
 .socialIcons {
   position: relative;
   display: flex;
-  justify-content: center; /* Centraliza os ícones */
+  justify-content: center; 
   align-items: center;
   gap: 15px;
   left: 0px;
   bottom: -350px;
-  margin-top: 20px; /* Espaçamento após a logo/slogan */
-  margin-bottom: 20px; /* Espaçamento antes das colunas */
-  /* Removendo position: relative, left, bottom para o fluxo normal */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+ 
 }
 
 .socialIcons a {
@@ -1417,8 +1416,8 @@ bottom: -120px;
 .socialIcons img {
   transition: transform 0.2s ease-in-out;
   filter: grayscale(100%) brightness(180%);
-  width: 30px; /* Mantém o tamanho dos ícones sociais */
-  height: 30px; /* Mantém o tamanho dos ícones sociais */
+  width: 30px;
+  height: 30px; 
 }
 
 .socialIcons img:hover {

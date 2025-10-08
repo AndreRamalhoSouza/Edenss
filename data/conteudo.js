@@ -19,22 +19,22 @@ export const conteudoSobreNos = {
 export const servicos = [
   {
     titulo: "MASTER PLANNING",
-    icon: "/images/planejamento.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/planejamento.png", 
     color: "#7FC8D7"
   },
   {
     titulo: "DESENVOLVIMENTO CRIATIVO",
-    icon: "/images/design-grafico.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/design-grafico.png", 
     color: "#5FBAC9",
   },
   {
     titulo: "CONSULTORIA ESTRATÉGICA",
-    icon: "/images/serv.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/serv.png", 
     color: "#47A2AE",
   },
   {
     titulo: "PISCINAS RESIDENCIAS / PARQUES TEMÁTICOS / HOTEIS",
-    icon: "/images/piscina.png", // <--- Adicione o caminho completo do ícone
+    icon: "/images/piscina.png", 
     color: "#2A7C86",
   },
 ];

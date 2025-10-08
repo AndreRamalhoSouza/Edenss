@@ -1,13 +1,13 @@
 // components/Cabecalho.js
 
-import { useState, useEffect, useRef, useCallback } from 'react'; // Adicionado useCallback
+import { useState, useEffect, useRef, useCallback } from 'react'; 
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from '../styles/Cabecalho.module.css';
 import Mark from 'mark.js';
 
-// Função auxiliar para remover acentos
+
 const removeAccents = (str) => {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 };
@@ -22,7 +22,7 @@ function Cabecalho() {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const searchResultsRef = useRef([]);
 
-  // **Corrigido**: clearHighlights envolvido em useCallback para estabilidade
+ 
   const clearHighlights = useCallback(() => {
     if (currentMarkInstance) {
       currentMarkInstance.unmark();
@@ -31,7 +31,7 @@ function Cabecalho() {
     setHighlightedCount(0);
     setCurrentIndex(-1);
     searchResultsRef.current = [];
-  }, [currentMarkInstance]); // currentMarkInstance é uma dependência aqui
+  }, [currentMarkInstance]); 
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -48,14 +48,14 @@ function Cabecalho() {
     clearHighlights();
   };
 
-  // Função para rolar para a próxima/anterior ocorrência
+  
   const scrollToHighlight = (index) => {
     if (searchResultsRef.current[index]) {
       searchResultsRef.current[index].scrollIntoView({
         behavior: 'smooth',
         block: 'center',
       });
-      // Adiciona uma classe temporária para destacar visualmente a ocorrência atual
+      
       searchResultsRef.current.forEach((el) => {
         if (el.classList.contains(styles.currentHighlight)) {
           el.classList.remove(styles.currentHighlight);
@@ -67,7 +67,7 @@ function Cabecalho() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    clearHighlights(); // Limpa destaques antigos antes de uma nova busca
+    clearHighlights(); 
 
     const normalizedTerm = removeAccents(searchTerm).toLowerCase().trim();
 
@@ -100,7 +100,7 @@ function Cabecalho() {
     });
   };
 
-  // Navegar para a próxima ocorrência
+  
   const goToNext = () => {
     if (highlightedCount > 0) {
       const nextIndex = (currentIndex + 1) % highlightedCount;
@@ -109,7 +109,7 @@ function Cabecalho() {
     }
   };
 
-  // Navegar para a ocorrência anterior
+  
   const goToPrevious = () => {
     if (highlightedCount > 0) {
       const prevIndex = (currentIndex - 1 + highlightedCount) % highlightedCount;
@@ -118,8 +118,8 @@ function Cabecalho() {
     }
   };
 
-  // Nova função para o clique na logo
-  const handleLogoClick = () => { // Removido 'e' pois não é mais usado com preventDefault
+  
+  const handleLogoClick = () => { 
     if (router.pathname === '/') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       if (window.location.hash) {
@@ -145,21 +145,21 @@ function Cabecalho() {
       window.removeEventListener('resize', handleResize);
       clearHighlights();
     };
-  }, [clearHighlights]); // **Corrigido**: clearHighlights adicionado às dependências
+  }, [clearHighlights]); 
 
-  // Limpa destaques quando a busca é fechada explicitamente pelo usuário
+ 
   useEffect(() => {
     if (!isSearchOpen) {
       clearHighlights();
     }
-  }, [isSearchOpen, clearHighlights]); // **Corrigido**: clearHighlights adicionado às dependências
+  }, [isSearchOpen, clearHighlights]); 
 
 
   return (
     <header className={styles.cabecalho}>
       <div className={styles.logoContainer}>
         <div className={styles.logo}>
-          {/* **Corrigido**: Usando <Link> do Next.js para navegação interna */}
+          
           <Link href="/" onClick={handleLogoClick}>
             <Image
               src="/images/edens 1.png"

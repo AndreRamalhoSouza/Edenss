@@ -8,8 +8,8 @@ import styles from '../styles/Sobre.module.css';
 
 function Sobre() {
   const partesTitulo = conteudoSobreNos.titulo.split(' ');
-  const nossa = partesTitulo[0]; // "NOSSA"
-  const historia = partesTitulo.slice(1).join(' '); // "HISTÓRIA"
+  const nossa = partesTitulo[0]; 
+  const historia = partesTitulo.slice(1).join(' '); 
 
   return (
     <div className={styles.container}>
@@ -21,13 +21,13 @@ function Sobre() {
       <Header />
 
       <main className={styles.main}>
-        {/* Ajuste aqui para usar uma div para cada parte do título */}
+        
         <h1 className={styles.titulo}>
           <div className={styles.nossaAzulPequeno}>{nossa}</div>
           <div className={styles.historiaGrande}>{historia}</div>
         </h1>
         <p className={styles.descricao}>{conteudoSobreNos.texto}</p>
-        <div className={styles.divisorCinza}></div> {/* Adicione esta linha para o traço */}
+        <div className={styles.divisorCinza}></div> 
 
         <section className={styles.secaoEquipe}>
           <h2>Conheça Nossos Fundadores</h2>

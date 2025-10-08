@@ -23,7 +23,7 @@ function Contato() {
             <h3>Informações de Contato</h3>
             <p>Email Samuel: {infoContato.emailSamuel}</p>
             <p>Email Susi: {infoContato.emailSusi}</p>
-            {/* Adicione número de telefone se disponível */}
+            
           </div>
         </div>
       </main>

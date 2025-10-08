@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import Header from '../components/Cabecalho'; // Caminho corrigido
-import Footer from '../components/Rodape';   // Caminho corrigido
-import ProjectCard from '../components/ProjectCard'; // Seu componente ProjectCard
-import { projects } from '../data/projects'; // Importa a lista de projetos do seu 'data/projects.js'
-import styles from '../styles/Portfolio.module.css'; // Crie um CSS para a página de portfólio (ou use um existente)
+import Header from '../components/Cabecalho'; 
+import Footer from '../components/Rodape';   
+import ProjectCard from '../components/ProjectCard'; 
+import { projects } from '../data/projects'; 
+import styles from '../styles/Portfolio.module.css'; 
 
-function Portfolio({ projects }) { // O nome da prop 'projects' aqui deve ser o mesmo que você passa em 'getStaticProps'
+function Portfolio({ projects }) { 
   return (
     <div className={styles.container}>
       <Head>
@@ -29,14 +29,14 @@ function Portfolio({ projects }) { // O nome da prop 'projects' aqui deve ser o 
   );
 }
 
-// Esta função busca todos os projetos no momento da build para pré-renderizar a lista
+
 export async function getStaticProps() {
-  // Retorna os dados de todos os projetos diretamente do seu 'data/projects.js'
+ 
   return {
     props: {
-      projects: projects, // Certifique-se que 'projects' é o nome da sua constante no 'data/projects.js'
+      projects: projects, 
     },
   };
 }
 
-export default Portfolio; // Isso é crucial: exportar o componente React como default
+export default Portfolio; 

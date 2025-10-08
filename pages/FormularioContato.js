@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from '../styles/FormularioContato.module.css'; // Crie este módulo CSS
+import styles from '../styles/FormularioContato.module.css'; 
 
 function FormularioContato() {
   const [dadosFormulario, setDadosFormulario] = useState({
@@ -19,11 +19,10 @@ function FormularioContato() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aqui você normalmente enviaria os dados do formulário para um endpoint de API
-    // Para um site estático simples, você pode usar um serviço como Formspree ou Netlify Forms
+ 
     console.log('Dados do formulário enviados:', dadosFormulario);
-    alert('Mensagem enviada com sucesso!'); // Feedback básico
-    setDadosFormulario({ nome: '', email: '', telefone: '', mensagem: '' }); // Limpar formulário
+    alert('Mensagem enviada com sucesso!'); 
+    setDadosFormulario({ nome: '', email: '', telefone: '', mensagem: '' }); 
   };
 
   return (

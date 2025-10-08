@@ -58,7 +58,7 @@
   color: #7fcae3;
 }
 
-/* Estilos para as setas do carrossel (visíveis por padrão) */
+
 .carouselArrow {
   position: absolute;
   top: 80%;
@@ -90,7 +90,7 @@
   right: 20px;
 }
 
-/* --- Responsividade --- */
+
 
 @media (max-width: 1200px) {
   .heroTitle {
@@ -110,7 +110,7 @@
     width: 90%;
     text-align: center;
   }
-  /* Oculta as setas em telas menores ou iguais a 768px */
+  
   .carouselArrow {
     display: none;
   }

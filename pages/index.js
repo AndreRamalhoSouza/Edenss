@@ -9,15 +9,15 @@ import MembroEquipe from '../components/MembroEquipe';
 import CartaoDepoimento from '../components/CartaoDepoimento';
 import FormularioContato from '../components/FormularioContato';
 
-// --- IMPORTS DO PORTFÓLIO ---
+
 import ProjectCard from '../components/ProjectCard';
 import projectsData from '../data/projects';
-// --- FIM DOS IMPORTS DO PORTFÓLIO ---
 
-// --- OUTROS IMPORTS (EXISTENTES) ---
+
+
 import CartaoServico from '../components/CartaoServico';
 import { conteudoHero, conteudoSobreNos, membrosEquipe, depoimentos, servicos } from '../data/conteudo';
-// --- FIM DOS OUTROS IMPORTS ---
+
 
 import styles from '../styles/Home.module.css';
 
@@ -37,9 +37,9 @@ function Home() {
 
   const currentProjects = projectsData || exampleProjects;
 
-  // --- LÓGICA DE PAGINAÇÃO DO PORTFÓLIO ---
+  
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const projectsPerPage = 9; // Quantos projetos mostrar por vez
+  const projectsPerPage = 9; 
 
   const totalProjects = currentProjects.length;
   const totalProjectPages = Math.ceil(totalProjects / projectsPerPage);
@@ -49,7 +49,7 @@ function Home() {
     currentProjectIndex + projectsPerPage
   );
 
-  // Swipe handlers
+
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setCurrentProjectIndex((prevIndex) => {
@@ -63,10 +63,10 @@ function Home() {
         return nextIndex < 0 ? Math.max(totalProjects - projectsPerPage, 0) : nextIndex;
       });
     },
-    trackMouse: true, // permite arrastar com o mouse no desktop
+    trackMouse: true, 
   });
 
-  // --- Carrossel de Depoimentos ---
+  
   const [currentDepoimentoIndex, setCurrentDepoimentoIndex] = useState(0);
   const depoimentosPorPagina = 2;
 
@@ -107,7 +107,7 @@ function Home() {
       <main className={styles.main}>
         <SecaoHero images={conteudoHero.imagensCarrossel} />
 
-        {/* Nossa História */}
+       
         <section className={styles.secaoSobreNos}>
           <h2 id="nossa-historia" style={{ scrollMarginTop: '130px' }} className={styles.tituloSobreNos}>
             <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
@@ -117,7 +117,7 @@ function Home() {
           <div className={styles.divisorCinza}></div>
         </section>
 
-        {/* Serviços */}
+       
         <section className={styles.secaoServicos}>
           <h2 id="servicos" style={{ scrollMarginTop: '130px' }} className={styles.tituloServicos}>SERVIÇOS</h2>
           <div className={styles.gradeServicos}>
@@ -127,7 +127,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Portfólio */}
+    
         <section className={styles.secaoPortfolio}>
           <h2 id="projetos" style={{ scrollMarginTop: '130px' }} className={styles.portfolioTitle}>PORTFÓLIO</h2>
           <div className={styles.divisorCinza}></div>
@@ -149,7 +149,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Equipe */}
+       
         <section className={styles.secaoEquipe}>
           <div className={styles.gradeEquipe}>
             {membrosEquipe.map((membro, index) => (
@@ -158,7 +158,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Depoimentos */}
+        
         <section className={styles.secaoDepoimentos}>
           <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>DEPOIMENTOS</h2>
           <div className={styles.divisorGray}></div>
@@ -196,7 +196,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Contato */}
+       
         <section id="contato">
           <FormularioContato />
         </section>

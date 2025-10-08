@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Espaçamento entre cards (desktop) */
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -22,10 +22,10 @@
   height: 100%;
 }
 
-/* Personalizando os Dots */
+
 .carouselWrapper .slick-dots {
   bottom: -40px;
-  z-index: 10; /* Adicione ou garanta um z-index alto para serem clicáveis */
+  z-index: 10; 
 }
 
 .carouselWrapper .slick-dots li button:before {
@@ -37,7 +37,7 @@
   color: #007bff;
 }
 
-/* Personalizando as setas (arrows) - Para desktop */
+
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
   z-index: 1;
@@ -59,8 +59,7 @@
   right: -50px;
 }
 
-/* --- ESTILOS ESPECÍFICOS PARA DESKTOP (MAIORES QUE 768px) --- */
-/* Estes estilos só devem ser aplicados em telas grandes para o layout de 2 linhas */
+
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
@@ -71,22 +70,22 @@
   }
 }
 
-/* --- CORREÇÃO CRUCIAL PARA MOBILE --- */
+
 @media (max-width: 768px) {
   .carouselWrapper :global(.slick-track) {
-    display: block !important;        /* slick controla o track */
+    display: block !important; 
     transform: translate3d(0, 0, 0) !important;
     transition: transform 0.3s ease !important;
     height: auto !important;
   }
 }
 
-/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 480PX) --- */
+
 @media (max-width: 480px) {
   .carouselWrapper .slick-dots li button:before {
     font-size: 12px;
     color: #999;
-    opacity: 1; /* garante visibilidade */
+    opacity: 1;
   }
 
   .carouselWrapper .slick-dots li.slick-active button:before {

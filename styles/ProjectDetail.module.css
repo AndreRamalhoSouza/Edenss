@@ -1,22 +1,22 @@
 /* styles/ProjectDetail.module.css */
 
 .backButton {
-  background-color: #3ea6e2; /* Azul vibrante */
+  background-color: #3ea6e2; 
   color: white;
   padding: 12px 25px;
   border: none;
-  border-radius: 50px; /* Borda mais arredondada */
+  border-radius: 50px; 
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-bottom: 40px; /* Espaço abaixo do botão */
+  margin-bottom: 40px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .backButton:hover {
   background-color: #004f76;
-  transform: translateY(-3px); /* Leve elevação no hover */
+  transform: translateY(-3px); 
 }
 
 .title {
@@ -34,7 +34,7 @@
   margin-bottom: 60px;
   max-width: 800px;
   text-align: justify;
-  margin: 0 auto 60px auto; /* Combina margin-left/right auto com margin-bottom */
+  margin: 0 auto 60px auto; 
 }
 
 .detailImagesGrid {
@@ -52,7 +52,7 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   position: relative;
-  aspect-ratio: 16/9; /* Define proporção fixa para todos os cards */
+  aspect-ratio: 16/9; 
   width: 100%;
   height: auto;
 }
@@ -63,7 +63,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Mantém imagem inteira, sem cortes */
+  object-fit: contain;
 }
 
 .imageWrapper:hover {
@@ -80,7 +80,7 @@
   text-align: center;
 }
 
-/* Media Queries para Responsividade */
+
 @media (max-width: 992px) {
   .detailImagesGrid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -91,7 +91,7 @@
   }
   .description {
     font-size: 1.1rem;
-    margin-bottom: 40px; /* Ajuste para espaçamento em telas menores */
+    margin-bottom: 40px; 
   }
 }
 

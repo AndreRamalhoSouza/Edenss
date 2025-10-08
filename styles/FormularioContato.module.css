@@ -12,9 +12,8 @@
   width: 100%;
   height:950px ;
   top: 0px;
-  /* REMOVIDO: position:relative; */
-  /* REMOVIDO: top:200px; */
-  margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
+
+  margin-top: 5rem; 
 }
 
 .tituloFormulario {
@@ -32,7 +31,7 @@
   padding: 2rem;
   background-color: #c0c0c07f;
   border-radius: 8px;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+ 
 }
 
 .campo {
@@ -91,7 +90,7 @@
   background-color: #595a5a;
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .tituloFormulario {
     font-size: 2rem;
@@ -109,9 +108,8 @@
   justify-content: center;
   width: 100%;
   height: 650px;
-  /* REMOVIDO: position:relative; */
-  /* REMOVIDO: top:200px; */
-  margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
+ 
+  margin-top: 5rem; 
 }
 
   .formulario {
@@ -136,6 +134,7 @@
     font-size: 1rem;
     margin-top: 1.5rem;
   }
+}
 
   @media (max-width: 480px) {
   .tituloFormulario {
@@ -154,9 +153,8 @@
   justify-content: center;
   width: 100%;
   height: 650px;
-  /* REMOVIDO: position:relative; */
-  /* REMOVIDO: top:200px; */
-  margin-top: 5rem; /* Adicione esta linha para descer o formulário, ajuste o valor conforme necessário */
+ 
+  margin-top: 5rem;
 }
 
   .formulario {
@@ -181,5 +179,4 @@
     font-size: 1rem;
     margin-top: 1.5rem;
   }
-}
 }

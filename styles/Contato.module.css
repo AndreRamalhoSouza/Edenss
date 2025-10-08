@@ -1,9 +1,9 @@
 .container {
-  /* O container principal é definido em globals.css */
+
 }
 
 .main {
-  /* O main é definido em globals.css */
+  
 }
 
 .titulo {
@@ -45,9 +45,7 @@
   margin-bottom: 0.8rem;
 }
 
-/* O formulário terá estilos de FormularioContato.module.css */
 
-/* Responsividade */
 @media (max-width: 768px) {
   .titulo {
     font-size: 2.5rem;

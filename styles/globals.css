@@ -1,9 +1,9 @@
 /* styles/globals.css */
 
-/* Combinando Montserrat Black (wght@900) e Rubik Regular (wght@400) */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Rubik:wght@400&display=swap');
 
-/* Mantenha scroll-behavior no html para rolagem suave em links de âncora */
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,19 +17,12 @@ body {
   line-height: 1.6;
   font-size: 16px;
   color: #333;
-  /* REMOVA ou COMENTE esta linha: overflow-x: hidden; */
-  /* REMOVA ou COMENTE esta linha: height: 100%; */
 
-  /* Em vez disso, adicione min-height para garantir que o corpo ocupe a altura mínima */
   min-height: 100vh;
 }
 
-/* Para evitar scroll horizontal indesejado de forma mais segura,
-   aplique overflow-x: hidden a um elemento específico se for necessário,
-   como um wrapper de todo o conteúdo.
-   Se seu layout já lida com responsividade, talvez nem precise disso. */
 body {
-  overflow-x: hidden; /* Mova o overflow-x para o body e remova do html se necessário */
+  overflow-x: hidden; 
 }
 
 * {
@@ -52,9 +45,9 @@ img {
   display: block;
 }
 
-/* --- Layout Básico para Páginas --- */
+
 .container {
-  min-height: 100vh; /* Mantenha no container se ele for o principal wrapper */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -67,6 +60,3 @@ img {
   width: 100%;
 }
 
-/* --- Media Queries para Telas Maiores (Tablets e Computadores) --- */
-
-/* ... (restante do seu CSS permanece o mesmo) ... */

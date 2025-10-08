@@ -17,7 +17,7 @@ const settings = {
   autoplay: false,
   autoplaySpeed: 3000,
   swipe: true,
-  swipeToSlide: true, // garante atualização dos dots no toque
+  swipeToSlide: true, 
 
   responsive: [
     {
@@ -56,7 +56,7 @@ const settings = {
         dots: true,
         arrows: false,
         swipe: true,
-        swipeToSlide: true, // <<< ESSENCIAL para mobile 480 e 360
+        swipeToSlide: true, 
       },
     },
     {

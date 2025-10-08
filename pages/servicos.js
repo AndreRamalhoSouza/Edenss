@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from '../components/Cabecalho';
 import Footer from '../components/Rodape';
 import CartaoServico from '../components/CartaoServico';
-import { servicos } from '../data/conteudo'; // <-- Importação CORRETA
+import { servicos } from '../data/conteudo'; 
 import styles from '../styles/Servicos.module.css';
 
 function Servicos() {
@@ -18,7 +18,7 @@ function Servicos() {
       <main className={styles.main}>
         <h1 className={styles.titulo}>Nossos Serviços</h1>
         <div className={styles.gradeServicos}>
-          {servicos.map((servico, index) => ( // <-- USO CORRETO: 'servicos'
+          {servicos.map((servico, index) => ( 
             <CartaoServico key={index} servico={servico} />
           ))}
         </div>

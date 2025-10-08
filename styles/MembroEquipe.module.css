@@ -2,8 +2,8 @@
 
 .membroDetalhe {
   display: flex;
-  flex-direction: column; /* Manter como coluna para empilhar verticalmente por padrão (desktop) */
-  align-items: flex-start; /* Alinhar itens à esquerda por padrão */
+  flex-direction: column; 
+  align-items: flex-start; 
   gap: 1rem;
   padding: 1rem;
   background-color: #ffffff;
@@ -15,12 +15,12 @@
   margin-right: auto;
 }
 
-/* Não é necessário .membroDetalhe.reverse aqui, pois o layout principal é em coluna */
+
 
 
 .imagemMembro {
-  display: block; /* Garante que a imagem ocupe sua própria linha */
-  margin-bottom: 1rem; /* Espaço abaixo da imagem */
+  display: block; 
+  margin-bottom: 1rem; 
   width: 250px;
   height: 350px;
   object-fit: cover;
@@ -28,17 +28,17 @@
 }
 
 
-/* Estilos específicos para a imagem de Samuel */
+
 .imagemMembro-samuel {
   border: 2px solid #0071f300;
-  /* Samuel não tem deslocamentos, então não adicionamos aqui */
+  
 }
 
-/* Estilos específicos para a imagem de Susi */
+
 .imagemMembro-susi {
-  position: relative; /* Mantido como solicitado */
-  right: 500px; /* Mantido como solicitado */
-  top: 400px; /* Mantido como solicitado */
+  position: relative; 
+  right: 500px; 
+  top: 400px; 
   filter: grayscale(50%);
 }
 
@@ -46,8 +46,8 @@
 .textoMembro {
   flex-grow: 1;
   text-align: left;
-  position: relative; /* Mantido como solicitado */
-  min-width: 550px; /* Mantido como solicitado */
+  position: relative; 
+  min-width: 550px; 
   word-wrap: break-word;
   overflow-wrap: break-word;
   
@@ -70,44 +70,41 @@
   word-break: break-word;
 }
 
-/* Estilos para o texto de Samuel */
+
 .textoMembro-samuel {
   text-align: justify;
   word-spacing: 0.1em;
-  position: relative; /* Mantido como solicitado */
-  bottom: 400px; /* Mantido como solicitado */
-  left: 350px; /* Mantido como solicitado */
+  position: relative; 
+  bottom: 400px; 
+  left: 350px; 
 }
 
-/* Estilos para o texto de Susi */
+
 .textoMembro-susi {
   text-align: justify;
-  position: relative; /* Mantido como solicitado */
-  top: 20px; /* Mantido como solicitado */
-  right: 150px; /* Mantido como solicitado */
+  position: relative;
+  top: 20px; 
+  right: 150px; 
 }
 
 
-
-
-/* Responsividade para Mobile */
 @media (max-width: 1200px) {
   .membroDetalhe {
-    flex-direction: column; /* Garante que continua empilhado em mobile */
-    align-items: center; /* Centraliza tudo horizontalmente em mobile */
+    flex-direction: column; 
+    align-items: center;
     gap: 1.5rem;
     padding: 1.5rem;
   }
 
-  /* Resetar o order para garantir que a ordem natural seja seguida */
+  
   .membroDetalhe > * {
-    order: unset !important; /* Desfaz qualquer order aplicada */
+    order: unset !important; 
   }
 
   .imagemMembro {
-    width: 250px; /* Mantido o tamanho para mobile */
-    height: 350px; /* Mantido o tamanho para mobile */
-    margin-bottom: 0; /* O gap já controla */
+    width: 250px; 
+    height: 350px; 
+    margin-bottom: 0; 
   }
   .imagemMembro-samuel {
     border: 1px solid #0071f300;
@@ -115,32 +112,32 @@
 
   .imagemMembro-susi {
     filter: none;
-    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
-    position: static; /* Remove position: relative */
-    right: auto; /* Remove right */
-    top: auto; /* Remove top */
-    /* Garante que não haja deslocamento em mobile */
-    transform: none; /* Se houver algum transform */
-    margin: 0; /* Zera margens extras */
+    
+    position: static; 
+    right: auto; 
+    top: auto; 
+  
+    transform: none; 
+    margin: 0; 
   }
 
   .textoMembro {
-    text-align: center; /* Centraliza o texto em mobile */
-    min-width: auto; /* Permite que o texto se ajuste à largura da tela */
-    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
-    position: static; /* Remove position: relative */
-    top: auto; /* Remove top */
-    right: auto; /* Remove right */
-    left: auto; /* Remove left */
-    bottom: auto; /* Remove bottom */
-    transform: none; /* Se houver algum transform */
-    margin: 0; /* Zera margens extras */
+    text-align: center; 
+    min-width: auto; 
+  
+    position: static; 
+    top: auto; 
+    right: auto; 
+    left: auto; 
+    bottom: auto; 
+    transform: none; 
+    margin: 0; 
   }
 
   .textoMembro-samuel {
-    text-align: center; /* Centraliza texto de Samuel em mobile */
+    text-align: center; 
     word-spacing: normal;
-    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    
     position: static;
     bottom: auto;
     left: auto;
@@ -149,8 +146,7 @@
   }
 
   .textoMembro-susi {
-    text-align: center; /* Centraliza texto de Susi em mobile */
-    /* --- CRUCIAL: RESETAR TODOS OS POSICIONAMENTOS FIXOS AQUI --- */
+    text-align: center; 
     position: static;
     top: auto;
     right: auto;
@@ -158,7 +154,7 @@
     margin: 0;
   }
 
-  /* Ajustes de fonte para mobile */
+  
   .textoMembro h3 {
     font-size: 1.8rem;
   }
