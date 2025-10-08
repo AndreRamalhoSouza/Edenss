@@ -5,30 +5,25 @@
   padding: 40px 0;
   box-sizing: border-box;
 
-  /* ⚠️ IMPORTANTE: não pode bloquear o swipe */
+  /* Importante: não bloquear swipe */
   overflow-x: hidden;
   overflow-y: visible;
 }
 
-.carouselWrapper .slick-slide > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .carouselItemWrapper {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+}
+
+.groupWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas desktop */
+  grid-template-rows: repeat(2, auto);   /* 2 linhas desktop */
+  gap: 10px;
 }
 
 /* Dots */
 .carouselWrapper .slick-dots {
-  bottom: -40px;
+  bottom: -30px;
   z-index: 10;
 }
 
@@ -70,15 +65,18 @@
     flex-wrap: wrap !important;
     margin: 0 !important;
     height: auto !important;
-
-    /* ⚠️ só trava o transform no desktop */
     transform: none !important;
   }
 }
 
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
-  /* ⚠️ ESSENCIAL: devolve o comportamento padrão no mobile */
+  .groupWrapper {
+    grid-template-columns: 1fr;      /* 1 coluna mobile */
+    grid-template-rows: repeat(6, auto); /* 6 linhas mobile */
+    gap: 5px;
+  }
+
   .carouselWrapper :global(.slick-track) {
     display: block !important;
     transform: translate3d(0, 0, 0) !important;
@@ -101,6 +99,10 @@
 }
 
 @media (max-width: 480px) {
+  .groupWrapper {
+    gap: 3px;
+  }
+
   .carouselWrapper .slick-dots {
     bottom: -15px;
   }

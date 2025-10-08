@@ -1,80 +1,45 @@
 import ProjectCard from './ProjectCard';
 import Slider from 'react-slick';
 import styles from '../styles/Carousel.module.css';
-
-// Importa os estilos do slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Função para agrupar os portfólios em blocos de 6
+const chunkArray = (arr, size) => {
+  const result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+  return result;
+};
+
 const Carousel = ({ projects }) => {
+  const slides = chunkArray(projects, 6); // cada slide terá 6 portfólios
+
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    rows: 2, // duas linhas no desktop
-    slidesPerRow: 1,
+    slidesToShow: 1,       // 1 bloco de 6 por vez
+    slidesToScroll: 1,
     arrows: false,
     autoplay: false,
     swipe: true,
     swipeToSlide: true,
     touchMove: true,
-    draggable: true, // <--- ESSENCIAL pra permitir o swipe real no touch
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          rows: 2,
-          slidesPerRow: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          rows: 1, // apenas 1 linha no mobile
-          slidesPerRow: 1,
-          infinite: true,
-          dots: true,
-          arrows: false,
-          swipe: true,
-          swipeToSlide: true,
-          touchMove: true,
-          draggable: true, // garante o arrasto no celular
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          rows: 1,
-          slidesPerRow: 1,
-          infinite: true,
-          dots: true,
-          arrows: false,
-          swipe: true,
-          swipeToSlide: true,
-          touchMove: true,
-          draggable: true,
-        },
-      },
-    ],
+    draggable: true,
   };
 
   return (
     <div className={styles.carouselWrapper}>
       <Slider {...settings}>
-        {projects.map((project) => (
-          <div key={project.id} className={styles.carouselItemWrapper}>
-            <ProjectCard project={project} />
+        {slides.map((group, index) => (
+          <div key={index} className={styles.carouselItemWrapper}>
+            <div className={styles.groupWrapper}>
+              {group.map(project => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
           </div>
         ))}
       </Slider>
