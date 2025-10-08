@@ -1,5 +1,3 @@
-/* styles/Carousel.module.css */
-
 .carouselWrapper {
   width: 100%;
   max-width: 960px;
@@ -7,7 +5,7 @@
   padding: 40px 0;
   box-sizing: border-box;
 
-  /* ⚠️ ESSENCIAL: não bloqueia o swipe */
+  /* ⚠️ IMPORTANTE: não pode bloquear o swipe */
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -65,7 +63,7 @@
   right: -50px;
 }
 
-/* ⚙️ Apenas para desktop */
+/* ---- DESKTOP ---- */
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
@@ -73,20 +71,14 @@
     margin: 0 !important;
     height: auto !important;
 
-    /* ⚠️ IMPORTANTE: só aplica isso no desktop */
+    /* ⚠️ só trava o transform no desktop */
     transform: none !important;
   }
 }
 
-/* ⚙️ Regras gerais */
-.carouselWrapper :global(.slick-list) {
-  padding: 0 !important;
-  overflow: hidden;
-}
-
-/* 📱 Ajustes mobile */
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
-  /* ⚠️ Remove qualquer interferência no mobile */
+  /* ⚠️ ESSENCIAL: devolve o comportamento padrão no mobile */
   .carouselWrapper :global(.slick-track) {
     display: block !important;
     transform: translate3d(0, 0, 0) !important;

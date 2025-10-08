@@ -2,6 +2,7 @@ import ProjectCard from './ProjectCard';
 import Slider from 'react-slick';
 import styles from '../styles/Carousel.module.css';
 
+// Importa os estilos do slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -12,13 +13,14 @@ const Carousel = ({ projects }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    rows: 2,
+    rows: 2, // duas linhas no desktop
     slidesPerRow: 1,
     arrows: false,
     autoplay: false,
     swipe: true,
     swipeToSlide: true,
     touchMove: true,
+    draggable: true, // <--- ESSENCIAL pra permitir o swipe real no touch
 
     responsive: [
       {
@@ -37,7 +39,7 @@ const Carousel = ({ projects }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 1, // ← sem isso, o swipe nunca vai funcionar
+          rows: 1, // apenas 1 linha no mobile
           slidesPerRow: 1,
           infinite: true,
           dots: true,
@@ -45,6 +47,7 @@ const Carousel = ({ projects }) => {
           swipe: true,
           swipeToSlide: true,
           touchMove: true,
+          draggable: true, // garante o arrasto no celular
         },
       },
       {
@@ -60,6 +63,7 @@ const Carousel = ({ projects }) => {
           swipe: true,
           swipeToSlide: true,
           touchMove: true,
+          draggable: true,
         },
       },
     ],
