@@ -9,17 +9,17 @@ const Carousel = ({ projects }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    rows: 2,
+    slidesToShow: 3,       // 3 colunas por linha
+    slidesToScroll: 3,     // 3 slides por vez
+    rows: 2,               // 2 linhas → total 6 cards por página
     slidesPerRow: 1,
     arrows: false,
     autoplay: false,
-    autoplaySpeed: 3000,
-
+    touchMove: true,       // garante swipe
+    swipeToSlide: true,    // desliza mesmo parcialmente
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // tablet/desktop pequeno
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -30,27 +30,31 @@ const Carousel = ({ projects }) => {
         }
       },
       {
-        breakpoint: 768, // Para a maioria dos celulares (e alguns tablets menores)
+        breakpoint: 768, // mobile
         settings: {
-          slidesToShow: 1, // Mostra 1 card por "tela" no carrossel
-          slidesToScroll: 1, // Rola 1 card por vez
-          rows: 1, // <--- Crucial: Apenas 1 linha para o carrossel deslizar horizontalmente
-          slidesPerRow: 1,
-          infinite: true, // DEVE ser true para rolagem contínua
-          dots: true, // DEVE ser true para os indicadores
-          arrows: false, // Mantém sem setas se preferir arrastar
-        }
-      },
-      {
-        breakpoint: 480, // Para celulares muito pequenos
-        settings: {
-          slidesToShow: 1,
+          slidesToShow: 1,  // 1 card por vez
           slidesToScroll: 1,
-          rows: 1, // Crucial: Apenas 1 linha
+          rows: 1,           // apenas 1 linha → swipe horizontal funciona
           slidesPerRow: 1,
           infinite: true,
           dots: true,
           arrows: false,
+          touchMove: true,
+          swipeToSlide: true,
+        }
+      },
+      {
+        breakpoint: 480, // celulares muito pequenos
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+          slidesPerRow: 1,
+          infinite: true,
+          dots: true,
+          arrows: false,
+          touchMove: true,
+          swipeToSlide: true,
         }
       }
     ]
