@@ -1,30 +1,31 @@
+/* styles/Carousel.module.css */
+
 .carouselWrapper {
   width: 100%;
-  max-width: 960px;
+  max-width: 960px; /* Largura máxima para desktop */
   margin: 0 auto;
   padding: 40px 0;
   box-sizing: border-box;
+  overflow: hidden;
+}
 
-  /* Importante: não bloquear swipe */
-  overflow-x: hidden;
-  overflow-y: visible;
+.carouselWrapper .slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Espaçamento entre cards (desktop) */
+  box-sizing: border-box;
 }
 
 .carouselItemWrapper {
   width: 100%;
+  height: 100%;
 }
 
-.groupWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas desktop */
-  grid-template-rows: repeat(2, auto);   /* 2 linhas desktop */
-  gap: 10px;
-}
-
-/* Dots */
+/* Personalizando os Dots */
 .carouselWrapper .slick-dots {
-  bottom: -30px;
-  z-index: 10;
+  bottom: -40px;
+  z-index: 10; 
 }
 
 .carouselWrapper .slick-dots li button:before {
@@ -36,7 +37,7 @@
   color: #007bff;
 }
 
-/* Setas desktop */
+/* Personalizando as setas (arrows) - Para desktop */
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
   z-index: 1;
@@ -58,31 +59,24 @@
   right: -50px;
 }
 
-/* ---- DESKTOP ---- */
+/* --- ESTILOS PARA DESKTOP (MAIORES QUE 768px) --- */
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
-    flex-wrap: wrap !important;
-    margin: 0 !important;
-    height: auto !important;
+    flex-wrap: wrap !important; /* 2 linhas */
     transform: none !important;
+    height: auto !important;
   }
 }
 
-/* ---- MOBILE ---- */
+/* --- AJUSTES GERAIS PARA O SLICK-LIST --- */
+.carouselWrapper :global(.slick-list) {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* --- AJUSTES PARA MOBILE (MAX-WIDTH: 768PX) --- */
 @media (max-width: 768px) {
-  .groupWrapper {
-    grid-template-columns: 1fr;      /* 1 coluna mobile */
-    grid-template-rows: repeat(6, auto); /* 6 linhas mobile */
-    gap: 5px;
-  }
-
-  .carouselWrapper :global(.slick-track) {
-    display: block !important;
-    transform: translate3d(0, 0, 0) !important;
-    height: auto !important;
-  }
-
   .carouselWrapper .slick-prev,
   .carouselWrapper .slick-next {
     display: none !important;
@@ -94,20 +88,26 @@
   }
 
   .carouselWrapper .slick-slide > div {
-    padding: 5px;
+    padding: 5px; /* menos espaçamento no mobile */
+  }
+
+  .carouselWrapper :global(.slick-track) {
+    display: block !important; /* importante para mobile */
+    transform: translate3d(0,0,0) !important;
+  }
+
+  .carouselWrapper .slick-slide {
+    float: left; /* necessário para rolagem horizontal */
   }
 }
 
+/* --- AJUSTES PARA CELULARES MUITO PEQUENOS (MAX-WIDTH: 480PX) --- */
 @media (max-width: 480px) {
-  .groupWrapper {
-    gap: 3px;
-  }
-
   .carouselWrapper .slick-dots {
     bottom: -15px;
   }
 
   .carouselWrapper .slick-slide > div {
-    padding: 3px;
+    padding: 3px; 
   }
 }
