@@ -794,158 +794,222 @@
 }
 
 @media (max-width: 480px) {
-  .gradeDepoimentos {
-    display: flex; /* mudou de grid para flex */
-    gap: 0px;
-    justify-content: flex-start;
-    flex-wrap: nowrap; /* impede que os cartões quebrem linha */
-    overflow-x: auto; /* permite scroll horizontal */
-    scroll-snap-type: x mandatory; /* snap em cada card */
-    width: 100%; /* ocupa toda a largura */
-    transition: transform 0.5s ease-in-out;
-  }
 
-  .projectsGridContainer {
-    display: flex; /* container do carrossel */
-    gap: 1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    padding: 0;
-  }
-
-  .cartao {
-    flex: 0 0 80%; /* largura de cada card */
-    max-width: 300px;
-    scroll-snap-align: start; /* encaixa no início do slide */
-  }
-
-  /* Hide scrollbar no mobile */
-  .projectsGridContainer::-webkit-scrollbar,
-  .gradeDepoimentos::-webkit-scrollbar {
-    display: none;
-  }
-  .projectsGridContainer {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
+  
+   .gradeDepoimentos {
+  display:grid; /* Mudei de grid para flex para o carrossel */
+  gap: 0px;
+  justify-content: center;
+  flex-wrap: nowrap; /* IMPEDE QUE OS CARTÕES QUEBREM LINHA */
+  overflow: hidden; /* ESCONDE OS CARTÕES QUE ESTÃO FORA DA VISÃO */
+  width: 300px; /* Ocupa 100% da largura do depoimentosCarouselContainer */
+  transition: transform 0.5s ease-in-out; /* Para animação de slide */
+}
   .portfolioTitle {
     font-size: 2.5em;
-    text-align: center;
+  }
+  .projectsGridContainer {
+    width: 100%;
+    padding: 0; /* AJUSTADO: Garante zero padding */
+  }
+  .cartao { /* Para telas ainda menores, ajuste novamente se precisar */
+    width: 25%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
+    max-width: 300px;
   }
 
-  .carouselArrowDepoimento,
-  .carouselArrowRightDepoimento {
-    position: relative;
-    background: rgba(255, 255, 255, 0.5);
-    color: rgb(7, 224, 248);
-    border: none;
-    padding: 10px 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    z-index: 10;
-    flex-shrink: 0;
-    appearance: none;
-    outline: none;
-  }
+  .carouselArrowDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  left: -30px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.0rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
 
-  .carouselArrowDepoimento:hover,
-  .carouselArrowRightDepoimento:hover {
-    background-color: rgba(0, 0, 0, 0.155);
-  }
+.carouselArrowDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.155);
+}
 
-  .nossaAzulPequeno {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
-    color: #7fcae3;
-    right: 70px;
-    font-weight: bold;
-    line-height: 1;
-    margin-bottom: 0.2em;
-  }
+.carouselArrowRightDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  right: -30px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 1.0rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
 
-  .historiaGrande {
-    font-size: 2.8rem;
-    color: #000000;
-    font-weight: bold;
-    line-height: 1;
-    font-family: 'Montserrat', sans-serif;
-  }
+.carouselArrowRightDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.nossaAzulPequeno {position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem; /* Menor para mobile */
+  color: #7fcae3;
+  right: 70px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.2em;
+   font-family: 'Montserrat', sans-serif
+}
 
-  .chamadaParaAcao h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.8rem;
-    font-family: 'Montserrat', sans-serif;
-  }
+.historiaGrande {
+  font-size: 2.8rem; /* Menor para mobile */
+  color: #000000;
+  font-weight: bold;
+  line-height: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'Montserrat', sans-serif
+}
 
-  .secaoDepoimentos h2 {
-    font-size: 2.5rem;
-    color: #000000;
-    margin-bottom: 1.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: 'Montserrat', sans-serif;
-  }
+.chamadaParaAcao h2 {
+  font-size: 2.5rem; /* Menor para mobile */
+  margin-bottom: 1.8rem;
+   font-family: 'Montserrat', sans-serif
+}
+.secaoDepoimentos h2 {
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: 900; /* Use 900 para Montserrat Black */
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* ADICIONE A FONTE AQUI, SOMENTE PARA O H2 */
+  font-family: 'Montserrat', sans-serif;
+}
 }
 
 @media (max-width: 360px) {
-  .gradeDepoimentos,
-  .projectsGridContainer {
-    display: flex;
-    gap: 0px;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .cartao {
-    flex: 0 0 80%;
-    max-width: 300px;
-    scroll-snap-align: start;
-  }
-
-  .projectsGridContainer::-webkit-scrollbar,
-  .gradeDepoimentos::-webkit-scrollbar {
-    display: none;
-  }
-  .projectsGridContainer {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
+  .gradeDepoimentos {
+  display:grid; /* Mudei de grid para flex para o carrossel */
+  gap: 0px;
+  justify-content: center;
+  flex-wrap: nowrap; /* IMPEDE QUE OS CARTÕES QUEBREM LINHA */
+  overflow: hidden; /* ESCONDE OS CARTÕES QUE ESTÃO FORA DA VISÃO */
+  width: 300px; /* Ocupa 100% da largura do depoimentosCarouselContainer */
+  transition: transform 0.5s ease-in-out; /* Para animação de slide */
+}
   .portfolioTitle {
     font-size: 1.8em;
-    text-align: center;
+  }
+  .projectsGridContainer {
+    width: 100%;
+    padding: 0; /* AJUSTADO: Garante zero padding */
+  }
+  .cartao { /* Para telas ainda menores, ajuste novamente se precisar */
+    width: 25%; /* Pode ser um pouco mais largo aqui para ocupar bem a tela */
+    max-width: 300px;
   }
 
-  .carouselArrowDepoimento,
-  .carouselArrowRightDepoimento {
-    font-size: 0.5rem;
-  }
+  .carouselArrowDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  left: -30px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 0.5rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
 
-  .nossaAzulPequeno {
-    font-size: 1.5rem;
-    right: 70px;
-  }
+.carouselArrowDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.155);
+}
 
-  .historiaGrande {
-    font-size: 2.8rem;
-  }
+.carouselArrowRightDepoimento {
+  position: relative;
+  background: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
+  color: rgb(7, 224, 248);
+  border: none;
+  right: -30px;
+  padding: 10px 8px; /* Corrigido de '0spx' para '8px' para dar padding horizontal */
+  cursor: pointer;
+  font-size: 0.5rem;
+  border-radius: 50%; /* Setas redondas */
+  transition: background-color 0.3s ease;
+  z-index: 10; /* Garante que a seta esteja acima dos depoimentos */
+  flex-shrink: 0; /* Impede que as setas encolham */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
 
-  .secaoDepoimentos h2 {
-    font-size: 2rem;
-  }
+.carouselArrowRightDepoimento:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.nossaAzulPequeno {position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem; /* Menor para mobile */
+  color: #7fcae3;
+  right: 70px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 0.2em;
+   font-family: 'Montserrat', sans-serif
+}
 
-  .chamadaParaAcao h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
+.historiaGrande {
+  font-size: 2.8rem; /* Menor para mobile */
+  color: #000000;
+  font-weight: bold;
+  line-height: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+   font-family: 'Montserrat', sans-serif
+}
+.secaoDepoimentos h2 {
+  font-size: 2.0rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: 900; /* Use 900 para Montserrat Black */
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* ADICIONE A FONTE AQUI, SOMENTE PARA O H2 */
+  font-family: 'Montserrat', sans-serif;
+}
+.portfolioTitle {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 10px;
+   font-family: 'Montserrat', sans-serif
+}
+.chamadaParaAcao h2 {
+  font-size: 2.5rem; /* Menor para mobile */
+  margin-bottom: 1.5rem;
+   font-family: 'Montserrat', sans-serif
+}
 }
