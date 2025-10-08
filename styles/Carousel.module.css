@@ -2,18 +2,18 @@
 
 .carouselWrapper {
   width: 100%;
-  max-width: 960px; /* Largura máxima do carrossel */
+  max-width: 960px;
   margin: 0 auto;
   padding: 40px 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
+
 
 .carouselWrapper .slick-slide > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Espaçamento entre os cards no desktop */
+  padding: 10px; /* Espaçamento entre cards (desktop) */
   box-sizing: border-box;
 }
 
@@ -22,13 +22,10 @@
   height: 100%;
 }
 
-/* --- Dots --- */
+/* Personalizando os Dots */
 .carouselWrapper .slick-dots {
-  bottom: -30px;
-  z-index: 10;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
+  bottom: -40px;
+  z-index: 10; /* Adicione ou garanta um z-index alto para serem clicáveis */
 }
 
 .carouselWrapper .slick-dots li button:before {
@@ -40,7 +37,7 @@
   color: #007bff;
 }
 
-/* --- Setas (arrows) --- */
+/* Personalizando as setas (arrows) - Para desktop */
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
   z-index: 1;
@@ -62,46 +59,38 @@
   right: -50px;
 }
 
-/* --- Ajustes para desktop (maiores que 768px) --- */
+/* --- ESTILOS ESPECÍFICOS PARA DESKTOP (MAIORES QUE 768px) --- */
+/* Estes estilos só devem ser aplicados em telas grandes para o layout de 2 linhas */
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
-    flex-wrap: wrap !important; /* 2 linhas */
+    flex-wrap: wrap !important;
     margin: 0 !important;
     transform: none !important;
     height: auto !important;
   }
-
-  .carouselWrapper .slick-slide > div {
-    padding: 10px; /* espaçamento entre cards */
-  }
 }
 
-/* --- Ajustes para mobile (max-width: 768px) --- */
+/* --- CORREÇÃO CRUCIAL PARA MOBILE --- */
 @media (max-width: 768px) {
   .carouselWrapper :global(.slick-track) {
-    display: flex !important;
-    flex-wrap: nowrap !important; /* linha única para swipe */
-    transform: none !important;
+    display: block !important;        /* slick controla o track */
+    transform: translate3d(0, 0, 0) !important;
+    transition: transform 0.3s ease !important;
     height: auto !important;
-  }
-
-  .carouselWrapper .slick-slide > div {
-    padding: 5px; /* espaço menor entre cards no mobile */
-  }
-
-  .carouselWrapper .slick-dots {
-    bottom: -15px;
   }
 }
 
-/* --- Ajustes para celulares muito pequenos (max-width: 480px) --- */
+/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 480PX) --- */
 @media (max-width: 480px) {
-  .carouselWrapper .slick-slide > div {
-    padding: 3px;
+  .carouselWrapper .slick-dots li button:before {
+    font-size: 12px;
+    color: #999;
+    opacity: 1; /* garante visibilidade */
   }
 
-  .carouselWrapper .slick-dots {
-    bottom: -10px;
+  .carouselWrapper .slick-dots li.slick-active button:before {
+    color: #007bff;
+    opacity: 1;
   }
 }

@@ -1,6 +1,6 @@
+// pages/Home.js
 import Head from 'next/head';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Cabecalho';
 import Footer from '../components/Rodape';
 import SecaoHero from '../components/SecaoHero';
@@ -9,15 +9,12 @@ import CartaoDepoimento from '../components/CartaoDepoimento';
 import FormularioContato from '../components/FormularioContato';
 
 // --- IMPORTS DO PORTFÓLIO ---
-import ProjectCard from '../components/ProjectCard';
+import Carousel from '../components/Carousel'; // ✅ Usando o carrossel slick
 import projectsData from '../data/projects';
 // --- FIM DOS IMPORTS DO PORTFÓLIO ---
 
-// --- OUTROS IMPORTS (EXISTENTES) ---
 import CartaoServico from '../components/CartaoServico';
 import { conteudoHero, conteudoSobreNos, membrosEquipe, depoimentos, servicos } from '../data/conteudo';
-// --- FIM DOS OUTROS IMPORTS ---
-
 import styles from '../styles/Home.module.css';
 
 function Home() {
@@ -25,6 +22,7 @@ function Home() {
   const nossaSobreNos = partesTituloSobreNos[0];
   const historiaSobreNos = partesTituloSobreNos.slice(1).join(' ');
 
+  // --- PROJETOS DE EXEMPLO (CASO projectsData ESTEJA VAZIO) ---
   const exampleProjects = [
     { id: '1', name: 'Resort Paradisíaco', mainImage: '/images/project1.jpg' },
     { id: '2', name: 'Parque Aquático Aventura', mainImage: '/images/project2.jpg' },
@@ -36,171 +34,139 @@ function Home() {
 
   const currentProjects = projectsData || exampleProjects;
 
-  // --- LÓGICA DE PAGINAÇÃO DO PORTFÓLIO (NOVA) ---
-  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-  const projectsPerPage = 9; // Quantos projetos você quer mostrar por vez
-
-  const totalProjects = currentProjects.length;
-  const totalProjectPages = Math.ceil(totalProjects / projectsPerPage);
-
-  const projectsToDisplay = currentProjects.slice(
-    currentProjectIndex,
-    currentProjectIndex + projectsPerPage
-  );
-  // --- FIM DA LÓGICA DE PAGINAÇÃO DO PORTFÓLIO ---
-
-  // Carrossel de Depoimentos
-  const [currentDepoimentoIndex, setCurrentDepoimentoIndex] = useState(0);
-  const depoimentosPorPagina = 2; // Quantos depoimentos você quer mostrar por vez
-
+  // --- LÓGICA DO CARROSSEL DE DEPOIMENTOS ---
+  const [currentDepoimentoIndex, setCurrentDepoimentoIndex] = React.useState(0);
+  const depoimentosPorPagina = 2;
   const totalDepoimentoPages = Math.ceil(depoimentos.length / depoimentosPorPagina);
 
   const handleClickNextDepoimento = () => {
-    setCurrentDepoimentoIndex((prevIndex) => {
-      const nextIndex = prevIndex + depoimentosPorPagina;
-      return nextIndex >= depoimentos.length ? 0 : nextIndex; // Volta ao início se for o último slide
-    });
+    setCurrentDepoimentoIndex((prevIndex) =>
+      prevIndex + depoimentosPorPagina >= depoimentos.length ? 0 : prevIndex + depoimentosPorPagina
+    );
   };
 
   const handleClickPrevDepoimento = () => {
-    setCurrentDepoimentoIndex((prevIndex) => {
-      const nextIndex = prevIndex - depoimentosPorPagina;
-      return nextIndex < 0 ? (depoimentos.length - depoimentosPorPagina < 0 ? 0 : depoimentos.length - depoimentosPorPagina) : nextIndex;
-      // Garante que não vai para índice negativo, e se for, vai para o penúltimo "slide"
-      // Se não houver depoimentos suficientes para preencher um "slide" completo no final, ajusta para o início
-    });
+    setCurrentDepoimentoIndex((prevIndex) =>
+      prevIndex - depoimentosPorPagina < 0
+        ? depoimentos.length - depoimentosPorPagina
+        : prevIndex - depoimentosPorPagina
+    );
   };
 
-  // Depoimentos a serem exibidos no slide atual
   const depoimentosVisiveis = depoimentos.slice(
     currentDepoimentoIndex,
     currentDepoimentoIndex + depoimentosPorPagina
   );
 
-
   return (
     <div className={styles.container}>
       <Head>
         <title>Edenss - Arquitetura que Transforma Experiências</title>
-        <meta name="description" content="Edenss é uma empresa de arquitetura especializada em ambientes de entretenimento e espaços corporativos." />
+        <meta
+          name="description"
+          content="Edenss é uma empresa de arquitetura especializada em ambientes de entretenimento e espaços corporativos."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
 
       <main className={styles.main}>
+        {/* === HERO === */}
         <SecaoHero images={conteudoHero.imagensCarrossel} />
 
-        {/* Nossa História - Mova o ID para o h2 */}
+        {/* === SOBRE NÓS === */}
         <section className={styles.secaoSobreNos}>
-        <h2 id="nossa-historia" style={{ scrollMarginTop: '130px' }} className={styles.tituloSobreNos}> {/* ID MOVIDO PARA CÁ */}
-          <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
-          <div className={styles.historiaGrande}>{historiaSobreNos}</div>
-        </h2>
+          <h2 id="nossa-historia" style={{ scrollMarginTop: '130px' }} className={styles.tituloSobreNos}>
+            <div className={styles.nossaAzulPequeno}>{nossaSobreNos}</div>
+            <div className={styles.historiaGrande}>{historiaSobreNos}</div>
+          </h2>
           <p className={styles.descricaoSobreNos}>{conteudoSobreNos.texto}</p>
           <div className={styles.divisorCinza}></div>
         </section>
 
-        {/* --- SEÇÃO DE SERVIÇOS --- */}
-        {/* Serviços - Mova o ID para o h2 */}
+        {/* === SERVIÇOS === */}
         <section className={styles.secaoServicos}>
-       <h2 id="servicos" style={{ scrollMarginTop: '130px' }} className={styles.tituloServicos}>SERVIÇOS</h2>
+          <h2 id="servicos" style={{ scrollMarginTop: '130px' }} className={styles.tituloServicos}>
+            SERVIÇOS
+          </h2>
           <div className={styles.gradeServicos}>
             {servicos.map((servico, index) => (
               <CartaoServico key={index} servico={servico} />
             ))}
           </div>
         </section>
-        {/* --- FIM DA SEÇÃO DE SERVIÇOS --- */}
 
-        {/* --- SEÇÃO DE PORTFÓLIO --- */}
-        {/* Portfólio/Projetos - Mova o ID para o h2 */}
+        {/* === PORTFÓLIO === */}
         <section className={styles.secaoPortfolio}>
+          <h2 id="projetos" style={{ scrollMarginTop: '130px' }} className={styles.portfolioTitle}>
+            PORTFÓLIO
+          </h2>
+          <div className={styles.divisorCinza}></div>
 
-          <h2 id="projetos" style={{ scrollMarginTop: '130px' }} className={styles.portfolioTitle}>PORTFÓLIO</h2>
-              <div className={styles.divisorCinza}></div>
-            <div className={styles.projectsGridContainer}>
+          {/* ✅ AQUI ENTRA O CARROSSEL FUNCIONAL */}
+          <div className={styles.projectsGridContainer}>
+            <Carousel projects={currentProjects} />
+          </div>
+        </section>
 
-              {/* AQUI ESTÁ A ALTERAÇÃO: mapeia apenas os projetos da página atual */}
-               {projectsToDisplay.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-
-            <div className={styles.paginationDots}>
-              {/* AQUI ESTÁ A ALTERAÇÃO: usa totalProjectPages e adiciona o onClick */}
-              {[...Array(totalProjectPages)].map((_, index) => (
-                <span
-                  key={index}
-                  className={`${styles.dot} ${Math.floor(currentProjectIndex / projectsPerPage) === index ? styles.active : ''}`}
-                  onClick={() => setCurrentProjectIndex(index * projectsPerPage)}
-                ></span>
-              ))}
-            </div>
-          </section>
-        {/* --- FIM DA SEÇÃO DE PORTFÓLIO --- */}
-
-        {/* --- SEÇÃO DA EQUIPE --- */}
-        {/* Equipe - Adicione o ID ao h2 */}
+        {/* === EQUIPE === */}
         <section className={styles.secaoEquipe}>
-      
-
           <div className={styles.gradeEquipe}>
             {membrosEquipe.map((membro, index) => (
               <MembroEquipe key={index} membro={membro} />
             ))}
           </div>
         </section>
-        {/* --- FIM DA SEÇÃO DA EQUIPE --- */}
 
-        {/* --- SEÇÃO DE DEPOIMENTOS (AGORA COM CARROSSEL) --- */}
-        {/* Depoimentos - Adicione o ID ao h2 */}
+        {/* === DEPOIMENTOS === */}
         <section className={styles.secaoDepoimentos}>
-           <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>DEPOIMENTOS</h2>
-           <div className={styles.divisorGray}></div>
+          <h2 id="secao-depoimentos" style={{ scrollMarginTop: '130px' }}>
+            DEPOIMENTOS
+          </h2>
+          <div className={styles.divisorGray}></div>
 
-           <div className={styles.depoimentosCarouselContainer}> {/* Novo contêiner para o carrossel */}
+          <div className={styles.depoimentosCarouselContainer}>
             <button
               className={`${styles.carouselArrowDepoimento} ${styles.arrowLeftDepoimento}`}
               onClick={handleClickPrevDepoimento}
             >
-              &#10094; {/* Seta para a esquerda */}
+              &#10094;
             </button>
 
             <div className={styles.gradeDepoimentos}>
-              {/* Renderiza apenas os depoimentos visíveis no slide atual */}
               {depoimentosVisiveis.map((depoimento) => (
                 <CartaoDepoimento key={depoimento.nome} depoimento={depoimento} />
               ))}
             </div>
 
             <button
-              className={`${styles.carouselArrowleftDepoimento} ${styles.carouselArrowRightDepoimento}`}
+              className={`${styles.carouselArrowDepoimento} ${styles.arrowRightDepoimento}`}
               onClick={handleClickNextDepoimento}
             >
-              &#10095; {/* Seta para a direita */}
+              &#10095;
             </button>
           </div>
 
-          {/* Pontos de paginação para os depoimentos (opcional) */}
           <div className={styles.paginationDotsDepoimento}>
             {[...Array(totalDepoimentoPages)].map((_, index) => (
               <span
                 key={index}
-                className={`${styles.dotDepoimento} ${Math.floor(currentDepoimentoIndex / depoimentosPorPagina) === index ? styles.activeDepoimento : ''}`}
+                className={`${styles.dotDepoimento} ${
+                  Math.floor(currentDepoimentoIndex / depoimentosPorPagina) === index
+                    ? styles.activeDepoimento
+                    : ''
+                }`}
                 onClick={() => setCurrentDepoimentoIndex(index * depoimentosPorPagina)}
               ></span>
             ))}
           </div>
         </section>
-        {/* --- FIM DA SEÇÃO DE DEPOIMENTOS --- */}
 
-        {/* Formulário de Contato - Adicione o ID ao FormularioContato ou a um wrapper */}
-        {/* Assumindo que FormularioContato é um componente. Se ele não tiver um ID interno, envolva-lo */}
-        <section id="contato"> {/* <--- ADICIONE ESTE WRAPPER COM O ID */}
+        {/* === CONTATO === */}
+        <section id="contato">
           <FormularioContato />
         </section>
-
       </main>
 
       <Footer />
