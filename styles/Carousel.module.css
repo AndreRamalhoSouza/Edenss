@@ -7,7 +7,7 @@
   padding: 40px 0;
   box-sizing: border-box;
 
-  /* ESSENCIAL: não bloqueia o swipe horizontal */
+  /* ⚠️ ESSENCIAL: não bloqueia o swipe */
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Espaçamento entre cards (desktop) */
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@
   align-items: stretch;
 }
 
-/* Personalizando os Dots */
+/* Dots */
 .carouselWrapper .slick-dots {
   bottom: -40px;
   z-index: 10;
@@ -43,7 +43,7 @@
   color: #007bff;
 }
 
-/* Personalizando as setas (arrows) - Para desktop */
+/* Setas desktop */
 .carouselWrapper .slick-prev,
 .carouselWrapper .slick-next {
   z-index: 1;
@@ -65,25 +65,34 @@
   right: -50px;
 }
 
-/* --- ESTILOS ESPECÍFICOS PARA DESKTOP (MAIORES QUE 768px) --- */
+/* ⚙️ Apenas para desktop */
 @media (min-width: 769px) {
   .carouselWrapper :global(.slick-track) {
     display: flex !important;
-    flex-wrap: wrap !important; /* organiza em 2 linhas */
+    flex-wrap: wrap !important;
     margin: 0 !important;
-    transform: none !important; /* trava apenas no desktop */
     height: auto !important;
+
+    /* ⚠️ IMPORTANTE: só aplica isso no desktop */
+    transform: none !important;
   }
 }
 
-/* --- GERAIS PARA O SLICK-LIST --- */
+/* ⚙️ Regras gerais */
 .carouselWrapper :global(.slick-list) {
   padding: 0 !important;
   overflow: hidden;
 }
 
-/* --- AJUSTES PARA O MOBILE (MAX-WIDTH: 768PX) --- */
+/* 📱 Ajustes mobile */
 @media (max-width: 768px) {
+  /* ⚠️ Remove qualquer interferência no mobile */
+  .carouselWrapper :global(.slick-track) {
+    display: block !important;
+    transform: translate3d(0, 0, 0) !important;
+    height: auto !important;
+  }
+
   .carouselWrapper .slick-prev,
   .carouselWrapper .slick-next {
     display: none !important;
@@ -95,11 +104,10 @@
   }
 
   .carouselWrapper .slick-slide > div {
-    padding: 5px; /* Menor espaçamento no mobile */
+    padding: 5px;
   }
 }
 
-/* --- AJUSTES PARA CELULARES PEQUENOS (MAX-WIDTH: 480PX) --- */
 @media (max-width: 480px) {
   .carouselWrapper .slick-dots {
     bottom: -15px;

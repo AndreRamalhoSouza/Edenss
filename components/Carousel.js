@@ -2,7 +2,6 @@ import ProjectCard from './ProjectCard';
 import Slider from 'react-slick';
 import styles from '../styles/Carousel.module.css';
 
-// Importa o CSS base do slick (essencial)
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -13,17 +12,15 @@ const Carousel = ({ projects }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    rows: 2, // 2 linhas no desktop
+    rows: 2,
     slidesPerRow: 1,
     arrows: false,
     autoplay: false,
-    autoplaySpeed: 3000,
     swipe: true,
     swipeToSlide: true,
     touchMove: true,
 
     responsive: [
-      // Tablets
       {
         breakpoint: 1024,
         settings: {
@@ -35,13 +32,12 @@ const Carousel = ({ projects }) => {
           dots: true,
         },
       },
-      // Celulares médios
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 1, // 1 linha no mobile (chave pro swipe funcionar)
+          rows: 1, // ← sem isso, o swipe nunca vai funcionar
           slidesPerRow: 1,
           infinite: true,
           dots: true,
@@ -51,7 +47,6 @@ const Carousel = ({ projects }) => {
           touchMove: true,
         },
       },
-      // Celulares pequenos
       {
         breakpoint: 480,
         settings: {
