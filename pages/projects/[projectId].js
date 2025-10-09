@@ -3,11 +3,11 @@
 import { useRouter } from 'next/router'; 
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react'; // <-- NOVO: Importe o useState para o Modal
+import { useState } from 'react'; // 1. Importa o estado para o Modal
 
-import { projects } from '../../data/projects'; // Mantenha esta importação CORRETA
+import { projects } from '../../data/projects'; // Importa os dados do projeto
 
-import styles from '../../styles/ProjectDetail.module.css';
+import styles from '../../styles/ProjectDetail.module.css'; // Importa estilos
 
 import Header from '../../components/Cabecalho';
 import Footer from '../../components/Rodape';
@@ -16,11 +16,11 @@ import Footer from '../../components/Rodape';
 export default function ProjectDetail({ project }) {
   const router = useRouter();
 
-  // Estados para controlar o Modal/Lightbox
+  // 2. Estados para controlar o Modal/Lightbox
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(''); 
 
-  // Funções para abrir e fechar o Modal
+  // 3. Funções para abrir e fechar o Modal
   const openModal = (imageSrc) => {
     setSelectedImage(imageSrc);
     setIsModalOpen(true);
@@ -57,12 +57,12 @@ export default function ProjectDetail({ project }) {
         <p className={styles.description}>{project.description}</p>
 
         <div className={styles.detailImagesGrid}>
+          {/* 4. Mapeamento das Imagens com o evento onClick */}
           {project.detailImages.map((imageSrc, index) => (
             <div 
               key={index} 
               className={styles.imageWrapper}
-              // Chama a função para abrir o modal ao clicar
-              onClick={() => openModal(imageSrc)} 
+              onClick={() => openModal(imageSrc)} // Chama a função para abrir o modal
             >
               <Image
                 src={imageSrc}
@@ -79,7 +79,7 @@ export default function ProjectDetail({ project }) {
 
       <Footer />
       
-      {/* CÓDIGO DO MODAL: Renderizado apenas se isModalOpen for true */}
+      {/* 5. CÓDIGO DO MODAL (Lightbox) */}
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div 
@@ -90,13 +90,12 @@ export default function ProjectDetail({ project }) {
             <button className={styles.modalCloseButton} onClick={closeModal}>
               &times;
             </button>
+            {/* O Image com layout="fill" e objectFit="contain" garante o preenchimento total */}
             <Image 
               src={selectedImage}
               alt="Imagem Ampliada"
-              width={1200} 
-              height={800} 
-              layout="responsive"
-              objectFit="contain" 
+              layout="fill"          
+              objectFit="contain"   
             />
           </div>
         </div>
@@ -106,16 +105,15 @@ export default function ProjectDetail({ project }) {
   );
 }
 
-// --- Next.js Data Fetching Functions ---
+// --- Funções de Data Fetching do Next.js (Corrigidas) ---
 
 export async function getStaticPaths() {
   
-  // CORREÇÃO: Garante que o array paths seja criado corretamente a partir de projects
+  // O formato de retorno está garantido aqui
   const paths = projects.map((project) => ({
     params: { projectId: project.id },
   }));
 
-  // CORREÇÃO: Garante o retorno do objeto no formato esperado pelo Next.js
   return {
     paths,
     fallback: false, 

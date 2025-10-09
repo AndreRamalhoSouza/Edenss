@@ -14,51 +14,65 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* --- ESTILOS DO MODAL (LIGHTBOX) APRIMORADOS --- */
+
 
 .modalOverlay {
-  /* 1. LAYOUT BÁSICO E POSICIONAMENTO */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   
-  /* 2. FLEXBOX PARA CENTRALIZAÇÃO */
+  /* Centraliza o conteúdo */
   display: flex;
   justify-content: center;
   align-items: center;
   
-  /* 3. VISUAL E ANIMAÇÃO */
-  background-color: rgba(0, 0, 0, 0.95); /* Fundo mais escuro para destaque */
-  opacity: 1; /* Inicia opaco (se for usar JS para animação, pode começar em 0) */
-  transition: opacity 0.3s ease-in-out; /* Transição suave de opacidade */
-  
-  /* 4. CAMADA (Z-INDEX) */
+  background-color: rgba(0, 0, 0, 0.95); /* Fundo bem escuro */
+  transition: opacity 0.3s ease-in-out; 
   z-index: 2000; 
 }
 
 .modalContent {
   position: relative;
   
-  /* 1. TAMANHO E PREENCHIMENTO */
-  max-width: 95%; /* Um pouco mais de espaço em telas pequenas */
-  max-height: 95%;
-  width: auto;
-  height: auto;
+  /* Permite que o conteúdo use quase a tela toda */
+  width: 100%; 
+  height: 100%; 
   
-  /* 2. EFEITO DE ENTRADA */
-  transform: scale(1); /* Inicia no tamanho normal (se for usar JS para animação, pode começar em 0.9) */
-  transition: transform 0.3s ease-in-out;
+  /* Padding de respiro nas bordas */
+  padding: 20px; 
+  box-sizing: border-box; 
+  
+  /* Garante que o contêiner interno do Next/Image use o espaço */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 3. ESTILO DO BOTÃO DE FECHAR */
+/* NOVO ESTILO: Garante que o wrapper do Next/Image preencha o modal content */
+/* Isto é necessário quando o Next.js Image usa layout="fill" */
+.modalContent > span { /* Se o Next Image envolver a imagem em um <span> */
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Caso o Next Image use um <div> wrapper */
+.modalContent > div { 
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* ESTILO DO BOTÃO DE FECHAR */
 .modalCloseButton {
   position: absolute;
   top: 15px;
   right: 15px;
   
-  font-size: 48px; /* Maior e mais fácil de clicar */
+  font-size: 48px; 
   line-height: 1;
   color: #fff;
   background: none;
@@ -66,26 +80,28 @@
   cursor: pointer;
   padding: 10px;
   z-index: 2001; 
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destaque sobre a imagem */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
   transition: color 0.2s ease;
 }
 
 .modalCloseButton:hover {
-  color: #ff4d4d; /* Cor vermelha suave no hover */
+  color: #038c99; 
 }
 
-/* 4. RESPONSIVIDADE (Ajustes para telas menores) */
+
 @media (max-width: 768px) {
-  .modalCloseButton {
+ .modalCloseButton {
     top: 5px;
     right: 5px;
     font-size: 36px;
   }
+
 }
 .backButton:hover {
   background-color: #004f76;
   transform: translateY(-3px); 
 }
+
 
 .title {
   font-size: 3.5rem;
