@@ -14,6 +14,74 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* --- ESTILOS DO MODAL (LIGHTBOX) APRIMORADOS --- */
+
+.modalOverlay {
+  /* 1. LAYOUT BÁSICO E POSICIONAMENTO */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  /* 2. FLEXBOX PARA CENTRALIZAÇÃO */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* 3. VISUAL E ANIMAÇÃO */
+  background-color: rgba(0, 0, 0, 0.95); /* Fundo mais escuro para destaque */
+  opacity: 1; /* Inicia opaco (se for usar JS para animação, pode começar em 0) */
+  transition: opacity 0.3s ease-in-out; /* Transição suave de opacidade */
+  
+  /* 4. CAMADA (Z-INDEX) */
+  z-index: 2000; 
+}
+
+.modalContent {
+  position: relative;
+  
+  /* 1. TAMANHO E PREENCHIMENTO */
+  max-width: 95%; /* Um pouco mais de espaço em telas pequenas */
+  max-height: 95%;
+  width: auto;
+  height: auto;
+  
+  /* 2. EFEITO DE ENTRADA */
+  transform: scale(1); /* Inicia no tamanho normal (se for usar JS para animação, pode começar em 0.9) */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 3. ESTILO DO BOTÃO DE FECHAR */
+.modalCloseButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  
+  font-size: 48px; /* Maior e mais fácil de clicar */
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2001; 
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para destaque sobre a imagem */
+  transition: color 0.2s ease;
+}
+
+.modalCloseButton:hover {
+  color: #ff4d4d; /* Cor vermelha suave no hover */
+}
+
+/* 4. RESPONSIVIDADE (Ajustes para telas menores) */
+@media (max-width: 768px) {
+  .modalCloseButton {
+    top: 5px;
+    right: 5px;
+    font-size: 36px;
+  }
+}
 .backButton:hover {
   background-color: #004f76;
   transform: translateY(-3px); 
