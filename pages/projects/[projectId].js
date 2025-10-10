@@ -3,11 +3,11 @@
 import { useRouter } from 'next/router'; 
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react'; // 1. Importa o estado para o Modal
+import { useState } from 'react'; 
 
-import { projects } from '../../data/projects'; // Importa os dados do projeto
+import { projects } from '../../data/projects'; 
 
-import styles from '../../styles/ProjectDetail.module.css'; // Importa estilos
+import styles from '../../styles/ProjectDetail.module.css'; 
 
 import Header from '../../components/Cabecalho';
 import Footer from '../../components/Rodape';
@@ -16,11 +16,11 @@ import Footer from '../../components/Rodape';
 export default function ProjectDetail({ project }) {
   const router = useRouter();
 
-  // 2. Estados para controlar o Modal/Lightbox
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(''); 
 
-  // 3. Funções para abrir e fechar o Modal
+
   const openModal = (imageSrc) => {
     setSelectedImage(imageSrc);
     setIsModalOpen(true);
@@ -57,12 +57,12 @@ export default function ProjectDetail({ project }) {
         <p className={styles.description}>{project.description}</p>
 
         <div className={styles.detailImagesGrid}>
-          {/* 4. Mapeamento das Imagens com o evento onClick */}
+        
           {project.detailImages.map((imageSrc, index) => (
             <div 
               key={index} 
               className={styles.imageWrapper}
-              onClick={() => openModal(imageSrc)} // Chama a função para abrir o modal
+              onClick={() => openModal(imageSrc)} 
             >
               <Image
                 src={imageSrc}
@@ -79,18 +79,18 @@ export default function ProjectDetail({ project }) {
 
       <Footer />
       
-      {/* 5. CÓDIGO DO MODAL (Lightbox) */}
+     
       {isModalOpen && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div 
             className={styles.modalContent} 
-            // Garante que clicar na imagem dentro não feche o modal
+           
             onClick={(e) => e.stopPropagation()} 
           >
             <button className={styles.modalCloseButton} onClick={closeModal}>
               &times;
             </button>
-            {/* O Image com layout="fill" e objectFit="contain" garante o preenchimento total */}
+            
             <Image 
               src={selectedImage}
               alt="Imagem Ampliada"
@@ -105,11 +105,11 @@ export default function ProjectDetail({ project }) {
   );
 }
 
-// --- Funções de Data Fetching do Next.js (Corrigidas) ---
+
 
 export async function getStaticPaths() {
   
-  // O formato de retorno está garantido aqui
+  
   const paths = projects.map((project) => ({
     params: { projectId: project.id },
   }));

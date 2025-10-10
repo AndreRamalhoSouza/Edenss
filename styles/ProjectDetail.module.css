@@ -23,12 +23,12 @@
   width: 100vw;
   height: 100vh;
   
-  /* Centraliza o conteúdo */
+ 
   display: flex;
   justify-content: center;
   align-items: center;
   
-  background-color: rgba(0, 0, 0, 0.95); /* Fundo bem escuro */
+  background-color: rgba(0, 0, 0, 0.95); 
   transition: opacity 0.3s ease-in-out; 
   z-index: 2000; 
 }
@@ -36,29 +36,28 @@
 .modalContent {
   position: relative;
   
-  /* Permite que o conteúdo use quase a tela toda */
+
   width: 100%; 
   height: 100%; 
   
-  /* Padding de respiro nas bordas */
+  
   padding: 20px; 
   box-sizing: border-box; 
   
-  /* Garante que o contêiner interno do Next/Image use o espaço */
+  
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* NOVO ESTILO: Garante que o wrapper do Next/Image preencha o modal content */
-/* Isto é necessário quando o Next.js Image usa layout="fill" */
-.modalContent > span { /* Se o Next Image envolver a imagem em um <span> */
+
+.modalContent > span { 
   position: relative !important;
   width: 100% !important;
   height: 100% !important;
 }
 
-/* Caso o Next Image use um <div> wrapper */
+
 .modalContent > div { 
   position: relative !important;
   width: 100% !important;
@@ -66,7 +65,7 @@
 }
 
 
-/* ESTILO DO BOTÃO DE FECHAR */
+
 .modalCloseButton {
   position: absolute;
   top: 15px;
@@ -139,6 +138,9 @@
   aspect-ratio: 16/9; 
   width: 100%;
   height: auto;
+  
+  
+  cursor: pointer; 
 }
 
 .imageWrapper img {

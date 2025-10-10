@@ -1,11 +1,23 @@
 export const conteudoHero = {
-  titulo: "ARQUITETURA QUE TRANSFORMA EXPERIÊNCIAS",
- 
-  imagensCarrossel: [
-    "/images/parque.jpg",
-    "/images/hotel 1.jpg",
   
-  ]
+  titulo: "PROJETANDO EXPERIÊNCIAS",
+
+
+  imagensCarrossel: [
+    {
+      imagem: "/images/banner 1.png",
+      titulo: "PROJETANDO EXPERIÊNCIAS", 
+    },
+    {
+      imagem: "/images/banner 2.png",
+      titulo: "HOTÉIS, RESORTS E PARQUES AQUÁTICOS PENSADOS PARA EXPERIÊNCIAS ÚNICAS", 
+    },
+    {
+    
+      imagem: "/images/banner 3.png",
+      titulo: "EDENSS - INOVAÇÃO E ARQUITERUA PARA GRANDES EMPREENDIMENTOS", 
+    },
+  ],
 };
 
 
@@ -49,7 +61,7 @@ export const membrosEquipe = [
   },
   {
     nome: "Susi",
-       cargo: "Arquiteta Especialista\nem Hotelaria e Entretenimento",
+        cargo: "Arquiteta Especialista\nem Hotelaria e Entretenimento",
     imagem: "/images/Susi.png", 
     bio: "Formada em Arquitetura e Urbanismo, cursando MBA em Arquitetura Hoteleira, Susi possui ampla experiência em projetos de atrações aquáticas, parques e destinos de lazer familiar. Seu conhecimento abrange o design de produtos para hotéis, pousadas e parques aquáticos, enriquecido por viagens ao redor do mundo, que lhe deram uma visão inovadora do setor. Na Edenss, sua missão é criar experiências únicas e inesquecíveis, projetando ambientes que encantam, conectam e transformam sonhos em realidade.",
   },
