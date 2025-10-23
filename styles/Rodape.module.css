@@ -26,6 +26,8 @@ bottom: -100px;
 }
 
 
+
+
 .edenn {
   font-size: 5rem;
   color: white;
@@ -147,6 +149,16 @@ bottom: -100px;
   color: rgb(0, 0, 0);
   
 }
+.telefone {
+  position: relative;
+  bottom: 70px;
+  color: #000000; 
+  font-weight: 600; /* Deixa a fonte um pouco mais grossa */
+  font-size: 0.8rem;
+}
+
+
+
 
 
 .socialIcons {

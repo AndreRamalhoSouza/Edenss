@@ -49,7 +49,7 @@ export default function ProjectDetail({ project }) {
 
       <main className={styles.main}>
         
-        <button onClick={() => router.push('/')} className={styles.backButton}>
+        <button onClick={() => router.push('/#projetos')} className={styles.backButton}>
           ← Página Inicial
         </button>
 

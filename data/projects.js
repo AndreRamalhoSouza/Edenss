@@ -62,8 +62,8 @@ export const projects = [
     ],
   },
   {
-    id: 'Vale-Encantado',
-    name: 'Vale Encantado',
+    id: 'Vale-Encantado-EcoPark',
+    name: 'Vale Encantado EcoPark',
     mainImage: '/images/vale 1.jpeg',
     description: 'A ideia era conectar os espaços criando uma nova entrada para o parque mas preservando a estrutura do antigo restaurante, pensando nisso trouxemos uma cobertura bem diferente porém que integrasse as 2 arquiteturas , além de um espaço com piscina e brinquedo aquáticos.',
     detailImages: [
@@ -207,7 +207,7 @@ export const projects = [
 
  {
     id: 'Blue-Beach',
-    name: 'Blue Beach Park',
+    name: ' Blue Beach Parque Aquático',
     mainImage: '/images/bl.jpeg',
     description: 'Aguardando Texto... ',
 

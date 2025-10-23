@@ -83,6 +83,8 @@ function Rodape() {
           <h3>CONTATO</h3>
           <p className={styles.emailSamuel}>samuelvidal@edenss.com.br</p>
           <p className={styles.emailSusi}>susi@edenss.com.br</p>
+          <p className={styles.telefone}>+55 35 8862-1806</p>
+
         </div>
       </div>
     </footer>
