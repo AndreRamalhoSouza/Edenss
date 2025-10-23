@@ -35,29 +35,51 @@
   z-index: 1;
 }
 
+.heroTitleContainer {
+    /* Posicionamento do texto */
+    position: absolute;
+    top: 13%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 2; /* Acima do overlay */
+    
+    /* Ajuste para que o contêiner se alinhe bem, mas não estoure */
+    width: auto; 
+    max-width: 90%; 
+}
+
+/* TÍTULO - Responsável pela ESTILIZAÇÃO DO TEXTO E DO FUNDO CINZA 3D */
 .heroTitle {
-  position: absolute;
-  top: 13%;
-  left: 5%;
-  transform: translateY(-50%);
-  z-index: 2;
-  color: #ffffff; /* Cor principal do texto */
-  font-size: 3rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  text-align: left;
-  line-height: 1.1;
-  margin: 0;
-  padding: 0;
-  
-  /* --- Efeito de Profundidade com Sombra --- */
-  text-shadow: 
-    /* Sombra mais clara (1ª camada) */
-    1px 1px 0px rgba(0, 0, 0, 0.2), 
-    /* Sombra mais escura (2ª camada) */
-    2px 2px 0px rgba(0, 0, 0, 0.4),
-    /* Sombra mais escura (3ª camada) - Dá o efeito de "profundidade" */
-    4px 4px 0px rgba(0, 0, 0, 0.7);
+    /* Mantenha as propriedades de texto */
+    color: #ffffff; 
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    text-align: left;
+    line-height: 1.1;
+    margin: 0;
+    
+    /* --- FUNDO CINZA TRANSPARENTE --- */
+    background-color: rgba(100, 100, 100, 0.7); /* Cinza escuro com 70% de opacidade */
+    padding: 15px 25px; /* Espaçamento interno para o fundo */
+    border-radius: 8px; /* Bordas arredondadas (opcional) */
+    
+    /* CRUCIAL: Faz o fundo se ajustar ao tamanho exato do texto, mesmo com quebras de linha */
+    display: inline-block; 
+    
+    /* Garante que a sombra 3D seja vista corretamente */
+    position: relative; 
+    z-index: 1; 
+
+    /* --- EFEITO 3D com Box-shadow --- */
+    box-shadow: 
+        /* 1. Sombra principal (simula o objeto levantado) */
+        0 8px 15px rgba(0, 0, 0, 0.4),
+        /* 2. Sombra inferior/lateral (efeito chanfrado/profundidade) */
+        4px 4px 0px rgba(0, 0, 0, 0.6); 
+
+    /* Text-shadow para dar um bom contraste ao texto sobre o fundo */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8); 
 }
 .line {
   display: block;

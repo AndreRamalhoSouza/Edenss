@@ -10,12 +10,12 @@ function SecaoHero({ images }) {
     const currentItem = images[currentImageIndex];
     const currentTitle = currentItem ? currentItem.titulo : '';
     
-   
+    
     const blueKeywords = ["experiencias", "unicas", "empreendimentos"];
 
-  
+ 
     const colorizeWords = (line) => {
-     
+      
         const words = line.split(/(\s+)/).filter(w => w.length > 0);
 
         return words.map((word, index) => {
@@ -52,7 +52,7 @@ function SecaoHero({ images }) {
             );
         }
 
-       
+        
         if (title.includes("pensados para experiências")) {
             const quebra = title.indexOf("pensados");
             const linha1 = title.substring(0, quebra).trim();
@@ -76,7 +76,7 @@ function SecaoHero({ images }) {
             );
         }
 
-       
+        
         return <div className={styles.line}>{colorizeWords(title)}</div>;
     };
 
@@ -128,10 +128,12 @@ function SecaoHero({ images }) {
             />
             <div className={styles.overlay}></div>
 
-            
-            <h1 className={styles.heroTitle} key={currentImageIndex}>
-                {renderOrganizedTitle(currentTitle)}
-            </h1>
+            {/* O NOVO CONTÊINER PARA POSICIONAR O TÍTULO E O FUNDO */}
+            <div className={styles.heroTitleContainer} key={currentImageIndex}> 
+                <h1 className={styles.heroTitle}>
+                    {renderOrganizedTitle(currentTitle)}
+                </h1>
+            </div>
 
             <button
                 className={`${styles.carouselArrow} ${styles.arrowLeft}`}
