@@ -12,7 +12,7 @@ function FormularioContato() {
       <form 
         className={styles.formulario}
         // SEU ENDPOINT FORMULÁRIO ESTÁ AQUI:
-        action="https://formspree.io/f/mgvpndje" 
+        action="https://formspree.io/f/mwpwrzwk" 
         method="POST"
       >
         <div className={styles.campo}>
