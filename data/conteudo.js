@@ -77,7 +77,7 @@ export const depoimentos = [
   },
   {
     nome: "OSMAR TEIXEIRA",
-    titulo: "CEO de [Nome da Empresa]", 
+    titulo: "CEO de [Blue Beach]", 
     
     citacao: "Um excelente serviço no projeto de expansão do parque com rapidez, beleza e funcionalidade. Desde o design moderno até a economia operacional foram pensados com excelência no projeto"
 ,

@@ -50,7 +50,7 @@ export default function ProjectDetail({ project }) {
       <main className={styles.main}>
         
         <button onClick={() => router.push('/#projetos')} className={styles.backButton}>
-          ← Página Inicial
+          ← Voltar
         </button>
 
         <h1 className={styles.title}>{project.name}</h1>
