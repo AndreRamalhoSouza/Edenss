@@ -15,7 +15,7 @@ export const conteudoHero = {
     {
     
       imagem: "/images/banner 3.png",
-      titulo: "EDENSS - INOVAÇÃO E ARQUITERUA PARA GRANDES EMPREENDIMENTOS", 
+      titulo: "EDENSS - INOVAÇÃO E ARQUITETURA PARA GRANDES EMPREENDIMENTOS", 
     },
   ],
 };
