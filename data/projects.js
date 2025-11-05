@@ -209,7 +209,7 @@ export const projects = [
     id: 'Blue-Beach',
     name: ' Blue Beach Parque Aquático',
     mainImage: '/images/bl.jpeg',
-    description: 'Aguardando Texto... ',
+    
 
     detailImages: [
 '/images/bl 2.jpeg',
@@ -226,7 +226,7 @@ export const projects = [
     id: 'Pousada-dos-Sonhos',
     name: 'Pousada dos Sonhos',
     mainImage: '/images/po s.jpeg',
-    description: 'Aguardando Texto... ',
+    
 
     detailImages: [
 '/images/po 2.jpeg',
@@ -247,7 +247,7 @@ export const projects = [
     id: 'Resort-Urbano',
     name: 'Resort Urbano',
     mainImage: '/images/re.jpeg',
-    description: 'Aguardando Texto... ',
+    
 
     detailImages: [
 '/images/re 2.jpeg',
@@ -264,7 +264,7 @@ export const projects = [
     id: 'Sesi-Go',
     name: 'Sesi Go',
     mainImage: '/images/se p.jpeg',
-    description: 'Aguardando Texto... ',
+    
 
     detailImages: [
 '/images/se 2.jpeg',
@@ -281,7 +281,7 @@ export const projects = [
     id: 'Villa-Di-Mantova',
     name: 'Villa Di Mantova Resort Hotel',
     mainImage: '/images/vi.jpeg',
-    description: 'Aguardando Texto... ',
+    
 
     detailImages: [
 '/images/vi 2.jpeg',
